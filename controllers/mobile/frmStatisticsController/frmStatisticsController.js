@@ -31,6 +31,6 @@ define({
         this.view.lblTabSumInfo.text = "Outcome";
       	this.view.lblTabSumInfoValue.text = "1258 UAH";
       }
-    }
-
+    },
+  
  });

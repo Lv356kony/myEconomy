@@ -1,9 +1,11 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
+    "_children_": [],
+    "_height_": {
         "type": "string",
-        "value": "0dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -15,7 +17,7 @@
         0,
         0
     ],
-    "_orientation_": 6,
+    "_orientation_": 1,
     "_padding_": [
         0,
         0,
@@ -23,41 +25,37 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "s5ce651a59864dd08fdb569c2f8ca54b",
     "_top_": {
         "type": "string",
-        "value": "110dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
-    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "flxTabHeaderOutcome",
-        "flxTabHeaderIncome",
-        "flxTubSum",
-        "flxChartContainer"
-    ],
     "clipbounds": true,
-    "containerweight": 100,
+    "containerweight": 0,
+    "data": {
+        "chartTitle": ""
+    },
     "enablescrolling": true,
-    "id": "flxContainerTabPane",
+    "id": "piechart",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d850e3f3ea83407d87230ac05645e8dc",
+    "kuid": "ca03d77a9c1a49a28b0bb8625614153d",
     "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "flxMainContainer",
+    "masterType": 1,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "flxChartContainer",
     "pf": "frmStatistics",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "vizProps": {},
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "sourceUserWidget": "b54a4d19936043159966940875ffd799",
+    "wType": "UserWidgetInstance"
 }

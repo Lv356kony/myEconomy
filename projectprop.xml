@@ -62,7 +62,7 @@
     <attributes name="apmgestureswipe" value=""/>
     <attributes name="andweartargetsdkkey" value="7.1 (25)"/>
     <attributes name="appnamekey" value="myEconomy"/>
-    <attributes name="currentgaversion" value="8.3.4.v201810251429"/>
+    <attributes name="currentgaversion" value="8.3.5.v201811011817"/>
     <attributes name="wp10sharedUserCertificates" value="false"/>
     <attributes name="enablelocalnotificationsandroidwear" value="false"/>
     <attributes name="ANDROIDWEAR_READ_SYNC_SETTINGS" value="false"/>
@@ -150,7 +150,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1541354148860"/>
+    <attributes name="lastmodifiedtime" value="1541492898249"/>
     <attributes name="ipad_notificationicon_1x_20" value=""/>
     <attributes name="iphone_spotlighticon_2x_40" value=""/>
     <attributes name="wp10microphone" value="false"/>
@@ -450,7 +450,7 @@
     <attributes name="apmapptransition" value="false"/>
     <attributes name="hostkey_andwear" value=""/>
     <attributes name="wp8iconcountnotificationkey" value="false"/>
-    <attributes name="enablecharts2d3d" value="false"/>
+    <attributes name="enablecharts2d3d" value="true"/>
     <attributes name="USE_CREDENTIALS" value="false"/>
     <attributes name="win8applogokey" value=""/>
     <attributes name="ANDROIDWEAR_BLUETOOTH_ADMIN" value="false"/>
