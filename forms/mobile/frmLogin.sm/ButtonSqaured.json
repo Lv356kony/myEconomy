@@ -1,0 +1,58 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "-7dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_skin_": "sdec9d86a2db4e3fbbe9fdf2089600ca",
+    "_text_": "LOGIN",
+    "_top_": {
+        "type": "string",
+        "value": "-2dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "258dp"
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "s7a79ad8926d4a6fab933e802d751939",
+    "id": "ButtonSqaured",
+    "info": null,
+    "isvisible": true,
+    "kuid": "b5850d277d274a38b111f4da1efe6963",
+    "masterType": 1,
+    "name": "kony.ui.Button",
+    "parent": "btnLogin",
+    "pf": "frmLogin",
+    "wType": "Button",
+    "zindex": 1
+}
