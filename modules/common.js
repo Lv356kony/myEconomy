@@ -200,6 +200,44 @@ const serviceTransactions = {
 //       }
 //     }
     return 0.0;
+  },
+  
+  getByCategoryId: function(categoryId){
+    let transaction =[];
+    for(let i = 0; i < DATA.transactions.length; i++){
+      if(categoryId === DATA.transactions[i].to){
+        transaction.push(DATA.transactions[i]);
+      }
+    }
+    return transaction;
+  },
+  
+  getById: function(transactionId){
+    for(let i = 0; i < DATA.transactions.length; i++){
+      if(transactionId === DATA.transactions[i].id){
+        return DATA.transactions[i];
+      }
+    }
+    return null;
+  },
+  
+  update: function(transactionId, amount, from, to, date, comment){
+    let transaction = this.getById(transactionId);
+ 
+    transaction.amount = amount || transaction.amount;
+    transaction.from = from || transaction.from;
+    transaction.to = to || transaction.to;
+    transaction.date = date || transaction.date;
+    transaction.commentary = comment || transaction.commentary;
+
+  },
+  
+  delteById: function(transactionId){
+    for(let i = 0; i < DATA.transactions.length; i++){
+      if(transactionId === DATA.transactions[i].id){
+        DATA.transactions.splice(i, 1);
+      }
+    }
   }
 };
 
