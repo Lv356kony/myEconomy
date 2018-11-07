@@ -286,7 +286,7 @@ const serviceCategory = {
 
 const userService = {
     getById: function (userId) {
-        var userMockArray = DATA.users.filter(function (user) {
+        let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
         });
 
@@ -297,9 +297,20 @@ const userService = {
     },
 
     login: function (email, password) {
-        validateEmail(email);
+        let validateEmailResult= validateEmail(email);
+        if(!validateEmailResult){
+            return {
+                error: 'invalid Email'
+            };    
+        }
 
-        validatePassword(password);
+        let validatePasswordResult=validatePassword(password);
+        if(!validatePasswordResult){
+            return {
+                error: 'invalid password'
+            };    
+        }
+
         var user = DATA.users.filter(function (user) {
             return user.email === email;
         })[0];
@@ -314,24 +325,39 @@ const userService = {
 
     },
 
-    registration: function(userObj) {
-        var user = {};
-        var email = userObj.email;
-        var password = userObj.password;
+    registration: function(userObj) { 
+        let user = {};
+        let email = userObj.email;
+        let password = userObj.password;
 
-        if ( !!email || !!password ) {
+
+        let validateEmailResult= validateEmail(email);
+        if(!validateEmailResult){
             return {
-                error: 'email and password is required'
-            }
+                error: 'invalid Email'
+            };    
         }
 
-        var userMockArray = DATA.users.filter(function(user) {
+        let validatePasswordResult=validatePassword(password);
+        if(!validatePasswordResult){
+            return {
+                error: 'invalid password'
+            };    
+        }
+
+        if ( !email || !password ) {
+            return {
+                error: 'email and password is required'
+            };
+        }
+
+        let userMockArray = DATA.users.filter(function(user) {
             return user.email === email;
         });
         if ( userMockArray.length ){
             return {
                 error: 'User with this email address already exists'
-            }
+            };
         }
         user.email = email;
         user.password = password;
