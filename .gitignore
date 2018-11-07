@@ -90,3 +90,6 @@ resources/i18n/
 
 # Logs created by building from the command line.
 velocity.log
+
+# AndroidStudio
+.idea/

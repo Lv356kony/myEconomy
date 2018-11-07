@@ -1,52 +1,60 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "60dp"
+        "value": "25%"
     },
     "_left_": {
         "type": "string",
         "value": "0dp"
     },
     "_margin_": [
-        6,
-        6,
-        6,
-        6
+        0,
+        0,
+        0,
+        0
     ],
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_skin_": "s3fc93e66de04fd1ad5e71d96138852a",
-    "_text_": "icon",
+    "_percent_": true,
+    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "75%"
     },
     "_width_": {
         "type": "string",
-        "value": "60dp"
+        "value": "25%"
     },
+    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
+    "children": [
+        "imgIcon13"
+    ],
+    "clipbounds": true,
     "containerweight": 100,
-    "contentalignment": 5,
-    "displaytext": true,
-    "focusskin": "s2a6dfee9c9140c085bf2d27e12f5128",
-    "id": "Button0fe6c1278dfcb4b",
+    "enablescrolling": true,
+    "id": "flxIcon13",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a70e75c8356a4317b6e49ef19ef27781",
-    "name": "kony.ui.Button",
-    "parent": "FlexContainer0a3add9fdd5004e",
+    "kuid": "e40aa7c850954dc2a2a302a54dda9314",
+    "layouttype": 2,
+    "name": "kony.ui.FlexContainer",
+    "parent": "flxIconsList",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "Button",
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
     "zindex": 1
 }

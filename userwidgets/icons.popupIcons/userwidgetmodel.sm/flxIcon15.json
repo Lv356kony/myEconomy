@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "300dp"
+        "value": "25%"
     },
     "_left_": {
         "type": "string",
-        "value": "50dp"
+        "value": "50%"
     },
     "_margin_": [
         0,
@@ -23,39 +23,38 @@
         0
     ],
     "_percent_": true,
-    "_right_": {
-        "type": "string",
-        "value": "50dp"
-    },
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_top_": {
+        "type": "string",
+        "value": "75%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "25%"
+    },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "45%"
-    },
     "children": [
-        "flxIconWrp",
-        "flxEnterCategorName",
-        "btnAddCategory"
+        "imgIcon15"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "categoryForm",
+    "id": "flxIcon15",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a323bc92b77c437985eb9a7521e2c0ae",
+    "kuid": "b7bdc145b4814b3b82814f45811ba297",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "userwidgetmodel",
+    "parent": "flxIconsList",
     "pf": "userwidgetmodel",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

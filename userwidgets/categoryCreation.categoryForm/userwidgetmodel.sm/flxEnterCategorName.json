@@ -40,13 +40,13 @@
         "value": "50%"
     },
     "children": [
-        "TextField0ec652e7adf114d",
-        "FlexContainer0f48b4055a73544"
+        "txbEnterCategory",
+        "flxUnderline"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "FlexContainer0f5e75ef0a56d4b",
+    "id": "flxEnterCategorName",
     "info": null,
     "iphone": {
         "render": true

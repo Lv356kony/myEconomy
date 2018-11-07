@@ -30,7 +30,6 @@
     },
     "canUpdateUI": true,
     "children": [
-        "FlexContainer0feb0fd839fe64e",
         "popupIcons"
     ],
     "containerweight": 100,
