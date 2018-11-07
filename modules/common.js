@@ -202,3 +202,44 @@ const serviceTransactions = {
     return 0.0;
   }
 };
+
+const serviceCategory = {
+  deleteById: function(id) {
+    const index = DATA.categories.findIndex(category => category.id === id);
+    if(index !== -1) {
+      DATA.categories.splice(index, 1);
+    }
+    return DATA.categories;
+  },
+
+  getById: categoryId => {
+    DATA.categories.find(category => category.id === categoryId);
+  },
+
+  deleteByUserId: function(userId) {
+    for(let i = 0; i < DATA.categories.length; i++) {
+      if(DATA.categories[i].user_id === userId) {
+        DATA.categories.splice([i], 1);
+        i--;
+      }
+    }
+    return DATA.categories;
+  },
+
+  create: function(data) {
+//     const existingElement = DATA.categories.find(category => category.id === id);
+//     if(existingElement !== undefined) return;
+    DATA.categories.push(data);
+    return DATA.categories;
+  },
+
+  updateById: function(id, data) {
+    const element = DATA.categories.find(category => category.id === id);
+    Object.keys(data).map(key => {
+      if(element.hasOwnProperty(key)) {
+        element[key] = data[key];
+      }
+    });
+    return element;
+  }
+};
