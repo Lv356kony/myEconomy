@@ -6,38 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e19549e4-7cdd-4a6c-8ef4-87deb15cd836" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/appSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context.properties" beforeDir="false" afterPath="$PROJECT_DIR$/context.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/mobile/frmLoginController/frmLoginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/mobile/frmLoginController/frmLoginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/mobile/frmLoginController/frmLoginControllerActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/mobile/frmLoginController/frmLoginControllerActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defaults/defaults.properties" beforeDir="false" afterPath="$PROJECT_DIR$/defaults/defaults.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/BtnLink.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/BtnLink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/ButtonSqaured.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/ButtonSqaured.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/HyperLinkButton.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/HyperLinkButton.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/btnLogin.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/btnLogin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/flxImage.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/flxImage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/flxLogin.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/flxLogin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/frmLogin.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/frmLogin.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/imgCashSaver.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/imgCashSaver.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/lblCashSaver.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/lblCashSaver.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/txtEmail.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/txtEmail.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/txtPassword.json" beforeDir="false" afterPath="$PROJECT_DIR$/forms/mobile/frmLogin.sm/txtPassword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectprop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projectprop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectsplash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projectsplash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/customlibs/sdkplugin.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/customlibs/sdkplugin.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_06ab01183a50442b9c2f262c92c0b649.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_06ab01183a50442b9c2f262c92c0b649.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_6378df3644db40e3b9650ca9f42f88dd.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_6378df3644db40e3b9650ca9f42f88dd.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_695e4e01b4084d8d8121e5cf724da6eb.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_695e4e01b4084d8d8121e5cf724da6eb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_79de7b9dbc164788a561b36cb34b3d2f.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_79de7b9dbc164788a561b36cb34b3d2f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_a5b8da3c57124ccabc79daff58d85b3d.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_a5b8da3c57124ccabc79daff58d85b3d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_cfae64f9051c432c8db4031ecf312c7a.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_cfae64f9051c432c8db4031ecf312c7a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_d30c59624cb94b9ca91bf71ab96536f8.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_d30c59624cb94b9ca91bf71ab96536f8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/common/AS_TextField_f2dc01e8df8c439e91fe577c171ec128.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/common/AS_TextField_f2dc01e8df8c439e91fe577c171ec128.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/mobile/AS_Button_gaa876960f9c4f4a9341ffbe9e532600.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/mobile/AS_Button_gaa876960f9c4f4a9341ffbe9e532600.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studioactions/mobile/AS_RichText_jceb21d148344cbc98b17975f1a9cbba.json" beforeDir="false" afterPath="$PROJECT_DIR$/studioactions/mobile/AS_RichText_jceb21d148344cbc98b17975f1a9cbba.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windowsViews.xml" beforeDir="false" afterPath="$PROJECT_DIR$/windowsViews.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e19549e4-7cdd-4a6c-8ef4-87deb15cd836" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -59,8 +28,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="AndroidView" />
     </panes>
@@ -143,31 +112,46 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="20" width="1346" height="698" extended-state="0" />
+    <frame x="10" y="20" width="1346" height="698" extended-state="1" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Captures" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
