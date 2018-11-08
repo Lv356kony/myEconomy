@@ -240,7 +240,7 @@ function navToForm(formName){
     getBalanceByCategoryId: function(categoryId){
         let categoryBalance = 0.0;
         for(let i = 0; i < DATA.transactions.length; i++){
-            if(DATA.transactions[i].to === categoryId && DATA.transactions[i].user_id === CURRENT_USER.id){
+            if(DATA.transactions[i].to === categoryId ){
                 categoryBalance += DATA.transactions[i].amount;
             }
         }
