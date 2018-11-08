@@ -186,22 +186,55 @@ const DATA = {
 };
 
 const serviceTransactions = {
-    getBalanceByUserId: function(userId){
-        //     let categories = [];
-        //     for(let i = 0; i < DATA.categories.length; i++){
-        //       if(userId === DATA.categories[i].user_id){
-        //         categories.push(DATA.categories[i]);
-        //       }
-        //     }
-        //     for(let i = 0; i < DATA.transactions.length; i++){
-        //       let transactionId = DATA.transactions[i].to;
-        //       for(let j = 0; j < categories.length; j++){
-        //         if(transactionId === categories[j].id){
 
-        //         }
-        //       }
-        //     }
-        return 0.0;
+    getBalanceByCategoryId: function(categoryId){
+        let categoryBalance = 0.0;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i].to === categoryId){
+                categoryBalance += DATA.transactions[i].amount;
+            }
+        }
+        return categoryBalance;
+    },
+
+    getBalanceByUserId: function(userId){
+        let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++){
+            if(userId === DATA.categories[i].user_id){
+                categories.push(DATA.categories[i]);
+            }
+        }
+
+        let expensesIds = [];
+        let incomeIds = [];
+        for(let i = 0; i < categories.length; i++){
+            if(categories[i].type === 'Expenses'){
+                expensesIds.push(categories[i].id);
+            }
+            else if(categories[i].type === 'Income'){
+                incomeIds.push(categories[i].id);
+            }
+        }
+
+        let countExpenses = 0.0;
+        let countIncome = 0.0;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            for(let j = 0; j < expensesIds.length; j++){
+                if(DATA.transactions[i].to === expensesIds[j]){
+                    countExpenses += DATA.transactions[i].amount;
+                }
+            }
+        }
+
+        for(let i = 0; i < DATA.transactions.length; i++){
+            for(let j = 0; j < incomeIds.length; j++){
+                if(DATA.transactions[i].from === incomeIds[j]){
+                    countIncome += DATA.transactions[i].amount;
+                }
+            }
+        }
+
+       return countIncome - countExpenses;
     },
 
     getByCategoryId: function(categoryId){
@@ -223,6 +256,19 @@ const serviceTransactions = {
         return null;
     },
 
+    create: function(id, amount, from, to, userId, date, comment){
+        let transaction = {};
+        transaction.id = id;
+        transaction.amount = amount;
+        transaction.from = from;
+        transaction.to = to;
+        transaction.userId = userId;
+        transaction.date = date;
+        transaction.comment = comment;
+
+        DATA.transactions.push(transaction);
+    },
+
     update: function(transactionId, amount, from, to, date, comment){
         let transaction = this.getById(transactionId);
 
@@ -234,7 +280,7 @@ const serviceTransactions = {
 
     },
 
-    delteById: function(transactionId){
+    deleteById: function(transactionId){
         for(let i = 0; i < DATA.transactions.length; i++){
             if(transactionId === DATA.transactions[i].id){
                 DATA.transactions.splice(i, 1);
@@ -296,19 +342,19 @@ const userService = {
 
     login: function (email, password) {
         let validateEmailResult = validateEmail(email);
-        
+
         if(!validateEmailResult){
             return {
                 error: 'invalid Email'
-            };    
+            };
         }
 
         let validatePasswordResult = validatePassword(password);
-        
+
         if(!validatePasswordResult){
             return {
                 error: 'invalid password'
-            };    
+            };
         }
 
         var user = DATA.users.filter(function (user) {
@@ -325,7 +371,7 @@ const userService = {
 
     },
 
-    registration: function(userObj) { 
+    registration: function(userObj) {
         let user = {};
         let email = userObj.email;
         let password = userObj.password;
@@ -336,14 +382,14 @@ const userService = {
         if(!validateEmailResult){
             return {
                 error: 'invalid Email'
-            };    
+            };
         }
 
         let validatePasswordResult = validatePassword(password);
         if(!validatePasswordResult){
             return {
                 error: 'invalid password'
-            };    
+            };
         }
 
         if ( !email || !password ) {
