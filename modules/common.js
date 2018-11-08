@@ -253,7 +253,7 @@ const serviceCategory = {
     },
 
     getById: categoryId => {
-        DATA.categories.find(category => category.id === categoryId);
+        return DATA.categories.find(category => category.id === categoryId);
     },
 
     deleteByUserId: function(userId) {
@@ -267,8 +267,6 @@ const serviceCategory = {
     },
 
     create: function(data) {
-        //     const existingElement = DATA.categories.find(category => category.id === id);
-        //     if(existingElement !== undefined) return;
         DATA.categories.push(data);
         return DATA.categories;
     },
