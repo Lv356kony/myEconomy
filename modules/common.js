@@ -297,14 +297,16 @@ const userService = {
     },
 
     login: function (email, password) {
-        let validateEmailResult= validateEmail(email);
+        let validateEmailResult = validateEmail(email);
+        
         if(!validateEmailResult){
             return {
                 error: 'invalid Email'
             };    
         }
 
-        let validatePasswordResult=validatePassword(password);
+        let validatePasswordResult = validatePassword(password);
+        
         if(!validatePasswordResult){
             return {
                 error: 'invalid password'
@@ -329,16 +331,17 @@ const userService = {
         let user = {};
         let email = userObj.email;
         let password = userObj.password;
+        let confPassword = userObj.confPassword;
 
 
-        let validateEmailResult= validateEmail(email);
+        let validateEmailResult = validateEmail(email);
         if(!validateEmailResult){
             return {
                 error: 'invalid Email'
             };    
         }
 
-        let validatePasswordResult=validatePassword(password);
+        let validatePasswordResult = validatePassword(password);
         if(!validatePasswordResult){
             return {
                 error: 'invalid password'
@@ -359,6 +362,14 @@ const userService = {
                 error: 'User with this email address already exists'
             };
         }
+
+        if(password != confPassword){
+            return {
+                error: 'The password confirmation is not the same as the password entered'
+            };
+
+        }
+
         user.email = email;
         user.password = password;
         user.id = Date.now();
