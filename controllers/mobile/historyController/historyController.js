@@ -1,5 +1,1 @@
-define({ 
-
- //Type your controller code here 
-
- });
+define({});
