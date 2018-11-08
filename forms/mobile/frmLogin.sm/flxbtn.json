@@ -7,7 +7,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "50dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -26,11 +26,11 @@
     "_skin_": "s097787234004301aa569d377d11435c",
     "_top_": {
         "type": "string",
-        "value": "350dp"
+        "value": "70dp"
     },
     "_width_": {
         "type": "string",
-        "value": "73.02%"
+        "value": "100%"
     },
     "allboxes": [],
     "android": {
@@ -41,19 +41,19 @@
     },
     "canUpdateUI": true,
     "children": [
-        "ButtonSqaured"
+        "btnRegistration"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "btnLogin",
+    "id": "flxbtn",
     "info": null,
     "isvisible": true,
-    "kuid": "fb2e992806db49418cade2b7ebe19890",
+    "kuid": "a79fae0237d944d88952b0ef5b5351a4",
     "layouttype": 2,
     "masterType": 1,
     "name": "kony.ui.FlexContainer",
-    "parent": "btnGroup",
+    "parent": "flxRegister",
     "pf": "frmLogin",
     "snapgridsize": 10,
     "snaptogrid": true,
