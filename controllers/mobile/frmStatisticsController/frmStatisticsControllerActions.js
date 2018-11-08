@@ -11,5 +11,10 @@ define({
     AS_FlexContainer_ie5fa32e45d54261b5d2fa74fd3192f1: function AS_FlexContainer_ie5fa32e45d54261b5d2fa74fd3192f1(eventobject) {
         var self = this;
         return self.incomeClick.call(this);
+    },
+    /** postShow defined for frmStatistics **/
+    AS_Form_d5e5ca8d3cc94566a49ef97546105a5b: function AS_Form_d5e5ca8d3cc94566a49ef97546105a5b(eventobject) {
+        var self = this;
+        return self.addChart.call(this);
     }
 });
