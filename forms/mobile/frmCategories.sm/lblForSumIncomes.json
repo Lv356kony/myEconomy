@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "15dp"
+        "value": "115dp"
     },
     "_margin_": [
         1,
@@ -23,11 +23,11 @@
         0
     ],
     "_render_": true,
-    "_skin_": "s37bd97fbeb24122aa9e238f5d44f88f",
-    "_text_": "Incomes:",
+    "_skin_": "sedff23d53e7473e8cff81624d5c3332",
+    "_text_": "0.00",
     "_top_": {
         "type": "string",
-        "value": "9dp"
+        "value": "10dp"
     },
     "_width_": {
         "type": "ref",
@@ -35,6 +35,7 @@
     },
     "_wrapping_": 2,
     "android": {
+        "render": true,
         "textStyle": {
             "letterSpacing": 0,
             "strikeThrough": false
@@ -43,15 +44,15 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "40.00%"
     },
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "50.30%"
     },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblNameIncomes",
+    "id": "lblForSumIncomes",
     "info": null,
     "ipad": {
         "psp": {
@@ -61,18 +62,34 @@
     "iphone": {
         "psp": {
             "wrapping": 2
-        }
+        },
+        "render": true
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ie916894eeee421087252942c6fd3163",
+    "kuid": "fb555fb02f464d96a8962baf03a122e4",
     "name": "kony.ui.Label",
     "parent": "flexIncome",
     "pf": "frmCategories",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
+    "spaan": {
+        "render": true
+    },
+    "spabb": {
+        "render": true
+    },
+    "spaip": {
+        "render": true
+    },
+    "spawinphone8": {
+        "render": true
+    },
     "textstyle": {},
     "tooltip": "",
     "wType": "Label",
+    "winphone8": {
+        "render": true
+    },
     "zindex": 1
 }

@@ -31,7 +31,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "100.31%"
     },
     "allboxes": [],
     "android": {
@@ -40,7 +40,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblCurrent"
+        "lblCurrent",
+        "flxForsumCurrent"
     ],
     "clipbounds": true,
     "containerweight": 100,

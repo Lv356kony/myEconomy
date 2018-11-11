@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "70dp"
+        "value": "10dp"
     },
     "_margin_": [
         1,
@@ -27,7 +27,7 @@
     "_text_": "Expenses:",
     "_top_": {
         "type": "string",
-        "value": "3dp"
+        "value": "8dp"
     },
     "_width_": {
         "type": "ref",

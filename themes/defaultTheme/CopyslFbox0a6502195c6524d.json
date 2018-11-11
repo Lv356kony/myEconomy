@@ -5,12 +5,12 @@
   "androidwearos": {
     "font_name": "default"
   },
-  "background_color": "293a4c00",
+  "background_color": "33d29eff",
   "bg_type": "one",
-  "border_color": "293a4cff",
+  "border_color": "fafafaff",
   "border_style": "plain",
   "border_type": 0,
-  "border_width": 1,
+  "border_width": 0,
   "desktopweb": {
     "font_name": "Helvetica"
   },

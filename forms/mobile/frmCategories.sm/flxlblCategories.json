@@ -40,7 +40,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblNameCategories"
+        "lblNameCategories",
+        "flxForSumExpenses"
     ],
     "clipbounds": true,
     "containerweight": 100,
