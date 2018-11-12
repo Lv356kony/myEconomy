@@ -35,6 +35,8 @@
     "defaulttheme": "defaultTheme",
     "cloud_account_guid": "990b7119-9591-4481-a42a-75650efa137e",
     "nativeContainerProperties": {
+        "isModified": false,
+        "isEnableJSContainer": true,
         "isEnableJSContainerAndroid": true,
         "isModified": false,
         "isEnableJSContaineriOS": true,
