@@ -1,0 +1,28 @@
+{
+    "AS_Button_baf021471cb8410f823232645020d1a5": {
+        "id": "AS_Button_baf021471cb8410f823232645020d1a5",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmCategoryCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "hd9bc2449f914ed69b9376f9841ae86e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___hde83630fc5449d69c459a85503fa9a2",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "addCategory",
+            "display": "addCategory",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

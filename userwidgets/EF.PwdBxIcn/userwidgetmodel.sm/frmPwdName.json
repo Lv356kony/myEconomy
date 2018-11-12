@@ -1,0 +1,59 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "5dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 6,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_skin_": "sd095b2ab6cb4790974d6f871d33b77c",
+    "_top_": {
+        "type": "string",
+        "value": "5dp"
+    },
+    "allboxes": [],
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "children": [
+        "lblLock",
+        "txtPassword"
+    ],
+    "clipbounds": true,
+    "containerweight": 100,
+    "enablescrolling": true,
+    "focusskin": "s37938ff0629429a8d4da13cb4aaab6e",
+    "id": "frmPwdName",
+    "info": null,
+    "isvisible": true,
+    "kuid": "fb7a4484fe604ead8ed5fd871d41c57a",
+    "layouttype": 2,
+    "name": "kony.ui.FlexContainer",
+    "parent": "PwdBxIcn",
+    "pf": "userwidgetmodel",
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
+    "zindex": 1
+}
