@@ -1,0 +1,56 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        10,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s86adfd6220a4cfd8632f7e3d8a8a785",
+    "_text_": "Operations",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 4,
+    "disabledSkins": {
+        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
+    },
+    "displaytext": true,
+    "id": "btnOperations",
+    "ide_onClick": "AS_Button_ib481acbf19747fb8b8b749128c2c489",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "eb01ae36e23c401c8ab0edf40b9611ac",
+    "name": "kony.ui.Button",
+    "paddinginpixel": false,
+    "parent": "flxOperationsText",
+    "pf": "frmSideMenu",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

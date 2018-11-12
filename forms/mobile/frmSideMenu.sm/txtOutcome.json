@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "seddec967eee46efb0391bba096cbd23",
+    "_text_": "Outcome",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "id": "txtOutcome",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "c3751fda715f4d8684f5bd7e136bf250",
+    "linkskin": "sbb94eebb18c407f9c3e8aaa008fdb1d",
+    "name": "kony.ui.RichText",
+    "parent": "flxCurrMoney",
+    "pf": "frmSideMenu",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "RichText",
+    "widgetalignment": 5,
+    "zindex": 1
+}

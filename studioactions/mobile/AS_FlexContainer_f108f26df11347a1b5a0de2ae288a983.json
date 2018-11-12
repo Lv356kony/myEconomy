@@ -1,0 +1,24 @@
+{
+    "AS_FlexContainer_f108f26df11347a1b5a0de2ae288a983": {
+        "id": "AS_FlexContainer_f108f26df11347a1b5a0de2ae288a983",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmSideMenu",
+            "type": "forms",
+            "platform": "",
+            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c"
+        },
+        "language": "js",
+        "actions": []
+    }
+}
