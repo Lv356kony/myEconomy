@@ -1,0 +1,34 @@
+{
+    "AS_Image_gbef2c9a81ae431894caea92192c9c47": {
+        "id": "AS_Image_gbef2c9a81ae431894caea92192c9c47",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmCategoryCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "hd9bc2449f914ed69b9376f9841ae86e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___fa9fc6b3eb454d7690ee4819c321f260",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "chooseIcon",
+            "display": "chooseIcon",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
