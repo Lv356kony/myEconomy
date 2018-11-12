@@ -13,8 +13,8 @@ define({
         return self.incomeClick.call(this);
     },
     /** postShow defined for frmStatistics **/
-    AS_Form_d5e5ca8d3cc94566a49ef97546105a5b: function AS_Form_d5e5ca8d3cc94566a49ef97546105a5b(eventobject) {
+    AS_Form_c8d28d13b7c54a4ebf94279914d2f579: function AS_Form_c8d28d13b7c54a4ebf94279914d2f579(eventobject) {
         var self = this;
-        return self.addChart.call(this);
+        return self.init.call(this);
     }
 });

@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "10dp"
+    },
     "_margin_": [
         1,
         1,
@@ -18,16 +22,8 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "10dp"
-    },
-    "_skin_": "sce5e2b3f74a48e39575b5b756dc852d",
-    "_text_": "6364 UAH",
-    "_top_": {
-        "type": "string",
-        "value": "10dp"
-    },
+    "_skin_": "sb53b01432094850ab5016d34e9c0b4a",
+    "_text_": "Your Balance",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -40,9 +36,13 @@
         }
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblInitialBalanceValue",
+    "id": "lblCurrentBalance",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,7 +56,7 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f8d6844b348b4c07835965a101f9e8a4",
+    "kuid": "e3cd404b063f42ef85a99edda4547888",
     "name": "kony.ui.Label",
     "parent": "flxBalance",
     "pf": "frmStatistics",

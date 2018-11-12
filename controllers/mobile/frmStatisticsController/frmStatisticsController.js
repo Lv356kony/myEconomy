@@ -1,16 +1,46 @@
 define({ 
 
+  init: function () {
+    this.addChart("Expenses");
+    this.view.lblCurrentBalanceValue.text = serviceTransactions.getBalanceByUserId(CURRENT_USER.id) + " UAH";
+    let segment = this.view.segLabels;
+    segment.widgetDataMap = {
+      lblTemplateName: "name",
+      lblTemplateValue: "balance"
+    };
+    segment.setData(this.getListNamesAndBalanceByCategory("Expenses"));
+  },
+
+
   incomeClick : function() {
+    this.view.flxChartContainer.removeAll();
+    this.addChart("Current");
     const selectedItem = this.view.flxTabHeaderIncome;
     this.changeTabHeaderColor(selectedItem);
     this.changeTabSumInfo(selectedItem);
+    let segment = this.view.segLabels;
+    segment.widgetDataMap = {
+      lblTemplateName: "name",
+      lblTemplateValue: "balance"
+    };
+    segment.setData(this.getListNamesAndBalanceByCategory("Current"));
   },
 
+
   outcomeClick : function() {
+    this.view.flxChartContainer.removeAll();
+    this.addChart("Expenses");
     const selectedItem = this.view.flxTabHeaderOutcome;
     this.changeTabHeaderColor(selectedItem);
     this.changeTabSumInfo(selectedItem);
+    let segment = this.view.segLabels;
+    segment.widgetDataMap = {
+      lblTemplateName: "name",
+      lblTemplateValue: "balance"
+    };
+    segment.setData(this.getListNamesAndBalanceByCategory("Expenses"));
   },
+
 
   changeTabHeaderColor : function(selectedItem) {
     if (selectedItem === this.view.flxTabHeaderIncome){
@@ -23,6 +53,7 @@ define({
 
   },
 
+
   changeTabSumInfo : function(selectedItem) {
     if (selectedItem === this.view.flxTabHeaderIncome) {
       this.view.lblTabSumInfo.text = "Income";
@@ -32,10 +63,49 @@ define({
       this.view.lblTabSumInfoValue.text = "1258 UAH";
     }
   },
-  
-  kdv_createChartWidget: function() {
-    var chartObj = this.kdv_createChartJSObject();
 
+
+  getListNamesAndBalanceByCategory : function (categorytype) {
+    let listNameAndBalanceByCategiry = [];
+    let categoryList = this.getListOfCategoriesByType(categorytype);
+
+    categoryList.forEach( i => {
+      let categorySum = serviceTransactions.getBalanceByCategoryId(i.id);
+      if (categorySum) {
+        listNameAndBalanceByCategiry.push({balance : categorySum,
+                                           name : i.name});
+      }
+    });
+    return listNameAndBalanceByCategiry;
+  },
+
+
+  getListOfCategoriesByType: function (categorytype) {
+    let userId = CURRENT_USER.id;
+    let expenses = [];
+    let income = [];
+    for(let i = 0; i < DATA.categories.length; i++){
+      if(userId === DATA.categories[i].user_id && DATA.categories[i].type === "Expenses"){
+        expenses.push(DATA.categories[i]);
+      } else if (userId === DATA.categories[i].user_id && DATA.categories[i].type === "Current") {
+        income.push(DATA.categories[i]);
+      }
+    }
+    if (arguments[0] === "Expenses") {
+      return expenses;
+    } else return income;
+
+  },
+
+
+  addChart: function (categorytype) {
+    var chartWidjet = this.kdv_createChartWidget(categorytype);
+    this.view.flxChartContainer.add(chartWidjet);
+  },
+
+
+  kdv_createChartWidget: function(categorytype) {
+    var chartObj = this.kdv_createChartJSObject(categorytype);
     var chartWidget = new kony.ui.Chart2D3D({
       "id": "chartid",
       "isVisible": true
@@ -44,10 +114,13 @@ define({
       "contentAlignment": constants.CONTENT_ALIGN_MIDDLE_LEFT,
       "containerWeight": 100
     }, chartObj);
+
     return chartWidget;
   },
 
-  kdv_createChartJSObject: function() {
+
+  kdv_createChartJSObject: function(categorytype) {
+
     var chartInfo = {
       "chartProperties": {
         "chartHeight": 100,
@@ -116,22 +189,22 @@ define({
           "plotMissingValues": "assumeZero",
           "direction": "clockWise",
           "startAngle": 0,
-          "holeRadius": 25,
+          "holeRadius": 0,
           "exploded": false,
           "pieSlice": {
             "fillType": ["gradient"],
             "gradientType": ["linearTopToBottom"],
             "transparency": [0],
             "color": [
-              ["0xf91818ff", "0x980a0aff"],
-              ["0xf31515ff", "0x500b0bff"],
-              ["0xcd3539ff", "0x470305ff"],
-              ["0xe53340ff", "0x6d030bff"],
-              ["0xf415f1ff", "0x460745ff"],
-              ["0xf415f1ff", "0x460745ff"],
-              ["0xf415f1ff", "0x460745ff"],
-              ["0x6253f6ff", "0x0a0538ff"],
-              ["0x6253f6ff", "0x0a0538ff"],
+              ["0xff9773ff", "0xfb6530ff"],
+              ["0x60ff00ff", "0x2f7c02ff"],
+              ["0x7cfdffff", "0x305353ff"],
+              ["0xffd658ff", "0x8c701aff"],
+              ["0xba69ffff", "0x22005dff"],
+              ["0xff6c6cff", "0xb50000ff"],
+              ["0xab6effff", "0x320077ff"],
+              ["0xffd675ff", "0xb37e00ff"],
+              ["0xff6cfdff", "0x9d009bff"],
               ["0x6253f6ff", "0x0a0538ff"]
             ]
           },
@@ -141,32 +214,32 @@ define({
               "width": [1],
               "style": ["continuous"],
               "visible": true,
-              "color": ["0xffffffff"],
+              "color": ["0x000000ff"],
               "transparency": [0]
             }
           },
           "dataLabels": {
             "visible": true,
             "separator": "space",
-            "placement": "inside",
+            "placement": "outside",
             "indicators": ["rowName"],
-            "orientationAngle": 0,
+            "orientationAngle": null,
             "connector": {
               "visible": true,
               "line": {
                 "width": [1],
                 "style": ["continuous"],
                 "visible": true,
-                "color": ["aaaaaaff"],
+                "color": ["0x000000ff"],
                 "transparency": [0]
               }
             },
             "font": {
               "family": ["HelveticaNeue"],
               "style": ["Bold"],
-              "size": [40],
+              "size": [25],
               "transparency": [0],
-              "color": ["0xffffffff"]
+              "color": ["0x000000ff"]
             }
           },
           "margin": [0, 0, 0, 0]
@@ -174,14 +247,13 @@ define({
       },
       "chartData": {
         "rowNames": {
-          "values": ["China", "USA", "Russia", "Britian", "Germany", "Australia", "Korea", "Japan", "Italy", "Ukraine"]
+          "values": this.getListNamesAndBalanceByCategory(categorytype).map(i => i.name)
         },
         "columnNames": {
-          "values": ["Amount1", "Amount2"]
+          "values": ["Amount"]
         },
         "data": {
-          "Amount1": [70, 70, 50, 30, 20, 23, 18, 15, 18, 20],
-          "Amount2": [70, 70, 50, 30, 20, 23, 18, 15, 18, 20]
+          "Amount": this.getListNamesAndBalanceByCategory(categorytype).map(i => i.balance)
         }
       },
       "chartEvents": {
@@ -223,14 +295,8 @@ define({
         }
       }
     };
+
     return chartInfo;
   },
-
-
-  addChart : function () {
-    var chartWidjet = this.kdv_createChartWidget();
-
-    this.view.flxChartContainer.add(chartWidjet);
-  }
 
 });

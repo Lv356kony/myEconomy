@@ -2,17 +2,9 @@
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "string",
-        "value": "10dp"
-    },
     "_height_": {
         "type": "ref",
         "value": "preferred"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "10dp"
     },
     "_margin_": [
         1,
@@ -26,8 +18,12 @@
         0,
         0
     ],
-    "_skin_": "sce5e2b3f74a48e39575b5b756dc852d",
-    "_text_": "Ending Balance",
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_skin_": "sb53b01432094850ab5016d34e9c0b4a",
+    "_text_": "",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -40,9 +36,13 @@
         }
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblEndingBalance",
+    "id": "lblCurrentBalanceValue",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,7 +56,7 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h39670da385f4466857168383b7aeb06",
+    "kuid": "f8d6844b348b4c07835965a101f9e8a4",
     "name": "kony.ui.Label",
     "parent": "flxBalance",
     "pf": "frmStatistics",

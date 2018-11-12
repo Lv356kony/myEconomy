@@ -36,10 +36,8 @@
         "value": "50%"
     },
     "children": [
-        "lblInitialBalance",
-        "lblEndingBalance",
-        "lblInitialBalanceValue",
-        "lblEndingBalanceValue"
+        "lblCurrentBalance",
+        "lblCurrentBalanceValue"
     ],
     "clipbounds": true,
     "containerweight": 100,

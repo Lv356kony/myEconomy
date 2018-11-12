@@ -1,13 +1,12 @@
 {
     "DNDConfig": null,
-    "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "220dp"
+        "value": "30dp"
     },
     "_left_": {
         "type": "string",
-        "value": "344dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -26,32 +25,43 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "44dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "lblTemplateName",
+        "lblTemplateValue"
+    ],
     "clipbounds": true,
+    "containerId": true,
     "containerweight": 100,
+    "controllerInfo": {
+        "default": {
+            "channel": "mobile",
+            "name": "flxStatisticsRowTemplateController"
+        }
+    },
     "enablescrolling": true,
-    "id": "FlexContainer0ef758ffba4b846",
+    "id": "flxStatisticsRowTemplate",
     "info": null,
+    "isTemplate": true,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c41027721a6740f78777a87c611010ad",
+    "kuid": "h76403e3b4e047428cc92bace793a4f1",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxContainerBalance",
-    "pf": "frmStatistics",
+    "parent": "segStatisticsRowTemplate",
+    "pf": "segStatisticsRowTemplate",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "widgetalignment": 1
 }
