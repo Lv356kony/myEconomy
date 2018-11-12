@@ -1,9 +1,75 @@
 {
     "HEAD": "w2adca4c4b664eda90c57d91ea6a9534",
     "w2adca4c4b664eda90c57d91ea6a9534": {
-        "children": [],
+        "children": [
+            "w47d5d1f084c4cf5a0faddae99a1877b"
+        ],
         "kuid": "w2adca4c4b664eda90c57d91ea6a9534",
         "name": "localfiles",
         "type": "L"
+    },
+    "w2b622bb1214471082670b387531b0ff": {
+        "extension": "js",
+        "kuid": "w2b622bb1214471082670b387531b0ff",
+        "name": "chartistlegend.js",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "w32a6401e53c44fb90217217cfc3bf60": {
+        "extension": "js",
+        "kuid": "w32a6401e53c44fb90217217cfc3bf60",
+        "name": "chartist.js",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "w47d5d1f084c4cf5a0faddae99a1877b": {
+        "children": [
+            "w719da577a6244cbbda62aea8eb5572c",
+            "w32a6401e53c44fb90217217cfc3bf60",
+            "w2b622bb1214471082670b387531b0ff",
+            "wf78c7d6289d43ee8a1d715982a47422",
+            "w81c29081414458393c16cbcf695e745",
+            "w595775a700c4e9fb73a4fac608744b5",
+            "wac512db419f40a690c0f8f7361007d9"
+        ],
+        "kuid": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "name": "Chart_pie",
+        "parent": "w2adca4c4b664eda90c57d91ea6a9534",
+        "type": "D"
+    },
+    "w595775a700c4e9fb73a4fac608744b5": {
+        "extension": "js",
+        "kuid": "w595775a700c4e9fb73a4fac608744b5",
+        "name": "LIC.js",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "w719da577a6244cbbda62aea8eb5572c": {
+        "extension": "js",
+        "kuid": "w719da577a6244cbbda62aea8eb5572c",
+        "name": "chartist-plugin-axistitle.js",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "w81c29081414458393c16cbcf695e745": {
+        "extension": "css",
+        "kuid": "w81c29081414458393c16cbcf695e745",
+        "name": "chartitst.css",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "wac512db419f40a690c0f8f7361007d9": {
+        "extension": "html",
+        "kuid": "wac512db419f40a690c0f8f7361007d9",
+        "name": "Pie_chartistChart.html",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "wf78c7d6289d43ee8a1d715982a47422": {
+        "extension": "js",
+        "kuid": "wf78c7d6289d43ee8a1d715982a47422",
+        "name": "chartist_pie.js",
+        "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
     }
 }

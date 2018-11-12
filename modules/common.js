@@ -10,7 +10,7 @@ const DATA = {
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'notthistime'
+            password: 'Ra$1'
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
@@ -386,7 +386,7 @@ const userService = {
 
     registration: function(email, password, confPassword) {
         let user = {};
-        
+
         let validateEmailResult = validateEmail(email);
         if(!validateEmailResult){
             return {
@@ -424,7 +424,7 @@ const userService = {
                 error: {
                     message: 'User with this email address already exists',
                     type: 'email'
-                    
+
                 }
             };
         }

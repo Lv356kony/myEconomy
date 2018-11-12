@@ -24,7 +24,7 @@ define({
         } else {
             this.view.flxLogin.flxEmail.txtEmail.text = '';
             this.view.flxLogin.flxPassword.txtPassword.text = '';
-            navToForm("frmTest");    
+            navToForm("frmStatistics");    
         }    
     },
 
