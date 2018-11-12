@@ -1,0 +1,301 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_data_": [
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        },
+        {
+            "numDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "00"
+            },
+            "txtDate": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "date"
+            },
+            "txtDay": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "day"
+            },
+            "txtResult": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "summary"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 1,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "09",
+    "enablehapticfeedback": false,
+    "enablereordering": false,
+    "focusedindex": null,
+    "focuseditem": null,
+    "generatedtemplate": "g5fb0c05ab0f4514a347c9bd2ffb880c",
+    "groupcells": false,
+    "hasSections": false,
+    "id": "segHistoryExpense",
+    "ide_onRowClick": "AS_Segment_eceb30fe2d6c47568dd5b0a8c981a3f4",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "ff3653f1895d4f4da66e4de05a4b4366",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom",
+        "vdistance": 1
+    },
+    "parent": "FlexContainer0ab9e86ba656f45",
+    "pf": "frmHistory",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "g5fb0c05ab0f4514a347c9bd2ffb880c",
+    "rowcounter": 9,
+    "rowfocusskin": "s4d17ef97bbd44b1b18588dda91c6028",
+    "rowskin": "saf2120726e74030acf61f470c844bde",
+    "rowtemplate": "FBox0b72131d6637c4d",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionHeaderTemplateId": null,
+    "sectionheaderskin": "s038424339a74adb98883a41a04d90e0",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "selectionbehaviorconfig": null,
+    "separatorcolor": "33bf9e46",
+    "separatorrequired": true,
+    "separatorthickness": 0,
+    "showscrollbars": false,
+    "swipeContext": {
+        "currentPage": 0,
+        "imageWidth": 1080,
+        "widthRatio": 0
+    },
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "flxHeader": "flxHeader",
+        "flxSectionHistory": "flxSectionHistory",
+        "numDay": "numDay",
+        "txtDate": "txtDate",
+        "txtDay": "txtDay",
+        "txtResult": "txtResult"
+    },
+    "zindex": 1
+}

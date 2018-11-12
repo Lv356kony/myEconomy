@@ -1,0 +1,84 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizListBox",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        3,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Choose Category",
+    "_skin_": "sb063ff75f1a4ac58979ab8fc598ba0a",
+    "_width_": {
+        "type": "string",
+        "value": "160dp"
+    },
+    "android": {
+        "psp": {}
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "52%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 4,
+    "disabledSkins": {
+        "placeholderSkin": "s921abab625540b491e2dc967edf246f"
+    },
+    "dropdownimage": "down_arrow.png",
+    "focusskin": "se0d937cce43487299f54f6864210271",
+    "groupcells": false,
+    "id": "lstBoxTo",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "fd8ac75b701b4f8c82f517ee9ec66b5b",
+    "masterdata": [
+        [
+            "lb1",
+            "Placeholder One"
+        ],
+        [
+            "lb2",
+            "Placeholder Two"
+        ],
+        [
+            "lb3",
+            "Placeholder Three"
+        ]
+    ],
+    "name": "kony.ui.ListBox",
+    "parent": "flxCategory",
+    "pf": "frmHistoryDetails",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "selectedkey": null,
+    "selectedkeys": null,
+    "selectedkeyvalue": null,
+    "selectedkeyvalues": null,
+    "size": 18,
+    "viewconfig": {
+        "toggleViewConfig": {
+            "viewStyle": 0
+        }
+    },
+    "viewtype": 0,
+    "wType": "ListBox",
+    "zindex": 1
+}

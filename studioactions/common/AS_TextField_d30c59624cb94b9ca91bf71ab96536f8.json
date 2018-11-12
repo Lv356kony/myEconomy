@@ -1,0 +1,39 @@
+{
+    "AS_TextField_d30c59624cb94b9ca91bf71ab96536f8": {
+        "id": "AS_TextField_d30c59624cb94b9ca91bf71ab96536f8",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "SET_FORM_WIDGET_PROPERTY____f5473b62d117446cb1f63296e0670375",
+            "type": "SET_WIDGET_PROPERTY",
+            "itemType": "FORM",
+            "itemId": "EF.PwdBxIcn",
+            "widgetId": "frmPwdName",
+            "propertyName": "skin",
+            "propertyValue": "skPWDSNormal",
+            "itemKUID": "1045dfd5b0fb42a7ada7d6861f4a87a3",
+            "widgetKUID": "fb7a4484fe604ead8ed5fd871d41c57a",
+            "skinKUID": "sd095b2ab6cb4790974d6f871d33b77c",
+            "isSkinProperty": true,
+            "wType": "FlexContainer",
+            "currentTheme": "defaultTheme",
+            "forkedPlatform": "all",
+            "parentId": null,
+            "callbackType": null,
+            "widgetPath": "this.view.frmPwdName"
+        }, {
+            "id": "ADD_SNIPPET__j5290f6306de406ba8e12f04a31313ab",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "//Password validation Logic\n//Length as 6 to 16\n//Password has Alpha, Numeric and Special Character\n//Special Charactrs include !@#$%^&*_\n\nvar regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[a-zA-Z0-9!@#$%^&*]{6,16}$/;\n\n//Check if the field is empty then set the text to Normal else check for Validation\nif(/^\\s*$/.test(this.view.frmPwdName.txtPassword.text))\n  {\n        self.view.frmPwdName[\"skin\"] = \"skPWDSNormal\"\n        self.view.txtPassword[\"skin\"] = \"skUNIRN\"   \n  }\n  else\n  {  \n    //Check if Password has all the required validations and set skin to Normal\n\n    if (regularExpression.test(this.view.frmPwdName.txtPassword.text))\n    {\n        self.view.frmPwdName[\"skin\"] = \"skPWDSNormal\"\n        self.view.txtPassword[\"skin\"] = \"skUNIRN\"   \n    }\n\n  else\n  //Check if Password is failing any required validations and set skin to Red  \n    {\n        self.view.frmPwdName[\"skin\"] = \"skPWDSRed\"\n        self.view.txtPassword[\"skin\"] = \"skUNIRRed\"\n    }\n  }",
+            "parentId": null,
+            "callbackType": null
+        }]
+    }
+}

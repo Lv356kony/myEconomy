@@ -1,0 +1,47 @@
+{
+    "classname": "categoryForm",
+    "definitions": {
+        "apis": {
+            "custom": [],
+            "passthrough": []
+        },
+        "events": {
+            "custom": [],
+            "passthrough": []
+        },
+        "groups": {
+            "apis": [],
+            "events": [],
+            "properties": [],
+            "widgets": []
+        },
+        "properties": {
+            "custom": [],
+            "passthrough": [
+                {
+                    "access": "Enable",
+                    "group": "General",
+                    "kuid": "b4fa4cda43cb4bf59e3a0318ef39c5a9",
+                    "originalPropertyKey": "text",
+                    "propertyIndex": 1,
+                    "propertyKey": "text",
+                    "pw": {
+                        "access": "readwrite",
+                        "category": "look",
+                        "displayName": "Text",
+                        "type": "string",
+                        "uiRepresentation": "Label-Textbox",
+                        "wType": "TextField"
+                    },
+                    "srcWgtKUID": "fbd26719f09c4d13a4f85993be42596d"
+                }
+            ]
+        },
+        "widgets": {
+            "expose": [],
+            "passthrough": []
+        }
+    },
+    "namespace": "categoryCreation",
+    "version": "1.0.0"
+}

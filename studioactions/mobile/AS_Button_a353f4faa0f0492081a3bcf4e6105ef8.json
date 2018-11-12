@@ -1,0 +1,34 @@
+{
+    "AS_Button_a353f4faa0f0492081a3bcf4e6105ef8": {
+        "id": "AS_Button_a353f4faa0f0492081a3bcf4e6105ef8",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___efa68c59297b4cebb7028fab3cf039cc",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "goToCategories",
+            "display": "goToCategories",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
