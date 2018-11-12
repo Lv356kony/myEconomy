@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "123dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "47dp"
+        "value": "415dp"
     },
     "_margin_": [
         0,
@@ -26,22 +22,29 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "235dp"
+        "value": "187dp"
     },
     "_width_": {
         "type": "string",
-        "value": "77.08%"
+        "value": "80%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "49.99%"
     },
     "children": [
-        "txtEmail",
-        "txtPassword"
+        "flxEmail",
+        "flxPassword",
+        "flxButtonLogin",
+        "flxCreateAccount",
+        "flxConfirmation",
+        "flxButtonRegister",
+        "lblEmailError",
+        "lblPasswordError",
+        "lblConfirmationError"
     ],
     "clipbounds": true,
     "containerweight": 100,

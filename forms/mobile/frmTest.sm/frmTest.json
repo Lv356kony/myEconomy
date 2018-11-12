@@ -15,12 +15,11 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sc9bd61f9c31446db1c58c797faf9ecc",
+    "_skin_": "sc88b2e2d3a0472ab0d2c7fc352d0573",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
     "android": {
-        "ide_onOrientationChange": "AS_Form_bce8f418ade1455d8be2bdddf93637b1",
         "needAppMenu": false,
         "psp": {
             "windowSoftInputMode": 2
@@ -30,25 +29,22 @@
         "needAppMenu": false
     },
     "canUpdateUI": true,
-    "children": [
-        "flxImage",
-        "flxLogin"
-    ],
+    "children": [],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmLoginController"
+            "name": "frmTestController"
         }
     },
     "currentLocale": "default",
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "GalaxyS7",
+    "device": "iPhoneX",
     "displayorientation": 1,
     "enabledforidletimeout": false,
-    "id": "frmLogin",
+    "id": "frmTest",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -66,7 +62,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "c8c1107979b24e9eb328525bddf5d28b",
+                "kuid": "b5c4ef872ec441abb62fbe9c558f0e2c",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -77,7 +73,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "g26b9aeb74f24c758685574d7a034370",
+                        "kuid": "cbb3eef17ee1464eaf28a20ed9aa346b",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -94,18 +90,18 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "d42189327348471aa1ab445fc6ea76cd",
+    "kuid": "f45279c3cebe42d4b8ed625ccd278e7b",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "android",
+    "platform": "iphone",
     "prevDevice": "iPhoneX",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "and_GalaxyS7",
+    "shellCSS": "iOS_iPhoneX",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {

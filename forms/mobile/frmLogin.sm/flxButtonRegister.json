@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "24.76%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "70dp"
+        "value": "60dp"
     },
     "_margin_": [
         0,
@@ -23,40 +19,42 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "s097787234004301aa569d377d11435c",
     "_top_": {
         "type": "string",
-        "value": "35dp"
+        "value": "215dp"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "250dp"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "android": {
+        "height": {
+            "type": "string",
+            "value": "50dp"
+        }
+    },
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "49.99%"
+        "value": "50.00%"
     },
     "children": [
-        "imgCashSaver",
-        "CopylblCashSaver0i09fa5204d8d46"
+        "btnRegister"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxImage",
+    "id": "flxButtonRegister",
     "info": null,
-    "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "e334a3ad5acf4c3e84946be571509be6",
+    "isvisible": false,
+    "kuid": "e2aa1a79ddb249e5961c3cd780bc3cc0",
     "layouttype": 2,
+    "masterType": 1,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmLogin",
+    "parent": "flxLogin",
     "pf": "frmLogin",
-    "retaincontentalignment": false,
-    "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",

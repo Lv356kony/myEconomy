@@ -22,14 +22,15 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
     "_skin_": "sdec9d86a2db4e3fbbe9fdf2089600ca",
-    "_text_": "Login",
+    "_text_": "Register",
     "_width_": {
         "type": "string",
         "value": "100%"
-    },
-    "android": {
-        "psp": {}
     },
     "canUpdateUI": true,
     "centerx": {
@@ -38,26 +39,16 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "s3b1ca6ccd3c462796d16d6e96b4f099",
-        "pressedSkin": "sc99466415614b938a8ce4c680da7e6e"
-    },
     "displaytext": true,
-    "enablehapticfeedback": false,
-    "id": "btnLogin",
-    "ide_onClick": "AS_Button_f6d56250f0b74682be45ea8066f6ae20",
+    "focusskin": "s7a79ad8926d4a6fab933e802d751939",
+    "id": "btnRegister",
+    "ide_onClick": "AS_Button_c79901a8efea4817b63ff4e68ce87ba9",
     "info": null,
-    "iphone": {
-        "psp": {
-            "showProgressIndicator": true
-        }
-    },
     "isvisible": true,
-    "kuid": "ff1ca25d1081477198c4de534e56cbff",
+    "kuid": "ad3ba4f72e954e18917627b1c60d0092",
     "masterType": 1,
     "name": "kony.ui.Button",
-    "paddinginpixel": false,
-    "parent": "flxButtonLogin",
+    "parent": "flxButtonRegister",
     "pf": "frmLogin",
     "wType": "Button",
     "zindex": 1

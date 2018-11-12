@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "24.76%"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "70dp"
+        "value": "40dp"
     },
     "_margin_": [
         0,
@@ -23,37 +19,36 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "s8d1752ecd8a4cfe8a62b090f2f067d7",
     "_top_": {
         "type": "string",
-        "value": "35dp"
+        "value": "135dp"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "250dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "49.99%"
+        "value": "50%"
     },
     "children": [
-        "imgCashSaver",
-        "CopylblCashSaver0i09fa5204d8d46"
+        "txtConfirmation"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxImage",
+    "id": "flxConfirmation",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "e334a3ad5acf4c3e84946be571509be6",
+    "isvisible": false,
+    "kuid": "d3cf357f37744de7b68e6cf8b2f290bb",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmLogin",
+    "parent": "flxLogin",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
