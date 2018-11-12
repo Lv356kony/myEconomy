@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "81dp"
     },
     "_margin_": [
         1,
@@ -22,11 +22,11 @@
         0,
         0
     ],
-    "_skin_": "s66905b89ae241e4ae1ebe795983cc1d",
-    "_text_": "",
+    "_skin_": "s887b8cd83b74e41adc4fed5f016fc3c",
+    "_text_": "For real?",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "8dp"
     },
     "_width_": {
         "type": "ref",
@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblTransactionId",
+    "id": "lblDeleteQuestion",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "hd62879c9b0547399dad3cfd9070c674",
+    "kuid": "a83ec80215d64464ba4e30f14b0dd48e",
     "name": "kony.ui.Label",
-    "parent": "flxEditForm",
+    "parent": "flxDeleteConfirm",
     "pf": "frmHistoryDetails",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

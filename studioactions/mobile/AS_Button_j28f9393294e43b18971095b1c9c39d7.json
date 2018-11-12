@@ -1,6 +1,6 @@
 {
-    "AS_Button_a9af04dd59b14e65a83804676bc4f141": {
-        "id": "AS_Button_a9af04dd59b14e65a83804676bc4f141",
+    "AS_Button_j28f9393294e43b18971095b1c9c39d7": {
+        "id": "AS_Button_j28f9393294e43b18971095b1c9c39d7",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,10 +14,10 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___f46b0fab9c0346719a70ca2af051fc7b",
+            "id": "INVOKE_FUNCTION___d88e5673e8274657b19e5a8eddb7cb7e",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showDeleteConfirmationWindow",
-            "display": "showDeleteConfirmationWindow",
+            "sequenceKUID": "hideDeleteConfirmationWindow",
+            "display": "hideDeleteConfirmationWindow",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

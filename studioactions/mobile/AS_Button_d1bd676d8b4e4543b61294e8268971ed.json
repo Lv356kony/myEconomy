@@ -24,6 +24,16 @@
             "disabled": null,
             "source": "controller"
         }, {
+            "id": "INVOKE_FUNCTION___e18e5d8e2bff4ec4bb4438239da7aad7",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteConfirmationWindow",
+            "display": "hideDeleteConfirmationWindow",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
             "id": "INVOKE_FUNCTION___afe8b047ce6e4d0586ec74c2a12853bd",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "clearInputs",

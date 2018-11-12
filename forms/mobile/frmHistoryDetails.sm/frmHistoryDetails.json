@@ -32,7 +32,8 @@
     "children": [
         "flxDetails",
         "flxDetailsTopMenu",
-        "flxEdit"
+        "flxEdit",
+        "flxDeleteConfirm"
     ],
     "containerweight": 100,
     "controllerInfo": {

@@ -1,6 +1,5 @@
 function navToForm(formName, data){
   let target = new kony.mvc.Navigation(formName);
-  alert(data);
   if(data){
   	target.navigate(data);  
   } else{

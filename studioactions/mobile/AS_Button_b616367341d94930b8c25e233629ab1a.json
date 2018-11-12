@@ -1,6 +1,6 @@
 {
-    "AS_Button_ba85ec7c201c460ea834195fd1867d5f": {
-        "id": "AS_Button_ba85ec7c201c460ea834195fd1867d5f",
+    "AS_Button_b616367341d94930b8c25e233629ab1a": {
+        "id": "AS_Button_b616367341d94930b8c25e233629ab1a",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,17 +14,27 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___i3a202e581394b5b8ae3b1d1ab42eb18",
+            "id": "INVOKE_FUNCTION___f3329bb84af9451c8c49b6c3bd78f96b",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "updateTransaction",
-            "display": "updateTransaction",
+            "sequenceKUID": "deleteTransaction",
+            "display": "deleteTransaction",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
             "disabled": null,
             "source": "controller"
         }, {
-            "id": "INVOKE_FUNCTION___b0a329b301f34e5e89c7f4d5863fa913",
+            "id": "INVOKE_FUNCTION___b6976830cd1f491ca4a88c8727908032",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteConfirmationWindow",
+            "display": "hideDeleteConfirmationWindow",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___f2648467b5034881a4d4a3621091cf66",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "refresh",
             "display": "refresh",

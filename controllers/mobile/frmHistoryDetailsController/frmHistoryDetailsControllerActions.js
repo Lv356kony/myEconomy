@@ -26,18 +26,19 @@ define({
     AS_Button_ba85ec7c201c460ea834195fd1867d5f: function AS_Button_ba85ec7c201c460ea834195fd1867d5f(eventobject) {
         var self = this;
         self.updateTransaction.call(this);
-        self.showDetails.call(this);
+        self.refresh.call(this);
     },
     /** onClick defined for btnCloseEditWindow **/
     AS_Button_d1bd676d8b4e4543b61294e8268971ed: function AS_Button_d1bd676d8b4e4543b61294e8268971ed(eventobject) {
         var self = this;
         self.hideEditForm.call(this);
+        self.hideDeleteConfirmationWindow.call(this);
         self.clearInputs.call(this);
     },
     /** onClick defined for btnDeleteTransaction **/
     AS_Button_a9af04dd59b14e65a83804676bc4f141: function AS_Button_a9af04dd59b14e65a83804676bc4f141(eventobject) {
         var self = this;
-        return self.deleteTransaction.call(this);
+        return self.showDeleteConfirmationWindow.call(this);
     },
     /** onClick defined for btnEditTransaction **/
     AS_Button_ff7dfbed36354735a504dee5f2487b95: function AS_Button_ff7dfbed36354735a504dee5f2487b95(eventobject) {
@@ -56,5 +57,17 @@ define({
         self.loadCategories.call(this, 'Current', 'lstBoxFrom');
         self.hideEditForm.call(this);
         self.clearInputs.call(this);
+    },
+    /** onClick defined for btnDeleteNo **/
+    AS_Button_j28f9393294e43b18971095b1c9c39d7: function AS_Button_j28f9393294e43b18971095b1c9c39d7(eventobject) {
+        var self = this;
+        return self.hideDeleteConfirmationWindow.call(this);
+    },
+    /** onClick defined for btnDeleteYes **/
+    AS_Button_b616367341d94930b8c25e233629ab1a: function AS_Button_b616367341d94930b8c25e233629ab1a(eventobject) {
+        var self = this;
+        self.deleteTransaction.call(this);
+        self.hideDeleteConfirmationWindow.call(this);
+        self.refresh.call(this);
     }
 });
