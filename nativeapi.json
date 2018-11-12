@@ -6,18 +6,29 @@
                     "title": "Kony_SyncV2",
                     "platform": "iOS",
                     "os": "11.0",
-                    "isDefault": true,
+                    "isDefault": false,
                     "url": "C:\\KonyVisualizerEnterprise8\\Kony_Visualizer_Enterprise\\configuration\\org.eclipse.osgi\\bundles\\516\\1\\.cp\\resources\\sdk\\nativeBindings\\Kony_SyncV2-iOS-11.0.zip",
-                    "filepath": "C:\\Users\\GAMES\\KonyVizEWS\\myEconomy\\nativebindings\\iOS\\11.0\\Kony_SyncV2-iOS-11.0.zip",
+                    "filepath": "C:\\Users\\xowko\\KonyVizEWS\\myEconomy\\nativebindings\\iOS\\11.0\\Kony_SyncV2-iOS-11.0.zip",
                     "enable": true
                 },
                 "Kony_SDKCommons-iOS-11.0": {
                     "title": "Kony_SDKCommons",
                     "platform": "iOS",
                     "os": "11.0",
-                    "isDefault": true,
+                    "isDefault": false,
                     "url": "C:\\KonyVisualizerEnterprise8\\Kony_Visualizer_Enterprise\\configuration\\org.eclipse.osgi\\bundles\\516\\1\\.cp\\resources\\sdk\\nativeBindings\\Kony_SDKCommons-iOS-11.0.zip",
-                    "filepath": "C:\\Users\\GAMES\\KonyVizEWS\\myEconomy\\nativebindings\\iOS\\11.0\\Kony_SDKCommons-iOS-11.0.zip",
+                    "filepath": "C:\\Users\\xowko\\KonyVizEWS\\myEconomy\\nativebindings\\iOS\\11.0\\Kony_SDKCommons-iOS-11.0.zip",
+                    "enable": true
+                }
+            },
+            "10.0": {
+                "Kony_SyncV2-iOS-10.0": {
+                    "title": "Kony_SyncV2",
+                    "platform": "iOS",
+                    "os": "10.0",
+                    "isDefault": false,
+                    "url": "C:\\Users\\xowko\\KonyVizEWS\\.nativebindings\\iOS\\10.0\\Kony_SyncV2-iOS-10.0.zip",
+                    "filepath": "C:\\Users\\xowko\\KonyVizEWS\\myEconomy\\nativebindings\\iOS\\10.0\\Kony_SyncV2-iOS-10.0.zip",
                     "enable": true
                 }
             }
@@ -28,18 +39,18 @@
                     "title": "Kony_SDKCommons",
                     "platform": "Android",
                     "os": "4.0",
-                    "isDefault": true,
+                    "isDefault": false,
                     "url": "C:\\KonyVisualizerEnterprise8\\Kony_Visualizer_Enterprise\\configuration\\org.eclipse.osgi\\bundles\\516\\1\\.cp\\resources\\sdk\\nativeBindings\\Kony_SDKCommons-Android-4.0.zip",
-                    "filepath": "C:\\Users\\GAMES\\KonyVizEWS\\myEconomy\\nativebindings\\Android\\4.0\\Kony_SDKCommons-Android-4.0.zip",
+                    "filepath": "C:\\Users\\xowko\\KonyVizEWS\\myEconomy\\nativebindings\\Android\\4.0\\Kony_SDKCommons-Android-4.0.zip",
                     "enable": true
                 },
                 "Kony_SyncV2-Android-4.0": {
                     "title": "Kony_SyncV2",
                     "platform": "Android",
                     "os": "4.0",
-                    "isDefault": true,
+                    "isDefault": false,
                     "url": "C:\\KonyVisualizerEnterprise8\\Kony_Visualizer_Enterprise\\configuration\\org.eclipse.osgi\\bundles\\516\\1\\.cp\\resources\\sdk\\nativeBindings\\Kony_SyncV2-Android-4.0.zip",
-                    "filepath": "C:\\Users\\GAMES\\KonyVizEWS\\myEconomy\\nativebindings\\Android\\4.0\\Kony_SyncV2-Android-4.0.zip",
+                    "filepath": "C:\\Users\\xowko\\KonyVizEWS\\myEconomy\\nativebindings\\Android\\4.0\\Kony_SyncV2-Android-4.0.zip",
                     "enable": true
                 }
             }
