@@ -1,8 +1,7 @@
 function navToForm(formName, data){
   let target = new kony.mvc.Navigation(formName);
-  alert(data);
   if(data){
-  	target.navigate(data);  
+  	target.navigate(data);
   } else{
     target.navigate();
   }
@@ -13,7 +12,7 @@ var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4'
              '9': 'October', '10': 'November', '11': 'December'};
 var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
            '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
-var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport', 
+var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
                    '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
 const CURRENT_USER = {id: undefined};
@@ -23,7 +22,7 @@ const DATA = {
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'notthistime'
+            password: 'Ra$1'
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
@@ -35,7 +34,7 @@ const DATA = {
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'anotheronepassword'
+            password: 'Ra$1'
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
@@ -358,7 +357,10 @@ const userService = {
 
         if(!validateEmailResult){
             return {
-                error: 'invalid Email'
+                error: {
+                    message: 'Invalid Email',
+                    type: 'email'
+                }
             };
         }
 
@@ -366,7 +368,10 @@ const userService = {
 
         if(!validatePasswordResult){
             return {
-                error: 'invalid password'
+              error: {
+                message: 'Invalid password',
+                type: 'password'
+              }
             };
         }
 
@@ -377,37 +382,49 @@ const userService = {
         if ( user) {
             if ( user.password === password ){
                 CURRENT_USER.id = user.id;
-                return true;
+                return {
+                	user: user,
+                    error: null,
+                };
             }
         }
-        return false;
-
+		return {
+            error: {
+                message: 'User is not found',
+                type: 'email'
+            },
+        };
     },
 
-    registration: function(userObj) {
+    registration: function(email, password, confPassword) {
         let user = {};
-        let email = userObj.email;
-        let password = userObj.password;
-        let confPassword = userObj.confPassword;
-
 
         let validateEmailResult = validateEmail(email);
         if(!validateEmailResult){
             return {
-                error: 'invalid Email'
+                error: {
+                    message: 'Invalid Email',
+                    type: 'email'
+                }
             };
         }
 
         let validatePasswordResult = validatePassword(password);
         if(!validatePasswordResult){
             return {
-                error: 'invalid password'
+              error: {
+                message: 'The password must include uppercase \n and lowercase letters numbers and symbols',
+                type: 'password'
+              }
             };
         }
 
         if ( !email || !password ) {
             return {
-                error: 'email and password is required'
+                error: {
+                    message: 'email and password is required',
+                    type: 'password'
+                }
             };
         }
 
@@ -416,13 +433,20 @@ const userService = {
         });
         if ( userMockArray.length ){
             return {
-                error: 'User with this email address already exists'
+                error: {
+                    message: 'User with this email address already exists',
+                    type: 'email'
+
+                }
             };
         }
 
         if(password != confPassword){
             return {
-                error: 'The password confirmation is not the same as the password entered'
+            	error: {
+                    message: 'The password confirmation is not the same \n as the password entered',
+                    type: 'passwordConfirmation'
+                }
             };
 
         }
@@ -431,7 +455,7 @@ const userService = {
         user.password = password;
         user.id = Date.now();
         DATA.users.push(user);
-        return user;
+        return true;
     }
 };
 

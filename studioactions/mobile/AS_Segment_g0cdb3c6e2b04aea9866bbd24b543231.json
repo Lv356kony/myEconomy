@@ -1,0 +1,44 @@
+{
+    "AS_Segment_g0cdb3c6e2b04aea9866bbd24b543231": {
+        "id": "AS_Segment_g0cdb3c6e2b04aea9866bbd24b543231",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmHistoryDetails",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c9af47bd87034153a0897765ac19e939"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___a2712461a3844c2194cb7721724ccb44",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "setEditDefaultValues",
+            "display": "setEditDefaultValues",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___iaaca836b0404557925e8b07e8327421",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showEditForm",
+            "display": "showEditForm",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

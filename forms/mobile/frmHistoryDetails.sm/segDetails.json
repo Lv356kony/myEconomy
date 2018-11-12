@@ -1,0 +1,332 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_data_": [
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        },
+        {
+            "btnDetailsDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "btnDetailsEdit": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Button"
+            },
+            "txtCommentary": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "commentary"
+            },
+            "txtExpense": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "expense"
+            },
+            "txtFrom": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "from"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 1,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "09",
+    "focusedindex": null,
+    "focuseditem": null,
+    "generatedtemplate": "c9aa7d25618944ea8085d843d8b424e2",
+    "groupcells": false,
+    "hasSections": false,
+    "id": "segDetails",
+    "ide_onRowClick": "AS_Segment_g0cdb3c6e2b04aea9866bbd24b543231",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "if5ddcbd0f424f2596d2b048449cba10",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "flxDetails",
+    "pf": "frmHistoryDetails",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "c9aa7d25618944ea8085d843d8b424e2",
+    "rowcounter": 9,
+    "rowfocusskin": "s4d17ef97bbd44b1b18588dda91c6028",
+    "rowskin": "s0c6f8b129f4414bb8466cfd380fd9a1",
+    "rowtemplate": "FBox0c96427e3131345",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionheaderskin": "s038424339a74adb98883a41a04d90e0",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "separatorcolor": "aaaaaa00",
+    "separatorrequired": true,
+    "separatorthickness": 0,
+    "showscrollbars": false,
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "btnDetailsDelete": "btnDetailsDelete",
+        "btnDetailsEdit": "btnDetailsEdit",
+        "flxDetailsSection": "flxDetailsSection",
+        "flxDetailsUD": "flxDetailsUD",
+        "txtCommentary": "txtCommentary",
+        "txtExpense": "txtExpense",
+        "txtFrom": "txtFrom"
+    },
+    "zindex": 1
+}

@@ -1,0 +1,18 @@
+{
+    "AS_FlexContainer_hd01368d98b441a29b9ae8720b5eef0e": {
+        "id": "AS_FlexContainer_hd01368d98b441a29b9ae8720b5eef0e",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "language": "js",
+        "actions": []
+    }
+}
