@@ -1,0 +1,38 @@
+{
+    "AS_Button_ba85ec7c201c460ea834195fd1867d5f": {
+        "id": "AS_Button_ba85ec7c201c460ea834195fd1867d5f",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistoryDetails",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c9af47bd87034153a0897765ac19e939"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___i3a202e581394b5b8ae3b1d1ab42eb18",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "updateTransaction",
+            "display": "updateTransaction",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___b0a329b301f34e5e89c7f4d5863fa913",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "refresh",
+            "display": "refresh",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

@@ -1,7 +1,19 @@
-function navToForm(formName){
-    let target = new kony.mvc.Navigation(formName);
+function navToForm(formName, data){
+  let target = new kony.mvc.Navigation(formName);
+  if(data){
+  	target.navigate(data);  
+  } else{
     target.navigate();
+  }
 }
+
+var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4': 'May',
+             '5': 'June', '6': 'July', '7': 'August', '8': 'September',
+             '9': 'October', '10': 'November', '11': 'December'};
+var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
+           '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
+var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport', 
+                   '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
 const CURRENT_USER = {id: undefined};
 
