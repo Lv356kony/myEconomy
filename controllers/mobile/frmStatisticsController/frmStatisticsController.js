@@ -1,44 +1,30 @@
 define({ 
 
-  init: function () {
+  init: function() {
     this.addChart("Expenses");
     this.view.lblCurrentBalanceValue.text = serviceTransactions.getBalanceByUserId(CURRENT_USER.id) + " UAH";
-    let segment = this.view.segLabels;
-    segment.widgetDataMap = {
-      lblTemplateName: "name",
-      lblTemplateValue: "balance"
-    };
-    segment.setData(this.getListNamesAndBalanceByCategory("Expenses"));
+    this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " UAH";
+    this.setSegmentLabels("Expenses");
   },
 
 
   incomeClick : function() {
+    let selectedItem = this.view.flxTabHeaderIncome;
     this.view.flxChartContainer.removeAll();
     this.addChart("Current");
-    const selectedItem = this.view.flxTabHeaderIncome;
     this.changeTabHeaderColor(selectedItem);
     this.changeTabSumInfo(selectedItem);
-    let segment = this.view.segLabels;
-    segment.widgetDataMap = {
-      lblTemplateName: "name",
-      lblTemplateValue: "balance"
-    };
-    segment.setData(this.getListNamesAndBalanceByCategory("Current"));
+    this.setSegmentLabels("Current");
   },
 
 
   outcomeClick : function() {
+    let selectedItem = this.view.flxTabHeaderOutcome;
     this.view.flxChartContainer.removeAll();
     this.addChart("Expenses");
-    const selectedItem = this.view.flxTabHeaderOutcome;
     this.changeTabHeaderColor(selectedItem);
     this.changeTabSumInfo(selectedItem);
-    let segment = this.view.segLabels;
-    segment.widgetDataMap = {
-      lblTemplateName: "name",
-      lblTemplateValue: "balance"
-    };
-    segment.setData(this.getListNamesAndBalanceByCategory("Expenses"));
+    this.setSegmentLabels("Expenses");
   },
 
 
@@ -57,17 +43,17 @@ define({
   changeTabSumInfo : function(selectedItem) {
     if (selectedItem === this.view.flxTabHeaderIncome) {
       this.view.lblTabSumInfo.text = "Income";
-      this.view.lblTabSumInfoValue.text = "2345 UAH";
+      this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Current") + " UAH";
     } else {
       this.view.lblTabSumInfo.text = "Outcome";
-      this.view.lblTabSumInfoValue.text = "1258 UAH";
+      this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " UAH";
     }
   },
 
 
-  getListNamesAndBalanceByCategory : function (categorytype) {
+  getListNamesAndBalanceByCategory : function(categoryType) {
     let listNameAndBalanceByCategiry = [];
-    let categoryList = this.getListOfCategoriesByType(categorytype);
+    let categoryList = this.getListOfCategoriesByType(categoryType);
 
     categoryList.forEach( i => {
       let categorySum = serviceTransactions.getBalanceByCategoryId(i.id);
@@ -80,7 +66,7 @@ define({
   },
 
 
-  getListOfCategoriesByType: function (categorytype) {
+  getListOfCategoriesByType: function(categoryType) {
     let userId = CURRENT_USER.id;
     let expenses = [];
     let income = [];
@@ -94,19 +80,42 @@ define({
     if (arguments[0] === "Expenses") {
       return expenses;
     } else return income;
-
+  },
+  
+  
+  getBalanceByTypeOfCategories: function(categoryType) {
+    let listOfCategories = this.getListNamesAndBalanceByCategory(categoryType).map(i => i.balance);
+    return listOfCategories.reduce((accumulator, currentValue) => accumulator + currentValue); 
+  },
+  
+  
+  setSegmentLabels: function(categoryType) {
+    let segment = this.view.segLabels;
+    // I copied and modified the array so that I could display values and currency
+    let segmentData = this.getListNamesAndBalanceByCategory(categoryType).map(i => {
+      return {
+        name: i.name,
+        balance: i.balance + " UAH"
+      };
+    });
+    
+    segment.widgetDataMap = {
+      lblTemplateName: "name",
+      lblTemplateValue: "balance"
+    };
+    segment.setData(segmentData);
   },
 
 
-  addChart: function (categorytype) {
-    var chartWidjet = this.kdv_createChartWidget(categorytype);
+  addChart: function(categoryType) {
+    let chartWidjet = this.kdv_createChartWidget(categoryType);
     this.view.flxChartContainer.add(chartWidjet);
   },
 
 
-  kdv_createChartWidget: function(categorytype) {
-    var chartObj = this.kdv_createChartJSObject(categorytype);
-    var chartWidget = new kony.ui.Chart2D3D({
+  kdv_createChartWidget: function(categoryType) {
+    let chartObj = this.kdv_createChartJSObject(categoryType);
+    let chartWidget = new kony.ui.Chart2D3D({
       "id": "chartid",
       "isVisible": true
     }, {
@@ -119,9 +128,9 @@ define({
   },
 
 
-  kdv_createChartJSObject: function(categorytype) {
+  kdv_createChartJSObject: function(categoryType) {
 
-    var chartInfo = {
+    let chartInfo = {
       "chartProperties": {
         "chartHeight": 100,
         "enableScrolling": false,
@@ -184,7 +193,7 @@ define({
           "animations": {
             "onInitAnimation": true
           },
-          "spinWheel": true,
+          "spinWheel": false,
           "plotZeroValues": false,
           "plotMissingValues": "assumeZero",
           "direction": "clockWise",
@@ -222,7 +231,7 @@ define({
             "visible": true,
             "separator": "space",
             "placement": "outside",
-            "indicators": ["rowName"],
+            "indicators": ["rowName",],
             "orientationAngle": null,
             "connector": {
               "visible": true,
@@ -247,13 +256,13 @@ define({
       },
       "chartData": {
         "rowNames": {
-          "values": this.getListNamesAndBalanceByCategory(categorytype).map(i => i.name)
+          "values": this.getListNamesAndBalanceByCategory(categoryType).map(i => i.name)
         },
         "columnNames": {
           "values": ["Amount"]
         },
         "data": {
-          "Amount": this.getListNamesAndBalanceByCategory(categorytype).map(i => i.balance)
+          "Amount": this.getListNamesAndBalanceByCategory(categoryType).map(i => i.balance)
         }
       },
       "chartEvents": {
