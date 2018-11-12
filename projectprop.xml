@@ -150,7 +150,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1541517026107"/>
+    <attributes name="lastmodifiedtime" value="1541879383001"/>
     <attributes name="ipad_notificationicon_1x_20" value=""/>
     <attributes name="iphone_spotlighticon_2x_40" value=""/>
     <attributes name="wp10microphone" value="false"/>
@@ -492,7 +492,7 @@
     <attributes name="wp8iconicsmallkey" value=""/>
     <attributes name="apploadeventkey" value="None"/>
     <attributes name="ANDROIDWEAR_INSTALL_LOCATION_PROVIDER" value="false"/>
-    <attributes name="support64bit" value="true"/>
+    <attributes name="support64bit" value="false"/>
     <attributes name="ANDROIDWEAR_BATTERY_STATS" value="false"/>
     <attributes name="tcbb400basefontsize" value="14"/>
     <attributes name="ANDROIDWEAR_BIND_INPUT_METHOD" value="false"/>
