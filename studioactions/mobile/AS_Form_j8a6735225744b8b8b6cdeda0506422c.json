@@ -1,0 +1,41 @@
+{
+    "AS_Form_j8a6735225744b8b8b6cdeda0506422c": {
+        "id": "AS_Form_j8a6735225744b8b8b6cdeda0506422c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c173e99b5d6944a88928af075dbb6fe6",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showCategory",
+            "display": "showCategory",
+            "inputparams": [{
+                "name": "categoryId",
+                "value": "'1'"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___d8de9ee8f93c46a08d751aab43eba254",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showExpenses",
+            "display": "showExpenses",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
