@@ -1,0 +1,154 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_data_": [
+        {
+            "icnIncome": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblIncome": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "CreditCard"
+            }
+        },
+        {
+            "icnIncome": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblIncome": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Salary"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_render_": true,
+    "_top_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "99.96%"
+    },
+    "android": {
+        "render": true
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "01",
+    "editstyle": "none",
+    "enablereordering": false,
+    "focusedindex": null,
+    "focuseditem": null,
+    "generatedtemplate": "a76ed805de79445fb0daa2f823aaff91",
+    "groupcells": false,
+    "hasSections": false,
+    "id": "sgmIncome",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "editStyle": "none",
+            "indicator": "rowselect"
+        },
+        "render": true
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "g4cb269d63034a669e9bc930d37806f8",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom",
+        "vdistance": 1
+    },
+    "parent": "flxIncome",
+    "pf": "frmCategories",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "a76ed805de79445fb0daa2f823aaff91",
+    "rowcounter": 1,
+    "rowfocusskin": "sf90b9bd6ebd4edfa133c10bcce563d1",
+    "rowskin": "s653ad5d153c4bfdbd39f6a1a8296218",
+    "rowtemplate": "FBox0cae806c6d11d4e",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionHeaderTemplateId": null,
+    "sectionheaderskin": "s0c935112c7e4b458122125c3bd335c8",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "selectionbehaviorconfig": null,
+    "separatorcolor": "aaaaaa00",
+    "separatorrequired": true,
+    "separatorthickness": 1,
+    "showscrollbars": false,
+    "spaan": {
+        "render": true
+    },
+    "spabb": {
+        "render": true
+    },
+    "spaip": {
+        "render": true
+    },
+    "spawinphone8": {
+        "render": true
+    },
+    "swipeContext": {
+        "currentPage": 0,
+        "imageWidth": 1125,
+        "widthRatio": 0
+    },
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "flxIncome": "flxIncome",
+        "icnIncome": "icnIncome",
+        "lblIncome": "lblIncome"
+    },
+    "winphone8": {
+        "render": true
+    },
+    "zindex": 1
+}

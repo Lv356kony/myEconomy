@@ -7,10 +7,6 @@
         "type": "string",
         "value": "70dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_margin_": [
         0,
         0,
@@ -25,10 +21,6 @@
     ],
     "_skin_": "s083dfd3e44c441faca27df15ac0a964",
     "_src_": "purse.png",
-    "_top_": {
-        "type": "string",
-        "value": "35dp"
-    },
     "_width_": {
         "type": "string",
         "value": "70dp"
@@ -46,7 +38,7 @@
     "context": {
         "channel": "mobile",
         "formID": "uwuf137e4e8bad4d6bbc17a280780431f1",
-        "platform": "iphone",
+        "platform": "android",
         "templateType": "userwidgets",
         "topLevelBox": null
     },

@@ -1,0 +1,28 @@
+{
+    "AS_FlexContainer_e13797066a0349828355859caec187dc": {
+        "id": "AS_FlexContainer_e13797066a0349828355859caec187dc",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmCategoryCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "hd9bc2449f914ed69b9376f9841ae86e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___a4593807d8ae4a7b9514a0a3cbdc9336",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "chooseIcon",
+            "display": "chooseIcon",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

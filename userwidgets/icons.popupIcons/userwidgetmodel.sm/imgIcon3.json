@@ -46,7 +46,7 @@
     "context": {
         "channel": "mobile",
         "formID": "uwuf137e4e8bad4d6bbc17a280780431f1",
-        "platform": "iphone",
+        "platform": "android",
         "templateType": "userwidgets",
         "topLevelBox": null
     },
