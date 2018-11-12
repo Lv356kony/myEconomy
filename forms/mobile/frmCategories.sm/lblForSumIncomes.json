@@ -53,6 +53,7 @@
     "containerweight": 100,
     "contentalignment": 4,
     "id": "lblForSumIncomes",
+    "ide_onTouchStart": "AS_Label_j710fd2cc9894e52a710761717d61020",
     "info": null,
     "ipad": {
         "psp": {

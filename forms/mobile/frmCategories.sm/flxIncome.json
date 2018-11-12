@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "200dp"
+        "value": "210dp"
     },
     "_left_": {
         "type": "string",
@@ -43,6 +43,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxIncome",
+    "ide_onTouchStart": "AS_FlexContainer_h891289b45094a39a45fb5e3847ba7c3",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

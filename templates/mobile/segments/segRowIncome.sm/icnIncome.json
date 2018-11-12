@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
-        "value": "10%"
+        "value": "3dp"
     },
     "_margin_": [
         0,
@@ -28,25 +28,21 @@
     "_src_": "imagedrag.png",
     "_top_": {
         "type": "string",
-        "value": "1%"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "45dp"
+        "value": "100%"
     },
     "android": {
         "render": true
     },
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerId": true,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "FBox0cae806c6d11d4e",
+        "platform": "iphone",
         "templateType": "segments",
         "topLevelBox": null
     },
@@ -58,10 +54,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f5ba95c277304b0c8e31a143a8f156b3",
+    "kuid": "d160957ab00041df80f4ce40e7d36287",
     "name": "kony.ui.Image2",
-    "parent": "FBox0cae806c6d11d4e",
-    "pf": "FBox0cae806c6d11d4e",
+    "parent": "flxIncomeLabelImage",
+    "pf": "segRowIncome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "spaan": {

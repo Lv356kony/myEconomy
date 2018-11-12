@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "165dp"
+        "value": "160dp"
     },
     "_margin_": [
         1,
@@ -27,7 +27,7 @@
     "_text_": "Label",
     "_top_": {
         "type": "string",
-        "value": "31.25%"
+        "value": "46.78%"
     },
     "_width_": {
         "type": "ref",
@@ -44,7 +44,7 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "60.42%"
     },
     "containerId": true,
     "containerweight": 100,
@@ -64,11 +64,11 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c8ecb1bf86da402f89c0bf21783fb5fb",
+    "kuid": "ea622614b3804ac8880d8290bac504be",
     "maxnumberoflines": 1,
     "name": "kony.ui.Label",
-    "parent": "FBox0cae806c6d11d4e",
-    "pf": "FBox0cae806c6d11d4e",
+    "parent": "flxRowIncome",
+    "pf": "segRowIncome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "spaan": {

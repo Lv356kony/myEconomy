@@ -3,7 +3,7 @@ function navToForm(formName){
     target.navigate();
 }
 
-const CURRENT_USER = {id: undefined};
+const CURRENT_USER = {id: 1};
 
 const DATA = {
     users: [
@@ -310,6 +310,16 @@ const serviceCategory = {
             }
         }
         return DATA.categories;
+    },
+  	
+    getCategories: function() {
+      	let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++) {
+            if(DATA.categories[i].user_id === CURRENT_USER.id) {
+                categories.push(DATA.categories[i]);
+            }
+        }
+        return categories;
     },
 
     create: function(data) {

@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "80dp"
+        "value": "53dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "37dp"
     },
     "_margin_": [
         0,
@@ -27,34 +27,57 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "27dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "13.33%"
     },
     "allboxes": [],
+    "android": {
+        "render": true
+    },
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "icnIncome"
+    ],
     "clipbounds": true,
     "containerId": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxIncome",
+    "id": "flxCurrentLabelImage",
     "info": null,
+    "iphone": {
+        "render": true
+    },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ff3e6c6a10424f3bb86c4f15fa1be4cf",
+    "kuid": "a5e5a8aa41324f05a00cfc7edccff785",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "FBox0cae806c6d11d4e",
-    "pf": "FBox0cae806c6d11d4e",
+    "parent": "flxRowCurrent",
+    "pf": "segRowCurrent",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "spaan": {
+        "render": true
+    },
+    "spabb": {
+        "render": true
+    },
+    "spaip": {
+        "render": true
+    },
+    "spawinphone8": {
+        "render": true
+    },
     "wType": "FlexContainer",
     "widgetalignment": 1,
+    "winphone8": {
+        "render": true
+    },
     "zindex": 1
 }

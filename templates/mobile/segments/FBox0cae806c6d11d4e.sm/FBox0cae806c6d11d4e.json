@@ -24,11 +24,7 @@
     },
     "allboxes": [],
     "canUpdateUI": true,
-    "children": [
-        "lblIncome",
-        "icnIncome",
-        "flxIncome"
-    ],
+    "children": [],
     "clipbounds": false,
     "containerId": true,
     "containerweight": 100,

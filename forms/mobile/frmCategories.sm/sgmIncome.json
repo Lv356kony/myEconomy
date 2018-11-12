@@ -10,7 +10,7 @@
             },
             "lblIncome": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "CreditCard"
+                "text": "Label"
             }
         },
         {
@@ -20,13 +20,13 @@
             },
             "lblIncome": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Salary"
+                "text": "Label"
             }
         }
     ],
     "_height_": {
         "type": "string",
-        "value": "150dp"
+        "value": "160dp"
     },
     "_indicator_": "none",
     "_left_": {
@@ -100,11 +100,11 @@
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainselection": false,
-    "rowTemplateId": "a76ed805de79445fb0daa2f823aaff91",
+    "rowTemplateId": "h4c2770d134c4c4c85c15a99b2fe09c6",
     "rowcounter": 1,
     "rowfocusskin": "sf90b9bd6ebd4edfa133c10bcce563d1",
     "rowskin": "s653ad5d153c4bfdbd39f6a1a8296218",
-    "rowtemplate": "FBox0cae806c6d11d4e",
+    "rowtemplate": "flxRowIncome",
     "screenlevelwidget": false,
     "seccounter": 0,
     "sectionHeaderTemplateId": null,
@@ -143,7 +143,8 @@
     "wType": "Segment",
     "widgetalignment": 5,
     "widgetdatamap": {
-        "flxIncome": "flxIncome",
+        "flxIncomeLabelImage": "flxIncomeLabelImage",
+        "flxRowIncome": "flxRowIncome",
         "icnIncome": "icnIncome",
         "lblIncome": "lblIncome"
     },
