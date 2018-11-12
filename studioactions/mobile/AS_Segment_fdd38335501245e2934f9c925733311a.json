@@ -1,0 +1,34 @@
+{
+    "AS_Segment_fdd38335501245e2934f9c925733311a": {
+        "id": "AS_Segment_fdd38335501245e2934f9c925733311a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmCategories",
+            "type": "forms",
+            "platform": "",
+            "KUID": "e3ed025ff46a4ac4afa8cddbf30005f5"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___h1047ddeb8f34d3786ace43f11041521",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "categoryIncomeList",
+            "display": "categoryIncomeList",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

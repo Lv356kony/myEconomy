@@ -1,0 +1,34 @@
+{
+    "AS_FlexContainer_h891289b45094a39a45fb5e3847ba7c3": {
+        "id": "AS_FlexContainer_h891289b45094a39a45fb5e3847ba7c3",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmCategories",
+            "type": "forms",
+            "platform": "",
+            "KUID": "e3ed025ff46a4ac4afa8cddbf30005f5"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___jbd26def69e44fd8852b38301e22473d",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "countIncome",
+            "display": "countIncome",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
+        }]
+    }
+}

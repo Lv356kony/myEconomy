@@ -324,6 +324,16 @@ const serviceCategory = {
         return DATA.categories;
     },
 
+    getCategories: function() {
+      	let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++) {
+            if(DATA.categories[i].user_id === CURRENT_USER.id) {
+                categories.push(DATA.categories[i]);
+            }
+        }
+        return categories;
+    },
+
     create: function(data) {
         DATA.categories.push(data);
         return DATA.categories;
