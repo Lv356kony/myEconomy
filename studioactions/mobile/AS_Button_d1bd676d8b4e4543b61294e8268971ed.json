@@ -1,0 +1,38 @@
+{
+    "AS_Button_d1bd676d8b4e4543b61294e8268971ed": {
+        "id": "AS_Button_d1bd676d8b4e4543b61294e8268971ed",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistoryDetails",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c9af47bd87034153a0897765ac19e939"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___f2cf1e9cb8164ea1b12f270516fe93f2",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideEditForm",
+            "display": "hideEditForm",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___afe8b047ce6e4d0586ec74c2a12853bd",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "clearInputs",
+            "display": "clearInputs",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
