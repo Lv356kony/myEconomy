@@ -22,7 +22,7 @@
     "_skin_": "s097787234004301aa569d377d11435c",
     "_top_": {
         "type": "string",
-        "value": "150dp"
+        "value": "154dp"
     },
     "_width_": {
         "type": "string",
@@ -38,7 +38,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "50.04%"
     },
     "children": [
         "btnLogin"
