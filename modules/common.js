@@ -15,7 +15,7 @@ var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
 var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
                    '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
-const CURRENT_USER = {id: undefined};
+const CURRENT_USER = {id: 1};
 
 const DATA = {
     users: [
@@ -200,7 +200,7 @@ const DATA = {
 const serviceTransactions = {
 
     getBalanceByCategoryId: function(categoryId){
-        let categoryBalance = 0.0;
+        let categoryBalance = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].to === categoryId){
                 categoryBalance += DATA.transactions[i].amount;
@@ -209,10 +209,10 @@ const serviceTransactions = {
         return categoryBalance;
     },
 
-    getBalanceByUserId: function(userId){
+    getCurrentBalanceByUserId: function(){
         let categories = [];
         for(let i = 0; i < DATA.categories.length; i++){
-            if(userId === DATA.categories[i].user_id){
+            if(CURRENT_USER.id === DATA.categories[i].user_id){
                 categories.push(DATA.categories[i]);
             }
         }
@@ -228,8 +228,8 @@ const serviceTransactions = {
             }
         }
 
-        let countExpenses = 0.0;
-        let countIncome = 0.0;
+        let countExpenses = 0.00;
+        let countIncome = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(DATA.transactions[i].to === expensesIds[j]){
@@ -248,7 +248,59 @@ const serviceTransactions = {
 
         return countIncome - countExpenses;
     },
+  
+    getIncomeBalanceByUserId: function(){
+        let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++){
+            if(CURRENT_USER.id === DATA.categories[i].user_id){
+                categories.push(DATA.categories[i]);
+            }
+        }
 
+        let incomeIds = [];
+        for(let i = 0; i < categories.length; i++){
+            if(categories[i].type === 'Income'){
+                incomeIds.push(categories[i].id);
+            }
+        }
+        
+        let countIncome = 0.00;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            for(let j = 0; j < incomeIds.length; j++){
+                if(DATA.transactions[i].from === incomeIds[j]){
+                    countIncome += DATA.transactions[i].amount;
+                }
+            }
+        }
+        return countIncome ;
+    },
+    
+    getExpensesBalanceByUserId: function(){
+        let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++){
+            if(CURRENT_USER.id === DATA.categories[i].user_id){
+                categories.push(DATA.categories[i]);
+            }
+        }
+
+        let expensesIds = [];
+        for(let i = 0; i < categories.length; i++){
+            if(categories[i].type === 'Expenses'){
+                expensesIds.push(categories[i].id);
+            }
+        }
+
+        let countExpenses = 0.00;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            for(let j = 0; j < expensesIds.length; j++){
+                if(DATA.transactions[i].to === expensesIds[j]){
+                    countExpenses += DATA.transactions[i].amount;
+                }
+            }
+        }
+        return countExpenses;
+    },
+    
     getByCategoryId: function(categoryId){
         let transaction =[];
         for(let i = 0; i < DATA.transactions.length; i++){

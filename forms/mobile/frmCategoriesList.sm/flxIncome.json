@@ -46,7 +46,7 @@
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxIncone",
+    "id": "flxIncome",
     "info": null,
     "iphone": {
         "render": true

@@ -62,7 +62,7 @@
     "isvisible": true,
     "kuid": "d425e9e1d9104f2daa58e72e91296af8",
     "name": "kony.ui.Label",
-    "parent": "flxIncone",
+    "parent": "flxIncome",
     "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -43,6 +43,36 @@
             "callbackType": null,
             "disabled": null,
             "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___b66f63944674454fbc149e3aad88db8c",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "calculateIncomeBalance",
+            "display": "calculateIncomeBalance",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___d414267bf6b545e9bb2e69c6e25d4002",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "calculateCurrentBalance",
+            "display": "calculateCurrentBalance",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___af05bd580257432aa28dabfa4c836a9a",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "calculateExpensesBalance",
+            "display": "calculateExpensesBalance",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
         }]
     }
 }

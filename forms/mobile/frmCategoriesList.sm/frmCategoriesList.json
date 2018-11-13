@@ -31,7 +31,7 @@
     "canUpdateUI": true,
     "children": [
         "headerCategories",
-        "flxIncone",
+        "flxIncome",
         "flxSegmIncome",
         "flxCurrent",
         "flxSegmCurrent",

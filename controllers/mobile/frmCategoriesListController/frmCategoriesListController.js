@@ -52,7 +52,22 @@ define({
       	icnCategories: "icon"
     	};
     	segment.setData(categories);
-	}
+	},
+    
+    calculateIncomeBalance: function(){
+        let incomeLabel = this.view.lblIncomeCount;
+        incomeLabel.text = serviceTransactions.getIncomeBalanceByUserId();
+    },
+    
+    calculateCurrentBalance: function(){
+        let incomeLabel = this.view.lblCurrentCount;
+        incomeLabel.text = serviceTransactions.getCurrentBalanceByUserId();
+    },
+    
+    calculateExpensesBalance: function(){
+        let incomeLabel = this.view.lblExpensesCount;
+        incomeLabel.text = serviceTransactions.getExpensesBalanceByUserId();
+    },
 
 
 });
