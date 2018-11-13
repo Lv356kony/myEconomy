@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "40dp"
     },
     "_margin_": [
         0,
@@ -29,6 +29,7 @@
         "type": "string",
         "value": "100%"
     },
+    "android": {},
     "autocapitalize": "none",
     "autocomplete": false,
     "autocorrect": false,
@@ -53,7 +54,7 @@
     "name": "kony.ui.TextBox2",
     "parent": "flxEmail",
     "pf": "frmLogin",
-    "placeholderskin": "s214d8f7d7fe4ab29a0ebc542cdc3b41",
+    "placeholderskin": "s593b4fbc8c449fab07a33c03f2f73d8",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "securetextentry": false,

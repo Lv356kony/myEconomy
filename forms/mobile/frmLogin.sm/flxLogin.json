@@ -41,9 +41,6 @@
         "flxButtonLogin",
         "flxConfirmation",
         "flxButtonRegister",
-        "lblEmailError",
-        "lblPasswordError",
-        "lblConfirmationError",
         "flxCreateAccount"
     ],
     "clipbounds": true,

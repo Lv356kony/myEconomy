@@ -16,13 +16,13 @@ define({
         var self = this;
         return self.registration.call(this);
     },
-    /** onOrientationChange defined for frmLogin **/
-    AS_Form_bce8f418ade1455d8be2bdddf93637b1: function AS_Form_bce8f418ade1455d8be2bdddf93637b1(eventobject) {
-        var self = this;
-    },
     /** onClick defined for btnCreateAccount **/
     AS_Button_bc68cf59db484e9b8031ca8335c09c68: function AS_Button_bc68cf59db484e9b8031ca8335c09c68(eventobject) {
         var self = this;
         return self.createAccount.call(this);
+    },
+    /** onOrientationChange defined for frmLogin **/
+    AS_Form_bce8f418ade1455d8be2bdddf93637b1: function AS_Form_bce8f418ade1455d8be2bdddf93637b1(eventobject) {
+        var self = this;
     }
 });
