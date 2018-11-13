@@ -1,28 +1,23 @@
 {
-    "AS_Segment_fdd38335501245e2934f9c925733311a": {
-        "id": "AS_Segment_fdd38335501245e2934f9c925733311a",
+    "AS_Button_bc68cf59db484e9b8031ca8335c09c68": {
+        "id": "AS_Button_bc68cf59db484e9b8031ca8335c09c68",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
-        }, {
-            "datatype": "number",
-            "name": "sectionNumber"
-        }, {
-            "datatype": "number",
-            "name": "rowNumber"
         }],
         "contextObj": {
+            "name": "frmLogin",
             "type": "forms",
             "platform": "",
-            "KUID": "e3ed025ff46a4ac4afa8cddbf30005f5"
+            "KUID": "d42189327348471aa1ab445fc6ea76cd"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___h1047ddeb8f34d3786ace43f11041521",
+            "id": "INVOKE_FUNCTION___df3826fd10ff4c33b1a369e5253dde4a",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "categoryIncomeList",
-            "display": "categoryIncomeList",
+            "sequenceKUID": "createAccount",
+            "display": "createAccount",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

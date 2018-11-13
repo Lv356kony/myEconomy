@@ -33,18 +33,18 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "49.99%"
+        "value": "50%"
     },
     "children": [
         "flxEmail",
         "flxPassword",
         "flxButtonLogin",
-        "flxCreateAccount",
         "flxConfirmation",
         "flxButtonRegister",
         "lblEmailError",
         "lblPasswordError",
-        "lblConfirmationError"
+        "lblConfirmationError",
+        "flxCreateAccount"
     ],
     "clipbounds": true,
     "containerweight": 100,
