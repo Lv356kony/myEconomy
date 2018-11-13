@@ -15,7 +15,6 @@
         0
     ],
     "_percent_": true,
-    "_render_": true,
     "_skin_": "sc88b2e2d3a0472ab0d2c7fc352d0573",
     "_title_": null,
     "addWidgetsdone": false,
@@ -24,14 +23,21 @@
         "needAppMenu": false,
         "psp": {
             "windowSoftInputMode": 2
-        },
-        "render": true
+        }
     },
     "androidwearos": {
         "needAppMenu": false
     },
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "headerCategories",
+        "flxIncone",
+        "flxSegmIncome",
+        "flxCurrent",
+        "flxSegmCurrent",
+        "flxExpenses",
+        "flxSegmExpenses"
+    ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
@@ -47,6 +53,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmCategoriesList",
+    "ide_preShow": "AS_Form_ee877c39514d4bbc9c47de5d059486d7",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -64,7 +71,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "b706b322e8754ce7becbc0d561578836",
+                "kuid": "b2599189f5b043cab51663f4f08e2ae8",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -75,7 +82,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "ac6c220c99494f5fb9088fdace00ab67",
+                        "kuid": "e8507a6eb1c442b49f2dc22cd8442d3b",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -85,7 +92,6 @@
                 "translucent": true
             }
         },
-        "render": false,
         "titleBar": false
     },
     "iscustomlayout": false,
@@ -93,7 +99,7 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "ebf2a21220d649399b377e79c174047e",
+    "kuid": "c7ffa35dd61e41be8d87029af9cf5943",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,
@@ -108,19 +114,16 @@
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "spaandroidtablet": {
         "needAppMenu": false
     },
     "spabb": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "spaip": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "spaipad": {
         "needAppMenu": false
@@ -129,8 +132,7 @@
         "needAppMenu": false
     },
     "spawinphone8": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "titleBarSkin": "sca409e2f82d48b0845a0e609c253137",
     "titlebar": true,
@@ -140,7 +142,6 @@
         "needAppMenu": false
     },
     "winphone8": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     }
 }

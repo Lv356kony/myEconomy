@@ -23,7 +23,7 @@ define({
         } else {
             this.view.flxLogin.flxEmail.txtEmail.text = '';
             this.view.flxLogin.flxPassword.txtPassword.text = '';
-            navToForm("frmStatistics");    
+            navToForm("frmCategoriesList");    
         }    
     },
 
