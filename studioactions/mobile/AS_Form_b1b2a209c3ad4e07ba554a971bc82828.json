@@ -1,6 +1,6 @@
 {
-    "AS_Form_j8a6735225744b8b8b6cdeda0506422c": {
-        "id": "AS_Form_j8a6735225744b8b8b6cdeda0506422c",
+    "AS_Form_b1b2a209c3ad4e07ba554a971bc82828": {
+        "id": "AS_Form_b1b2a209c3ad4e07ba554a971bc82828",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,7 +14,7 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___c173e99b5d6944a88928af075dbb6fe6",
+            "id": "INVOKE_FUNCTION___c19831c7705a4718a98533acc724ffcb",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "showCategory",
             "display": "showCategory",
@@ -24,7 +24,7 @@
             "disabled": null,
             "source": "controller"
         }, {
-            "id": "INVOKE_FUNCTION___d8de9ee8f93c46a08d751aab43eba254",
+            "id": "INVOKE_FUNCTION___a6546f1670544f5a86fd94d8b74cb36d",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "showExpenses",
             "display": "showExpenses",

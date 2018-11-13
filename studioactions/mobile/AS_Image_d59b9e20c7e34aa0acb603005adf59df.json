@@ -1,0 +1,27 @@
+{
+    "AS_Image_d59b9e20c7e34aa0acb603005adf59df": {
+        "id": "AS_Image_d59b9e20c7e34aa0acb603005adf59df",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "imagesrc"
+        }, {
+            "datatype": "boolean",
+            "name": "issuccess"
+        }, {
+            "datatype": "collection",
+            "name": "context"
+        }],
+        "contextObj": {
+            "name": "FBox0b72131d6637c4d",
+            "type": "templates",
+            "platform": "",
+            "KUID": "g5fb0c05ab0f4514a347c9bd2ffb880c"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

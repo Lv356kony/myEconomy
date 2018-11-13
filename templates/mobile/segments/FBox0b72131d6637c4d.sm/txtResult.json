@@ -22,7 +22,7 @@
         "type": "number",
         "value": "0"
     },
-    "_skin_": "sdfb1a22fd064340b45b23aded3ff3f6",
+    "_skin_": "see2359263ff4fe8af3b843347871021",
     "_text_": "RichText",
     "_top_": {
         "type": "string",
@@ -30,21 +30,19 @@
     },
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "120dp"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
     "containerId": true,
     "containerweight": 100,
     "contentalignment": 6,
-    "disabledSkins": {
-        "linkSkin": "sbb94eebb18c407f9c3e8aaa008fdb1d"
-    },
     "id": "txtResult",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "i2b616579acd4b17ab3d95945f9f8035",
+    "kuid": "g69a808ff5fe47dba8b94fae2f24f25b",
+    "linkskin": "s8f1776a6193465781fd3fdeecf5084a",
     "name": "kony.ui.RichText",
     "paddinginpixel": false,
     "parent": "flxHeader",
