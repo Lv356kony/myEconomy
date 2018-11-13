@@ -15,7 +15,7 @@ var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
 var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
                    '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
-const CURRENT_USER = {id: 1};
+const CURRENT_USER = {id: undefined};
 
 const DATA = {
     users: [
