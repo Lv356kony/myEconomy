@@ -36,12 +36,13 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "AngleLeft"
+        "lblBackward"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxHeaderBtnContainer",
+    "id": "flxHeaderBackward",
+    "ide_onClick": "AS_FlexContainer_a3e1b2b96ebd47ae951f18a663cdccb5",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
