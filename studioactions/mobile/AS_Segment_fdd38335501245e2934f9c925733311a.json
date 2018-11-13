@@ -13,7 +13,6 @@
             "name": "rowNumber"
         }],
         "contextObj": {
-            "name": "frmCategories",
             "type": "forms",
             "platform": "",
             "KUID": "e3ed025ff46a4ac4afa8cddbf30005f5"

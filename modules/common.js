@@ -1,19 +1,9 @@
 function navToForm(formName, data){
-  let target = new kony.mvc.Navigation(formName);
-  if(data){
-  	target.navigate(data);
-  } else{
-    target.navigate();
-  }
+    let target = new kony.mvc.Navigation(formName);
+    if(data){
+        target.navigate();
+    }    
 }
-
-var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4': 'May',
-             '5': 'June', '6': 'July', '7': 'August', '8': 'September',
-             '9': 'October', '10': 'November', '11': 'December'};
-var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
-           '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
-var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
-                   '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
 const CURRENT_USER = {id: undefined};
 
@@ -22,7 +12,7 @@ const DATA = {
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'Ra$1'
+            password: 'notthistime'
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
@@ -34,7 +24,7 @@ const DATA = {
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'Ra$1'
+            password: 'anotheronepassword'
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
@@ -323,17 +313,17 @@ const serviceCategory = {
         }
         return DATA.categories;
     },
-
-    getCategories: function() {
-      	let categories = [];
-        for(let i = 0; i < DATA.categories.length; i++) {
+    
+    getCategories: function(){
+		let categories = [];
+        for(let i=0; i < DATA.categories.length; i++){
             if(DATA.categories[i].user_id === CURRENT_USER.id) {
                 categories.push(DATA.categories[i]);
             }
         }
         return categories;
-    },
-
+},
+    
     create: function(data) {
         DATA.categories.push(data);
         return DATA.categories;
@@ -367,10 +357,7 @@ const userService = {
 
         if(!validateEmailResult){
             return {
-                error: {
-                    message: 'Invalid Email',
-                    type: 'email'
-                }
+                error: 'invalid Email'
             };
         }
 
@@ -378,10 +365,7 @@ const userService = {
 
         if(!validatePasswordResult){
             return {
-              error: {
-                message: 'Invalid password',
-                type: 'password'
-              }
+                error: 'invalid password'
             };
         }
 
@@ -392,49 +376,37 @@ const userService = {
         if ( user) {
             if ( user.password === password ){
                 CURRENT_USER.id = user.id;
-                return {
-                	user: user,
-                    error: null,
-                };
+                return true;
             }
         }
-		return {
-            error: {
-                message: 'User is not found',
-                type: 'email'
-            },
-        };
+        return false;
+
     },
 
-    registration: function(email, password, confPassword) {
+    registration: function(userObj) {
         let user = {};
+        let email = userObj.email;
+        let password = userObj.password;
+        let confPassword = userObj.confPassword;
+
 
         let validateEmailResult = validateEmail(email);
         if(!validateEmailResult){
             return {
-                error: {
-                    message: 'Invalid Email',
-                    type: 'email'
-                }
+                error: 'invalid Email'
             };
         }
 
         let validatePasswordResult = validatePassword(password);
         if(!validatePasswordResult){
             return {
-              error: {
-                message: 'The password must include uppercase \n and lowercase letters numbers and symbols',
-                type: 'password'
-              }
+                error: 'invalid password'
             };
         }
 
         if ( !email || !password ) {
             return {
-                error: {
-                    message: 'email and password is required',
-                    type: 'password'
-                }
+                error: 'email and password is required'
             };
         }
 
@@ -443,20 +415,13 @@ const userService = {
         });
         if ( userMockArray.length ){
             return {
-                error: {
-                    message: 'User with this email address already exists',
-                    type: 'email'
-
-                }
+                error: 'User with this email address already exists'
             };
         }
 
         if(password != confPassword){
             return {
-            	error: {
-                    message: 'The password confirmation is not the same \n as the password entered',
-                    type: 'passwordConfirmation'
-                }
+                error: 'The password confirmation is not the same as the password entered'
             };
 
         }
@@ -465,7 +430,7 @@ const userService = {
         user.password = password;
         user.id = Date.now();
         DATA.users.push(user);
-        return true;
+        return user;
     }
 };
 
