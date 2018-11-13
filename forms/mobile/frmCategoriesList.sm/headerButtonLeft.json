@@ -4,11 +4,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "64.29%"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "7dp"
     },
     "_margin_": [
         6,
@@ -26,11 +26,11 @@
     "_text_": "Back",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "9dp"
     },
     "_width_": {
         "type": "string",
-        "value": "41dp"
+        "value": "35dp"
     },
     "android": {
         "displayText": false

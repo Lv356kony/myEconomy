@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "18dp"
+        "value": "20dp"
     },
     "_left_": {
         "type": "string",
-        "value": "11dp"
+        "value": "14dp"
     },
     "_margin_": [
         0,
@@ -30,14 +30,14 @@
     },
     "_width_": {
         "type": "string",
-        "value": "20dp"
+        "value": "21dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "50.00%"
     },
     "children": [
         "FlexContainer0f97e6e10d5ff40",

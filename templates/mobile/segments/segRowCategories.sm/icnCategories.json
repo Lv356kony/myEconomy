@@ -38,11 +38,14 @@
         "render": true
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerId": true,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "segRowCategories",
         "platform": "iphone",
         "templateType": "segments",
         "topLevelBox": null

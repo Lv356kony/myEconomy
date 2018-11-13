@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "130dp"
+        "value": "120dp"
     },
     "_margin_": [
         1,
@@ -44,11 +44,11 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "50.04%"
     },
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "49.71%"
     },
     "containerweight": 100,
     "contentalignment": 4,

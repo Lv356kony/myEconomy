@@ -39,6 +39,10 @@
     },
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
         "icnCategories"
     ],
