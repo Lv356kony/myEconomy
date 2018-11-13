@@ -1,0 +1,48 @@
+{
+    "AS_Form_ee877c39514d4bbc9c47de5d059486d7": {
+        "id": "AS_Form_ee877c39514d4bbc9c47de5d059486d7",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmCategoriesList",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c7ffa35dd61e41be8d87029af9cf5943"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___ieceb98ab5cb4889bd7cb1a63ee01ade",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "initIncomeCategoriesList",
+            "display": "initIncomeCategoriesList",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___a908922932f74dba926875046dbd4b74",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "initCurrentCategoriesList",
+            "display": "initCurrentCategoriesList",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___c982e52f816d4414993c5424720e314f",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "initExpensesCategoriesList",
+            "display": "initExpensesCategoriesList",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
