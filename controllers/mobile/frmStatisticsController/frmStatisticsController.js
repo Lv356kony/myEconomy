@@ -72,14 +72,14 @@ define({
 
 
     getListOfCategoriesByType: function(categoryType) {
-        let userId = CURRENT_USER.id;
+        let categories = serviceCategory.getCategories();
         let expenses = [];
         let income = [];
-        for(let i = 0; i < DATA.categories.length; i++){
-            if(userId === DATA.categories[i].user_id && DATA.categories[i].type === "Expenses"){
-                expenses.push(DATA.categories[i]);
-            } else if (userId === DATA.categories[i].user_id && DATA.categories[i].type === "Current") {
-                income.push(DATA.categories[i]);
+        for(let i = 0; i < categories.length; i++){
+            if(categories[i].type === "Expenses"){
+                expenses.push(categories[i]);
+            } else if (categories[i].type === "Current") {
+                income.push(categories[i]);
             }
         }
         if (arguments[0] === "Expenses") {
