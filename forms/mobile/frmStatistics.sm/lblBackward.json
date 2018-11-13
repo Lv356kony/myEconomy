@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "AngleLeft",
+    "id": "lblBackward",
     "info": null,
     "ipad": {
         "psp": {
@@ -58,7 +58,7 @@
     "kuid": "efa9a735f77140c18828a386b626f41a",
     "masterType": 1,
     "name": "kony.ui.Label",
-    "parent": "flxHeaderBtnContainer",
+    "parent": "flxHeaderBackward",
     "pf": "frmStatistics",
     "textstyle": {},
     "tooltip": "",

@@ -16,5 +16,10 @@ define({
     AS_Form_c8d28d13b7c54a4ebf94279914d2f579: function AS_Form_c8d28d13b7c54a4ebf94279914d2f579(eventobject) {
         var self = this;
         return self.init.call(this);
+    },
+    /** onClick defined for flxHeaderBackward **/
+    AS_FlexContainer_a3e1b2b96ebd47ae951f18a663cdccb5: function AS_FlexContainer_a3e1b2b96ebd47ae951f18a663cdccb5(eventobject) {
+        var self = this;
+        return self.backwardClick.call(this);
     }
 });
