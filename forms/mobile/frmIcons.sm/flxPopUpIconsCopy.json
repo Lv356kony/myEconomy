@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "35dp"
+        "value": "400dp"
     },
     "_left_": {
         "type": "string",
@@ -23,11 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s2a38583d40c4438a21f05ee6bb9f48c",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "seb6f2a2961342658db80559672d9066",
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -35,26 +31,31 @@
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
-        "lblIconsHeader"
+        "flxIconsHeader",
+        "flxIconList"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxIconsHeader",
+    "id": "flxPopUpIconsCopy",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h6d134892446408e999fccf1451d5cfa",
+    "kuid": "e55f6a0ea7784d5d8f2855f68afdee7a",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxPopUpIcons",
-    "pf": "frmCategoryCreation",
+    "parent": "frmIcons",
+    "pf": "frmIcons",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 1
+    "zindex": 10
 }

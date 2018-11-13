@@ -30,25 +30,23 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxCategoryCreation",
-        "flxPopUpIcons"
+        "flxPopUpIconsCopy"
     ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmCategoryCreationController"
+            "name": "frmIconsController"
         }
     },
     "currentLocale": "default",
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "GalaxyS8",
+    "device": "iPhoneX",
     "displayorientation": 1,
     "enabledforidletimeout": false,
-    "id": "frmCategoryCreation",
-    "ide_preShow": "AS_Form_b6c301a58aaf452ea9fe4696ef9a84cb",
+    "id": "frmIcons",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -66,7 +64,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "ja1ba902284744e1bbebd21874453be6",
+                "kuid": "h712d6e8c9664b5882cf57d393da4323",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -77,7 +75,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "d374201839b84cf8ac2aabfc609356bc",
+                        "kuid": "i3f4aac54d034d3ab3e18cb57cd6855e",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -94,18 +92,18 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "hd9bc2449f914ed69b9376f9841ae86e",
+    "kuid": "c7e38e37ab80499ba1771c25d02b4952",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "android",
+    "platform": "iphone",
     "prevDevice": "iPhoneX",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "and_GalaxyS8",
+    "shellCSS": "iOS_iPhoneX",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {

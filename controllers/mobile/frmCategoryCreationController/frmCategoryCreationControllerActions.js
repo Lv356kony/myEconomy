@@ -22,14 +22,9 @@ define({
         var self = this;
         return self.hidePopUp.call(this);
     },
-    /** onClick defined for flxIcon1 **/
-    AS_FlexContainer_e13797066a0349828355859caec187dc: function AS_FlexContainer_e13797066a0349828355859caec187dc(eventobject) {
-        var self = this;
-        return self.chooseIcon.call(this);
-    },
     /** preShow defined for frmCategoryCreation **/
     AS_Form_b6c301a58aaf452ea9fe4696ef9a84cb: function AS_Form_b6c301a58aaf452ea9fe4696ef9a84cb(eventobject) {
         var self = this;
-        return self.clearTextbox.call(this);
+        return self.generatePreview.call(this);
     }
 });
