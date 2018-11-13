@@ -1,5 +1,5 @@
 define({ 
-    
+
 	initIncomeCategoriesList: function(){
      	let categories = [];
      	for (let i = 0; i < DATA.categories.length; i++) {
@@ -17,7 +17,7 @@ define({
     	};
     	segment.setData(categories);
 	},
-	
+
     initCurrentCategoriesList: function(){
      	let categories = [];
      	for (let i = 0; i < DATA.categories.length; i++) {
@@ -35,7 +35,7 @@ define({
     	};
     	segment.setData(categories);
 	},
-    
+
     initExpensesCategoriesList: function(){
      	let categories = [];
      	for (let i = 0; i < DATA.categories.length; i++) {
@@ -53,6 +53,6 @@ define({
     	};
     	segment.setData(categories);
 	}
-	
-    
+
+
 });
