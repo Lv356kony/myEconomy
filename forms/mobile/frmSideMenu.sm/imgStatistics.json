@@ -54,6 +54,7 @@
     "ide_onDownloadComplete": "AS_Image_e7fce7adae24495fb97f56cdba848e5d",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "a15899ab5c6f4703a0281d6c308d39b9",

@@ -18,8 +18,8 @@
         0,
         0
     ],
-    "_skin_": "sd8e6e91749540cca5b914bd5e3e2e44",
-    "_text_": "antti.raatali@gmail.com",
+    "_skin_": "s9e03222682c49698056a9ac472d98dc",
+    "_text_": "user email",
     "_top_": {
         "type": "string",
         "value": "87dp"
@@ -36,7 +36,7 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "txtNameUser",
+    "id": "txtUserEmail",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

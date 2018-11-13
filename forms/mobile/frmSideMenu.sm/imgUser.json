@@ -45,6 +45,7 @@
     "id": "imgUser",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "cc1c31c937ea490582db9abfe5a0cf7f",
