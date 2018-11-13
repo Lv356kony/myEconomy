@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "19dp"
-    },
     "_margin_": [
         1,
         1,
@@ -26,7 +22,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "175dp"
+        "value": "45dp"
     },
     "_width_": {
         "type": "ref",
@@ -40,6 +36,10 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 4,
     "id": "lblConfirmationError",
@@ -55,10 +55,10 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "b0f20479a2034d6f909af5db1fc88b1b",
     "name": "kony.ui.Label",
-    "parent": "flxLogin",
+    "parent": "flxConfirmation",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "55dp"
-    },
     "_margin_": [
         1,
         1,
@@ -46,7 +42,7 @@
     },
     "containerweight": 100,
     "contentalignment": 5,
-    "id": "CopylblCashSaver0i09fa5204d8d46",
+    "id": "lblCashSaver",
     "info": null,
     "ipad": {
         "psp": {

@@ -5,10 +5,6 @@
         "type": "string",
         "value": "60dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "23dp"
-    },
     "_margin_": [
         0,
         0,
@@ -26,7 +22,7 @@
     "_skin_": "s097787234004301aa569d377d11435c",
     "_top_": {
         "type": "string",
-        "value": "135dp"
+        "value": "154dp"
     },
     "_width_": {
         "type": "string",
@@ -42,7 +38,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "50.04%"
     },
     "children": [
         "btnLogin"

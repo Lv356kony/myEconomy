@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "65dp"
     },
     "_margin_": [
         0,
@@ -36,7 +36,8 @@
         "value": "50%"
     },
     "children": [
-        "txtEmail"
+        "txtEmail",
+        "lblEmailError"
     ],
     "clipbounds": true,
     "containerweight": 100,

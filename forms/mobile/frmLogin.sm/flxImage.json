@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "24.76%"
+        "value": "25%"
     },
     "_left_": {
         "type": "string",
@@ -37,11 +37,11 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "49.99%"
+        "value": "50%"
     },
     "children": [
         "imgCashSaver",
-        "CopylblCashSaver0i09fa5204d8d46"
+        "lblCashSaver"
     ],
     "clipbounds": true,
     "containerweight": 100,
