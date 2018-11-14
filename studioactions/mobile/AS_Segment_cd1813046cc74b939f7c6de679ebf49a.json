@@ -1,0 +1,37 @@
+{
+    "AS_Segment_cd1813046cc74b939f7c6de679ebf49a": {
+        "id": "AS_Segment_cd1813046cc74b939f7c6de679ebf49a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "frmCategoriesList",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c7ffa35dd61e41be8d87029af9cf5943"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___a811f989dbb54ec9a5dfe36db384f536",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "goToHistory",
+            "display": "goToHistory",
+            "inputparams": [{
+                "name": "seguiWidget",
+                "value": " eventobject "
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
