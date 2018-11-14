@@ -23,10 +23,10 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s4c5df9b0d9b42b5bafa9fc52603ea39",
+    "_skin_": "seb6f2a2961342658db80559672d9066",
     "_top_": {
-        "type": "string",
-        "value": "0dp"
+        "type": "number",
+        "value": "0"
     },
     "_width_": {
         "type": "string",
@@ -36,26 +36,26 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxCreateCategoryHeader",
-        "flxCreateCategoryForm"
+        "flxIconsHeader",
+        "flxIconsList"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxCategoryCreation",
+    "id": "flxPopUpIcons",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ja1dc3a54b294224a77972b14b217c4a",
+    "kuid": "e55f6a0ea7784d5d8f2855f68afdee7a",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmCategoryCreation",
-    "pf": "frmCategoryCreation",
+    "parent": "frmIcons",
+    "pf": "frmIcons",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 1
+    "zindex": 10
 }
