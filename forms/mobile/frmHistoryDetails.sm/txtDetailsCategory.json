@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "56dp"
     },
     "_left_": {
         "type": "string",
@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "sa82ece8930a410faa8efe840859c278",
+    "_skin_": "scc37c807f73402ba9e3616820dae20d",
     "_text_": "Category Name",
     "_top_": {
         "type": "string",

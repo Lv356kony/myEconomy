@@ -1,7 +1,7 @@
 {
     "@class": "com.kony.gen.viz.model.component.KVizDateField",
     "DNDConfig": null,
-    "Image": "calendar32.png",
+    "Image": "calendar32_1.png",
     "__id": "frmHistoryDetails_Calendar0a2c18469cfab42",
     "__input": "Calendar0a2c18469cfab42",
     "__parentReadjusting__": false,
@@ -23,13 +23,13 @@
         0,
         0
     ],
-    "_skin_": "s4b5070ca68c4b969b3d33291540ba48",
+    "_skin_": "s7ae644221114f2eba51a17b634c335e",
     "_width_": {
         "type": "string",
         "value": "230dp"
     },
     "advview": "default",
-    "calendaricon": "calendar32.png",
+    "calendaricon": "calendar32_1.png",
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
@@ -72,7 +72,7 @@
     "hidedaysheader": false,
     "hidemonthsheader": false,
     "hour": 0,
-    "id": "Calendar0a2c18469cfab42",
+    "id": "calEdit",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

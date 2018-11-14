@@ -1,0 +1,21 @@
+{
+    "AS_Button_adaf1cde98f044669022358c664148f4": {
+        "id": "AS_Button_adaf1cde98f044669022358c664148f4",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_c3ab353777f8411391637fe8a514111c",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteConfirmationWindow",
+            "display": "hideDeleteConfirmationWindow",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

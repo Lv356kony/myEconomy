@@ -287,7 +287,7 @@ const serviceTransactions = {
         transaction.amount = amount || transaction.amount;
         transaction.from = from || transaction.from;
         transaction.to = to || transaction.to;
-        transaction.date = date || transaction.date;
+        transaction.date = new Date(date) || transaction.date;
         transaction.commentary = comment || transaction.commentary;
 
     },
