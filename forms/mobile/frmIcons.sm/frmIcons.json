@@ -30,7 +30,7 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxPopUpIconsCopy"
+        "flxPopUpIcons"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -47,6 +47,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmIcons",
+    "ide_preShow": "AS_Form_f6688be8deec4739ad8c48808e55bfde",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

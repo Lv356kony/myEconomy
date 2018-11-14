@@ -30,8 +30,7 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxCategoryCreation",
-        "flxPopUpIcons"
+        "flxCategoryCreation"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -48,7 +47,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmCategoryCreation",
-    "ide_preShow": "AS_Form_b6c301a58aaf452ea9fe4696ef9a84cb",
+    "ide_preShow": "AS_Form_a8e6700421d3413e83e87a026be16c50",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

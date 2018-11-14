@@ -10,21 +10,16 @@ define({
     /** onClick defined for flxIconButton **/
     AS_FlexContainer_b83040e748544969a6e9c1467ca97831: function AS_FlexContainer_b83040e748544969a6e9c1467ca97831(eventobject) {
         var self = this;
-        return self.showPopUp.call(this);
+        return self.navToIcons.call(this);
     },
     /** onClick defined for btnAddNewCategory **/
     AS_Button_baf021471cb8410f823232645020d1a5: function AS_Button_baf021471cb8410f823232645020d1a5(eventobject) {
         var self = this;
         return self.addCategory.call(this);
     },
-    /** onClick defined for flxHideOpasity **/
-    AS_FlexContainer_g231c71d7b8d4bcab1ea92a7a61519fb: function AS_FlexContainer_g231c71d7b8d4bcab1ea92a7a61519fb(eventobject) {
-        var self = this;
-        return self.hidePopUp.call(this);
-    },
     /** preShow defined for frmCategoryCreation **/
-    AS_Form_b6c301a58aaf452ea9fe4696ef9a84cb: function AS_Form_b6c301a58aaf452ea9fe4696ef9a84cb(eventobject) {
+    AS_Form_a8e6700421d3413e83e87a026be16c50: function AS_Form_a8e6700421d3413e83e87a026be16c50(eventobject) {
         var self = this;
-        return self.generatePreview.call(this);
+        return self.clearInputs.call(this);
     }
 });

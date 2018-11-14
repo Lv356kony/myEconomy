@@ -5,7 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "70dp"
+        "value": "80%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -20,16 +24,12 @@
         0
     ],
     "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
-    "_src_": "plane.png",
+    "_src_": "left_arrow.png",
     "_width_": {
         "type": "string",
-        "value": "70dp"
+        "value": "80%"
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "centery": {
         "type": "string",
         "value": "50%"
@@ -42,15 +42,15 @@
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgIcon3",
+    "id": "imgBtnGoBack",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a49dfce1d430459dbf7f5cc5d382cf66",
+    "kuid": "aeda21a99c3a4c01832830357941d186",
     "name": "kony.ui.Image2",
-    "parent": "flxIcon3",
+    "parent": "flxGoBackBtn",
     "pf": "frmIcons",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
