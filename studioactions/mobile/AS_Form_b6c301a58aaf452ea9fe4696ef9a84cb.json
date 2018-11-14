@@ -16,8 +16,8 @@
         "actions": [{
             "id": "INVOKE_FUNCTION___c822a14bd9d147e2844c88c89786505c",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "clearTextbox",
-            "display": "clearTextbox",
+            "sequenceKUID": "generatePreview",
+            "display": "generatePreview",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

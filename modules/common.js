@@ -45,43 +45,43 @@ const DATA = {
     categories: [
         {
             id: 1,
-            icon: 'groceriesIcon.png',
+            icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
             user_id: 1
         },  {
             id: 2,
-            icon: 'homeIcon.png',
+            icon: 'gold.png',
             name: 'Home',
             type: 'Expenses',
             user_id: 1
         },  {
             id: 3,
-            icon: 'transportIcon.png',
+            icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
             user_id: 1
         },  {
             id: 4,
-            icon: 'cafeIcon.png',
+            icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
             user_id: 1
         },  {
             id: 5,
-            icon: 'gamesIcon.png',
+            icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
             user_id: 1
         },  {
             id: 6,
-            icon: 'salaryIcon.png',
+            icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
             user_id: 1
         },  {
             id: 7,
-            icon: 'monobankIcon.png',
+            icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
             user_id: 1

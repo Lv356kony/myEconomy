@@ -50,6 +50,7 @@
     "isvisible": true,
     "kuid": "j5658aadd98248f0bf0924938ca6bced",
     "name": "kony.ui.Image2",
+    "paddinginpixel": false,
     "parent": "flxIconButton",
     "pf": "frmCategoryCreation",
     "retaincontentalignment": false,
