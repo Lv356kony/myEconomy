@@ -49,15 +49,6 @@ define({
     AS_Image_h562a90f98e941549067d9cd836f533b: function AS_Image_h562a90f98e941549067d9cd836f533b(eventobject, imagesrc, issuccess) {
         var self = this;
     },
-    /** preShow defined for frmHistoryDetails **/
-    AS_Form_j19b08eaddab407eb7afe8ff122c3956: function AS_Form_j19b08eaddab407eb7afe8ff122c3956(eventobject) {
-        var self = this;
-        self.showDetails.call(this);
-        self.loadCategories.call(this, 'Expenses', 'lstBoxTo');
-        self.loadCategories.call(this, 'Current', 'lstBoxFrom');
-        self.hideEditForm.call(this);
-        self.clearInputs.call(this);
-    },
     /** onClick defined for btnDeleteYes **/
     AS_Button_a512088465b649ffa381babbad070902: function AS_Button_a512088465b649ffa381babbad070902(eventobject) {
         var self = this;
@@ -73,5 +64,14 @@ define({
     AS_FlexContainer_c96363e9db8c45128d25a0ea475d8c27: function AS_FlexContainer_c96363e9db8c45128d25a0ea475d8c27(eventobject, x, y) {
         var self = this;
         return self.hideDeleteConfirmationWindow.call(this);
+    },
+    /** preShow defined for frmHistoryDetails **/
+    AS_Form_j19b08eaddab407eb7afe8ff122c3956: function AS_Form_j19b08eaddab407eb7afe8ff122c3956(eventobject) {
+        var self = this;
+        self.showDetails.call(this);
+        self.loadCategories.call(this, 'Expenses', 'lstBoxTo');
+        self.loadCategories.call(this, 'Current', 'lstBoxFrom');
+        self.hideEditForm.call(this);
+        self.clearInputs.call(this);
     }
 });
