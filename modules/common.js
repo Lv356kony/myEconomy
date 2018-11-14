@@ -51,7 +51,7 @@ const DATA = {
             user_id: 1
         },  {
             id: 2,
-            icon: 'gold.png',
+            icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
             user_id: 1

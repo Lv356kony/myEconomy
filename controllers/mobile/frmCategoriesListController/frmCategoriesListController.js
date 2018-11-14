@@ -52,7 +52,19 @@ define({
       	icnCategories: "icon"
     	};
     	segment.setData(categories);
-	}
-
+	},
+    
+    setCategoryIncomeType: function() {
+        navToForm('frmCategoryCreation', {categoryType: "Income"});
+    },
+    
+    setCategoryCurrentType: function() {
+        navToForm('frmCategoryCreation', {categoryType: "Current"});
+    },
+    
+    setCategoryExpensesType: function() {
+        navToForm('frmCategoryCreation', {categoryType: "Expenses"});
+    }
+    
 
 });

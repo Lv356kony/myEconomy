@@ -41,7 +41,8 @@
     "canUpdateUI": true,
     "children": [
         "lblCurrent",
-        "lblCurrentCount"
+        "lblCurrentCount",
+        "flxAddCurrent"
     ],
     "clipbounds": true,
     "containerweight": 100,

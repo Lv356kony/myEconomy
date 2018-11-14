@@ -13,16 +13,6 @@
             "KUID": "hd9bc2449f914ed69b9376f9841ae86e"
         },
         "language": "js",
-        "actions": [{
-            "id": "INVOKE_FUNCTION___jc452644171544328901e5228abaf98b",
-            "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "clearInputs",
-            "display": "clearInputs",
-            "inputparams": [],
-            "parentId": null,
-            "callbackType": null,
-            "disabled": null,
-            "source": "controller"
-        }]
+        "actions": []
     }
 }

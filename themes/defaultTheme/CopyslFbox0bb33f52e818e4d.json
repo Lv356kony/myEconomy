@@ -8,7 +8,7 @@
   "background_color": "ffffffff",
   "bg_type": "one",
   "border_color": "ffffffff",
-  "border_radius": 57,
+  "border_radius": 15,
   "border_style": "custom",
   "border_type": 0,
   "border_width": 1,
@@ -25,7 +25,7 @@
   "kiosk": {
     "font_name": "None"
   },
-  "kuid": "sc8d60958d9849f2a1a14119ad75be05",
+  "kuid": "s2df366a1e494b9890c7885b25867f17",
   "spaan": {
     "font_name": "Helvetica"
   },
