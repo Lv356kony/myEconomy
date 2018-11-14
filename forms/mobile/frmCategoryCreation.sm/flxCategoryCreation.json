@@ -37,8 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "flxCreateCategoryHeader",
-        "flxCreateCategoryForm",
-        "flxHideOpasity"
+        "flxCreateCategoryForm"
     ],
     "clipbounds": true,
     "containerweight": 100,
