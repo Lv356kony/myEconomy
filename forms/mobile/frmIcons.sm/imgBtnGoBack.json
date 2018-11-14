@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "70%"
+        "value": "80%"
     },
     "_left_": {
         "type": "string",
@@ -27,7 +27,7 @@
     "_src_": "left_arrow.png",
     "_width_": {
         "type": "string",
-        "value": "70%"
+        "value": "80%"
     },
     "canUpdateUI": true,
     "centery": {
@@ -37,21 +37,21 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmCategoryCreation",
-        "platform": "android",
+        "formID": "frmIcons",
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgCreateCategoryHeader",
+    "id": "imgBtnGoBack",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "jf12983a8cb448428e55990a9e8db267",
+    "kuid": "aeda21a99c3a4c01832830357941d186",
     "name": "kony.ui.Image2",
-    "parent": "flxCreateCategoryBack",
-    "pf": "frmCategoryCreation",
+    "parent": "flxGoBackBtn",
+    "pf": "frmIcons",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

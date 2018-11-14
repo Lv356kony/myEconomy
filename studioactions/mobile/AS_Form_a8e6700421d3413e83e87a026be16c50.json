@@ -1,6 +1,6 @@
 {
-    "AS_FlexContainer_b83040e748544969a6e9c1467ca97831": {
-        "id": "AS_FlexContainer_b83040e748544969a6e9c1467ca97831",
+    "AS_Form_a8e6700421d3413e83e87a026be16c50": {
+        "id": "AS_Form_a8e6700421d3413e83e87a026be16c50",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -9,15 +9,15 @@
         "contextObj": {
             "name": "frmCategoryCreation",
             "type": "forms",
-            "platform": null,
+            "platform": "",
             "KUID": "hd9bc2449f914ed69b9376f9841ae86e"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___a0854f80e29d4baeb27b46802d804400",
+            "id": "INVOKE_FUNCTION___jc452644171544328901e5228abaf98b",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "navToIcons",
-            "display": "navToIcons",
+            "sequenceKUID": "clearInputs",
+            "display": "clearInputs",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
