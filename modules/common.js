@@ -1,17 +1,17 @@
 function navToForm(formName, data){
-  let target = new kony.mvc.Navigation(formName);
-  if(data){
-  	target.navigate(data);
-  } else{
-    target.navigate();
-  }
+    let target = new kony.mvc.Navigation(formName);
+    if(data){
+        target.navigate(data);
+    } else{
+        target.navigate();
+    }
 }
 
 var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4': 'May',
-             '5': 'June', '6': 'July', '7': 'August', '8': 'September',
-             '9': 'October', '10': 'November', '11': 'December'};
+                '5': 'June', '6': 'July', '7': 'August', '8': 'September',
+                '9': 'October', '10': 'November', '11': 'December'};
 var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
-           '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
+              '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
 var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
                    '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
@@ -246,7 +246,7 @@ const serviceTransactions = {
             }
         }
 
-       return countIncome - countExpenses;
+        return countIncome - countExpenses;
     },
 
     getByCategoryId: function(categoryId){
@@ -325,7 +325,7 @@ const serviceCategory = {
     },
 
     getCategories: function() {
-      	let categories = [];
+        let categories = [];
         for(let i = 0; i < DATA.categories.length; i++) {
             if(DATA.categories[i].user_id === CURRENT_USER.id) {
                 categories.push(DATA.categories[i]);
@@ -378,10 +378,10 @@ const userService = {
 
         if(!validatePasswordResult){
             return {
-              error: {
-                message: 'Invalid password',
-                type: 'password'
-              }
+                error: {
+                    message: 'Invalid password',
+                    type: 'password'
+                }
             };
         }
 
@@ -393,12 +393,12 @@ const userService = {
             if ( user.password === password ){
                 CURRENT_USER.id = user.id;
                 return {
-                	user: user,
+                    user: user,
                     error: null,
                 };
             }
         }
-		return {
+        return {
             error: {
                 message: 'User is not found',
                 type: 'email'
@@ -422,10 +422,10 @@ const userService = {
         let validatePasswordResult = validatePassword(password);
         if(!validatePasswordResult){
             return {
-              error: {
-                message: 'The password must include uppercase \n and lowercase letters numbers and symbols',
-                type: 'password'
-              }
+                error: {
+                    message: 'The password must include uppercase \n and lowercase letters numbers and symbols',
+                    type: 'password'
+                }
             };
         }
 
@@ -453,7 +453,7 @@ const userService = {
 
         if(password != confPassword){
             return {
-            	error: {
+                error: {
                     message: 'The password confirmation is not the same \n as the password entered',
                     type: 'passwordConfirmation'
                 }

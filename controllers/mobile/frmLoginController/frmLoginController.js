@@ -10,21 +10,20 @@ define({
 
         if ( result.error ) {
             let type = result.error.type;
-            //var message = result.error.message;
-
-            this.view.flxLogin.lblEmailError.text = '';
-            this.view.flxLogin.lblPasswordError.text = '';
+           
+            this.view.flxLogin.flxEmail.lblEmailError.text = '';
+            this.view.flxLogin.flxPassword.lblPasswordError.text = '';
 
             if ( type === 'email' ) {
-                this.view.flxLogin.lblEmailError.text = result.error.message;
+                this.view.flxLogin.flxEmail.lblEmailError.text = result.error.message;
             } else if (type === 'password' ) {
-                this.view.flxLogin.lblPasswordError.text = result.error.message;
+                this.view.flxLogin.flxPassword.lblPasswordError.text = result.error.message;
 
             }
         } else {
             this.view.flxLogin.flxEmail.txtEmail.text = '';
             this.view.flxLogin.flxPassword.txtPassword.text = '';
-            navToForm("frmStatistics");    
+            navToForm("frmCategoriesList");    
         }    
     },
 
@@ -40,22 +39,22 @@ define({
            if ( result.error ) {
               let type = result.error.type;
 
-              this.view.flxLogin.lblEmailError.text = '';
-              this.view.flxLogin.lblPasswordError.text = '';
-              this.view.flxLogin.lblConfirmationError.text ='';
+              this.view.flxLogin.flxEmail.lblEmailError.text = '';
+              this.view.flxLogin.flxPassword.lblPasswordError.text = '';
+              this.view.flxLogin.flxConfirmation.lblConfirmationError.text ='';
 
 
             if ( type === 'email' ) {
-                this.view.flxLogin.lblEmailError.text = result.error.message;    
+                this.view.flxLogin.flxEmail.lblEmailError.text = result.error.message;    
             } else if (type === 'password' ) {
-                this.view.flxLogin.lblPasswordError.text = result.error.message; 
+                this.view.flxLogin.flxPassword.lblPasswordError.text = result.error.message; 
             } else if (type === 'passwordConfirmation' ) {
-                this.view.flxLogin.lblConfirmationError.text = result.error.message;
+                this.view.flxLogin.flxConfirmation.lblConfirmationError.text = result.error.message;
             } 
         } else {
 
             this.view.flxLogin.flxConfirmation.isVisible=false;
-            this.view.flxLogin.lblConfirmationError.isVisible=false;
+           // this.view.flxLogin.lblConfirmationError.isVisible=false;
             this.view.flxLogin.flxButtonRegister.isVisible=false; 
             this.view.flxLogin.flxButtonLogin.isVisible=true;
 
@@ -64,9 +63,9 @@ define({
             this.view.flxLogin.flxPassword.txtPassword.text = '';
             this.view.flxLogin.flxConfirmation.txtConfirmation.text = '';
 
-            this.view.flxLogin.lblEmailError.text = '';
-            this.view.flxLogin.lblPasswordError.text = '';
-            this.view.flxLogin.lblConfirmationError.text ='';
+            this.view.flxLogin.flxEmail.lblEmailError.text = '';
+            this.view.flxLogin.flxPassword.lblPasswordError.text = '';
+            this.view.flxLogin.flxConfirmation.lblConfirmationError.text ='';
 
 
 
