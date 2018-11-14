@@ -24,15 +24,7 @@
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "goToHistoryDetails",
             "display": "goToHistoryDetails",
-            "inputparams": [{
-                "name": "a"
-            }, {
-                "name": "b"
-            }, {
-                "name": "c"
-            }, {
-                "name": "d"
-            }],
+            "inputparams": [],
             "parentId": null,
             "callbackType": null,
             "disabled": null,

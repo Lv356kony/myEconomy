@@ -10,10 +10,6 @@
         "type": "string",
         "value": "50%"
     },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_margin_": [
         6,
         6,
@@ -26,11 +22,15 @@
         0,
         0
     ],
-    "_skin_": "s17ab7e2638b40e083bf74fdabd7d515",
+    "_right_": {
+        "type": "number",
+        "value": "100"
+    },
+    "_skin_": "s2643a19d5834e7a8ab6e4a20a1a8a1c",
     "_text_": "Yes",
     "_width_": {
         "type": "string",
-        "value": "50%"
+        "value": "100dp"
     },
     "canUpdateUI": true,
     "containerweight": 100,
@@ -38,13 +38,13 @@
     "displaytext": true,
     "focusskin": "sbe987a2b9a446a586fe227729c03fee",
     "id": "btnDeleteYes",
-    "ide_onClick": "AS_Button_b616367341d94930b8c25e233629ab1a",
+    "ide_onClick": "AS_Button_a512088465b649ffa381babbad070902",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "bff76141ef5e46e996096ebceeee955f",
     "name": "kony.ui.Button",
-    "parent": "flxDeleteConfirm",
+    "parent": "flxDeleteButtons",
     "pf": "frmHistoryDetails",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

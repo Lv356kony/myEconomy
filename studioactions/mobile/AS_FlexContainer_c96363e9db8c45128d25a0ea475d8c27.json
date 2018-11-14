@@ -1,0 +1,34 @@
+{
+    "AS_FlexContainer_c96363e9db8c45128d25a0ea475d8c27": {
+        "id": "AS_FlexContainer_c96363e9db8c45128d25a0ea475d8c27",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmHistoryDetails",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c9af47bd87034153a0897765ac19e939"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___hc87eb52143f4c318626883578476b27",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteConfirmationWindow",
+            "display": "hideDeleteConfirmationWindow",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
