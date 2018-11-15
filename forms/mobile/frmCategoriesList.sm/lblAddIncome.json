@@ -18,12 +18,8 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "7dp"
-    },
     "_skin_": "s10b12b1a1da403486e5f2405fbb41b9",
-    "_text_": "Add new",
+    "_text_": "add income",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -36,13 +32,17 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "60%"
+    },
     "centery": {
         "type": "string",
         "value": "50%"
     },
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "Label0c8fb26907e7449",
+    "contentalignment": 5,
+    "id": "lblAddIncome",
     "info": null,
     "ipad": {
         "psp": {

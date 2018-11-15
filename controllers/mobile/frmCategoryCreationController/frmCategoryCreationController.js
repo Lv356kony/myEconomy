@@ -45,15 +45,13 @@ define({
                 type: this.type,
                 user_id: CURRENT_USER 
             };
+            
             serviceCategory.create(newCategory);
-
-            kony.ui.Alert({message: `${newCategory.id} ${newCategory.name} ${newCategory.icon} type: ${newCategory.type}`}, {});
-
+			navToForm('frmCategoriesList');
+            
         } else {
             kony.ui.Alert({message: 'Please enter category name'}, {});
         }
-
-    },
-
+    }
 
 });

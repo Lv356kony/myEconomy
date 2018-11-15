@@ -29,16 +29,16 @@
     "project.type": "js",
     "project_version": "sprint32",
     "referenceWidth": "375",
-    "startupformkey": "c7ffa35dd61e41be8d87029af9cf5943",
+    "startupformkey": "cd15a9bc7cc7470aaf5463cd91a7a632",
     "vendornamekey": "KonyLabs",
     "winmobileguidkey": "",
     "defaulttheme": "defaultTheme",
     "cloud_account_guid": "990b7119-9591-4481-a42a-75650efa137e",
     "nativeContainerProperties": {
-        "isModified": true,
-        "isEnableJSContainer": true,
         "isEnableJSContainerAndroid": true,
-        "isEnableJSContaineriOS": true
+        "isModified": true,
+        "isEnableJSContaineriOS": true,
+        "isEnableJSContainer": true
     },
     "appmenu": {
         "tablet": {

@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "30dp"
     },
     "_margin_": [
         0,
@@ -26,7 +26,7 @@
     "_skin_": "s2df366a1e494b9890c7885b25867f17",
     "_width_": {
         "type": "string",
-        "value": "40dp"
+        "value": "100dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -35,7 +35,10 @@
         "type": "string",
         "value": "50%"
     },
-    "children": [],
+    "children": [
+        "imgAddExpenses",
+        "lblAddExpenses"
+    ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,

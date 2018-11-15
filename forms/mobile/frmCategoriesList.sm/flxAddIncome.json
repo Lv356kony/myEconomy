@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "35dp"
+        "value": "30dp"
     },
     "_margin_": [
         0,
@@ -37,7 +37,7 @@
     },
     "children": [
         "imgAddIncome",
-        "Label0c8fb26907e7449"
+        "lblAddIncome"
     ],
     "clipbounds": true,
     "containerweight": 100,
