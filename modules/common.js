@@ -327,7 +327,7 @@ const serviceTransactions = {
         transaction.from = from;
         transaction.to = to;
         transaction.userId = userId;
-        transaction.date = date;
+        transaction.date = new Date(date);
         transaction.comment = comment;
 
         DATA.transactions.push(transaction);

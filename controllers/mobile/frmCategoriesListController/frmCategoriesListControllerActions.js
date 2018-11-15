@@ -61,6 +61,16 @@ define({
         self.showUserInfo.call(this);
         self.showMenu.call(this);
     },
+    /** onClick defined for flxExpensesButton **/
+    AS_FlexContainer_hdaeaa9151404938946ad71a89caacf7: function AS_FlexContainer_hdaeaa9151404938946ad71a89caacf7(eventobject) {
+        var self = this;
+        return self.goToCreationExpensesTransaction.call(this);
+    },
+    /** onClick defined for flxCurrentButton **/
+    AS_FlexContainer_a511bde6387a45228fbce13f4ba27ba1: function AS_FlexContainer_a511bde6387a45228fbce13f4ba27ba1(eventobject) {
+        var self = this;
+        return self.goToCreationCuurentTransaction.call(this);
+    },
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
@@ -71,15 +81,5 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
-    },
-    /** onClick defined for flxCurrentButton **/
-    AS_FlexContainer_a511bde6387a45228fbce13f4ba27ba1: function AS_FlexContainer_a511bde6387a45228fbce13f4ba27ba1(eventobject) {
-        var self = this;
-        return self.goToCreationCuurentTransaction.call(this);
-    },
-    /** onClick defined for flxExpensesButton **/
-    AS_FlexContainer_hdaeaa9151404938946ad71a89caacf7: function AS_FlexContainer_hdaeaa9151404938946ad71a89caacf7(eventobject) {
-        var self = this;
-        return self.goToCreationExpensesTransaction.call(this);
     }
 });
