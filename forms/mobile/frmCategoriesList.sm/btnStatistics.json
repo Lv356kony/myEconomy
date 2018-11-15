@@ -17,48 +17,40 @@
         6
     ],
     "_padding_": [
-        27,
+        10,
         0,
         0,
         0
     ],
-    "_skin_": "s6c81f0bd15c439395f974ff8a254fc7",
-    "_text_": "Back",
+    "_skin_": "sa232ef7dea64776bb91dda2c033ad24",
+    "_text_": "Statistics",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "41dp"
-    },
-    "android": {
-        "displayText": false
+        "value": "100%"
     },
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "displaytext": false,
-    "focusskin": "s0696c3010af4a22814c5ede15ab175c",
-    "id": "headerButtonLeft",
-    "info": null,
-    "iphone": {
-        "padding": [
-            27,
-            0,
-            0,
-            0
-        ],
-        "paddingInPixel": true
+    "disabledSkins": {
+        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
     },
+    "displaytext": true,
+    "id": "btnStatistics",
+    "ide_onTouchEnd": "AS_Button_f225ba20b4c64004bccbcb210ca50db5",
+    "info": null,
+    "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e278ba7d4e0246af88c7def4c8c81e89",
-    "masterType": 1,
+    "kuid": "ed4c30c5d60e4d4bb0690c816b6fa187",
     "name": "kony.ui.Button",
-    "paddingLocked": false,
     "paddinginpixel": false,
-    "parent": "headerCategories",
+    "parent": "flxStatisticsText",
     "pf": "frmCategoriesList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
     "wType": "Button",
     "zindex": 1
 }

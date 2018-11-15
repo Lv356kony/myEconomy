@@ -1,25 +1,18 @@
 {
-    "AS_Button_b5a0c227f41c43d1957b4158ccfe233e": {
-        "id": "AS_Button_b5a0c227f41c43d1957b4158ccfe233e",
+    "AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2": {
+        "id": "AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
-        "contextObj": {
-            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c",
-            "name": "frmSideMenu",
-            "platform": "",
-            "type": "forms"
-        },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___e31ec8928b2a4e1c9a35eb89969fa8da",
+            "id": "INVOKE_FUNCTION__ide_onClick_h4b6d2af338e45d7bffe96b353e1410c",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "hideMenu",
             "display": "hideMenu",
             "inputparams": [],
-            "parentId": null,
             "callbackType": null,
             "disabled": null,
             "source": "controller"

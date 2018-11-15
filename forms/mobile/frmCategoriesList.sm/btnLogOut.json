@@ -2,9 +2,13 @@
     "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "35dp"
     },
     "_left_": {
         "type": "string",
@@ -22,12 +26,8 @@
         0,
         0
     ],
-    "_skin_": "s256e99a69b0488cbe9835db87ca2253",
-    "_text_": "Button",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "sc842f92a3e6488d92f2c92c84a72d1e",
+    "_text_": "Log Out",
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -35,19 +35,17 @@
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
-    },
     "displaytext": true,
-    "id": "btnHideMenu",
-    "ide_onClick": "AS_Button_b5a0c227f41c43d1957b4158ccfe233e",
+    "focusskin": "sb71986bb31942d9b64f4cdbfc00d7bf",
+    "id": "btnLogOut",
+    "ide_onTouchEnd": "AS_Button_a61942448b7045b4bfa7a9492ab4ea61",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e355b9914bd04df383677073ed00321a",
+    "kuid": "jee852614afb4b13bafff5b60356cc42",
     "name": "kony.ui.Button",
-    "parent": "flxHideMenu",
-    "pf": "frmSideMenu",
+    "parent": "flxMenuButtons",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "wType": "Button",

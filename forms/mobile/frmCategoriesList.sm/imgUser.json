@@ -23,7 +23,7 @@
     "_src_": "thinking.png",
     "_top_": {
         "type": "string",
-        "value": "37dp"
+        "value": "20dp"
     },
     "_width_": {
         "type": "string",
@@ -37,7 +37,7 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmSideMenu",
+        "formID": "frmCategoriesList",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
@@ -48,10 +48,10 @@
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "cc1c31c937ea490582db9abfe5a0cf7f",
+    "kuid": "fdfd4a7e371c40d09f70587ef03d3671",
     "name": "kony.ui.Image2",
     "parent": "flxUserInfo",
-    "pf": "frmSideMenu",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

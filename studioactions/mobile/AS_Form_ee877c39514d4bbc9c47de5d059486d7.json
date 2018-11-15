@@ -43,6 +43,16 @@
             "callbackType": null,
             "disabled": null,
             "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___bf0f1f4386c344c5a7697a955b41457f",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideMenu",
+            "display": "hideMenu",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
         }]
     }
 }
