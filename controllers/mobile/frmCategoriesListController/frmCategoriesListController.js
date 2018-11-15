@@ -110,6 +110,15 @@ define({
 
     setCategoryExpensesType: function() {
         navToForm('frmCategoryCreation', {categoryType: "Expenses"});
+    },
+    
+    goToCreationCuurentTransaction: function () {
+        navToForm("frmTransactionCreation", {categoryType: "Income"});
+    },
+    
+    
+    goToCreationExpensesTransaction: function () {
+        navToForm("frmTransactionCreation", {categoryType: "Expenses"});
     }
 
 

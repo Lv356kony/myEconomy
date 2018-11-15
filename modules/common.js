@@ -203,7 +203,7 @@ const serviceTransactions = {
         let categoryBalance = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].to === categoryId){
-                categoryBalance += DATA.transactions[i].amount;
+                categoryBalance += parseInt(DATA.transactions[i].amount);
             }
         }
         return categoryBalance;
@@ -233,7 +233,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += DATA.transactions[i].amount;
+                    countExpenses += parseInt(DATA.transactions[i].amount);
                 }
             }
         }
@@ -241,7 +241,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += DATA.transactions[i].amount;
+                    countIncome += parseInt(DATA.transactions[i].amount);
                 }
             }
         }

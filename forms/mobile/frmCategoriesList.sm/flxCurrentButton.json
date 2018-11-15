@@ -42,6 +42,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxCurrentButton",
+    "ide_onClick": "AS_FlexContainer_a511bde6387a45228fbce13f4ba27ba1",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

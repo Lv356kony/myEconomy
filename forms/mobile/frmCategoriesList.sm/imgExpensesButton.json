@@ -38,6 +38,7 @@
     "context": {
         "channel": "mobile",
         "formID": "frmCategoriesList",
+        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },

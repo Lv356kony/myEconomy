@@ -2,7 +2,7 @@ define({
 
     init: function() {
         this.addChart("Expenses");
-        this.view.lblCurrentBalanceValue.text = serviceTransactions.getBalanceByUserId(CURRENT_USER.id) + " UAH";
+        this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId(CURRENT_USER.id) + " UAH";
         this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " UAH";
         this.setSegmentLabels("Expenses");
     },

@@ -42,6 +42,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxExpensesButton",
+    "ide_onClick": "AS_FlexContainer_hdaeaa9151404938946ad71a89caacf7",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
