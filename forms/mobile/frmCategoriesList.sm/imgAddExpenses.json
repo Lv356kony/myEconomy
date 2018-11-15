@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "18dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "7dp"
     },
     "_margin_": [
         0,
@@ -24,35 +24,38 @@
         0
     ],
     "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
-    "_src_": "image.png",
+    "_src_": "piggy_bank.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "18dp"
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmCategoryCreation",
+        "formID": "frmCategoriesList",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgAddIcon",
+    "id": "imgAddExpenses",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "j5658aadd98248f0bf0924938ca6bced",
+    "kuid": "af5ae076a64842a2b86fec45097e128b",
     "name": "kony.ui.Image2",
-    "paddinginpixel": false,
-    "parent": "flxIconButton",
-    "pf": "frmCategoryCreation",
+    "parent": "flxAddExpenses",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

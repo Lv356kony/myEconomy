@@ -5,18 +5,32 @@ define({
     },
 
     navToCategories: function() {
-        navToForm('frmCategories');
+        navToForm('frmCategoriesList');
+    },
+    
+    preShowIcon: function() {
+        this.view.imgAddIcon.src = 'image.png';
     },
 
     onNavigate: function(context) {
-        let imgAddIcon = this.view.imgAddIcon;
-        imgAddIcon.src = context || 'image.png';
-        if(imgAddIcon.src !== 'image.png') {
-            imgAddIcon.height = '80dp';
-            imgAddIcon.width = '80dp';
-        } else {
-            imgAddIcon.height = '70%';
-            imgAddIcon.width = '70%';
+
+        if(context){
+            if(context.categoryType) {
+                this.view.lblCreateCategoryHeader.text =  "Create new " + context.categoryType.toLowerCase();
+                this.type = context.categoryType;
+                this.view.txbInputCategoryName.text = "";
+                this.view.imgAddIcon.src = 'image.png';
+            }
+            
+            if(context.chosenIconSrc) {
+                let imgAddIcon = this.view.imgAddIcon;
+                imgAddIcon.src = context.chosenIconSrc || 'image.png';
+                
+                if(imgAddIcon.src !== 'image.png') {
+                    imgAddIcon.height = '80dp';
+                    imgAddIcon.width = '80dp';
+                }
+            }    
         }
     },
 
@@ -24,24 +38,21 @@ define({
         let categoryName = this.view.txbInputCategoryName.text;
         let categoryIcon = this.view.imgAddIcon.src;
 
-        if(categoryName && categoryIcon !== 'image.png') {
+        if(categoryName) {
             let newCategory = {
                 id: Date.now(),
                 icon: categoryIcon,
                 name: categoryName,
+                type: this.type,
                 user_id: CURRENT_USER 
             };
+            
             serviceCategory.create(newCategory);
-
-            kony.ui.Alert({message: `${newCategory.id} ${newCategory.name} ${newCategory.icon}`}, {});
-
+			navToForm('frmCategoriesList');
+            
         } else {
-            kony.ui.Alert({message: 'Please fill out all fields!'}, {});
+            kony.ui.Alert({message: 'Please enter category name'}, {});
         }
-
-    },
-
-    clearInputs: function() {
-        this.view.txbInputCategoryName.text = "";
     }
+
 });

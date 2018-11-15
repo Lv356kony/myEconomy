@@ -1,22 +1,22 @@
 define({ 
     
     backToCategotyCreation: function() {
-        navToForm('frmCategoryCreation');
+        navToForm('frmCategoryCreation', {chosenIconSrc: null});
     },
     
     generatePreview: function() {
         
-        const iconsList = ['bank.png', 'cash.png', 'cinema.png', 'cocktail.png', 
-                     'creditcard.png', 'diamond.png', 'dollar.png', 'euro.png',
-                     'food.png', 'gamecontroller.png', 'gold.png', 'hollidays.png',
-                     'karaoke.png', 'money_graph.png', 'money_increase.png', 'online_shopping.png',
-                     'plane.png', 'purse.png', 'receipt.png', 'scooter.png',
-                     'theatre.png', 'luggage.png', 'savings.png', 'gift.png', 
-                     'gas.png', 'bill.png', 'car.png'];
+        const iconsList = ['bank.png', 'home.png', 'cash.png','currency.png', 
+                           'cocktail.png', 'visa_icon.png', 'mastercard.png', 'deposit.png',
+                           'creditcard.png', 'car.png', 'dollar.png', 'euro.png',
+                           'food.png', 'gamecontroller.png', 'gold.png', 'hollidays.png',
+                           'cinema.png', 'money_graph.png', 'money_increase.png', 'online_shopping.png',
+                           'plane.png', 'purse.png', 'scooter.png','theatre.png', 
+                           'luggage.png', 'savings.png', 'gift.png', 'bill.png'];
         
         function getIconSrc(eventobject) {
             let chosenIconSrc = eventobject.src;
-            navToForm('frmCategoryCreation', chosenIconSrc);
+            navToForm('frmCategoryCreation', {chosenIconSrc: chosenIconSrc});
         }
         
         let flexIconList = this.view.flxPopUpIcons.flxIconsList;

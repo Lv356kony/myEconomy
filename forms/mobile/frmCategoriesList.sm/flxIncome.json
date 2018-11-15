@@ -41,7 +41,8 @@
     "canUpdateUI": true,
     "children": [
         "lblIncome",
-        "lblIncomeCount"
+        "lblIncomeCount",
+        "flxAddIncome"
     ],
     "clipbounds": true,
     "containerweight": 100,

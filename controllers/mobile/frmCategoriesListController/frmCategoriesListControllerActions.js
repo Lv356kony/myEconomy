@@ -13,10 +13,20 @@ define({
         var self = this;
         return self.goToHistory.call(this, eventobject);
     },
+    /** onClick defined for flxAddCurrent **/
+    AS_FlexContainer_c0ab460c24d645b49f8ee95460a64e4f: function AS_FlexContainer_c0ab460c24d645b49f8ee95460a64e4f(eventobject) {
+        var self = this;
+        return self.setCategoryCurrentType.call(this);
+    },
     /** onRowClick defined for segmCurrent **/
     AS_Segment_cd1813046cc74b939f7c6de679ebf49a: function AS_Segment_cd1813046cc74b939f7c6de679ebf49a(eventobject, sectionNumber, rowNumber) {
         var self = this;
         return self.goToHistory.call(this, eventobject);
+    },
+    /** onClick defined for flxAddExpenses **/
+    AS_FlexContainer_e1f8bac1ba84451a855e2ea89fec8761: function AS_FlexContainer_e1f8bac1ba84451a855e2ea89fec8761(eventobject) {
+        var self = this;
+        return self.setCategoryExpensesType.call(this);
     },
     /** onRowClick defined for segmExpenses **/
     AS_Segment_f353746986dd4760aa4632d92f13dc00: function AS_Segment_f353746986dd4760aa4632d92f13dc00(eventobject, sectionNumber, rowNumber) {
@@ -56,5 +66,10 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
+    },
+    /** onClick defined for flxAddIncome **/
+    AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c: function AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c(eventobject) {
+        var self = this;
+        return self.setCategoryIncomeType.call(this);
     }
 });
