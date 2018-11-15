@@ -1,36 +1,31 @@
 {
     "AS_TextField_da66599987d84693a30f15a9d2344dc9": {
-        "actions": [
-            {
-                "callbackType": null,
-                "disabled": null,
-                "display": "hideErrorMasage",
-                "id": "INVOKE_FUNCTION___dd7a0e0423364238a89c032c8937c729",
-                "inputparams": [],
-                "parentId": null,
-                "sequenceKUID": "hideErrorMasage",
-                "source": "controller",
-                "type": "INVOKE_FUNCTION"
-            }
-        ],
+        "id": "AS_TextField_da66599987d84693a30f15a9d2344dc9",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
         "contextObj": {
             "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e",
             "name": "frmTransactionCreation",
             "platform": "",
             "type": "forms"
         },
-        "id": "AS_TextField_da66599987d84693a30f15a9d2344dc9",
         "language": "js",
-        "params": [
-            {
-                "datatype": "collection",
-                "name": "eventobject"
-            },
-            {
-                "datatype": "string",
-                "name": "changedtext"
-            }
-        ],
-        "type": "ACTION_SEQUENCE"
+        "actions": [{
+            "id": "INVOKE_FUNCTION___dd7a0e0423364238a89c032c8937c729",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideErrorMasage",
+            "display": "hideErrorMasage",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
     }
 }

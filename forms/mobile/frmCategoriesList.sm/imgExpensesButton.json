@@ -1,13 +1,15 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_base64_": null,
     "_height_": {
         "type": "string",
         "value": "100%"
     },
     "_left_": {
         "type": "string",
-        "value": "-100%"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -15,15 +17,14 @@
         0,
         0
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
+    "_src_": "wallet.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -32,30 +33,28 @@
         "type": "string",
         "value": "100%"
     },
-    "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "flxSideMenu",
-        "flxHideMenu"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "flxSideMenuContainer",
+    "context": {
+        "channel": "mobile",
+        "formID": "frmCategoriesList",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgExpensesButton",
+    "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f64af2ed7eb947959025665ddb0440a2",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "flxScrollMainContainer",
+    "kuid": "d49b6e663cd847acb7fa9ab8a245c6c6",
+    "name": "kony.ui.Image2",
+    "parent": "flxExpensesButton",
     "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 5
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
+    "zindex": 1
 }

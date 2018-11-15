@@ -8,6 +8,11 @@ define({
         self.showUserInfo.call(this);
         self.showMenu.call(this);
     },
+    /** onClick defined for flxAddIncome **/
+    AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c: function AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c(eventobject) {
+        var self = this;
+        return self.setCategoryIncomeType.call(this);
+    },
     /** onRowClick defined for segmIncome **/
     AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb: function AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb(eventobject, sectionNumber, rowNumber) {
         var self = this;
@@ -66,10 +71,5 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
-    },
-    /** onClick defined for flxAddIncome **/
-    AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c: function AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c(eventobject) {
-        var self = this;
-        return self.setCategoryIncomeType.call(this);
     }
 });

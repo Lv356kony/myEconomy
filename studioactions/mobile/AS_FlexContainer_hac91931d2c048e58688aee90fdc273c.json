@@ -1,32 +1,28 @@
 {
     "AS_FlexContainer_hac91931d2c048e58688aee90fdc273c": {
-        "actions": [
-            {
-                "callbackType": null,
-                "disabled": null,
-                "display": "clickBackwardButton",
-                "id": "INVOKE_FUNCTION___gba6b0ee77da439a9b3eb2f3bd487ed8",
-                "inputparams": [],
-                "parentId": null,
-                "sequenceKUID": "clickBackwardButton",
-                "source": "controller",
-                "type": "INVOKE_FUNCTION"
-            }
-        ],
+        "id": "AS_FlexContainer_hac91931d2c048e58688aee90fdc273c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
         "contextObj": {
             "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e",
             "name": "frmTransactionCreation",
             "platform": "",
             "type": "forms"
         },
-        "id": "AS_FlexContainer_hac91931d2c048e58688aee90fdc273c",
         "language": "js",
-        "params": [
-            {
-                "datatype": "collection",
-                "name": "eventobject"
-            }
-        ],
-        "type": "ACTION_SEQUENCE"
+        "actions": [{
+            "id": "INVOKE_FUNCTION___gba6b0ee77da439a9b3eb2f3bd487ed8",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "clickBackwardButton",
+            "display": "clickBackwardButton",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
     }
 }

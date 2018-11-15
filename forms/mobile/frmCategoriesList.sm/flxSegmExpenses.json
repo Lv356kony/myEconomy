@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
+    "_bottom_": {
         "type": "string",
-        "value": "153dp"
+        "value": "0dp"
     },
     "_left_": {
         "type": "string",
@@ -55,7 +55,7 @@
     "kuid": "h594259c3ee849058c043f433d0aa900",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmCategoriesList",
+    "parent": "flxScrollMainContainer",
     "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

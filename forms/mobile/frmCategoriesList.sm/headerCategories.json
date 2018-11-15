@@ -60,7 +60,7 @@
     "layouttype": 2,
     "masterType": 1,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmCategoriesList",
+    "parent": "flxScrollMainContainer",
     "pf": "frmCategoriesList",
     "snapgridsize": 10,
     "snaptogrid": true,
