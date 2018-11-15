@@ -1,0 +1,64 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextBox2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        3,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Amount",
+    "_right_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_skin_": "s82f8b20388049818c901c6e504f84c9",
+    "_text_": "",
+    "_width_": {
+        "type": "string",
+        "value": "200dp"
+    },
+    "android": {},
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentalignment": 4,
+    "focusskin": "sab74807df994273ab3b0a9dc946fbbc",
+    "id": "txbTransactionAmount",
+    "ide_onTextChange": "AS_TextField_da66599987d84693a30f15a9d2344dc9",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "keyboardstyle": "A",
+    "keyboardtype": "A",
+    "kuid": "c75c1c19203b4247a3b2f05c9000a3e4",
+    "mode": "N",
+    "name": "kony.ui.TextBox2",
+    "parent": "flxContainerExpence",
+    "pf": "frmTransactionCreation",
+    "placeholderskin": "s5a92d8d43b646b98fb3e08facdb118f",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "securetextentry": false,
+    "textinputmode": "N",
+    "tooltip": "",
+    "viewtype": "default",
+    "wType": "TextField",
+    "zindex": 1
+}

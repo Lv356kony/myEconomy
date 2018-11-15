@@ -2,6 +2,10 @@
     "@class": "com.kony.gen.viz.model.container.KVizSegment2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_data_": [
         {
             "icnCategories": {
@@ -104,10 +108,6 @@
             }
         }
     ],
-    "_height_": {
-        "type": "string",
-        "value": "153dp"
-    },
     "_indicator_": "none",
     "_left_": {
         "type": "string",

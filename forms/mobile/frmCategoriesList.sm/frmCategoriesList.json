@@ -30,14 +30,9 @@
     },
     "canUpdateUI": true,
     "children": [
-        "headerCategories",
-        "flxIncome",
-        "flxSegmIncome",
-        "flxCurrent",
-        "flxSegmCurrent",
-        "flxExpenses",
-        "flxSegmExpenses",
-        "flxSideMenuContainer"
+        "flxScrollMainContainer",
+        "flxExpensesButton",
+        "flxCurrentButton"
     ],
     "containerweight": 100,
     "controllerInfo": {

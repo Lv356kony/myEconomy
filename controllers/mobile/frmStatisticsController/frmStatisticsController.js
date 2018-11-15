@@ -2,8 +2,8 @@ define({
 
     init: function() {
         this.addChart("Expenses");
-        this.view.lblCurrentBalanceValue.text = serviceTransactions.getBalanceByUserId(CURRENT_USER.id) + " UAH";
-        this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " UAH";
+        this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId(CURRENT_USER.id) + " $";
+        this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " $";
         this.setSegmentLabels("Expenses");
     },
 
@@ -30,6 +30,7 @@ define({
 
     backwardClick: function() {
 		navToForm("frmCategoriesList");
+        this.view.flxChartContainer.removeAll();
     },
 
 
@@ -48,10 +49,10 @@ define({
     changeTabSumInfo: function(selectedItem) {
         if (selectedItem === this.view.flxTabHeaderIncome) {
             this.view.lblTabSumInfo.text = "Income";
-            this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Current") + " UAH";
+            this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Current") + " $";
         } else {
             this.view.lblTabSumInfo.text = "Outcome";
-            this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " UAH";
+            this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " $";
         }
     },
 
@@ -100,7 +101,7 @@ define({
         let segmentData = this.getListNamesAndBalanceByCategory(categoryType).map(i => {
             return {
                 name: i.name,
-                balance: i.balance + " UAH"
+                balance: i.balance + " $"
             };
         });
 

@@ -1,0 +1,28 @@
+{
+    "AS_Form_b3c27e22f90343f3ae48febf44f9a91b": {
+        "id": "AS_Form_b3c27e22f90343f3ae48febf44f9a91b",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e",
+            "name": "frmTransactionCreation",
+            "platform": "",
+            "type": "forms"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___aa75ba9ceb924f13a3ac267b4fa4af15",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "init",
+            "display": "init",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
