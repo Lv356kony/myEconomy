@@ -1,0 +1,32 @@
+{
+    "AS_Button_e6fff834335e46e79a67fbcbe4f02abc": {
+        "actions": [
+            {
+                "callbackType": null,
+                "disabled": null,
+                "display": "clickSaveButton",
+                "id": "INVOKE_FUNCTION___g47fddf2ec314a62a9f3e713a2bfaa00",
+                "inputparams": [],
+                "parentId": null,
+                "sequenceKUID": "clickSaveButton",
+                "source": "controller",
+                "type": "INVOKE_FUNCTION"
+            }
+        ],
+        "contextObj": {
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e",
+            "name": "frmTransactionCreation",
+            "platform": "",
+            "type": "forms"
+        },
+        "id": "AS_Button_e6fff834335e46e79a67fbcbe4f02abc",
+        "language": "js",
+        "params": [
+            {
+                "datatype": "collection",
+                "name": "eventobject"
+            }
+        ],
+        "type": "ACTION_SEQUENCE"
+    }
+}
