@@ -7,11 +7,7 @@
     },
     "_height_": {
         "type": "string",
-        "value": "2dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
+        "value": "1dp"
     },
     "_margin_": [
         0,
@@ -27,26 +23,33 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "se247aacb5c1460f990f65f1f23a5568",
+    "_skin_": "s02168595fbb4c7caf595d6cb046f2cf",
     "_width_": {
         "type": "string",
-        "value": "20dp"
+        "value": "75%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "CopyFlexContainer0c1413b4b970f4a",
+    "id": "flxUserUnderline",
     "info": null,
+    "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c455e44468a947b086910d8f87045261",
+    "kuid": "afa554a8b5544da4bdf4d3278b720cb1",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "hamburgerIconContainer",
+    "parent": "flxUserInfo",
     "pf": "frmCategoriesList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",

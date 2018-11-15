@@ -23,8 +23,8 @@
         0,
         0
     ],
-    "_skin_": "sd0c73949f6c4f74a61a549886487c89",
-    "_src_": "menuhamb_1_1.png",
+    "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
+    "_src_": "menuhamb.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -45,20 +45,21 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmSideMenu",
+        "formID": "frmCategoriesList",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgSideMenu",
+    "id": "imgHamburger",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c3e3e9286ccf4aadaf92d801643222de",
+    "kuid": "cffd72b65c29458b953abce87652fbf5",
     "name": "kony.ui.Image2",
-    "parent": "flxBackButton",
-    "pf": "frmSideMenu",
+    "parent": "hamburgerIconContainer",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

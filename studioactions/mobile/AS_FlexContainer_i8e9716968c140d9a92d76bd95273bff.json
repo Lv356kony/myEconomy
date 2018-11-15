@@ -1,16 +1,16 @@
 {
-    "AS_Image_e7fce7adae24495fb97f56cdba848e5d": {
-        "id": "AS_Image_e7fce7adae24495fb97f56cdba848e5d",
+    "AS_FlexContainer_i8e9716968c140d9a92d76bd95273bff": {
+        "id": "AS_FlexContainer_i8e9716968c140d9a92d76bd95273bff",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }, {
             "datatype": "string",
-            "name": "imagesrc"
+            "name": "x"
         }, {
-            "datatype": "boolean",
-            "name": "issuccess"
+            "datatype": "string",
+            "name": "y"
         }],
         "language": "js",
         "actions": []

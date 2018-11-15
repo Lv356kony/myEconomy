@@ -36,7 +36,8 @@
         "flxCurrent",
         "flxSegmCurrent",
         "flxExpenses",
-        "flxSegmExpenses"
+        "flxSegmExpenses",
+        "flxSideMenuContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -49,7 +50,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhoneX",
+    "device": "GalaxyS8Plus",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmCategoriesList",
@@ -104,13 +105,13 @@
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "iphone",
-    "prevDevice": "iPhoneX",
+    "platform": "android",
+    "prevDevice": "Pixel",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhoneX",
+    "shellCSS": "and_GalaxyS8Plus",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {

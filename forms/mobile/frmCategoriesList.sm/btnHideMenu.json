@@ -1,4 +1,5 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
@@ -10,51 +11,45 @@
         "value": "0dp"
     },
     "_margin_": [
-        0,
-        0,
-        0,
-        0
+        6,
+        6,
+        6,
+        6
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "s256e99a69b0488cbe9835db87ca2253",
+    "_text_": "",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "60dp"
+        "value": "100%"
     },
-    "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "imgStatistics"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "flxStatisticsImage",
+    "contentalignment": 5,
+    "disabledSkins": {
+        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
+    },
+    "displaytext": true,
+    "id": "btnHideMenu",
+    "ide_onClick": "AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "c192813e3d6e4fb1aa91ea34fa4e9a98",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "flxStatisticsSection",
-    "pf": "frmSideMenu",
+    "kuid": "b62750e1edd74f75829c36aa1a2deebb",
+    "name": "kony.ui.Button",
+    "parent": "flxHideMenu",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
+    "wType": "Button",
     "zindex": 1
 }

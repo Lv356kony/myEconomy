@@ -27,12 +27,6 @@
             "inputparams": [{
                 "name": "seguiWidget",
                 "value": " eventobject"
-            }, {
-                "name": "sectionIndex",
-                "value": " sectionNumber"
-            }, {
-                "name": "rowIndex",
-                "value": " rowNumber"
             }],
             "parentId": null,
             "callbackType": null,

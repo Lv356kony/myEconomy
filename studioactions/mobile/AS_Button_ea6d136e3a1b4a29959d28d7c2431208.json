@@ -1,6 +1,6 @@
 {
-    "AS_Button_b5ae778be6fd405992be05edc2d23bde": {
-        "id": "AS_Button_b5ae778be6fd405992be05edc2d23bde",
+    "AS_Button_ea6d136e3a1b4a29959d28d7c2431208": {
+        "id": "AS_Button_ea6d136e3a1b4a29959d28d7c2431208",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -13,14 +13,24 @@
             "name": "y"
         }],
         "contextObj": {
-            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c",
-            "name": "frmSideMenu",
+            "name": "frmCategoriesList",
+            "type": "forms",
             "platform": "",
-            "type": "forms"
+            "KUID": "c7ffa35dd61e41be8d87029af9cf5943"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___a7dfd14c72a3449aa97ad3104cc8141f",
+            "id": "INVOKE_FUNCTION___b2203ad848144f39b695806e715f6b80",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showUserInfo",
+            "display": "showUserInfo",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___e7be77166087455bab63d15404d7d756",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "showMenu",
             "display": "showMenu",
