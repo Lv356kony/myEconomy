@@ -35,7 +35,6 @@ define({
             navToForm("frmCategoriesList");
             this.view.txbTransactionAmount.text = "";
             this.view.txbTransactionComentarry.text = "";
-            alert(DATA.transactions);
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
