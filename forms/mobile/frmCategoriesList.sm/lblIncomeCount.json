@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "150dp"
-    },
     "_margin_": [
         1,
         1,
@@ -25,13 +21,9 @@
     "_render_": true,
     "_skin_": "s21ae67403c24d9c86fff4081c3acb30",
     "_text_": "0.00",
-    "_top_": {
-        "type": "string",
-        "value": "7dp"
-    },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
@@ -44,14 +36,14 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "50.00%"
     },
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "49.74%"
     },
     "containerweight": 100,
-    "contentalignment": 4,
+    "contentalignment": 5,
     "id": "lblIncomeCount",
     "info": null,
     "ipad": {

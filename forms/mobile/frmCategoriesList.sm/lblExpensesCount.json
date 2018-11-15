@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "144dp"
-    },
     "_margin_": [
         1,
         1,
@@ -24,13 +20,9 @@
     ],
     "_skin_": "s0eb9ee169224d0ba1bceb8d650b4374",
     "_text_": "0.00",
-    "_top_": {
-        "type": "string",
-        "value": "10dp"
-    },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
@@ -49,7 +41,7 @@
         "value": "49.71%"
     },
     "containerweight": 100,
-    "contentalignment": 4,
+    "contentalignment": 5,
     "id": "lblExpensesCount",
     "info": null,
     "ipad": {
