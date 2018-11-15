@@ -1,0 +1,55 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s256e99a69b0488cbe9835db87ca2253",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "disabledSkins": {
+        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
+    },
+    "displaytext": true,
+    "id": "btnHideMenu",
+    "ide_onClick": "AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "b62750e1edd74f75829c36aa1a2deebb",
+    "name": "kony.ui.Button",
+    "parent": "flxHideMenu",
+    "pf": "frmCategoriesList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

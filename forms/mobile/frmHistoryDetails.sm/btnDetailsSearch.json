@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s8a317c2d4ff4f4abdd272eb6a493b2c",
+    "_skin_": "sc890298b61846d586ed241221869130",
     "_text_": "Search",
     "_width_": {
         "type": "string",
@@ -31,12 +31,12 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50.51%"
+        "value": "50%"
     },
     "containerweight": 100,
     "contentalignment": 5,
     "displaytext": true,
-    "focusskin": "scb1be65bb264a1ba4eb66ee098657b4",
+    "focusskin": "s392e8c6335840709df3d4923942d5ac",
     "id": "btnDetailsSearch",
     "ide_onClick": "AS_Button_ea82bc2cf707429ca6f63ebb6c1979fc",
     "info": null,

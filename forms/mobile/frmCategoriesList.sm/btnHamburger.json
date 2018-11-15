@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sdc10e1391a1478399e387cf53faf387",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "s1901fcac8f447b39705b120badbd2e6",
+    "id": "btnHamburger",
+    "ide_onTouchEnd": "AS_Button_ea6d136e3a1b4a29959d28d7c2431208",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "f2887b4a1d34411b979ab2e14e4a9fa9",
+    "name": "kony.ui.Button",
+    "parent": "hamburgerIconContainer",
+    "pf": "frmCategoriesList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

@@ -45,7 +45,6 @@
     "canUpdateUI": true,
     "children": [
         "hamburgerIconContainer",
-        "headerButtonLeft",
         "lblCategories"
     ],
     "clipbounds": true,

@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "sac83041093e4f52a562b2f39d33fc4d",
+    "_skin_": "s544b94b1296400b989b0232bc7fce26",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -31,6 +31,11 @@
     "_width_": {
         "type": "string",
         "value": "100%"
+    },
+    "android": {
+        "psp": {
+            "pressedSkin": "s5144a05784644d0abe64b82f85ac9d6"
+        }
     },
     "canUpdateUI": true,
     "containerweight": 100,

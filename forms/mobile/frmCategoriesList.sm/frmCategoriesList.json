@@ -36,7 +36,8 @@
         "flxCurrent",
         "flxSegmCurrent",
         "flxExpenses",
-        "flxSegmExpenses"
+        "flxSegmExpenses",
+        "flxSideMenuContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -49,7 +50,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "Pixel",
+    "device": "GalaxyS8Plus",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmCategoriesList",
@@ -110,7 +111,7 @@
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "and_Pixel",
+    "shellCSS": "and_GalaxyS8Plus",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {

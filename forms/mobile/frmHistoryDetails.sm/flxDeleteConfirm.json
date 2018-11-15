@@ -1,13 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
-        "type": "string",
-        "value": "100dp"
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
     },
     "_left_": {
         "type": "string",
-        "value": "82dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -23,31 +23,26 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sdca717403dd445fa0842f9a1edfb98a",
+    "_right_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_skin_": "sdaba54ceb314366be3683fdb107977b",
     "_top_": {
         "type": "string",
-        "value": "458dp"
-    },
-    "_width_": {
-        "type": "string",
-        "value": "250dp"
+        "value": "0dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "children": [
-        "btnDeleteYes",
-        "btnDeleteNo",
-        "lblDeleteQuestion"
+        "flxDeleteButtons"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxDeleteConfirm",
+    "ide_onTouchEnd": "AS_FlexContainer_c96363e9db8c45128d25a0ea475d8c27",
     "info": null,
     "iscustomlayout": false,
     "isvisible": false,

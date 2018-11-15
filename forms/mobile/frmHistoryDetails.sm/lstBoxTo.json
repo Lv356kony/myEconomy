@@ -19,7 +19,7 @@
         0
     ],
     "_placeholder_": "Choose Category",
-    "_skin_": "sb063ff75f1a4ac58979ab8fc598ba0a",
+    "_skin_": "s0e45f2e8af44d959c6ab40a874cedf5",
     "_width_": {
         "type": "string",
         "value": "160dp"
@@ -39,7 +39,7 @@
     "containerweight": 100,
     "contentalignment": 4,
     "disabledSkins": {
-        "placeholderSkin": "s921abab625540b491e2dc967edf246f"
+        "placeholderSkin": "s4da6b9be041438f98124a0ecb163d63"
     },
     "dropdownimage": "down_arrow.png",
     "focusskin": "se0d937cce43487299f54f6864210271",

@@ -1,0 +1,21 @@
+{
+    "AS_FlexContainer_bd40d2cdc57d4dd19fd83fb99d192c46": {
+        "id": "AS_FlexContainer_bd40d2cdc57d4dd19fd83fb99d192c46",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_fb35ce14cb9c44d38b1b38bba720fb7d",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "chooseIcon",
+            "display": "chooseIcon",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

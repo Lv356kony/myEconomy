@@ -14,10 +14,10 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___d51099e038534b838c9042ab67faef40",
+            "id": "INVOKE_FUNCTION___a0854f80e29d4baeb27b46802d804400",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showPopUp",
-            "display": "showPopUp",
+            "sequenceKUID": "navToIcons",
+            "display": "navToIcons",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "20dp"
+        "value": "56dp"
     },
     "_left_": {
         "type": "string",
-        "value": "14dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -30,19 +30,18 @@
     },
     "_width_": {
         "type": "string",
-        "value": "21dp"
+        "value": "56dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50.00%"
+        "value": "50%"
     },
     "children": [
-        "FlexContainer0f97e6e10d5ff40",
-        "aspdkaspdokaspdokaspdoakd",
-        "CopyFlexContainer0c1413b4b970f4a"
+        "btnHamburger",
+        "imgHamburger"
     ],
     "clipbounds": true,
     "containerweight": 100,
