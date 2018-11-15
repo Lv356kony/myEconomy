@@ -97,7 +97,7 @@ define({
     setDefaultDate: function () {
         let curDate = new Date(Date.now());
         let day = curDate.getDate();
-        let month = curDate.getMonth();
+        let month = curDate.getMonth() + 1;
         let year = curDate.getFullYear();
         this.view.calTransactionDate.dateComponents = [day, month, year];
     },

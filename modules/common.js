@@ -323,12 +323,12 @@ const serviceTransactions = {
     create: function(id, amount, from, to, userId, date, comment){
         let transaction = {};
         transaction.id = id;
-        transaction.amount = amount;
+        transaction.amount = parseInt(amount);
         transaction.from = from;
         transaction.to = to;
         transaction.userId = userId;
         transaction.date = new Date(date);
-        transaction.comment = comment;
+        transaction.commentary = comment;
 
         DATA.transactions.push(transaction);
     },
@@ -336,7 +336,7 @@ const serviceTransactions = {
     update: function(transactionId, amount, from, to, date, comment){
         let transaction = this.getById(transactionId);
 
-        transaction.amount = amount || transaction.amount;
+        transaction.amount = parseInt(amount) || transaction.amount;
         transaction.from = from || transaction.from;
         transaction.to = to || transaction.to;
         transaction.date = new Date(date) || transaction.date;
