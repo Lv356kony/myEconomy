@@ -16,8 +16,8 @@ define({
     AS_FlexContainer_db38504b27454600bb6b4ecd6c6999c6: function AS_FlexContainer_db38504b27454600bb6b4ecd6c6999c6(eventobject, x, y) {
         var self = this;
     },
-    /** init defined for frmHistory **/
-    AS_Form_j8a6735225744b8b8b6cdeda0506422c: function AS_Form_j8a6735225744b8b8b6cdeda0506422c(eventobject) {
+    /** preShow defined for frmHistory **/
+    AS_Form_b1b2a209c3ad4e07ba554a971bc82828: function AS_Form_b1b2a209c3ad4e07ba554a971bc82828(eventobject) {
         var self = this;
         self.showCategory.call(this);
         self.showExpenses.call(this);

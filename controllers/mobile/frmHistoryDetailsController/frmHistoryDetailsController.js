@@ -1,10 +1,11 @@
 define({   
     goToHistory: function(){
-        navToForm("frmHistory");
+        navToForm("frmHistory", {categoryId: this.categoryId});
     },
 
     refresh: function(){
-        navToForm("frmHistoryDetails");
+        navToForm("frmHistoryDetails", {categoryId: this.categoryId,
+                          				date: this.date});
     },
 
     onNavigate: function(context) 
@@ -142,12 +143,12 @@ define({
     deleteTransaction: function(){
         let id = this.view.lblTransactionId.text;
         serviceTransactions.deleteById(id);
-        let data = this.__showDetails(this.categoryId, this.date);
+         let data = this.__showDetails(this.categoryId, this.date);
         if(data.length === 0){
             this.goToHistory();
         }else{
             this.refresh();
-        }
+        }     
     },
 
     loadCategories: function(typeOfTransaction, listBoxId){
