@@ -31,12 +31,13 @@
     "canUpdateUI": true,
     "children": [
         "headerCategories",
-        "flxIncone",
+        "flxIncome",
         "flxSegmIncome",
         "flxCurrent",
         "flxSegmCurrent",
         "flxExpenses",
-        "flxSegmExpenses"
+        "flxSegmExpenses",
+        "flxSideMenuContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {

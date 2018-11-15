@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "18dp"
+        "value": "56dp"
     },
     "_left_": {
         "type": "string",
-        "value": "11dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -30,7 +30,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "20dp"
+        "value": "56dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -40,9 +40,8 @@
         "value": "50%"
     },
     "children": [
-        "FlexContainer0f97e6e10d5ff40",
-        "aspdkaspdokaspdokaspdoakd",
-        "CopyFlexContainer0c1413b4b970f4a"
+        "btnHamburger",
+        "imgHamburger"
     ],
     "clipbounds": true,
     "containerweight": 100,

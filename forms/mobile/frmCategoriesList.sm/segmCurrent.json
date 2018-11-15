@@ -106,7 +106,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "176dp"
+        "value": "150dp"
     },
     "_indicator_": "none",
     "_left_": {
@@ -147,6 +147,7 @@
     "groupcells": false,
     "hasSections": false,
     "id": "segmCurrent",
+    "ide_onRowClick": "AS_Segment_cd1813046cc74b939f7c6de679ebf49a",
     "info": null,
     "ipad": {
         "psp": {

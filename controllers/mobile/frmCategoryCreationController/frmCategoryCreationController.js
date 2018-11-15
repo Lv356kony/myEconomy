@@ -16,6 +16,7 @@ define({
 
         if(context){
             if(context.categoryType) {
+                this.view.lblCreateCategoryHeader.text =  "Create new " + context.categoryType.toLowerCase();
                 this.type = context.categoryType;
                 this.view.txbInputCategoryName.text = "";
                 this.view.imgAddIcon.src = 'image.png';

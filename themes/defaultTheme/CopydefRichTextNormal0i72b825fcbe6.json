@@ -1,4 +1,7 @@
 {
+  "android": {
+    "font_name": "default"
+  },
   "androidwearos": {
     "font_name": "default",
     "font_size": 130,

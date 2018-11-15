@@ -25,10 +25,6 @@
     ],
     "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
     "_src_": "piggy_bank.png",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_width_": {
         "type": "string",
         "value": "18dp"

@@ -37,7 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "lblDate",
-        "Calendar0a2c18469cfab42"
+        "calEdit"
     ],
     "clipbounds": true,
     "containerweight": 100,

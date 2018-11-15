@@ -106,7 +106,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "170dp"
+        "value": "153dp"
     },
     "_indicator_": "none",
     "_left_": {
@@ -147,6 +147,7 @@
     "groupcells": false,
     "hasSections": false,
     "id": "segmExpenses",
+    "ide_onRowClick": "AS_Segment_f353746986dd4760aa4632d92f13dc00",
     "info": null,
     "ipad": {
         "psp": {

@@ -106,7 +106,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "176dp"
+        "value": "150dp"
     },
     "_indicator_": "none",
     "_left_": {
@@ -147,6 +147,7 @@
     "groupcells": false,
     "hasSections": false,
     "id": "segmIncome",
+    "ide_onRowClick": "AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb",
     "info": null,
     "ipad": {
         "psp": {
