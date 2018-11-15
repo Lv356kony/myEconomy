@@ -5,8 +5,7 @@ define({
 
     onNavigate: function(category) 
     {
-        this.categoryId = 1;
-        //this.categoryId = category.id;
+        this.categoryId = category.categoryId;
     },
 
     showCategory: function(){
@@ -25,6 +24,8 @@ define({
             let day = getDay[expByCat[i].date.getDay()];
             let numDay = expByCat[i].date.getDate().toString();
             let date = getMonth[expByCat[i].date.getMonth()] + ' ' + expByCat[i].date.getFullYear();
+            let imgSum = 'sum.png';
+            let imgDol = 'dollar_symbol.png';
 
             let outerDateKey = expByCat[i].date.getDate() + ' ' + expByCat[i].date.getMonth(); 
 
@@ -40,7 +41,7 @@ define({
                     amounts.push(filtExpByDay[j].amount);
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr);
-                dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString()});
+                dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
             }
         }
 
@@ -49,7 +50,9 @@ define({
             numDay: 'numDay',
             txtDay: 'day',
             txtDate: 'date',
-            txtResult: 'sum'
+            txtResult: 'sum',
+            imgSummary: 'imgSum',
+            imgDollar: 'imgDol'
         };
         segHistoryExpense.setData(dates);
     },
