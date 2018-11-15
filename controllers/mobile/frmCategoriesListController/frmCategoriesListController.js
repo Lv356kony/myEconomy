@@ -7,7 +7,7 @@ define({
                 categories.push({
                     name: DATA.categories[i].name,
                     icon: DATA.categories[i].icon,
-                    id:  DATA.categories[i].id 
+                    id:  DATA.categories[i].id
                 });
             }
         }
@@ -26,7 +26,7 @@ define({
                 categories.push({
                     name: DATA.categories[i].name,
                     icon: DATA.categories[i].icon,
-                    id:  DATA.categories[i].id 
+                    id:  DATA.categories[i].id
                 });
             }
         }
@@ -45,7 +45,7 @@ define({
                 categories.push({
                     name: DATA.categories[i].name,
                     icon: DATA.categories[i].icon,
-                    id:  DATA.categories[i].id 
+                    id:  DATA.categories[i].id
 
                 });
             }
@@ -60,7 +60,7 @@ define({
 
 
 
-    goToHistory: function(seguiWidget){ 
+    goToHistory: function(seguiWidget){
 
         let currentCategory = this.view[seguiWidget.id].selectedRowItems;
         navToForm("frmHistory", {categoryId : currentCategory[0].id} );
@@ -77,14 +77,27 @@ define({
     hideMenu: function(){
         this.view.flxSideMenuContainer.left = '-100%';
     },
-    showUserInfo: function(){  
+    showUserInfo: function(){
         let userInfo = userService.getById(CURRENT_USER.id);
         this.view.txtUserEmail.text = userInfo.email;
     },
     logOut: function(){
         CURRENT_USER.id = undefined;
         navToForm("frmLogin");
-    }
+    },
+    calculateIncomeBalance: function(){
+        let incomeLabel = this.view.lblIncomeCount;
+        incomeLabel.text = serviceTransactions.getIncomeBalanceByUserId();
+    },
 
+    calculateCurrentBalance: function(){
+        let incomeLabel = this.view.lblCurrentCount;
+        incomeLabel.text = serviceTransactions.getCurrentBalanceByUserId();
+    },
+
+    calculateExpensesBalance: function(){
+        let incomeLabel = this.view.lblExpensesCount;
+        incomeLabel.text = serviceTransactions.getExpensesBalanceByUserId();
+    },
 
 });

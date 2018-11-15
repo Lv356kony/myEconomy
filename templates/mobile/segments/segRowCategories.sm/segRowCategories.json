@@ -30,7 +30,7 @@
     "containerId": true,
     "containerweight": 100,
     "currentLocale": "default",
-    "device": "iPhoneX",
+    "device": "GalaxyS8",
     "displayorientation": 3,
     "enabledforidletimeout": false,
     "id": "segRowCategories",
@@ -52,13 +52,13 @@
         "formTransition": "None"
     },
     "paddinginpixel": false,
-    "platform": "iphone",
+    "platform": "android",
     "prevDevice": "iPhoneX",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhoneX",
+    "shellCSS": "and_GalaxyS8",
     "spaan": {
         "render": true
     },

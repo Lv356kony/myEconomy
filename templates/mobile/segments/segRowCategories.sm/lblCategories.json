@@ -3,12 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "50%"
     },
     "_left_": {
         "type": "string",
-        "value": "160dp"
+        "value": "50%"
     },
     "_margin_": [
         1,
@@ -27,11 +27,11 @@
     "_text_": "Label",
     "_top_": {
         "type": "string",
-        "value": "46.78%"
+        "value": "35%"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "61.33%"
     },
     "_wrapping_": 2,
     "android": {
@@ -42,13 +42,17 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "60%"
+    },
     "centery": {
         "type": "string",
-        "value": "60.42%"
+        "value": "49.76%"
     },
     "containerId": true,
     "containerweight": 100,
-    "contentalignment": 4,
+    "contentalignment": 5,
     "id": "lblCategories",
     "info": null,
     "ipad": {

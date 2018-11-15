@@ -31,7 +31,7 @@
     "canUpdateUI": true,
     "children": [
         "headerCategories",
-        "flxIncone",
+        "flxIncome",
         "flxSegmIncome",
         "flxCurrent",
         "flxSegmCurrent",
@@ -106,7 +106,7 @@
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "android",
-    "prevDevice": "Pixel",
+    "prevDevice": "GalaxyS8",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

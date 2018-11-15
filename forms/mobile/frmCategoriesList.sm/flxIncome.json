@@ -27,7 +27,7 @@
     "_skin_": "sceacf79e68641969d454a3ed777700f",
     "_top_": {
         "type": "string",
-        "value": "50dp"
+        "value": "56dp"
     },
     "_width_": {
         "type": "string",
@@ -46,7 +46,7 @@
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxIncone",
+    "id": "flxIncome",
     "info": null,
     "iphone": {
         "render": true
