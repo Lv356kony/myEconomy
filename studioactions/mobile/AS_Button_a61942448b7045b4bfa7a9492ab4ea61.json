@@ -1,23 +1,29 @@
 {
-    "AS_Button_ib481acbf19747fb8b8b749128c2c489": {
-        "id": "AS_Button_ib481acbf19747fb8b8b749128c2c489",
+    "AS_Button_a61942448b7045b4bfa7a9492ab4ea61": {
+        "id": "AS_Button_a61942448b7045b4bfa7a9492ab4ea61",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
         }],
         "contextObj": {
+            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c",
             "name": "frmSideMenu",
-            "type": "forms",
             "platform": "",
-            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c"
+            "type": "forms"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___f2e59bf016954c88a71aad51416c7dab",
+            "id": "INVOKE_FUNCTION___hc391d92ec8c4ca7b50ea87b0933864c",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "goToHistory",
-            "display": "goToHistory",
+            "sequenceKUID": "logOut",
+            "display": "logOut",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

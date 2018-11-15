@@ -41,7 +41,7 @@
     "disabledSkins": {
         "placeholderSkin": "s4da6b9be041438f98124a0ecb163d63"
     },
-    "dropdownimage": "down_arrow_1.png",
+    "dropdownimage": "down_arrow.png",
     "focusskin": "se0d937cce43487299f54f6864210271",
     "groupcells": false,
     "id": "lstBoxTo",

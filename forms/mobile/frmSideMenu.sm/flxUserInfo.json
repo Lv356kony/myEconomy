@@ -27,7 +27,7 @@
         "type": "string",
         "value": "0dp"
     },
-    "_skin_": "s5f4ded74077414098def757d3d9186f",
+    "_skin_": "s816ec77259a4f43ac24314792319694",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -38,7 +38,7 @@
     "children": [
         "flxUserUnderline",
         "imgUser",
-        "txtNameUser"
+        "txtUserEmail"
     ],
     "clipbounds": true,
     "containerweight": 100,

@@ -26,7 +26,7 @@
         0,
         0
     ],
-    "_skin_": "se2f7f3f0e194b58b426c5f63beec9cf",
+    "_skin_": "sc842f92a3e6488d92f2c92c84a72d1e",
     "_text_": "Log Out",
     "_width_": {
         "type": "string",
@@ -36,8 +36,9 @@
     "containerweight": 100,
     "contentalignment": 5,
     "displaytext": true,
-    "focusskin": "s6ca5d5fc049406280fe18928e9217b6",
+    "focusskin": "sb71986bb31942d9b64f4cdbfc00d7bf",
     "id": "btnLogOut",
+    "ide_onTouchEnd": "AS_Button_a61942448b7045b4bfa7a9492ab4ea61",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

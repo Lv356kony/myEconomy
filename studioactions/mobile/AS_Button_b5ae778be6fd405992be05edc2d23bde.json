@@ -13,10 +13,10 @@
             "name": "y"
         }],
         "contextObj": {
+            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c",
             "name": "frmSideMenu",
-            "type": "forms",
             "platform": "",
-            "KUID": "b1ff3eba87b74745a5758f1c0bb19a0c"
+            "type": "forms"
         },
         "language": "js",
         "actions": [{

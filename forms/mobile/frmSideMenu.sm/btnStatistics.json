@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s2bc82f2af6a4df38736eda45aee61c0",
+    "_skin_": "sa232ef7dea64776bb91dda2c033ad24",
     "_text_": "Statistics",
     "_top_": {
         "type": "string",
@@ -40,6 +40,7 @@
     },
     "displaytext": true,
     "id": "btnStatistics",
+    "ide_onTouchEnd": "AS_Button_f225ba20b4c64004bccbcb210ca50db5",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
