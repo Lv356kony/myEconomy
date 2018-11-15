@@ -35,7 +35,7 @@
     },
     "containerweight": 100,
     "contentalignment": 4,
-    "dropdownimage": "down_arrow_1.png",
+    "dropdownimage": "down_arrow.png",
     "enablehapticfeedback": true,
     "focusskin": "se0d937cce43487299f54f6864210271",
     "groupcells": false,
