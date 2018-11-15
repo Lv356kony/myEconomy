@@ -18,10 +18,7 @@
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "showCategory",
             "display": "showCategory",
-            "inputparams": [{
-                "name": "categoryId",
-                "value": "'1'"
-            }],
+            "inputparams": [],
             "parentId": null,
             "callbackType": null,
             "disabled": null,

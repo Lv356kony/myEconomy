@@ -1,0 +1,28 @@
+{
+    "AS_Form_f6688be8deec4739ad8c48808e55bfde": {
+        "id": "AS_Form_f6688be8deec4739ad8c48808e55bfde",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmIcons",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c7e38e37ab80499ba1771c25d02b4952"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___gf68414a805f44608e5d17f1d270da82",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "generatePreview",
+            "display": "generatePreview",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

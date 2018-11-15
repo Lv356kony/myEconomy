@@ -43,7 +43,9 @@
         "numDay",
         "txtDay",
         "txtDate",
-        "txtResult"
+        "txtResult",
+        "imgSummary",
+        "imgDollar"
     ],
     "clipbounds": true,
     "containerId": true,

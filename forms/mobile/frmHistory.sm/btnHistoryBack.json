@@ -32,11 +32,18 @@
         "type": "string",
         "value": "100%"
     },
+    "android": {
+        "psp": {
+            "pressedSkin": "sf5a019734e1456085397beec9e5a5db"
+        }
+    },
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 5,
+    "disabledSkins": {
+        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
+    },
     "displaytext": true,
-    "focusskin": "sbe987a2b9a446a586fe227729c03fee",
     "id": "btnHistoryBack",
     "ide_onTouchEnd": "AS_Button_a353f4faa0f0492081a3bcf4e6105ef8",
     "info": null,

@@ -147,6 +147,7 @@
     "groupcells": false,
     "hasSections": false,
     "id": "segmExpenses",
+    "ide_onRowClick": "AS_Segment_f353746986dd4760aa4632d92f13dc00",
     "info": null,
     "ipad": {
         "psp": {
