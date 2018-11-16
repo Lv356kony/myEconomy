@@ -43,7 +43,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhoneX",
+    "device": "GalaxyS8",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmIcons",
@@ -98,13 +98,13 @@
     "name": "kony.ui.Form2",
     "needappmenu": false,
     "paddinginpixel": false,
-    "platform": "iphone",
+    "platform": "android",
     "prevDevice": "iPhoneX",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhoneX",
+    "shellCSS": "and_GalaxyS8",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {
