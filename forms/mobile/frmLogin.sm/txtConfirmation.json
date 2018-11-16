@@ -19,7 +19,7 @@
         0
     ],
     "_placeholder_": "Confirmation password",
-    "_skin_": "s81edffcbdcb41cb9e663459599f5bbd",
+    "_skin_": "sf6e230c030f44ac88095a96319fc42f",
     "_text_": "",
     "_top_": {
         "type": "number",
@@ -27,7 +27,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "250dp"
     },
     "android": {},
     "autocapitalize": "none",
@@ -50,7 +50,7 @@
     "isvisible": true,
     "keyboardtype": "A",
     "kuid": "a7c523e1db574c35ac599e5615a3f878",
-    "maxtextlength": 7,
+    "maxtextlength": 16,
     "mode": "A",
     "name": "kony.ui.TextBox2",
     "parent": "flxConfirmation",

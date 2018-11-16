@@ -54,7 +54,6 @@ define({
         } else {
 
             this.view.flxLogin.flxConfirmation.isVisible=false;
-           // this.view.flxLogin.lblConfirmationError.isVisible=false;
             this.view.flxLogin.flxButtonRegister.isVisible=false; 
             this.view.flxLogin.flxButtonLogin.isVisible=true;
 
@@ -66,9 +65,6 @@ define({
             this.view.flxLogin.flxEmail.lblEmailError.text = '';
             this.view.flxLogin.flxPassword.lblPasswordError.text = '';
             this.view.flxLogin.flxConfirmation.lblConfirmationError.text ='';
-
-
-
 
         }   
     },

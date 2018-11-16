@@ -2,10 +2,6 @@
     "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_height_": {
         "type": "string",
         "value": "100%"
@@ -22,12 +18,12 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "10dp"
-    },
-    "_skin_": "sdec9d86a2db4e3fbbe9fdf2089600ca",
+    "_skin_": "sb2ed9924301457bbe4b100a91b3af53",
     "_text_": "Register",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -40,16 +36,18 @@
     "containerweight": 100,
     "contentalignment": 5,
     "displaytext": true,
-    "focusskin": "s7a79ad8926d4a6fab933e802d751939",
+    "focusskin": "s1901fcac8f447b39705b120badbd2e6",
     "id": "btnRegister",
-    "ide_onClick": "AS_Button_c79901a8efea4817b63ff4e68ce87ba9",
+    "ide_onClick": "AS_Button_j57fa6913ee7438c90bc21fcebdcfcfd",
     "info": null,
+    "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ad3ba4f72e954e18917627b1c60d0092",
-    "masterType": 1,
+    "kuid": "b671b37fdaac4e509991100436cd218f",
     "name": "kony.ui.Button",
     "parent": "flxButtonRegister",
     "pf": "frmLogin",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
     "wType": "Button",
     "zindex": 1
 }

@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "415dp"
+        "value": "70%"
     },
     "_margin_": [
         0,
@@ -38,10 +38,10 @@
     "children": [
         "flxEmail",
         "flxPassword",
-        "flxButtonLogin",
         "flxConfirmation",
-        "flxButtonRegister",
-        "flxCreateAccount"
+        "flxCreateAccount",
+        "flxButtonLogin",
+        "flxButtonRegister"
     ],
     "clipbounds": true,
     "containerweight": 100,

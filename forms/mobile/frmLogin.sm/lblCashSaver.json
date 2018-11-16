@@ -22,7 +22,7 @@
     "_text_": "Cash Saver",
     "_top_": {
         "type": "string",
-        "value": "110dp"
+        "value": "100dp"
     },
     "_width_": {
         "type": "ref",
@@ -38,7 +38,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "50.00%"
     },
     "containerweight": 100,
     "contentalignment": 5,

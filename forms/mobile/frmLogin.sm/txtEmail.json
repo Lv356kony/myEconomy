@@ -27,7 +27,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "250dp"
     },
     "android": {},
     "autocapitalize": "none",
@@ -37,7 +37,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "49.95%"
     },
     "containerheight": "",
     "containerheightmode": 1,
