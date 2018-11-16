@@ -1,0 +1,31 @@
+{
+    "AS_TextField_i7e412883bbb4daf967005bf2fd4b72f": {
+        "id": "AS_TextField_i7e412883bbb4daf967005bf2fd4b72f",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "contextObj": {
+            "name": "frmLogin",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d42189327348471aa1ab445fc6ea76cd"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___a81dca6f2e774df0803289a7daca3c14",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "cleanEmailError",
+            "display": "cleanEmailError",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

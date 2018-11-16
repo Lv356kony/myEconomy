@@ -1,0 +1,31 @@
+{
+    "AS_TextField_d984052da1784ce5a9253faa6566876e": {
+        "id": "AS_TextField_d984052da1784ce5a9253faa6566876e",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "contextObj": {
+            "name": "frmLogin",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d42189327348471aa1ab445fc6ea76cd"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___d7f1422059884d608e3bff24703219af",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "cleanPasswordError",
+            "display": "cleanPasswordError",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

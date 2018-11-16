@@ -82,7 +82,33 @@ define({
         this.view.flxLogin.flxButtonLogin.isVisible=false;
         this.view.flxLogin.flxCreateAccount.isVisible=false;
         this.view.flxLogin.flxButtonRegister.isVisible=true;  
+        this.view.flxLogin.flxbuttonBackToLogin.isVisible=true; 
 
+    },
+    
+    goToLogin: function(){
+        this.view.flxLogin.flxConfirmation.isVisible=false;
+        this.view.flxLogin.flxButtonRegister.isVisible=false;
+        this.view.flxLogin.flxButtonLogin.isVisible=true;
+        this.view.flxLogin.flxCreateAccount.isVisible=true;
+        this.view.flxLogin.flxbuttonBackToLogin.isVisible=false; 
+        
+        this.view.flxLogin.lblEmailError.text = '';
+        this.view.flxLogin.lblPasswordError.text = '';
+        this.view.flxLogin.flxEmail.txtEmail.text = '';
+        this.view.flxLogin.flxPassword.txtPassword.text = '';
+        
+    },
+     cleanEmailError: function(){
+          this.view.flxLogin.lblEmailError.text = '';
+         
+     },
+    cleanPasswordError: function(){
+        this.view.flxLogin.lblPasswordError.text = '';
+    },
+    cleanConfPasswordError(){
+        this.view.flxLogin.flxConfirmation.lblConfirmationError.text ='';
+        
     }
 
 });
