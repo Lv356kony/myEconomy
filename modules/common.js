@@ -441,7 +441,7 @@ const userService = {
             return user.email === email;
         })[0];
 
-        if ( user) {
+        if ( user ) {
             if ( user.password === password ){
                 CURRENT_USER.id = user.id;
                 return {
@@ -476,15 +476,6 @@ const userService = {
             return {
                 error: {
                     message: 'The password must include uppercase \n and lowercase letters numbers and symbols',
-                    type: 'password'
-                }
-            };
-        }
-
-        if ( !email || !password ) {
-            return {
-                error: {
-                    message: 'email and password is required',
                     type: 'password'
                 }
             };
@@ -527,6 +518,6 @@ function validateEmail(str) {
 }
 
 function validatePassword(string){
-    let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{3,7})/;
+    let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
     return strongRegex.test(string);
 }

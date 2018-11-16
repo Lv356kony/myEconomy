@@ -1,60 +1,53 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "100%"
     },
     "_margin_": [
-        0,
-        0,
-        0,
-        0
+        6,
+        6,
+        6,
+        6
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "sc58e912f289446387d64c58121abff6",
+    "_text_": "GO BACK TO LOGIN",
     "_top_": {
         "type": "string",
-        "value": "154dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "250dp"
+        "value": "100%"
     },
-    "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
         "value": "50%"
     },
-    "children": [
-        "btnLogin"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "flxButtonLogin",
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "sfab57103bcc4c6f86e01304a32f6fb2",
+    "id": "btnBackToLogin",
+    "ide_onClick": "AS_Button_a5d5709a5a6d40b5b59566e65898b7b2",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ada7f093f0254fa588875e95f455a36e",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "flxLogin",
+    "kuid": "e32e5e5646ba4b27b59ea56056f0e35a",
+    "name": "kony.ui.Button",
+    "parent": "flxbuttonBackToLogin",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
+    "wType": "Button",
     "zindex": 1
 }
