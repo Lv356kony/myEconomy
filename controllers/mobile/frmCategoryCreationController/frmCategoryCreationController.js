@@ -40,11 +40,11 @@ define({
 
         if(categoryName) {
             let newCategory = {
-                id: Date.now(),
+                id: parseInt(Date.now()),
                 icon: categoryIcon,
                 name: categoryName,
                 type: this.type,
-                user_id: CURRENT_USER 
+                user_id: CURRENT_USER.id 
             };
             
             serviceCategory.create(newCategory);

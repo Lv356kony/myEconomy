@@ -44,7 +44,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "GalaxyS5",
+    "device": "GalaxyS8",
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmTransactionCreation",
@@ -100,12 +100,12 @@
     "needappmenu": false,
     "paddinginpixel": false,
     "platform": "android",
-    "prevDevice": "iPhoneX",
+    "prevDevice": "GalaxyS5",
     "prevPlatform": "iphone",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainscrollposition": false,
-    "shellCSS": "and_GalaxyS5",
+    "shellCSS": "and_GalaxyS8",
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {
