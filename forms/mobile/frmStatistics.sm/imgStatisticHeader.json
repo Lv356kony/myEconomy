@@ -5,7 +5,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "80%"
+        "value": "70%"
     },
     "_left_": {
         "type": "string",
@@ -27,7 +27,7 @@
     "_src_": "left_arrow.png",
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "70%"
     },
     "canUpdateUI": true,
     "centery": {
@@ -37,21 +37,21 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmIcons",
+        "formID": "frmStatistics",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgBtnGoBack",
+    "id": "imgStatisticHeader",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "aeda21a99c3a4c01832830357941d186",
+    "kuid": "eff162ec8ee2445b9cc26b095ea2be88",
     "name": "kony.ui.Image2",
-    "parent": "flxGoBackBtn",
-    "pf": "frmIcons",
+    "parent": "flxHeaderBackward",
+    "pf": "frmStatistics",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

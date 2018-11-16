@@ -23,10 +23,10 @@ define({
             var expDate = `${expByCat[i].date.getDate()} ${getMonth[expByCat[i].date.getMonth()]} ${expByCat[i].date.getFullYear()}`;
             if(expDate === date){
                 data.push({id: expByCat[i].id,
-                           from: getCategory[expByCat[i].from],
+                           from: serviceCategory.getById(expByCat[i].from).name,
                            commentary: expByCat[i].commentary,
                            expense: expByCat[i].amount.toString(),
-                           to: getCategory[expByCat[i].to],
+                           to: serviceCategory.getById(expByCat[i].to).name,
                            date: expByCat[i].date.toString()
                           });        
             }

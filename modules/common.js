@@ -268,7 +268,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += DATA.transactions[i].amount;
+                    countIncome += parseInt(DATA.transactions[i].amount);
                 }
             }
         }
@@ -294,7 +294,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += DATA.transactions[i].amount;
+                    countExpenses += parseInt(DATA.transactions[i].amount);
                 }
             }
         }
@@ -322,11 +322,11 @@ const serviceTransactions = {
 
     create: function(id, amount, from, to, userId, date, comment){
         let transaction = {};
-        transaction.id = id;
+        transaction.id = parseInt(id);
         transaction.amount = parseInt(amount);
-        transaction.from = from;
-        transaction.to = to;
-        transaction.userId = userId;
+        transaction.from = parseInt(from);
+        transaction.to = parseInt(to);
+        transaction.userId = parseInt(userId);
         transaction.date = new Date(date);
         transaction.commentary = comment;
 
