@@ -22,7 +22,7 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "231dp"
+        "value": "77dp"
     },
     "_width_": {
         "type": "string",
@@ -44,11 +44,11 @@
     "id": "flxButtonRegister",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
+    "isvisible": true,
     "kuid": "ee9decf8a7e4436a9fb6a6970202c267",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxLogin",
+    "parent": "flxRegistration",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

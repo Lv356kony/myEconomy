@@ -38,11 +38,9 @@
     "children": [
         "flxEmail",
         "flxPassword",
-        "flxConfirmation",
         "flxCreateAccount",
         "flxButtonLogin",
-        "flxButtonRegister",
-        "flxbuttonBackToLogin"
+        "flxRegistration"
     ],
     "clipbounds": true,
     "containerweight": 100,

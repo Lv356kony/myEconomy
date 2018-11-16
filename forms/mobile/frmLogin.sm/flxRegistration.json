@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "77dp"
+        "value": "250dp"
     },
     "_margin_": [
         0,
@@ -19,14 +19,14 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sc789fcd540e4419b0cada3624851c6d",
+    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "77dp"
+        "value": "154dp"
     },
     "_width_": {
         "type": "string",
-        "value": "250dp"
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -36,17 +36,18 @@
         "value": "50.04%"
     },
     "children": [
-        "txtPassword",
-        "lblPasswordError"
+        "flxButtonRegister",
+        "flxbuttonBackToLogin",
+        "flxConfirmation"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxPassword",
+    "id": "flxRegistration",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "edadeeb37a2d4647a7b25db4f0a888aa",
+    "isvisible": false,
+    "kuid": "bfc9ecad6d2d45d1bb29b9ae17419437",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "flxLogin",

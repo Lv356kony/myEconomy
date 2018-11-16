@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "80dp"
+        "value": "77dp"
     },
     "_margin_": [
         0,
@@ -22,7 +22,7 @@
     "_skin_": "s8d1752ecd8a4cfe8a62b090f2f067d7",
     "_top_": {
         "type": "string",
-        "value": "154dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -33,7 +33,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50.00%"
+        "value": "50%"
     },
     "children": [
         "txtConfirmation",
@@ -49,7 +49,7 @@
     "kuid": "d3cf357f37744de7b68e6cf8b2f290bb",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxLogin",
+    "parent": "flxRegistration",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
