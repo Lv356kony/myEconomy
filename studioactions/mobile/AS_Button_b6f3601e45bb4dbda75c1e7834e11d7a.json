@@ -1,6 +1,6 @@
 {
-    "AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2": {
-        "id": "AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2",
+    "AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a": {
+        "id": "AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -8,7 +8,7 @@
         }],
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION__ide_onClick_h4b6d2af338e45d7bffe96b353e1410c",
+            "id": "INVOKE_FUNCTION__ide_onClick_e8f8cbcae1b7492792aae02eb6ac2510",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "hideMenu",
             "display": "hideMenu",

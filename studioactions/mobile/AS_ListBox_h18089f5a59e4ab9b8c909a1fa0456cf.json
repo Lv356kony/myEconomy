@@ -1,23 +1,23 @@
 {
-    "AS_Button_ba85ec7c201c460ea834195fd1867d5f": {
-        "id": "AS_Button_ba85ec7c201c460ea834195fd1867d5f",
+    "AS_ListBox_h18089f5a59e4ab9b8c909a1fa0456cf": {
+        "id": "AS_ListBox_h18089f5a59e4ab9b8c909a1fa0456cf",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
         "contextObj": {
-            "KUID": "c9af47bd87034153a0897765ac19e939",
             "name": "frmHistoryDetails",
+            "type": "forms",
             "platform": "",
-            "type": "forms"
+            "KUID": "c9af47bd87034153a0897765ac19e939"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___i3a202e581394b5b8ae3b1d1ab42eb18",
+            "id": "INVOKE_FUNCTION___i0c09d8f42534bca83b1da6876fe3397",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "updateTransaction",
-            "display": "updateTransaction",
+            "sequenceKUID": "changeIconOnSelect",
+            "display": "changeIconOnSelect",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

@@ -38,7 +38,7 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "FBox0b72131d6637c4d",
+        "formID": "FBox0c96427e3131345",
         "templateType": "segments",
         "topLevelBox": null
     },
@@ -47,10 +47,10 @@
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "j7a63f43aecf4d2682dd396349d9183b",
+    "kuid": "ae7899a6e6784cffba54c4905824b1be",
     "name": "kony.ui.Image2",
-    "parent": "flxHeader",
-    "pf": "FBox0b72131d6637c4d",
+    "parent": "flxDetailsSection",
+    "pf": "FBox0c96427e3131345",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

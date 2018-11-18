@@ -2,29 +2,6 @@ define({
     /*
       This is an auto generated file and any modifications to it may result in corruption of the action sequence.
     */
-    /** onDownloadComplete defined for imgStatistics **/
-    AS_Image_ae419f977f0a451a9cea791adeab21db: function AS_Image_ae419f977f0a451a9cea791adeab21db(eventobject, imagesrc, issuccess) {
-        var self = this;
-    },
-    /** onTouchEnd defined for btnStatistics **/
-    AS_Button_f225ba20b4c64004bccbcb210ca50db5: function AS_Button_f225ba20b4c64004bccbcb210ca50db5(eventobject, x, y) {
-        var self = this;
-        return self.goToStatistics.call(this);
-    },
-    /** onTouchEnd defined for btnLogOut **/
-    AS_Button_a61942448b7045b4bfa7a9492ab4ea61: function AS_Button_a61942448b7045b4bfa7a9492ab4ea61(eventobject, x, y) {
-        var self = this;
-        return self.logOut.call(this);
-    },
-    /** onClick defined for btnHideMenu **/
-    AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2: function AS_Button_c673c97ca6a54f5c9dabe70dcd9b1dd2(eventobject) {
-        var self = this;
-        return self.hideMenu.call(this);
-    },
-    /** onTouchStart defined for flxHideMenu **/
-    AS_FlexContainer_i8e9716968c140d9a92d76bd95273bff: function AS_FlexContainer_i8e9716968c140d9a92d76bd95273bff(eventobject, x, y) {
-        var self = this;
-    },
     /** onRowClick defined for segmExpenses **/
     AS_Segment_f353746986dd4760aa4632d92f13dc00: function AS_Segment_f353746986dd4760aa4632d92f13dc00(eventobject, sectionNumber, rowNumber) {
         var self = this;
@@ -81,5 +58,28 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
+    },
+    /** onDownloadComplete defined for imgStatistics **/
+    AS_Image_f1ca080e583a46729ee488100108d6b8: function AS_Image_f1ca080e583a46729ee488100108d6b8(eventobject, imagesrc, issuccess) {
+        var self = this;
+    },
+    /** onTouchEnd defined for btnStatistics **/
+    AS_Button_f225ba20b4c64004bccbcb210ca50db5: function AS_Button_f225ba20b4c64004bccbcb210ca50db5(eventobject, x, y) {
+        var self = this;
+        return self.goToStatistics.call(this);
+    },
+    /** onTouchEnd defined for btnLogOut **/
+    AS_Button_a61942448b7045b4bfa7a9492ab4ea61: function AS_Button_a61942448b7045b4bfa7a9492ab4ea61(eventobject, x, y) {
+        var self = this;
+        return self.logOut.call(this);
+    },
+    /** onClick defined for btnHideMenu **/
+    AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a: function AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a(eventobject) {
+        var self = this;
+        return self.hideMenu.call(this);
+    },
+    /** onTouchStart defined for flxHideMenu **/
+    AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88: function AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88(eventobject, x, y) {
+        var self = this;
     }
 });
