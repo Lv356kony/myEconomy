@@ -22,11 +22,15 @@ define({
         var self = this;
         return navToForm.call(this, null, null);
     },
+    /** onSelection defined for lstBoxTo **/
+    AS_ListBox_h18089f5a59e4ab9b8c909a1fa0456cf: function AS_ListBox_h18089f5a59e4ab9b8c909a1fa0456cf(eventobject) {
+        var self = this;
+        return self.changeIconOnSelect.call(this);
+    },
     /** onClick defined for btnUpdate **/
     AS_Button_ba85ec7c201c460ea834195fd1867d5f: function AS_Button_ba85ec7c201c460ea834195fd1867d5f(eventobject) {
         var self = this;
-        self.updateTransaction.call(this);
-        self.refresh.call(this);
+        return self.updateTransaction.call(this);
     },
     /** onClick defined for btnCloseEditWindow **/
     AS_Button_d1bd676d8b4e4543b61294e8268971ed: function AS_Button_d1bd676d8b4e4543b61294e8268971ed(eventobject) {
@@ -69,8 +73,6 @@ define({
     AS_Form_j19b08eaddab407eb7afe8ff122c3956: function AS_Form_j19b08eaddab407eb7afe8ff122c3956(eventobject) {
         var self = this;
         self.showDetails.call(this);
-        self.loadCategories.call(this, 'Expenses', 'lstBoxTo');
-        self.loadCategories.call(this, 'Current', 'lstBoxFrom');
         self.hideEditForm.call(this);
         self.clearInputs.call(this);
     }

@@ -335,7 +335,7 @@ const serviceTransactions = {
 
     update: function(transactionId, amount, from, to, date, comment){
         let transaction = this.getById(transactionId);
-
+        
         transaction.amount = parseInt(amount) || transaction.amount;
         transaction.from = from || transaction.from;
         transaction.to = to || transaction.to;

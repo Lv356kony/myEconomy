@@ -40,7 +40,8 @@
     "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "segDetails"
+        "segDetails",
+        "flxDetailsTopGradient"
     ],
     "clipbounds": true,
     "containerweight": 100,

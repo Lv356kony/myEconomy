@@ -32,7 +32,8 @@
     "children": [
         "flxScrollMainContainer",
         "flxExpensesButton",
-        "flxCurrentButton"
+        "flxCurrentButton",
+        "flxSideMenuContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {

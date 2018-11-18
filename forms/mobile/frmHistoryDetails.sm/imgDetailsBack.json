@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "sd0c73949f6c4f74a61a549886487c89",
-    "_src_": "left_arrow_1.png",
+    "_src_": "left_arrow.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -53,6 +53,7 @@
     "id": "imgDetailsBack",
     "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "c57ed13af49d42eeab901a050a77033d",

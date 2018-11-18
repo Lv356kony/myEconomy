@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
+    "_bottom_": {
         "type": "string",
-        "value": "220dp"
+        "value": "0dp"
     },
     "_left_": {
         "type": "string",
@@ -33,6 +33,7 @@
         "value": "130dp"
     },
     "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
         "flxStatisticsSection",

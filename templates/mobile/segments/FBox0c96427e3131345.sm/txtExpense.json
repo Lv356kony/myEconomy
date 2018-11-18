@@ -15,14 +15,14 @@
     "_padding_": [
         0,
         0,
-        0,
+        5,
         0
     ],
     "_right_": {
         "type": "string",
-        "value": "0dp"
+        "value": "5%"
     },
-    "_skin_": "sdfb1a22fd064340b45b23aded3ff3f6",
+    "_skin_": "sd96c1af6bb8442d834a0ad5b8bca5df",
     "_text_": "RichText",
     "_top_": {
         "type": "string",
@@ -30,20 +30,21 @@
     },
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "120dp"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
     "containerId": true,
     "containerweight": 100,
-    "contentalignment": 4,
+    "contentalignment": 6,
     "id": "txtExpense",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ed1b654fbed34ec79a7b4eaa12166653",
-    "linkskin": "sbb94eebb18c407f9c3e8aaa008fdb1d",
+    "kuid": "a164fa05ab2a45e2835c451989f9016d",
+    "linkskin": "s8f1776a6193465781fd3fdeecf5084a",
     "name": "kony.ui.RichText",
+    "paddinginpixel": false,
     "parent": "flxDetailsSection",
     "pf": "FBox0c96427e3131345",
     "retaincontentalignment": false,
