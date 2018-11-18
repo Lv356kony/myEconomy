@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sc58e912f289446387d64c58121abff6",
+    "_text_": "GO BACK TO LOGIN",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "sfab57103bcc4c6f86e01304a32f6fb2",
+    "id": "btnBackToLogin",
+    "ide_onClick": "AS_Button_a5d5709a5a6d40b5b59566e65898b7b2",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "e32e5e5646ba4b27b59ea56056f0e35a",
+    "name": "kony.ui.Button",
+    "parent": "flxbuttonBackToLogin",
+    "pf": "frmLogin",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}
