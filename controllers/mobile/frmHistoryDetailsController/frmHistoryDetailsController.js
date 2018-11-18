@@ -43,10 +43,10 @@ define({
             var expDate = `${expByCat[i].date.getDate()} ${getMonth[expByCat[i].date.getMonth()]} ${expByCat[i].date.getFullYear()}`;
             if(expDate === date){
                 data.push({id: expByCat[i].id,
-                           from: getCategory[expByCat[i].from],
+                           from: this.getCategoryName(expByCat[i].from),
                            commentary: expByCat[i].commentary,
                            expense: expByCat[i].amount.toString(),
-                           to: getCategory[expByCat[i].to],
+                           to: this.getCategoryName(expByCat[i].to),
                            date: expByCat[i].date.toString(),
                            imgDol: 'dollar_symbol.png'
                           });        
@@ -210,6 +210,11 @@ define({
     findByCategoryName: function(categoryName){
         let category = DATA.categories.find(category => category.name === categoryName);
         return category;
+    },
+
+    getCategoryName: function(id){
+        let category = DATA.categories.find(category => category.id === id);
+        return category.name;
     }
 
 });

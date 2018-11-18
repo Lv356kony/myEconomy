@@ -48,17 +48,6 @@ define({
         var self = this;
         return self.goToCreationCuurentTransaction.call(this);
     },
-    /** preShow defined for frmCategoriesList **/
-    AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
-        var self = this;
-        self.initIncomeCategoriesList.call(this);
-        self.initCurrentCategoriesList.call(this);
-        self.initExpensesCategoriesList.call(this);
-        self.hideMenu.call(this);
-        self.calculateIncomeBalance.call(this);
-        self.calculateCurrentBalance.call(this);
-        self.calculateExpensesBalance.call(this);
-    },
     /** onDownloadComplete defined for imgStatistics **/
     AS_Image_f1ca080e583a46729ee488100108d6b8: function AS_Image_f1ca080e583a46729ee488100108d6b8(eventobject, imagesrc, issuccess) {
         var self = this;
@@ -81,5 +70,16 @@ define({
     /** onTouchStart defined for flxHideMenu **/
     AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88: function AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88(eventobject, x, y) {
         var self = this;
+    },
+    /** preShow defined for frmCategoriesList **/
+    AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
+        var self = this;
+        self.initIncomeCategoriesList.call(this);
+        self.initCurrentCategoriesList.call(this);
+        self.initExpensesCategoriesList.call(this);
+        self.hideMenu.call(this);
+        self.calculateIncomeBalance.call(this);
+        self.calculateCurrentBalance.call(this);
+        self.calculateExpensesBalance.call(this);
     }
 });

@@ -109,14 +109,14 @@ define({
 
     getBalanceByCard: function(){
         let expByCat = serviceTransactions.getByCategoryId(this.categoryId);
-        let transactions = [];
+        let transactions = [0];
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].from === this.categoryId){
                 transactions.push(DATA.transactions[i].amount);
             }
         }
 
-        let incomes = [];
+        let incomes = [0];
         for(let j = 0; j < DATA.transactions.length; j++){
             if(DATA.transactions[j].to === this.categoryId){
                 incomes.push(DATA.transactions[j].amount);
