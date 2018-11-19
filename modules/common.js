@@ -193,6 +193,118 @@ const DATA = {
             user_id: 1,
             date: new Date('August 15, 2018 23:15:30'),
             commentary: 'Зарплата'
+        }, {
+            id: 14,
+            amount: 38.25,
+            from: 7,
+            to: 4,
+            user_id: 1,
+            date: new Date('August 14, 2018 23:15:30'),
+            commentary: 'Білий Лев'
+        }, {
+            id: 15,
+            amount: 5,
+            from: 7,
+            to: 3,
+            user_id: 1,
+            date: new Date('August 14, 2018 23:15:30'),
+            commentary: 'Тролейбус'
+        },  {
+            id: 16,
+            amount: 95,
+            from: 7,
+            to: 1,
+            user_id: 1,
+            date: new Date('August 14, 2018 23:15:30'),
+            commentary: 'Продукти'
+        },  {
+            id: 17,
+            amount: 16.59,
+            from: 7,
+            to: 1,
+            user_id: 1,
+            date: new Date('August 13, 2018 23:15:30'),
+            commentary: 'Халва'
+        },  {
+            id: 18,
+            amount: 105,
+            from: 7,
+            to: 2,
+            user_id: 1,
+            date: new Date('August 13, 2018 23:15:30'),
+            commentary: 'Мобільний звязок'
+        },  {
+            id: 19,
+            amount: 60,
+            from: 7,
+            to: 3,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Таксі'
+        },  {
+            id: 20,
+            amount: 129,
+            from: 7,
+            to: 1,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Рукавика'
+        },  {
+            id: 21,
+            amount: 74,
+            from: 7,
+            to: 1,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Пробукти'
+        },  {
+            id: 22,
+            amount: 1699,
+            from: 7,
+            to: 5,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Red Dead Redemption 2'
+        },  {
+            id: 23,
+            amount: 53,
+            from: 7,
+            to: 1,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Пиво'
+        },  {
+            id: 24,
+            amount: 1990,
+            from: 7,
+            to: 2,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Стіл'
+        },  {
+            id: 25,
+            amount: 4200,
+            from: 7,
+            to: 2,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Стільці'
+        },  {
+            id: 26,
+            amount: 1207,
+            from: 7,
+            to: 2,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Килим'
+        },    {
+            id: 27,
+            amount: 5,
+            from: 7,
+            to: 3,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Метро'
         }
     ]
 };
@@ -248,7 +360,7 @@ const serviceTransactions = {
 
         return countIncome - countExpenses;
     },
-  
+
     getIncomeBalanceByUserId: function(){
         let categories = [];
         for(let i = 0; i < DATA.categories.length; i++){
@@ -263,7 +375,7 @@ const serviceTransactions = {
                 incomeIds.push(categories[i].id);
             }
         }
-        
+
         let countIncome = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
@@ -274,7 +386,7 @@ const serviceTransactions = {
         }
         return countIncome ;
     },
-    
+
     getExpensesBalanceByUserId: function(){
         let categories = [];
         for(let i = 0; i < DATA.categories.length; i++){
@@ -300,7 +412,7 @@ const serviceTransactions = {
         }
         return countExpenses;
     },
-    
+
     getByCategoryId: function(categoryId){
         let transaction =[];
         for(let i = 0; i < DATA.transactions.length; i++){
@@ -323,7 +435,7 @@ const serviceTransactions = {
     create: function(id, amount, from, to, userId, date, comment){
         let transaction = {};
         transaction.id = parseInt(id);
-        transaction.amount = parseInt(amount);
+        transaction.amount = parseFloat(amount);
         transaction.from = parseInt(from);
         transaction.to = parseInt(to);
         transaction.userId = parseInt(userId);
@@ -335,8 +447,8 @@ const serviceTransactions = {
 
     update: function(transactionId, amount, from, to, date, comment){
         let transaction = this.getById(transactionId);
-        
-        transaction.amount = parseInt(amount) || transaction.amount;
+
+        transaction.amount = parseFloat(amount) || transaction.amount;
         transaction.from = from || transaction.from;
         transaction.to = to || transaction.to;
         transaction.date = new Date(date) || transaction.date;

@@ -122,7 +122,9 @@ define({
                 incomes.push(DATA.transactions[j].amount);
             }
         }
-        return incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
+        let result = incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
+        return result.toFixed(2);
+        //return incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
     },
 
     showCurrent: function(){

@@ -16,14 +16,5 @@ define({
     AS_Button_baf021471cb8410f823232645020d1a5: function AS_Button_baf021471cb8410f823232645020d1a5(eventobject) {
         var self = this;
         return self.addCategory.call(this);
-    },
-    /** init defined for frmCategoryCreation **/
-    AS_Form_d8617a8dffc44927b3e33ec13faeca61: function AS_Form_d8617a8dffc44927b3e33ec13faeca61(eventobject) {
-        var self = this;
-        return self.preShowIcon.call(this);
-    },
-    /** preShow defined for frmCategoryCreation **/
-    AS_Form_a8e6700421d3413e83e87a026be16c50: function AS_Form_a8e6700421d3413e83e87a026be16c50(eventobject) {
-        var self = this;
     }
 });

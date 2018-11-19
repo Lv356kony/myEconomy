@@ -1,10 +1,8 @@
 define({ 
 
     init: function() {
-        this.addChart("Expenses");
         this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId(CURRENT_USER.id) + " $";
-        this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " $";
-        this.setSegmentLabels("Expenses");
+        this.outcomeClick();
     },
 
 
@@ -30,7 +28,6 @@ define({
 
     backwardClick: function() {
 		navToForm("frmCategoriesList");
-        this.view.flxChartContainer.removeAll();
     },
 
 
