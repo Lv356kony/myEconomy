@@ -22,7 +22,7 @@
     "_text_": "Cash Saver",
     "_top_": {
         "type": "string",
-        "value": "100dp"
+        "value": "90dp"
     },
     "_width_": {
         "type": "ref",
