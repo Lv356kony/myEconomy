@@ -15,7 +15,6 @@
         0
     ],
     "_percent_": true,
-    "_render_": true,
     "_skin_": "sc88b2e2d3a0472ab0d2c7fc352d0573",
     "_title_": null,
     "addWidgetsdone": false,
@@ -24,22 +23,21 @@
         "needAppMenu": false,
         "psp": {
             "windowSoftInputMode": 2
-        },
-        "render": true
+        }
     },
     "androidwearos": {
         "needAppMenu": false
     },
     "canUpdateUI": true,
     "children": [
-        "flxHeader",
+        "flxHeaderContainer",
         "flxMainContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmStatisticsController"
+            "name": "frmSettingsController"
         }
     },
     "currentLocale": "default",
@@ -49,8 +47,7 @@
     "device": "GalaxyS8",
     "displayorientation": 1,
     "enabledforidletimeout": false,
-    "id": "frmStatistics",
-    "ide_postShow": "AS_Form_c8d28d13b7c54a4ebf94279914d2f579",
+    "id": "frmSettings",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -68,7 +65,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "be8fe1f8a4514bedafaa155061954242",
+                "kuid": "b6f78b81ffa441b69f063f2a373575f8",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -79,7 +76,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "e8a03ca097da412ea5bbe68b20460b93",
+                        "kuid": "acc9e20f14a24b5e988f88fd0d970cd1",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -89,7 +86,6 @@
                 "translucent": true
             }
         },
-        "render": false,
         "titleBar": false
     },
     "iscustomlayout": false,
@@ -97,7 +93,7 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "ca24dc4851f94e0493a6f0f7fcd75fad",
+    "kuid": "a82f7fff9d9b415698b96cec232b5a5e",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,
@@ -112,19 +108,16 @@
     "snapgridsize": 10,
     "snaptogrid": true,
     "spaan": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "spaandroidtablet": {
         "needAppMenu": false
     },
     "spabb": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "spaip": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "spaipad": {
         "needAppMenu": false
@@ -133,8 +126,7 @@
         "needAppMenu": false
     },
     "spawinphone8": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     },
     "titleBarSkin": "sca409e2f82d48b0845a0e609c253137",
     "titlebar": true,
@@ -144,7 +136,6 @@
         "needAppMenu": false
     },
     "winphone8": {
-        "needAppMenu": false,
-        "render": false
+        "needAppMenu": false
     }
 }

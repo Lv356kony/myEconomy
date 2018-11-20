@@ -31,5 +31,10 @@ define({
     AS_Form_b3c27e22f90343f3ae48febf44f9a91b: function AS_Form_b3c27e22f90343f3ae48febf44f9a91b(eventobject) {
         var self = this;
         return self.init.call(this);
+    },
+    /** onClick defined for Button0h0b66e67333f42 **/
+    AS_Button_aa6796749762487c8edfeca8e2bb3d3c: function AS_Button_aa6796749762487c8edfeca8e2bb3d3c(eventobject) {
+        var self = this;
+        return self.openFile.call(this);
     }
 });

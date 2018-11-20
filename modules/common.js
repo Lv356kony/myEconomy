@@ -22,7 +22,12 @@ const DATA = {
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "",
+            image: "",
+            
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
