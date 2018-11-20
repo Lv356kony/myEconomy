@@ -102,12 +102,12 @@ define({
             }
         }         
         let incomeLabel = this.view.lblIncomeCount;
-        incomeLabel.text = countIncome;
+        incomeLabel.text = parseFloat(Math.round(countIncome*100))/100;
     },
 
     calculateCurrentBalance: function(){
         let incomeLabel = this.view.lblCurrentCount;
-        incomeLabel.text = serviceTransactions.getCurrentBalanceByUserId();
+        incomeLabel.text = parseFloat(Math.round(serviceTransactions.getCurrentBalanceByUserId()*100))/100;
     },
 
     calculateExpensesBalance: function(){
@@ -128,7 +128,7 @@ define({
             }
         }        
         let expensesLabel = this.view.lblExpensesCount;
-        expensesLabel.text = countExpenses;
+        expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
     },
 
     setCategoryIncomeType: function() {
@@ -146,8 +146,7 @@ define({
     goToCreationCuurentTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Income"});
     },
-    
-    
+     
     goToCreationExpensesTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Expenses"});
     }
