@@ -11,6 +11,9 @@ define({
         this.setListBoxData();
         this.selectionFromCategory();
         this.selectionToCategory();
+        this.view.txbTransactionAmount.text = "";
+        this.view.txbTransactionComentarry.text = "";
+        this.view.flxErrorContainer.isVisible = "false";
     },
 
 
@@ -44,8 +47,7 @@ define({
         if (amount) {
             serviceTransactions.create(id, amount, from, to, userId, date, comment);
             navToForm("frmCategoriesList");
-            this.view.txbTransactionAmount.text = "";
-            this.view.txbTransactionComentarry.text = "";
+
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
