@@ -7,10 +7,6 @@
         "type": "string",
         "value": "100%"
     },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_margin_": [
         0,
         0,
@@ -23,35 +19,39 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "70%"
+    },
     "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
-    "_src_": "shopping_basket.png",
+    "_src_": "image.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "40dp"
     },
     "canUpdateUI": true,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmCategoriesList",
+        "formID": "frmTransactionCreation",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
-    "id": "imgExpensesButton",
+    "id": "imgCategoryFrom",
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d49b6e663cd847acb7fa9ab8a245c6c6",
+    "kuid": "a59db5ea99e34c8fbb0192c148e39a7a",
     "name": "kony.ui.Image2",
-    "parent": "flxExpensesButton",
-    "pf": "frmCategoriesList",
+    "parent": "flxContainerFrom",
+    "pf": "frmTransactionCreation",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

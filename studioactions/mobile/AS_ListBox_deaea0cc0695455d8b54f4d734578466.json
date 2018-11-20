@@ -1,0 +1,28 @@
+{
+    "AS_ListBox_deaea0cc0695455d8b54f4d734578466": {
+        "id": "AS_ListBox_deaea0cc0695455d8b54f4d734578466",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmTransactionCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___g36654f04b0a4ad88eaad79ab248516e",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "selectionCategory",
+            "display": "selectionCategory",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

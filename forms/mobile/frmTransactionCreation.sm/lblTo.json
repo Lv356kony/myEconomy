@@ -20,7 +20,7 @@
     ],
     "_right_": {
         "type": "string",
-        "value": "70%"
+        "value": "85%"
     },
     "_skin_": "sb63a06db3cc4b9f9804b5118445d672",
     "_text_": "To:",
@@ -42,7 +42,7 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "50%"
+        "value": "50.00%"
     },
     "containerweight": 100,
     "contentalignment": 4,

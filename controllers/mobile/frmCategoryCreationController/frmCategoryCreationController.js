@@ -7,10 +7,6 @@ define({
     navToCategories: function() {
         navToForm('frmCategoriesList');
     },
-    
-    preShowIcon: function() {
-        this.view.imgAddIcon.src = 'image.png';
-    },
 
     onNavigate: function(context) {
 

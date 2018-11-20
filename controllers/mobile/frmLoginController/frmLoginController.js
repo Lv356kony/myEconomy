@@ -77,6 +77,10 @@ define({
         this.view.flxLogin.flxButtonLogin.isVisible=false;
         this.view.flxLogin.flxCreateAccount.isVisible=false;
         this.view.flxLogin.flxRegistration.isVisible=true;
+        
+        this.view.flxLogin.flxEmail.txtEmail.setFocus(true);
+        
+        
 
     },
 
