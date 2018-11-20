@@ -9,6 +9,8 @@ define({
     init: function () {
         this.setDefaultDate();
         this.setListBoxData();
+        this.selectionFromCategory();
+        this.selectionToCategory();
     },
 
 
@@ -20,8 +22,17 @@ define({
     clickBackwardButton: function () {
         navToForm("frmCategoriesList");
     },
+    
+    selectionFromCategory : function (){
+        this.view.imgCategoryFrom.src = this.getSelectedCategory("from").icon;
+    },
+    
+    
+    selectionToCategory : function (){
+        this.view.imgCategoryTo.src = this.getSelectedCategory("to").icon;
+    },
 
-
+    
     createTransaction: function() {
         let id = new Date().getTime();
         let amount = this.view.txbTransactionAmount.text;

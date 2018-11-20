@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "lstTransactionFrom",
-        "lblFrom"
+        "lblFrom",
+        "imgCategoryFrom"
     ],
     "clipbounds": true,
     "containerweight": 100,

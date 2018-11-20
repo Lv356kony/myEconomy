@@ -38,6 +38,7 @@
     "focusskin": "se0d937cce43487299f54f6864210271",
     "groupcells": false,
     "id": "lstTransactionTo",
+    "ide_onSelection": "AS_ListBox_g83a1db0226946b4aedd58ad39558bff",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
