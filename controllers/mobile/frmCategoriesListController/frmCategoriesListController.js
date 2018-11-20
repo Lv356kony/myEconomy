@@ -97,22 +97,6 @@ define({
         for(let i = 0; i < data.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(data[i].from === incomeIds[j]){
-                    countIncome += data[i].amount;
-                }
-            }
-        }
-        let data = DATA.transactions;
-        let incomeIds = [];
-        for(let i = 0; i < serviceCategory.getCategories().length; i++){
-            if(serviceCategory.getCategories()[i].type === 'Income'){
-                incomeIds.push(serviceCategory.getCategories()[i].id);
-            }
-        }
-
-        let countIncome = 0.00;
-        for(let i = 0; i < data.length; i++){
-            for(let j = 0; j < incomeIds.length; j++){
-                if(data[i].from === incomeIds[j]){
                     countIncome += parseFloat(Math.round(data[i].amount*100))/100;
                 }
             }
@@ -146,25 +130,6 @@ define({
         }
         let expensesLabel = this.view.lblExpensesCount;
         expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
-        let data = DATA.transactions;
-        let expensesIds = [];
-        for(let i = 0; i < serviceCategory.getCategories().length; i++){
-            if(serviceCategory.getCategories()[i].type === 'Expenses'){
-                expensesIds.push(serviceCategory.getCategories()[i].id);
-            }
-        }
-
-        let countExpenses = 0.00;
-        for(let i = 0; i < data.length; i++){
-            for(let j = 0; j < expensesIds.length; j++){
-                if(data[i].to === expensesIds[j]){
-                    countExpenses += parseFloat(Math.round(data[i].amount*100))/100;
-                }
-            }
-        }
-
-        let expenseLabel = this.view.lblExpensesCount;
-        expenseLabel.text = parseFloat(Math.round(countExpenses*100))/100;
     },
 
     setCategoryIncomeType: function() {
