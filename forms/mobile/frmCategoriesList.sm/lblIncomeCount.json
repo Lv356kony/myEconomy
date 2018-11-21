@@ -19,7 +19,7 @@
         0
     ],
     "_render_": true,
-    "_skin_": "s21ae67403c24d9c86fff4081c3acb30",
+    "_skin_": "sa56246a32db45fcbe82fae3d32f4930",
     "_text_": "0.00",
     "_width_": {
         "type": "string",
@@ -36,11 +36,11 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50.00%"
+        "value": "50.03%"
     },
     "centery": {
         "type": "string",
-        "value": "49.74%"
+        "value": "45.47%"
     },
     "containerweight": 100,
     "contentalignment": 5,

@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "27dp"
-    },
     "_margin_": [
         1,
         1,
@@ -24,10 +20,6 @@
     ],
     "_skin_": "s832ceb8ce004c37b570a7065e10a485",
     "_text_": "Current:",
-    "_top_": {
-        "type": "string",
-        "value": "6dp"
-    },
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -42,7 +34,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "20%"
     },
     "centery": {
         "type": "string",
