@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "50dp"
     },
     "_margin_": [
         6,
@@ -13,23 +13,23 @@
         6
     ],
     "_padding_": [
-        3,
         0,
-        3,
+        0,
+        0,
         0
     ],
-    "_right_": {
+    "_skin_": "s8ea833479b24d509154bcce6757ea3c",
+    "_text_": "Button",
+    "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "20dp"
     },
-    "_skin_": "sf866a71c7484f1bae12e7787803f430",
-    "_text_": "Find image",
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "300dp"
     },
     "canUpdateUI": true,
-    "centery": {
+    "centerx": {
         "type": "string",
         "value": "50%"
     },
@@ -37,14 +37,13 @@
     "contentalignment": 5,
     "displaytext": true,
     "focusskin": "s1901fcac8f447b39705b120badbd2e6",
-    "id": "Button0b0516e032f7e48",
+    "id": "Button0j7c41ee31c9149",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "bf4e44ab4c0d4bdead83857c4725b80e",
+    "kuid": "b2d838874c9949f28153d989d8698b06",
     "name": "kony.ui.Button",
-    "paddinginpixel": false,
-    "parent": "FlexContainer0e6600f52b29542",
+    "parent": "flxMainContainer",
     "pf": "frmSettings",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

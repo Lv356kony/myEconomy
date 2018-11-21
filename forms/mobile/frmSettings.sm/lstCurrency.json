@@ -19,24 +19,27 @@
     "_padding_": [
         3,
         0,
-        0,
+        5,
         0
     ],
     "_placeholder_": "Please Select",
-    "_skin_": "s7c4ec5014c2478aaa3b08ca83be3475",
+    "_skin_": "s8607bd2b3fb4ffeb996030caac041d6",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "60%"
+        "value": "56.50%"
+    },
+    "android": {
+        "viewType": 0
     },
     "canUpdateUI": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "dropdownimage": "listboxarw.png",
-    "focusskin": "se0d937cce43487299f54f6864210271",
+    "dropdownimage": "down_arrow.png",
+    "focusskin": "se20f641375d4f74be3ad43935e0ccef",
     "groupcells": false,
     "id": "lstCurrency",
     "info": null,
@@ -58,6 +61,7 @@
         ]
     ],
     "name": "kony.ui.ListBox",
+    "paddinginpixel": false,
     "parent": "flxCurrencyContainer",
     "pf": "frmSettings",
     "retaincontentalignment": false,
@@ -67,11 +71,6 @@
     "selectedkeyvalue": null,
     "selectedkeyvalues": null,
     "size": 18,
-    "viewconfig": {
-        "toggleViewConfig": {
-            "viewStyle": 0
-        }
-    },
     "viewtype": 0,
     "wType": "ListBox",
     "zindex": 1

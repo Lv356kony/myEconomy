@@ -17,6 +17,8 @@ var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
 
 const CURRENT_USER = {id: undefined};
 
+const CURRENCY = ["UAH", "USD", "EUR", "PLZ"];
+
 const DATA = {
     users: [
         {
@@ -26,24 +28,40 @@ const DATA = {
             firstName: "",
             lastName: "",
             currency: "",
-            image: "",
+            image: ""
             
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
-            password: 'intelwithradeon'
+            password: 'intelwithradeon',
+            firstName: "",
+            lastName: "",
+            currency: "",
+            image: ""
         },  {
             id: 3,
             email: 'o.piaskovska@gmail.com',
-            password: 'somepassword'
+            password: 'somepassword',
+            firstName: "",
+            lastName: "",
+            currency: "",
+            image: ""
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "",
+            image: ""
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
-            password: 'onemoretime'
+            password: 'onemoretime',
+            firstName: "",
+            lastName: "",
+            currency: "",
+            image: ""
         }
     ],
 
@@ -529,6 +547,17 @@ const userService = {
             return userMockArray[0];
         }
         return null;
+    },
+    
+    updateUser: function (password, firstName, lastName, currency, image) {
+        let user = this.getById(CURRENT_USER.id);
+        
+        user.password = password || user.password;
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.currency = currency || user.currency;
+        user.image = image || user.image;
+        
     },
 
     login: function (email, password) {

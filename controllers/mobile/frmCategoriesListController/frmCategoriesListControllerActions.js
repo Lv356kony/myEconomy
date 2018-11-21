@@ -81,5 +81,14 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
+    },
+    /** onDownloadComplete defined for imgSettings **/
+    AS_Image_cdfd0cd2849947a88bd355d3a3a41864: function AS_Image_cdfd0cd2849947a88bd355d3a3a41864(eventobject, imagesrc, issuccess) {
+        var self = this;
+    },
+    /** onTouchEnd defined for btnSettings **/
+    AS_Button_b2250ed362804eb791f0032738f080c6: function AS_Button_b2250ed362804eb791f0032738f080c6(eventobject, x, y) {
+        var self = this;
+        return self.goToSettings.call(this);
     }
 });

@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "flxStatisticsSection",
-        "btnLogOut"
+        "btnLogOut",
+        "flxSettingsSection"
     ],
     "clipbounds": true,
     "containerweight": 100,
