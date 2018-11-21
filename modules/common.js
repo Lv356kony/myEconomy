@@ -459,7 +459,7 @@ const serviceTransactions = {
         return null;
     },
 
-    create: function(id, from, fromAmount, to, toAmount, userId, date, comment){
+    create: function(id, fromAmount, from, to, userId, date, comment, toAmount){
         let transaction = {};
         transaction.id = parseInt(id);
         transaction.from = parseInt(from);
@@ -473,7 +473,7 @@ const serviceTransactions = {
         DATA.transactions.push(transaction);
     },
 
-    update: function(transactionId, from, fromAmount, to, toAmount, date, comment){
+    update: function(transactionId, fromAmount, from, to, date, comment, toAmount){
         let transaction = this.getById(transactionId);
 
         transaction.fromAmount = parseFloat(fromAmount) || transaction.fromAmount;
