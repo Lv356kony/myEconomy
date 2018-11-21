@@ -9,6 +9,11 @@ define({
     init: function () {
         this.setDefaultDate();
         this.setListBoxData();
+        this.selectionFromCategory();
+        this.selectionToCategory();
+        this.view.txbTransactionAmount.text = "";
+        this.view.txbTransactionComentarry.text = "";
+        this.view.flxErrorContainer.isVisible = "false";
     },
 
 
@@ -20,8 +25,17 @@ define({
     clickBackwardButton: function () {
         navToForm("frmCategoriesList");
     },
+    
+    selectionFromCategory : function (){
+        this.view.imgCategoryFrom.src = this.getSelectedCategory("from").icon;
+    },
+    
+    
+    selectionToCategory : function (){
+        this.view.imgCategoryTo.src = this.getSelectedCategory("to").icon;
+    },
 
-
+    
     createTransaction: function() {
         let id = new Date().getTime();
         let amount = this.view.txbTransactionAmount.text;
@@ -33,8 +47,7 @@ define({
         if (amount) {
             serviceTransactions.create(id, amount, from, to, userId, date, comment);
             navToForm("frmCategoriesList");
-            this.view.txbTransactionAmount.text = "";
-            this.view.txbTransactionComentarry.text = "";
+
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
