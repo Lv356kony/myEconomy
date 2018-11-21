@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "100%"
     },
     "_margin_": [
         0,
@@ -21,25 +21,32 @@
     "_placeholder_": "Please Select",
     "_right_": {
         "type": "string",
-        "value": "30dp"
+        "value": "0dp"
     },
-    "_skin_": "s23e15749b3c4a9d98a2e85352cfc8a2",
+    "_skin_": "sd82e5e77d70465790b1e2bbb7f2de65",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "200dp"
+        "value": "70%"
     },
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 4,
     "dropdownimage": "down_arrow_1.png",
     "focusskin": "se0d937cce43487299f54f6864210271",
     "groupcells": false,
-    "id": "lstTransactionFrom",
-    "ide_onSelection": "AS_ListBox_af5cb1f704c043468c2bffd2542594fb",
+    "id": "lstCurrency",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "fa6464f8082048c1bf2bbcc8d860dc4c",
+    "kuid": "b17d61d96e89437d9c9979609bb115fb",
     "masterdata": [
         [
             "lb1",
@@ -55,16 +62,13 @@
         ]
     ],
     "name": "kony.ui.ListBox",
-    "parent": "flxContainerFrom",
-    "pf": "frmTransactionCreation",
+    "parent": "flxCurrency",
+    "pf": "frmCategoryCreation",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "selectedkey": "lb1",
+    "selectedkey": null,
     "selectedkeys": null,
-    "selectedkeyvalue": [
-        "lb1",
-        "Placeholder One"
-    ],
+    "selectedkeyvalue": null,
     "selectedkeyvalues": null,
     "size": 18,
     "viewconfig": {

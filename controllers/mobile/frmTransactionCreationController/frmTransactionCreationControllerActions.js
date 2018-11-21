@@ -7,6 +7,10 @@ define({
         var self = this;
         return self.clickBackwardButton.call(this);
     },
+    /** onSelection defined for lstTransactionFrom **/
+    AS_ListBox_af5cb1f704c043468c2bffd2542594fb: function AS_ListBox_af5cb1f704c043468c2bffd2542594fb(eventobject) {
+        var self = this;
+    },
     /** onTextChange defined for txbTransactionAmount **/
     AS_TextField_da66599987d84693a30f15a9d2344dc9: function AS_TextField_da66599987d84693a30f15a9d2344dc9(eventobject, changedtext) {
         var self = this;

@@ -17,11 +17,11 @@ define({
                 this.view.txbInputCategoryName.text = "";
                 this.view.imgAddIcon.src = 'image.png';
             }
-            
+
             if(context.chosenIconSrc) {
                 let imgAddIcon = this.view.imgAddIcon;
                 imgAddIcon.src = context.chosenIconSrc || 'image.png';
-                
+
                 if(imgAddIcon.src !== 'image.png') {
                     imgAddIcon.height = '80dp';
                     imgAddIcon.width = '80dp';
@@ -33,22 +33,39 @@ define({
     addCategory: function() {
         let categoryName = this.view.txbInputCategoryName.text;
         let categoryIcon = this.view.imgAddIcon.src;
+        let categoryCurrency =  this.view.lstCurrency.selectedKeyValue[1];
 
         if(categoryName) {
             let newCategory = {
-                id: parseInt(Date.now()),
+                id: parseInt(Date.now()), 
                 icon: categoryIcon,
                 name: categoryName,
                 type: this.type,
-                user_id: CURRENT_USER.id 
+                user_id: CURRENT_USER.id,
+                currency:categoryCurrency 
             };
-            
+
             serviceCategory.create(newCategory);
-			navToForm('frmCategoriesList');
-            
+            navToForm('frmCategoriesList');
+
         } else {
             kony.ui.Alert({message: 'Please enter category name'}, {});
         }
+    },
+
+    init: function () {
+        this.setListBoxData();
+    },
+
+    setListBoxData:function(){
+        let data = CURRENCIES.map((item,index)=>{ 
+            return [index,item];});
+        this.view.lstCurrency.masterData = data;  
     }
 
-});
+
+
+
+
+
+}); 

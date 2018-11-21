@@ -17,6 +17,9 @@ var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
 
 const CURRENT_USER = {id: undefined};
 
+const CURRENCIES = ["UAH","USD","EUR","PLN"];
+
+
 const DATA = {
     users: [
         {
@@ -48,43 +51,50 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
-            user_id: 1
+            user_id: 1,
+            currency: "UAH"
         }
     ],
 
@@ -497,6 +507,9 @@ const serviceCategory = {
         }
         return categories;
     },
+    
+     
+    
 
     create: function(data) {
         DATA.categories.push(data);
