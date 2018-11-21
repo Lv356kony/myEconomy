@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "20dp"
-    },
     "_margin_": [
         1,
         1,
@@ -22,12 +18,8 @@
         0,
         0
     ],
-    "_skin_": "s1a476b9eefa405998274551afc79dd3",
+    "_skin_": "sc6da32a1a0d40ff9f76c2e74181f97f",
     "_text_": "Income:",
-    "_top_": {
-        "type": "string",
-        "value": "7dp"
-    },
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -42,7 +34,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "20%"
     },
     "centery": {
         "type": "string",
