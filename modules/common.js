@@ -27,7 +27,7 @@ const DATA = {
             password: 'Ra$1',
             firstName: "",
             lastName: "",
-            currency: "",
+            currency: "UAH",
             image: ""
             
         },  {
@@ -497,12 +497,12 @@ const userService = {
         return null;
     },
     
-    updateUser: function (password, firstName, lastName, currency, image) {
+    updateUser: function (firstName, lastName, password, currency, image) {
         let user = this.getById(CURRENT_USER.id);
         
-        user.password = password || user.password;
         user.firstName = firstName || user.firstName;
         user.lastName = lastName || user.lastName;
+        user.password = password || user.password;
         user.currency = currency || user.currency;
         user.image = image || user.image;
         

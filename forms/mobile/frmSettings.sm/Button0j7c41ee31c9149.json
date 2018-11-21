@@ -18,8 +18,8 @@
         0,
         0
     ],
-    "_skin_": "s8ea833479b24d509154bcce6757ea3c",
-    "_text_": "Button",
+    "_skin_": "se208589049d4d858b95cad274f99cca",
+    "_text_": "Save",
     "_top_": {
         "type": "string",
         "value": "20dp"
@@ -38,6 +38,7 @@
     "displaytext": true,
     "focusskin": "s1901fcac8f447b39705b120badbd2e6",
     "id": "Button0j7c41ee31c9149",
+    "ide_onClick": "AS_Button_c6fc7f080ef7440a8aa11456ae2ddbce",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
