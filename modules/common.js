@@ -17,7 +17,7 @@ var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
 
 const CURRENT_USER = {id: undefined};
 
-const CURRENCY = ["UAH", "USD", "EUR", "PLZ"];
+const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
 
 const DATA = {
     users: [

@@ -28,6 +28,16 @@ define({
         });
         currency.masterData = data;
         currency.selectedKey = data[0][0];
+    },
+    
+    seveSettings: function () {
+        let firstName = this.view.txbFirstName.text;
+        let lastName = this.view.txbLastName.text;
+        let currency = this.view.lstCurrency.selectedKeyValue[1];
+    },
+    
+    verficationOldPasswoed () {
+        if (this.view.txbOldPassword1 === )
     }
     
 
