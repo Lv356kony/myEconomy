@@ -14,63 +14,8 @@ var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
               '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
 
 const CURRENT_USER = {id: undefined};
-const CURRENCIES = ['USD', 'EUR', 'PLN', 'UAH'];
 
-function findUserCurrencies(){
-    let categories = serviceCategory.getCategories();
-    let curr = [];
-    for(let i = 0; i < categories.length; i++){
-        const index = curr.findIndex(elem => elem === categories[i].currency);
-        if(index === -1) {
-            curr.push(categories[i].currency);
-        }           
-    }
-    return curr;
-}
-
-function getAllCurrencySubsets(currencies){
-    let results = [];
-    for(let i = 0; i < currencies.length; i++){
-        let currenciesCopy = currencies.slice();
-        let index = currenciesCopy.indexOf(currencies[i]);
-        currenciesCopy.splice(index, 1);    
-        for(let j = 0; j < currenciesCopy.length; j++){
-            results.push(currencies[i]+"_"+currenciesCopy[j]);
-        } 
-    }
-    return results;
-}
-
-let currencySubsets = getAllCurrencySubsets(findUserCurrencies());
-
-function getCurrencies(curr){
-    let sets = {};
-    curr.forEach(pairs => {
-        let request = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', request , false);
-        xhr.send();
-        if (xhr.status != 200) {
-            alert( xhr.status + ': ' + xhr.statusText ); 
-        } else {
-            let exchangeSet = JSON.parse(xhr.responseText);
-            for(let currencyPair in exchangeSet){
-                for(let exchangeRate in exchangeSet[currencyPair]){
-                    sets[currencyPair] = exchangeSet[currencyPair][exchangeRate];
-                }
-            }
-        }
-    });
-    return sets;
-}
-
-
-const EXCHANGELIST = getCurrencies(currencySubsets);
-
-function calculate(from, to, value) {
-    let key = from + "_" + to;
-    return value*EXCHANGELIST[key];
-}
+const EXCHANGELIST = {};
 
 const DATA = {
     users: [
@@ -678,6 +623,59 @@ const userService = {
         return true;
     }
 };
+
+const serviceCurrencies = {
+  findUserCurrencies: function (){
+    let categories = serviceCategory.getCategories();
+    let curr = [];
+    for(let i = 0; i < categories.length; i++){
+      const index = curr.findIndex(elem => elem === categories[i].currency);
+      if(index === -1) {
+        curr.push(categories[i].currency);
+      }           
+    }
+    return curr;
+  },
+
+  generateCurrencySubsets: function(currencies){
+    let results = [];
+    for(let i = 0; i < currencies.length; i++){
+      let currenciesCopy = currencies.slice();
+      let index = currenciesCopy.indexOf(currencies[i]);
+      currenciesCopy.splice(index, 1);    
+      for(let j = 0; j < currenciesCopy.length; j++){
+        results.push(currencies[i]+"_"+currenciesCopy[j]);
+      } 
+    }
+    return results;
+  },
+
+  getCurrencies: function(currencySubsets){
+    currencySubsets.forEach(pairs => {
+      let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', requestURL);
+      xhr.onload = function(){
+        if (xhr.status != 200) {
+          alert( xhr.status + ': ' + xhr.statusText ); 
+        } else {
+          let exchangeSet = JSON.parse(xhr.responseText);
+          for(let currencyPair in exchangeSet){
+            for(let exchangeRate in exchangeSet[currencyPair]){
+              EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+            }
+          }
+        }
+      };
+      xhr.send();
+    });
+  }
+};
+
+function initCurrencies(){
+    let currencySubsets = serviceCurrencies.generateCurrencySubsets(serviceCurrencies.findUserCurrencies());
+    serviceCurrencies.getCurrencies(currencySubsets);
+}
 
 function validateEmail(str) {
     let pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
