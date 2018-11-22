@@ -21,7 +21,6 @@
     "addWidgetsdone": false,
     "allboxes": [],
     "android": {
-        "ide_onOrientationChange": "AS_Form_bce8f418ade1455d8be2bdddf93637b1",
         "needAppMenu": false,
         "psp": {
             "windowSoftInputMode": 2
@@ -51,6 +50,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmLogin",
+    "ide_init": "AS_Form_e720965a63cf4878a346a8bb736bc64b",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

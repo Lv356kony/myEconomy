@@ -1,8 +1,30 @@
 {
     "HEAD": "w2adca4c4b664eda90c57d91ea6a9534",
+    "w009c442ae624315a68cada29cdbf0a1": {
+        "extension": "js",
+        "kuid": "w009c442ae624315a68cada29cdbf0a1",
+        "name": "lineChart.js",
+        "parent": "w28ed211889b4e3ea623eb39a6deb3da",
+        "type": "F"
+    },
+    "w28ed211889b4e3ea623eb39a6deb3da": {
+        "children": [
+            "w009c442ae624315a68cada29cdbf0a1",
+            "wbe56943ff9641598fe7cfd0fa07e45e",
+            "wd68f4ae7025424f8a0c74f7bf170356",
+            "wc538167b4b748f39fc474495fa9c7b6",
+            "wb30a5851e1d4f01aa8b60be8bcce281",
+            "wbdc9ed3604a459282877eb1f7d7b9ea"
+        ],
+        "kuid": "w28ed211889b4e3ea623eb39a6deb3da",
+        "name": "chartist_line",
+        "parent": "w2adca4c4b664eda90c57d91ea6a9534",
+        "type": "D"
+    },
     "w2adca4c4b664eda90c57d91ea6a9534": {
         "children": [
-            "w47d5d1f084c4cf5a0faddae99a1877b"
+            "w47d5d1f084c4cf5a0faddae99a1877b",
+            "w28ed211889b4e3ea623eb39a6deb3da"
         ],
         "kuid": "w2adca4c4b664eda90c57d91ea6a9534",
         "name": "localfiles",
@@ -63,6 +85,41 @@
         "kuid": "wac512db419f40a690c0f8f7361007d9",
         "name": "Pie_chartistChart.html",
         "parent": "w47d5d1f084c4cf5a0faddae99a1877b",
+        "type": "F"
+    },
+    "wb30a5851e1d4f01aa8b60be8bcce281": {
+        "extension": "js",
+        "kuid": "wb30a5851e1d4f01aa8b60be8bcce281",
+        "name": "chartist-plugin-axistitle.js",
+        "parent": "w28ed211889b4e3ea623eb39a6deb3da",
+        "type": "F"
+    },
+    "wbdc9ed3604a459282877eb1f7d7b9ea": {
+        "extension": "html",
+        "kuid": "wbdc9ed3604a459282877eb1f7d7b9ea",
+        "name": "lineChartist.html",
+        "parent": "w28ed211889b4e3ea623eb39a6deb3da",
+        "type": "F"
+    },
+    "wbe56943ff9641598fe7cfd0fa07e45e": {
+        "extension": "css",
+        "kuid": "wbe56943ff9641598fe7cfd0fa07e45e",
+        "name": "chartistCss.css",
+        "parent": "w28ed211889b4e3ea623eb39a6deb3da",
+        "type": "F"
+    },
+    "wc538167b4b748f39fc474495fa9c7b6": {
+        "extension": "js",
+        "kuid": "wc538167b4b748f39fc474495fa9c7b6",
+        "name": "LIC.js",
+        "parent": "w28ed211889b4e3ea623eb39a6deb3da",
+        "type": "F"
+    },
+    "wd68f4ae7025424f8a0c74f7bf170356": {
+        "extension": "js",
+        "kuid": "wd68f4ae7025424f8a0c74f7bf170356",
+        "name": "chartist.js",
+        "parent": "w28ed211889b4e3ea623eb39a6deb3da",
         "type": "F"
     },
     "wf78c7d6289d43ee8a1d715982a47422": {
