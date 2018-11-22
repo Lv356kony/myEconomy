@@ -17,31 +17,51 @@ var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
 
 const CURRENT_USER = {id: undefined};
 
-const CURRENCIES = ["UAH","USD","EUR","PLN"];
-
+const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
 
 const DATA = {
     users: [
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
+            
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
-            password: 'intelwithradeon'
+            password: 'intelwithradeon',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 3,
             email: 'o.piaskovska@gmail.com',
-            password: 'somepassword'
+            password: 'somepassword',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
-            password: 'onemoretime'
+            password: 'onemoretime',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         }
     ],
 
@@ -51,50 +71,43 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
-            user_id: 1,
-            currency: "UAH"
+            user_id: 1
         }
     ],
 
@@ -455,9 +468,6 @@ const serviceCategory = {
         }
         return categories;
     },
-    
-     
-    
 
     create: function(data) {
         DATA.categories.push(data);
@@ -485,6 +495,17 @@ const userService = {
             return userMockArray[0];
         }
         return null;
+    },
+    
+    updateUser: function (firstName, lastName, password, currency, image) {
+        let user = this.getById(CURRENT_USER.id);
+        
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.password = password || user.password;
+        user.currency = currency || user.currency;
+        user.image = image || user.image;
+        
     },
 
     login: function (email, password) {
@@ -580,6 +601,10 @@ const userService = {
         user.email = email;
         user.password = password;
         user.id = Date.now();
+        user.firstName = "";
+        user.lastName = "";
+        user.currency = "UAH";
+        user.image = "";
         DATA.users.push(user);
         return true;
     }

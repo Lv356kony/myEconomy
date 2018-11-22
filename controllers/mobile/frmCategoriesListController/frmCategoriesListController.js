@@ -70,6 +70,10 @@ define({
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmStatistics");
     },
+    goToSettings: function(){
+        this.view.flxSideMenuContainer.left = '-100%';
+        navToForm("frmSettings");
+    },
     showMenu: function(){
         this.view.flxSideMenuContainer.left = '0%';
     },
