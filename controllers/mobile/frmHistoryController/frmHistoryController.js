@@ -28,7 +28,6 @@ define({
     showExpenses: function() {
         let incomes = this.filterByTypeOfTransaction("Income");
         let currents = this.filterByTypeOfTransaction("Current");
-        // expByCat = [];
         let expByCat = '';
 
         if(incomes.indexOf(this.categoryId) !== -1){
@@ -56,12 +55,19 @@ define({
                 let innerDateKey = value.date.getDate() + ' ' + value.date.getMonth();
                 return outerDateKey == innerDateKey;
             });
-
+			
             const index = dates.findIndex(daySum => daySum.numDay === numDay && daySum.date === date);
+            
             if(index === -1){
                 let amounts = [];
-                for(let j = 0; j < filtExpByDay.length; j++){
-                    amounts.push(filtExpByDay[j].toAmount);
+                if(serviceCategory.getById(this.categoryId).type === 'Income'){
+                    for(let j = 0; j < filtExpByDay.length; j++){
+                        amounts.push(filtExpByDay[j].fromAmount);
+                    }
+                } else {
+                    for(let j = 0; j < filtExpByDay.length; j++){
+                        amounts.push(filtExpByDay[j].toAmount);
+                    }
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
                 dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
