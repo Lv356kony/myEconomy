@@ -37,8 +37,9 @@ define({
         var self = this;
         return self.cleanConfPasswordError.call(this);
     },
-    /** onOrientationChange defined for frmLogin **/
-    AS_Form_bce8f418ade1455d8be2bdddf93637b1: function AS_Form_bce8f418ade1455d8be2bdddf93637b1(eventobject) {
+    /** init defined for frmLogin **/
+    AS_Form_e720965a63cf4878a346a8bb736bc64b: function AS_Form_e720965a63cf4878a346a8bb736bc64b(eventobject) {
         var self = this;
+        return initCurrencies.call(this);
     }
 });
