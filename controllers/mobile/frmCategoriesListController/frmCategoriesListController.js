@@ -8,7 +8,7 @@ define({
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
-                    balance: serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id) +  symbol,
+                    balance: `${serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -27,11 +27,12 @@ define({
     initCurrentCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Current"){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
-                    balance: serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id),
+                    balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -49,11 +50,12 @@ define({
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Expenses"){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
-                    balance: serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id),
+                    balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
