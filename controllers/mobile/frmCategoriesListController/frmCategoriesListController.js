@@ -7,6 +7,7 @@ define({
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id),
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -15,7 +16,8 @@ define({
         let segment = this.view.segmIncome;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -27,6 +29,7 @@ define({
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id),
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -35,7 +38,8 @@ define({
         let segment = this.view.segmCurrent;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -47,6 +51,7 @@ define({
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id),
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -55,7 +60,8 @@ define({
         let segment = this.view.segmExpenses;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -134,6 +140,26 @@ define({
         }
         let expensesLabel = this.view.lblExpensesCount;
         expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
+    },
+    
+    getSymbolForCategory: function (categoryId){
+        let category = serviceCategory.getById(categoryId);
+        let currency = category.currency;
+        let currencySymbol;
+        switch(currency) {
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "EUR":
+                currencySymbol = "€";
+                break;
+            case "PLN":
+                currencySymbol = "zł";
+                break;
+            default:
+                currencySymbol = "₴";
+        }
+        return currencySymbol;
     },
 
     setCategoryIncomeType: function() {
