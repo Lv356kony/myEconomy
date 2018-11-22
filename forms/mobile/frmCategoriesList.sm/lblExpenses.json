@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "number",
-        "value": "23"
-    },
     "_margin_": [
         1,
         1,
@@ -25,8 +21,8 @@
     "_skin_": "s472a5edddb54d7a92e85f9203560cb4",
     "_text_": "Expenses:",
     "_width_": {
-        "type": "string",
-        "value": "100%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_wrapping_": 2,
     "android": {
@@ -36,6 +32,10 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "20%"
+    },
     "centery": {
         "type": "string",
         "value": "50%"

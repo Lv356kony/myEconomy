@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "20dp"
+    },
     "_margin_": [
         1,
         1,
@@ -18,11 +22,11 @@
         0,
         0
     ],
-    "_skin_": "s832ceb8ce004c37b570a7065e10a485",
-    "_text_": "Current:",
+    "_skin_": "s535ba2c64684c409ffb3af83ad22008",
+    "_text_": "Last name:",
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "25%"
     },
     "_wrapping_": 2,
     "android": {
@@ -32,17 +36,13 @@
         }
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "20%"
-    },
     "centery": {
         "type": "string",
         "value": "50%"
     },
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "lblCurrent",
+    "contentalignment": 6,
+    "id": "lblLastName",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +56,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d405a7df9e48481892b709de02af2dfe",
+    "kuid": "deec4022126b430dbf57a9c042cd2372",
     "name": "kony.ui.Label",
-    "parent": "flxCurrent",
-    "pf": "frmCategoriesList",
+    "parent": "flxLastNameContainer",
+    "pf": "frmSettings",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

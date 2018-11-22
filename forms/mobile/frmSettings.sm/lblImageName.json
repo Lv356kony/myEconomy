@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "35%"
+    },
     "_margin_": [
         1,
         1,
@@ -18,8 +22,8 @@
         0,
         0
     ],
-    "_skin_": "s832ceb8ce004c37b570a7065e10a485",
-    "_text_": "Current:",
+    "_skin_": "s535ba2c64684c409ffb3af83ad22008",
+    "_text_": "",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -32,17 +36,13 @@
         }
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "20%"
-    },
     "centery": {
         "type": "string",
         "value": "50%"
     },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblCurrent",
+    "id": "lblImageName",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +56,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d405a7df9e48481892b709de02af2dfe",
+    "kuid": "c5bd605ef84f40b893f68f96e9d5091c",
     "name": "kony.ui.Label",
-    "parent": "flxCurrent",
-    "pf": "frmCategoriesList",
+    "parent": "flxImageContainer",
+    "pf": "frmSettings",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

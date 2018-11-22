@@ -17,28 +17,51 @@ const CURRENT_USER = {id: undefined};
 
 const EXCHANGELIST = {};
 
+const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
+
 const DATA = {
     users: [
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
+
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
-            password: 'intelwithradeon'
+            password: 'intelwithradeon',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 3,
             email: 'o.piaskovska@gmail.com',
-            password: 'somepassword'
+            password: 'somepassword',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
-            password: 'onemoretime'
+            password: 'onemoretime',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         }
     ],
 
@@ -361,58 +384,6 @@ const serviceTransactions = {
         return countIncome - countExpenses;
     },
 
-    getIncomeBalanceByUserId: function(){
-        let categories = [];
-        for(let i = 0; i < DATA.categories.length; i++){
-            if(CURRENT_USER.id === DATA.categories[i].user_id){
-                categories.push(DATA.categories[i]);
-            }
-        }
-
-        let incomeIds = [];
-        for(let i = 0; i < categories.length; i++){
-            if(categories[i].type === 'Income'){
-                incomeIds.push(categories[i].id);
-            }
-        }
-
-        let countIncome = 0.00;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            for(let j = 0; j < incomeIds.length; j++){
-                if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += parseInt(DATA.transactions[i].amount);
-                }
-            }
-        }
-        return countIncome ;
-    },
-
-    getExpensesBalanceByUserId: function(){
-        let categories = [];
-        for(let i = 0; i < DATA.categories.length; i++){
-            if(CURRENT_USER.id === DATA.categories[i].user_id){
-                categories.push(DATA.categories[i]);
-            }
-        }
-
-        let expensesIds = [];
-        for(let i = 0; i < categories.length; i++){
-            if(categories[i].type === 'Expenses'){
-                expensesIds.push(categories[i].id);
-            }
-        }
-
-        let countExpenses = 0.00;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            for(let j = 0; j < expensesIds.length; j++){
-                if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += parseInt(DATA.transactions[i].amount);
-                }
-            }
-        }
-        return countExpenses;
-    },
-
     getByCategoryId: function(categoryId){
         let transaction =[];
         for(let i = 0; i < DATA.transactions.length; i++){
@@ -526,6 +497,17 @@ const userService = {
         return null;
     },
 
+    updateUser: function (firstName, lastName, password, currency, image) {
+        let user = this.getById(CURRENT_USER.id);
+
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.password = password || user.password;
+        user.currency = currency || user.currency;
+        user.image = image || user.image;
+
+    },
+
     login: function (email, password) {
         let validateEmailResult = validateEmail(email);
 
@@ -619,6 +601,10 @@ const userService = {
         user.email = email;
         user.password = password;
         user.id = Date.now();
+        user.firstName = "";
+        user.lastName = "";
+        user.currency = "UAH";
+        user.image = "";
         DATA.users.push(user);
         return true;
     }
@@ -632,7 +618,7 @@ const serviceCurrencies = {
       const index = curr.findIndex(elem => elem === categories[i].currency);
       if(index === -1) {
         curr.push(categories[i].currency);
-      }           
+      }
     }
     return curr;
   },
@@ -642,10 +628,10 @@ const serviceCurrencies = {
     for(let i = 0; i < currencies.length; i++){
       let currenciesCopy = currencies.slice();
       let index = currenciesCopy.indexOf(currencies[i]);
-      currenciesCopy.splice(index, 1);    
+      currenciesCopy.splice(index, 1);
       for(let j = 0; j < currenciesCopy.length; j++){
         results.push(currencies[i]+"_"+currenciesCopy[j]);
-      } 
+      }
     }
     return results;
   },
@@ -657,7 +643,7 @@ const serviceCurrencies = {
       xhr.open('GET', requestURL);
       xhr.onload = function(){
         if (xhr.status != 200) {
-          alert( xhr.status + ': ' + xhr.statusText ); 
+          alert( xhr.status + ': ' + xhr.statusText );
         } else {
           let exchangeSet = JSON.parse(xhr.responseText);
           for(let currencyPair in exchangeSet){

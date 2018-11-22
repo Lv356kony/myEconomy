@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "5%"
+    },
     "_margin_": [
         1,
         1,
@@ -18,11 +22,15 @@
         0,
         0
     ],
-    "_skin_": "s832ceb8ce004c37b570a7065e10a485",
-    "_text_": "Current:",
+    "_skin_": "s02a79d63f664c70b42a39889153c611",
+    "_text_": "The password must include uppercase and lowercase letters, numbers and symbols",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
@@ -32,17 +40,9 @@
         }
     },
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "20%"
-    },
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblCurrent",
+    "id": "lblNewPasswoed1Error",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +56,11 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d405a7df9e48481892b709de02af2dfe",
+    "kuid": "dc2585c96d4746e4b196f27df94b2e66",
     "name": "kony.ui.Label",
-    "parent": "flxCurrent",
-    "pf": "frmCategoriesList",
+    "paddinginpixel": false,
+    "parent": "flxNewPassword1Error",
+    "pf": "frmSettings",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

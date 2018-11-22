@@ -23,35 +23,43 @@
         0
     ],
     "_percent_": true,
-    "_right_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "130dp"
+        "value": "56dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxStatisticsSection",
-        "btnLogOut",
-        "flxSettingsSection"
+        "flxFirstNameContainer",
+        "flxLastNameContainer",
+        "flxOldPasswordContainer1",
+        "flxOldPasswordError",
+        "flxNewPasswordContainer1",
+        "flxNewPassword1Error",
+        "flxNewPasswordContainer2",
+        "flxNewPassword2Error",
+        "flxCurrencyContainer",
+        "flxImageContainer",
+        "Button0j7c41ee31c9149"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxMenuButtons",
+    "id": "flxMainContainer",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "cd34101ad0734d3f856c9092581003fc",
-    "layouttype": 2,
+    "kuid": "g269939b66f7461e9cb21e43e3ead74d",
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxSideMenu",
-    "pf": "frmCategoriesList",
+    "parent": "frmSettings",
+    "pf": "frmSettings",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,

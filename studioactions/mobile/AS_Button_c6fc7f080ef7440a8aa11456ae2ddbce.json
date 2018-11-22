@@ -1,0 +1,28 @@
+{
+    "AS_Button_c6fc7f080ef7440a8aa11456ae2ddbce": {
+        "id": "AS_Button_c6fc7f080ef7440a8aa11456ae2ddbce",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmSettings",
+            "type": "forms",
+            "platform": "",
+            "KUID": "a82f7fff9d9b415698b96cec232b5a5e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___bcfd1bb8dd1c4ee7bae21eba9e929351",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "clickSaveButton",
+            "display": "clickSaveButton",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

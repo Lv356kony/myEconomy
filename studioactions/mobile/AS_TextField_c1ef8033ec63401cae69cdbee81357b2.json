@@ -1,0 +1,31 @@
+{
+    "AS_TextField_c1ef8033ec63401cae69cdbee81357b2": {
+        "id": "AS_TextField_c1ef8033ec63401cae69cdbee81357b2",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "contextObj": {
+            "name": "frmSettings",
+            "type": "forms",
+            "platform": "",
+            "KUID": "a82f7fff9d9b415698b96cec232b5a5e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c6e394a140f041ae8ee8335c6ca5aa4d",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "verficationOldPasswoed",
+            "display": "verficationOldPasswoed",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
