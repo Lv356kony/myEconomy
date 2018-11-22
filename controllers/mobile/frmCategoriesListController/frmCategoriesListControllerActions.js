@@ -62,6 +62,15 @@ define({
         var self = this;
         return self.logOut.call(this);
     },
+    /** onDownloadComplete defined for imgSettings **/
+    AS_Image_cdfd0cd2849947a88bd355d3a3a41864: function AS_Image_cdfd0cd2849947a88bd355d3a3a41864(eventobject, imagesrc, issuccess) {
+        var self = this;
+    },
+    /** onTouchEnd defined for btnSettings **/
+    AS_Button_b2250ed362804eb791f0032738f080c6: function AS_Button_b2250ed362804eb791f0032738f080c6(eventobject, x, y) {
+        var self = this;
+        return self.goToSettings.call(this);
+    },
     /** onClick defined for btnHideMenu **/
     AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a: function AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a(eventobject) {
         var self = this;

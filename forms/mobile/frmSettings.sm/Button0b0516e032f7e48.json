@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        3,
+        0,
+        3,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_skin_": "sf866a71c7484f1bae12e7787803f430",
+    "_text_": "Find image",
+    "_width_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "s1901fcac8f447b39705b120badbd2e6",
+    "id": "Button0b0516e032f7e48",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "bf4e44ab4c0d4bdead83857c4725b80e",
+    "name": "kony.ui.Button",
+    "paddinginpixel": false,
+    "parent": "FlexContainer0e6600f52b29542",
+    "pf": "frmSettings",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}
