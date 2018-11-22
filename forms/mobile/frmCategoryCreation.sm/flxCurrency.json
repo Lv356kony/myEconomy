@@ -3,11 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "300dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "50dp"
+        "value": "40dp"
     },
     "_margin_": [
         0,
@@ -23,35 +19,37 @@
         0
     ],
     "_percent_": true,
-    "_right_": {
-        "type": "number",
-        "value": "50"
-    },
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_top_": {
+        "type": "string",
+        "value": "185dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centery": {
+    "centerx": {
         "type": "string",
-        "value": "45.00%"
+        "value": "50%"
     },
     "children": [
-        "flxAddIconWrp",
-        "flxInputCategoryName",
-        "btnAddNewCategory",
-        "flxCurrency"
+        "lblCurrency",
+        "lstCurrency"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxCreateCategoryForm",
+    "id": "flxCurrency",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "e7a492cffaef46d299f393b250d0540e",
+    "kuid": "e45b9e7741a34f448de087900f066f0b",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxCategoryCreation",
+    "parent": "flxCreateCategoryForm",
     "pf": "frmCategoryCreation",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
