@@ -36,7 +36,7 @@ const DATA = {
             password: 'intelwithradeon',
             firstName: "",
             lastName: "",
-            currency: "",
+            currency: "UAH",
             image: ""
         },  {
             id: 3,
@@ -44,7 +44,7 @@ const DATA = {
             password: 'somepassword',
             firstName: "",
             lastName: "",
-            currency: "",
+            currency: "UAH",
             image: ""
         },  {
             id: 4,
@@ -52,7 +52,7 @@ const DATA = {
             password: 'Ra$1',
             firstName: "",
             lastName: "",
-            currency: "",
+            currency: "UAH",
             image: ""
         },  {
             id: 5,
@@ -60,7 +60,7 @@ const DATA = {
             password: 'onemoretime',
             firstName: "",
             lastName: "",
-            currency: "",
+            currency: "UAH",
             image: ""
         }
     ],
@@ -601,6 +601,10 @@ const userService = {
         user.email = email;
         user.password = password;
         user.id = Date.now();
+        user.firstName = "";
+        user.lastName = "";
+        user.currency = "UAH";
+        user.image = "";
         DATA.users.push(user);
         return true;
     }
