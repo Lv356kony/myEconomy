@@ -12,33 +12,56 @@ var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4'
                 '9': 'October', '10': 'November', '11': 'December'};
 var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
               '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
-var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
-                   '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
 const CURRENT_USER = {id: undefined};
+
+const EXCHANGELIST = {};
+
+const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
 
 const DATA = {
     users: [
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
+
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
-            password: 'intelwithradeon'
+            password: 'intelwithradeon',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 3,
             email: 'o.piaskovska@gmail.com',
-            password: 'somepassword'
+            password: 'somepassword',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
-            password: 'onemoretime'
+            password: 'onemoretime',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         }
     ],
 
@@ -503,6 +526,17 @@ const userService = {
         return null;
     },
 
+    updateUser: function (firstName, lastName, password, currency, image) {
+        let user = this.getById(CURRENT_USER.id);
+
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.password = password || user.password;
+        user.currency = currency || user.currency;
+        user.image = image || user.image;
+
+    },
+
     login: function (email, password) {
         let validateEmailResult = validateEmail(email);
 
@@ -596,10 +630,67 @@ const userService = {
         user.email = email;
         user.password = password;
         user.id = Date.now();
+        user.firstName = "";
+        user.lastName = "";
+        user.currency = "UAH";
+        user.image = "";
         DATA.users.push(user);
         return true;
     }
 };
+
+const serviceCurrencies = {
+  findUserCurrencies: function (){
+    let categories = serviceCategory.getCategories();
+    let curr = [];
+    for(let i = 0; i < categories.length; i++){
+      const index = curr.findIndex(elem => elem === categories[i].currency);
+      if(index === -1) {
+        curr.push(categories[i].currency);
+      }
+    }
+    return curr;
+  },
+
+  generateCurrencySubsets: function(currencies){
+    let results = [];
+    for(let i = 0; i < currencies.length; i++){
+      let currenciesCopy = currencies.slice();
+      let index = currenciesCopy.indexOf(currencies[i]);
+      currenciesCopy.splice(index, 1);
+      for(let j = 0; j < currenciesCopy.length; j++){
+        results.push(currencies[i]+"_"+currenciesCopy[j]);
+      }
+    }
+    return results;
+  },
+
+  getCurrencies: function(currencySubsets){
+    currencySubsets.forEach(pairs => {
+      let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', requestURL);
+      xhr.onload = function(){
+        if (xhr.status != 200) {
+          alert( xhr.status + ': ' + xhr.statusText );
+        } else {
+          let exchangeSet = JSON.parse(xhr.responseText);
+          for(let currencyPair in exchangeSet){
+            for(let exchangeRate in exchangeSet[currencyPair]){
+              EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+            }
+          }
+        }
+      };
+      xhr.send();
+    });
+  }
+};
+
+function initCurrencies(){
+    let currencySubsets = serviceCurrencies.generateCurrencySubsets(serviceCurrencies.findUserCurrencies());
+    serviceCurrencies.getCurrencies(currencySubsets);
+}
 
 function validateEmail(str) {
     let pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
