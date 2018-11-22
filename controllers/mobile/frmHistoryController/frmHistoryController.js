@@ -28,6 +28,7 @@ define({
     showExpenses: function() {
         let incomes = this.filterByTypeOfTransaction("Income");
         let currents = this.filterByTypeOfTransaction("Current");
+        // expByCat = [];
         let expByCat = '';
 
         if(incomes.indexOf(this.categoryId) !== -1){
@@ -60,7 +61,7 @@ define({
             if(index === -1){
                 let amounts = [];
                 for(let j = 0; j < filtExpByDay.length; j++){
-                    amounts.push(filtExpByDay[j].amount);
+                    amounts.push(filtExpByDay[j].toAmount);
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
                 dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
@@ -98,7 +99,7 @@ define({
     }, 
 
     getByCategoryIdFrom: function(categoryId){
-        let transaction =[];
+        let transaction = [];
         for(let i = 0; i < DATA.transactions.length; i++){
             if(categoryId === DATA.transactions[i].from){
                 transaction.push(DATA.transactions[i]);
@@ -112,14 +113,14 @@ define({
         let transactions = [0];
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].from === this.categoryId){
-                transactions.push(DATA.transactions[i].amount);
+                transactions.push(DATA.transactions[i].fromAmount);
             }
         }
 
         let incomes = [0];
         for(let j = 0; j < DATA.transactions.length; j++){
             if(DATA.transactions[j].to === this.categoryId){
-                incomes.push(DATA.transactions[j].amount);
+                incomes.push(DATA.transactions[j].toAmount);
             }
         }
         let result = incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
