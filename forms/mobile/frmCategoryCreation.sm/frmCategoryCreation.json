@@ -49,6 +49,8 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmCategoryCreation",
+    "ide_init": "AS_Form_d6a67e65b8994d80b0700694f66936b4",
+    "ide_postShow": "AS_Form_f224d072d9174afe8790131623878a5d",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
