@@ -47,7 +47,7 @@ define({
             let numDay = expByCat[i].date.getDate().toString();
             let date = getMonth[expByCat[i].date.getMonth()] + ' ' + expByCat[i].date.getFullYear();
             let imgSum = 'sum.png';
-            let imgDol = 'dollar_symbol.png';
+            let imgDol = this.setCurrencyIcon(this.categoryId);
 
             let outerDateKey = expByCat[i].date.getDate() + ' ' + expByCat[i].date.getMonth(); 
 
@@ -131,7 +131,6 @@ define({
         }
         let result = incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
         return result.toFixed(2);
-        //return incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
     },
 
     showCurrent: function(){
@@ -144,7 +143,7 @@ define({
         let numDay = now.getDate().toString();
         let date = getMonth[now.getMonth()] + ' ' + now.getFullYear();
         let imgSum = 'sum.png';
-        let imgDol = 'dollar_symbol.png';
+        let imgDol = this.setCurrencyIcon(this.categoryId);
         let sum = this.getBalanceByCard();
 
         dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
@@ -159,5 +158,19 @@ define({
             imgDollar: 'imgDol'
         };
         segHistoryExpense.setData(dates);
+    },
+    
+    setCurrencyIcon: function(categoryId) {
+        let currency = serviceCategory.getCurrencyById(categoryId);
+        switch (currency){
+            case 'UAH':
+                return 'hryvnia_symbol.png';
+            case 'USD':
+                return 'dollar_symbol.png';
+            case 'EUR':
+                return 'euro_symbol.png';
+            case 'PLN':
+                return 'zloty_symbol.png';
+        }
     }
 });

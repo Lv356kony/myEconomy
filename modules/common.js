@@ -71,46 +71,106 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
+            currency: 'USD',
             user_id: 1
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
+            currency: 'UAH',
             user_id: 1
         }
     ],
-
+	
+        categoriesTest: [
+        {
+            id: 1,
+            icon: 'bill.png',
+            name: 'Groceries',
+            type: 'Expenses',
+            currency: 'UAH',
+            user_id: 1
+        },  {
+            id: 2,
+            icon: 'home.png',
+            name: 'Home',
+            type: 'Expenses',
+            currency: 'UAH',
+            user_id: 1
+        },  {
+            id: 3,
+            icon: 'car.png',
+            name: 'Transport',
+            type: 'Expenses',
+            currency: 'UAH',
+            user_id: 1
+        },  {
+            id: 4,
+            icon: 'cocktail.png',
+            name: 'Cafe',
+            type: 'Expenses',
+            currency: 'UAH',
+            user_id: 1
+        },  {
+            id: 5,
+            icon: 'gamecontroller.png',
+            name: 'Games',
+            type: 'Expenses',
+            currency: 'UAH',
+            user_id: 1
+        },  {
+            id: 6,
+            icon: 'dollar.png',
+            name: 'Salary',
+            type: 'Income',
+            currency: 'USD',
+            user_id: 1
+        },  {
+            id: 7,
+            icon: 'bank.png',
+            name: 'Monobank',
+            type: 'Current',
+            currency: 'UAH',
+            user_id: 1
+        }
+    ],
+    
     transactions: [
         {
             id: 1,
@@ -189,7 +249,7 @@ const DATA = {
             from: 7,
             fromAmount: 11670,
             to: 5,
-            toAmount: 11670,
+            toAmount: 417,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Playstation 4'
@@ -306,7 +366,7 @@ const DATA = {
             from: 7,
             fromAmount: 1699,
             to: 5,
-            toAmount: 1699,
+            toAmount: 61,
             user_id: 1,
             date: new Date('August 12, 2018 23:15:30'),
             commentary: 'Red Dead Redemption 2'
@@ -444,7 +504,7 @@ const serviceTransactions = {
         DATA.transactions.push(transaction);
     },
 
-    update: function(transactionId, fromAmount, from, to, date, comment, toAmount){
+    update: function(transactionId, from, fromAmount, to, toAmount, date, comment){
         let transaction = this.getById(transactionId);
 
         transaction.fromAmount = parseFloat(fromAmount) || transaction.fromAmount;
@@ -496,6 +556,15 @@ const serviceCategory = {
             }
         }
         return categories;
+    },
+    
+    getCurrencyById: function(categoryId) {
+   		return this.getById(categoryId).currency;
+    },
+    
+    getCurrencyByCatName: function(categoryName) {
+        let element = DATA.categories.find(category => category.name === categoryName);
+        return element.currency;
     },
 
     create: function(data) {
