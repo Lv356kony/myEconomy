@@ -419,6 +419,14 @@ const serviceTransactions = {
         }
         return null;
     },
+    
+    getTransactionForCurrentUser: function () {
+        return DATA.transactions.filter((element, i) => {
+            if (DATA.transactions[i].user_id === CURRENT_USER.id){
+                return DATA.transactions[i];
+            }
+        });
+    },
 
     create: function(id, amount, from, to, userId, date, comment){
         let transaction = {};
@@ -426,7 +434,7 @@ const serviceTransactions = {
         transaction.amount = parseFloat(amount);
         transaction.from = parseInt(from);
         transaction.to = parseInt(to);
-        transaction.userId = parseInt(userId);
+        transaction.user_id = parseInt(userId);
         transaction.date = new Date(date);
         transaction.commentary = comment;
 

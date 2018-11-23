@@ -21,7 +21,6 @@ define({
             lblBalance: "balance"
         };
         segment.setData(categories);
-        alert("$ € zł ₴");
     },
 
     initCurrentCategoriesList: function(){
@@ -29,10 +28,12 @@ define({
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
             let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Current"){
+                let income = serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id);
+                let expenses = this.getExpensesFromCurrentCategory(serviceCategory.getCategories()[i].id);
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
-                    balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
+                    balance: `${income - expenses} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -45,6 +46,18 @@ define({
             lblBalance: "balance"
         };
         segment.setData(categories);
+    },
+    
+    getExpensesFromCurrentCategory: function (categoryId) {
+        let balance = 0;
+        let transactions = serviceTransactions.getTransactionForCurrentUser();
+        let filter = transactions.filter((element, i) => {
+            if(element.from === categoryId) {
+                return element;
+            }
+        }).map(i => i.amount).forEach(i => balance += i);
+        return balance;
+        
     },
 
     initExpensesCategoriesList: function(){
