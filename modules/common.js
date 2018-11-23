@@ -71,42 +71,49 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
+            currency: 'USD',
             user_id: 1
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
+            currency: 'UAH',
             user_id: 1
         }
     ],
