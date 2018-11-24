@@ -40,7 +40,8 @@
         "flxShowFrom",
         "flxShowExpense",
         "flxShowCommentary",
-        "flxShowDate"
+        "flxShowDate",
+        "flxShowExpenseTo"
     ],
     "clipbounds": true,
     "containerweight": 100,

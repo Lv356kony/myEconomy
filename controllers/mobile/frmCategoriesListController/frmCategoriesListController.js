@@ -101,7 +101,7 @@ define({
         for(let i = 0; i < data.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(data[i].from === incomeIds[j]){
-                    countIncome += parseFloat(Math.round(data[i].amount*100))/100;
+                    countIncome += parseFloat(Math.round(data[i].fromAmount*100))/100;
                 }
             }
         }
@@ -128,7 +128,7 @@ define({
         for(let i = 0; i < data.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(data[i].to === expensesIds[j]){
-                    countExpenses += parseInt(data[i].amount);
+                    countExpenses += parseInt(data[i].toAmount);
                 }
             }
         }

@@ -71,260 +71,294 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
+            currency: 'UAH',
             user_id: 1
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
+            currency: 'USD',
             user_id: 1
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
+            currency: 'UAH',
             user_id: 1
         }
     ],
-
+    
     transactions: [
         {
             id: 1,
-            amount: 152.1,
             from: 7,
+            fromAmount: 152.1,
             to: 4,
+            toAmount: 152.1,
             user_id: 1,
             date: new Date('August 19, 2018 23:15:30'),
             commentary: 'Вечеря'
         }, {
             id: 2,
-            amount: 5,
             from: 7,
+            fromAmount: 5,
             to: 3,
+            toAmount: 5,
             user_id: 1,
             date: new Date('August 19, 2018 23:15:30'),
             commentary: 'Маршрутка'
         },  {
             id: 3,
-            amount: 67,
             from: 7,
+            fromAmount: 67,
             to: 1,
+            toAmount: 67,
             user_id: 1,
             date: new Date('August 18, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 4,
-            amount: 11.1,
             from: 7,
+            fromAmount: 11.1,
             to: 1,
+            toAmount: 11.1,
             user_id: 1,
             date: new Date('August 17, 2018 23:15:30'),
             commentary: 'Морозиво'
         },  {
             id: 5,
-            amount: 85,
             from: 7,
+            fromAmount: 85,
             to: 2,
+            toAmount: 85,
             user_id: 1,
             date: new Date('August 17, 2018 23:15:30'),
             commentary: 'Інтернет'
         },  {
             id: 6,
-            amount: 80.21,
             from: 7,
+            fromAmount: 80.21,
             to: 3,
+            toAmount: 80.21,
             user_id: 1,
             date: new Date('August 17, 2018 23:15:30'),
             commentary: 'Таксі'
         },  {
             id: 7,
-            amount: 329,
             from: 7,
+            fromAmount: 329,
             to: 1,
+            toAmount: 329,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Віскарь'
         },  {
             id: 8,
-            amount: 189,
             from: 7,
+            fromAmount: 189,
             to: 1,
+            toAmount: 189,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
-            commentary: 'Пробукти'
+            commentary: 'Продукти'
         },  {
             id: 9,
-            amount: 11670,
             from: 7,
+            fromAmount: 11670,
             to: 5,
+            toAmount: 417,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Playstation 4'
         },  {
             id: 10,
-            amount: 46,
             from: 7,
+            fromAmount: 46,
             to: 1,
+            toAmount: 46,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Абсент'
         },  {
             id: 11,
-            amount: 23,
             from: 7,
+            fromAmount: 23,
             to: 2,
+            toAmount: 23,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: ''
         },  {
             id: 12,
-            amount: 28200,
             from: 6,
+            fromAmount: 1000,
             to: 7,
+            toAmount: 28200,
             user_id: 1,
             date: new Date('August 15, 2018 23:15:30'),
             commentary: 'Зарплата'
         },  {
             id: 13,
-            amount: 28200,
             from: 6,
+            fromAmount: 1100,
             to: 7,
+            toAmount: 30800,
             user_id: 1,
             date: new Date('August 15, 2018 23:15:30'),
             commentary: 'Зарплата'
         }, {
             id: 14,
-            amount: 38.25,
             from: 7,
+            fromAmount: 38.25,
             to: 4,
+            toAmount: 38.25,
             user_id: 1,
             date: new Date('August 14, 2018 23:15:30'),
             commentary: 'Білий Лев'
         }, {
             id: 15,
-            amount: 5,
             from: 7,
+            fromAmount: 5,
             to: 3,
+            toAmount: 5,
             user_id: 1,
             date: new Date('August 14, 2018 23:15:30'),
             commentary: 'Тролейбус'
         },  {
             id: 16,
-            amount: 95,
             from: 7,
+            fromAmount: 95,
             to: 1,
+            toAmount: 95,
             user_id: 1,
             date: new Date('August 14, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 17,
-            amount: 16.59,
             from: 7,
+            fromAmount: 16.59,
             to: 1,
+            toAmount: 16.59,
             user_id: 1,
             date: new Date('August 13, 2018 23:15:30'),
             commentary: 'Халва'
         },  {
             id: 18,
-            amount: 105,
             from: 7,
+            fromAmount: 105,
             to: 2,
+            toAmount: 105,
             user_id: 1,
             date: new Date('August 13, 2018 23:15:30'),
             commentary: 'Мобільний звязок'
         },  {
             id: 19,
-            amount: 60,
             from: 7,
+            fromAmount: 60,
             to: 3,
+            toAmount: 60,
             user_id: 1,
             date: new Date('August 12, 2018 23:15:30'),
             commentary: 'Таксі'
         },  {
             id: 20,
-            amount: 129,
             from: 7,
+            fromAmount: 129,
             to: 1,
+            toAmount: 129,
             user_id: 1,
             date: new Date('August 12, 2018 23:15:30'),
-            commentary: 'Рукавика'
+            commentary: 'Рукавичка'
         },  {
             id: 21,
-            amount: 74,
             from: 7,
+            fromAmount: 74,
             to: 1,
+            toAmount: 74,
             user_id: 1,
             date: new Date('August 12, 2018 23:15:30'),
-            commentary: 'Пробукти'
+            commentary: 'Продукти'
         },  {
             id: 22,
-            amount: 1699,
             from: 7,
+            fromAmount: 1699,
             to: 5,
+            toAmount: 61,
             user_id: 1,
             date: new Date('August 12, 2018 23:15:30'),
             commentary: 'Red Dead Redemption 2'
         },  {
             id: 23,
-            amount: 53,
             from: 7,
+            fromAmount: 53,
             to: 1,
+            toAmount: 53,
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'Пиво'
         },  {
             id: 24,
-            amount: 1990,
             from: 7,
+            fromAmount: 1990,
             to: 2,
+            toAmount: 1990,
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'Стіл'
         },  {
             id: 25,
-            amount: 4200,
             from: 7,
+            fromAmount: 4200,
             to: 2,
+            toAmount: 4200,
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'Стільці'
         },  {
             id: 26,
-            amount: 1207,
             from: 7,
+            fromAmount: 1207,
             to: 2,
+            toAmount: 1207,
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'Килим'
         },    {
             id: 27,
-            amount: 5,
             from: 7,
+            fromAmount: 5,
             to: 3,
+            toAmount: 5,
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'Метро'
@@ -338,7 +372,7 @@ const serviceTransactions = {
         let categoryBalance = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].to === categoryId){
-                categoryBalance += parseInt(DATA.transactions[i].amount);
+                categoryBalance += parseInt(DATA.transactions[i].toAmount);
             }
         }
         return categoryBalance;
@@ -368,7 +402,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += parseInt(DATA.transactions[i].amount);
+                    countExpenses += parseInt(DATA.transactions[i].toAmount);
                 }
             }
         }
@@ -376,7 +410,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += parseInt(DATA.transactions[i].amount);
+                    countIncome += parseInt(DATA.transactions[i].toAmount);
                 }
             }
         }
@@ -403,12 +437,13 @@ const serviceTransactions = {
         return null;
     },
 
-    create: function(id, amount, from, to, userId, date, comment){
+    create: function(id, fromAmount, from, to, userId, date, comment, toAmount){
         let transaction = {};
         transaction.id = parseInt(id);
-        transaction.amount = parseFloat(amount);
         transaction.from = parseInt(from);
+        transaction.fromAmount = parseFloat(fromAmount);
         transaction.to = parseInt(to);
+        transaction.toAmount = parseFloat(toAmount);
         transaction.userId = parseInt(userId);
         transaction.date = new Date(date);
         transaction.commentary = comment;
@@ -416,10 +451,11 @@ const serviceTransactions = {
         DATA.transactions.push(transaction);
     },
 
-    update: function(transactionId, amount, from, to, date, comment){
+    update: function(transactionId, from, fromAmount, to, toAmount, date, comment){
         let transaction = this.getById(transactionId);
 
-        transaction.amount = parseFloat(amount) || transaction.amount;
+        transaction.fromAmount = parseFloat(fromAmount) || transaction.fromAmount;
+        transaction.toAmount = parseFloat(toAmount) || transaction.toAmount;
         transaction.from = from || transaction.from;
         transaction.to = to || transaction.to;
         transaction.date = new Date(date) || transaction.date;
@@ -467,6 +503,15 @@ const serviceCategory = {
             }
         }
         return categories;
+    },
+    
+    getCurrencyById: function(categoryId) {
+   		return this.getById(categoryId).currency;
+    },
+    
+    getCurrencyByCatName: function(categoryName) {
+        let element = DATA.categories.find(category => category.name === categoryName);
+        return element.currency;
     },
 
     create: function(data) {

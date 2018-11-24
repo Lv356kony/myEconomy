@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "inpExpense",
-        "lblExpense"
+        "lblExpense",
+        "imgCurrency"
     ],
     "clipbounds": true,
     "containerweight": 100,
