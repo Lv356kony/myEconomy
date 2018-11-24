@@ -95,7 +95,7 @@ const DATA = {
             from: 7,
             to: 4,
             user_id: 1,
-            date: new Date('August 19, 2018 23:15:30'),
+            date: new Date('June 19, 2018 23:15:30'),
             commentary: 'Вечеря'
         }, {
             id: 2,
@@ -103,7 +103,7 @@ const DATA = {
             from: 7,
             to: 3,
             user_id: 1,
-            date: new Date('August 19, 2018 23:15:30'),
+            date: new Date('July 19, 2018 23:15:30'),
             commentary: 'Маршрутка'
         },  {
             id: 3,
@@ -119,7 +119,7 @@ const DATA = {
             from: 7,
             to: 1,
             user_id: 1,
-            date: new Date('August 17, 2018 23:15:30'),
+            date: new Date('September 17, 2018 23:15:30'),
             commentary: 'Морозиво'
         },  {
             id: 5,
@@ -127,7 +127,7 @@ const DATA = {
             from: 7,
             to: 2,
             user_id: 1,
-            date: new Date('August 17, 2018 23:15:30'),
+            date: new Date('November 11, 2018 23:15:30'),
             commentary: 'Інтернет'
         },  {
             id: 6,
@@ -135,7 +135,7 @@ const DATA = {
             from: 7,
             to: 3,
             user_id: 1,
-            date: new Date('August 17, 2018 23:15:30'),
+            date: new Date('November 17, 2018 23:15:30'),
             commentary: 'Таксі'
         },  {
             id: 7,
@@ -143,7 +143,7 @@ const DATA = {
             from: 7,
             to: 1,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
+            date: new Date('November 16, 2018 23:15:30'),
             commentary: 'Віскарь'
         },  {
             id: 8,
@@ -151,8 +151,8 @@ const DATA = {
             from: 7,
             to: 1,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
-            commentary: 'Пробукти'
+            date: new Date('November 18, 2018 23:15:30'),
+            commentary: 'Продукти'
         },  {
             id: 9,
             amount: 11670,
@@ -183,7 +183,7 @@ const DATA = {
             from: 6,
             to: 7,
             user_id: 1,
-            date: new Date('August 15, 2018 23:15:30'),
+            date: new Date('November 15, 2018 23:15:30'),
             commentary: 'Зарплата'
         },  {
             id: 13,
@@ -203,7 +203,7 @@ const serviceTransactions = {
         let categoryBalance = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].to === categoryId){
-                categoryBalance += parseInt(DATA.transactions[i].amount);
+                categoryBalance += parseFloat(Math.round((DATA.transactions[i].amount)*100))/100;
             }
         }
         return categoryBalance;
@@ -233,7 +233,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += parseInt(DATA.transactions[i].amount);
+                    countExpenses += parseFloat(Math.round((DATA.transactions[i].amount)*100))/100;
                 }
             }
         }
@@ -241,7 +241,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += parseInt(DATA.transactions[i].amount);
+                    countIncome += parseFloat(Math.round((DATA.transactions[i].amount)*100))/100;
                 }
             }
         }
@@ -272,10 +272,10 @@ const serviceTransactions = {
     create: function(id, amount, from, to, userId, date, comment){
         let transaction = {};
         transaction.id = parseInt(id);
-        transaction.amount = parseInt(amount);
+        transaction.amount = parseFloat(Math.round((amount)*100))/100;
         transaction.from = parseInt(from);
         transaction.to = parseInt(to);
-        transaction.userId = parseInt(userId);
+        transaction.user_id = parseInt(userId);
         transaction.date = new Date(date);
         transaction.commentary = comment;
 

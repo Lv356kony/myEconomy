@@ -52,14 +52,65 @@ define({
             this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " $";
         }
     },
+    
+    
+    //this function returns ids of transactions where transactions were done this month
+	getTransactionsIdByMonth: function(){
+    let transMonthIds = [];
+    let transactions = DATA.transactions;
+        let currentDate = new Date();
+        for(let i = 0; i < transactions.length; i++){
+            if(transactions[i].date.getMonth() === currentDate.getMonth() && transactions[i].date.getFullYear() === currentDate.getFullYear()){
+                transMonthIds.push(transactions[i].from);
+                transMonthIds.push(transactions[i].to);
+            }
+        }
+    let unique = (value, index, self) => {
+            return self.indexOf(value) === index;
+        };
+        return transMonthIds.filter(unique);
+	},
+    
+    
+    //this function returns categories where transactions were done this month
+	getCategoriesByMonth: function(){
+        transMonthIds = this.getTransactionsIdByMonth();
+        let categoriesOfMonth = [];
+        for(let i = 0; i<transMonthIds.length; i++){
+            categoriesOfMonth.push(serviceCategory.getById(transMonthIds[i]));
+        }
+    return categoriesOfMonth;
+    },
+    
+    
+	//this function returns balance for categories where transactions were done this month
+    getBalanceByMonth: function(categoryId){
+        let transMonth = [];
+        let transactions = DATA.transactions;
+        let currentDate = new Date();
+        for(let i = 0; i < transactions.length; i++){
+            if(transactions[i].date.getMonth() === currentDate.getMonth()&&transactions[i].date.getFullYear() === currentDate.getFullYear()){
+                transMonth.push(transactions[i]);
+            }
+        }
 
+        let categoryBalance = 0.00;
+        
+        for(let i = 0; i < this.getTransactionsIdByMonth().length; i++){
+            if(transMonth[i].to === categoryId){
+                categoryBalance += parseFloat(Math.round((transMonth[i].amount)*100))/100;
+            }
+        }
+        return categoryBalance;
+    },
+    
 
     getListNamesAndBalanceByCategory: function(categoryType) {
         let listNameAndBalanceByCategiry = [];
         let categoryList = this.getListOfCategoriesByType(categoryType);
 
         categoryList.forEach( i => {
-            let categorySum = serviceTransactions.getBalanceByCategoryId(i.id);
+            let categorySum = this.getBalanceByMonth(i.id);
             if (categorySum) {
                 listNameAndBalanceByCategiry.push({balance : categorySum,
                                                    name : i.name});
@@ -70,7 +121,7 @@ define({
 
 
     getListOfCategoriesByType: function(categoryType) {
-        let categories = serviceCategory.getCategories();
+        let categories = this.getCategoriesByMonth();
         let expenses = [];
         let income = [];
         for(let i = 0; i < categories.length; i++){
