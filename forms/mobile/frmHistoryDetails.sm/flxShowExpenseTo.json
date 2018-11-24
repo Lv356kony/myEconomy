@@ -1,13 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "0"
-    },
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
@@ -27,39 +23,34 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sea569150381436bb908af2bed972441",
+    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "40dp"
+        "value": "150dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 1,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxCategory",
-        "flxExpense",
-        "flxFrom",
-        "flxDate",
-        "flxCommentary",
-        "flxUpdate",
-        "lblTransactionId",
-        "flxExpenseTo"
+        "lblShowExpenseTo",
+        "lblShowTo",
+        "imgShowCurrencyTo"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxEditForm",
+    "id": "flxShowExpenseTo",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "g153c0f2502d47609699b017eb6c8563",
+    "kuid": "id154e2eb4df4931a4ba8888f2258e31",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxEdit",
+    "parent": "flxShowForm",
     "pf": "frmHistoryDetails",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
@@ -67,5 +58,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 2
+    "zindex": 1
 }

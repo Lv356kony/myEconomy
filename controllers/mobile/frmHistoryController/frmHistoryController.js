@@ -47,7 +47,7 @@ define({
             let numDay = expByCat[i].date.getDate().toString();
             let date = getMonth[expByCat[i].date.getMonth()] + ' ' + expByCat[i].date.getFullYear();
             let imgSum = 'sum.png';
-            let imgDol = 'dollar_symbol.png';
+            let imgDol = this.setCurrencyIcon(this.categoryId);
 
             let outerDateKey = expByCat[i].date.getDate() + ' ' + expByCat[i].date.getMonth(); 
 
@@ -55,12 +55,19 @@ define({
                 let innerDateKey = value.date.getDate() + ' ' + value.date.getMonth();
                 return outerDateKey == innerDateKey;
             });
-
+			
             const index = dates.findIndex(daySum => daySum.numDay === numDay && daySum.date === date);
+            
             if(index === -1){
                 let amounts = [];
-                for(let j = 0; j < filtExpByDay.length; j++){
-                    amounts.push(filtExpByDay[j].amount);
+                if(serviceCategory.getById(this.categoryId).type === 'Income'){
+                    for(let j = 0; j < filtExpByDay.length; j++){
+                        amounts.push(filtExpByDay[j].fromAmount);
+                    }
+                } else {
+                    for(let j = 0; j < filtExpByDay.length; j++){
+                        amounts.push(filtExpByDay[j].toAmount);
+                    }
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
                 dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
@@ -98,7 +105,7 @@ define({
     }, 
 
     getByCategoryIdFrom: function(categoryId){
-        let transaction =[];
+        let transaction = [];
         for(let i = 0; i < DATA.transactions.length; i++){
             if(categoryId === DATA.transactions[i].from){
                 transaction.push(DATA.transactions[i]);
@@ -112,19 +119,18 @@ define({
         let transactions = [0];
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].from === this.categoryId){
-                transactions.push(DATA.transactions[i].amount);
+                transactions.push(DATA.transactions[i].fromAmount);
             }
         }
 
         let incomes = [0];
         for(let j = 0; j < DATA.transactions.length; j++){
             if(DATA.transactions[j].to === this.categoryId){
-                incomes.push(DATA.transactions[j].amount);
+                incomes.push(DATA.transactions[j].toAmount);
             }
         }
         let result = incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
         return result.toFixed(2);
-        //return incomes.reduce((prev, curr) => prev + curr) - transactions.reduce((prev, curr) => prev + curr);
     },
 
     showCurrent: function(){
@@ -137,7 +143,7 @@ define({
         let numDay = now.getDate().toString();
         let date = getMonth[now.getMonth()] + ' ' + now.getFullYear();
         let imgSum = 'sum.png';
-        let imgDol = 'dollar_symbol.png';
+        let imgDol = this.setCurrencyIcon(this.categoryId);
         let sum = this.getBalanceByCard();
 
         dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
@@ -152,5 +158,19 @@ define({
             imgDollar: 'imgDol'
         };
         segHistoryExpense.setData(dates);
+    },
+    
+    setCurrencyIcon: function(categoryId) {
+        let currency = serviceCategory.getCurrencyById(categoryId);
+        switch (currency){
+            case 'UAH':
+                return 'hryvnia_symbol.png';
+            case 'USD':
+                return 'dollar_symbol.png';
+            case 'EUR':
+                return 'euro_symbol.png';
+            case 'PLN':
+                return 'zloty_symbol.png';
+        }
     }
 });
