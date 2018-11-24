@@ -71,42 +71,49 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
+            currency: "UAH",
             user_id: 1
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
+            currency: "UAH",
             user_id: 1
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
+            currency: "UAH",
             user_id: 1
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
+            currency: "UAH",
             user_id: 1
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
+            currency: "UAH",
             user_id: 1
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
+            currency: "UAH",
             user_id: 1
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
+            currency: "UAH",
             user_id: 1
         }
     ],
@@ -635,6 +642,11 @@ const serviceCurrencies = {
     }
     return results;
   },
+    
+   calculate:function(from, to, value) {
+ let key = from + "_" + to;
+ return value* EXCHANGELIST[key];
+},
 
   getCurrencies: function(currencySubsets){
     currencySubsets.forEach(pairs => {
@@ -649,18 +661,28 @@ const serviceCurrencies = {
           for(let currencyPair in exchangeSet){
             for(let exchangeRate in exchangeSet[currencyPair]){
               EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+          
             }
           }
         }
+     
       };
       xhr.send();
     });
+      
+     
   }
+    
+    
+    
 };
 
 function initCurrencies(){
     let currencySubsets = serviceCurrencies.generateCurrencySubsets(serviceCurrencies.findUserCurrencies());
+    alert(currencySubsets);
     serviceCurrencies.getCurrencies(currencySubsets);
+    
+     
 }
 
 function validateEmail(str) {
@@ -672,3 +694,6 @@ function validatePassword(string){
     let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
     return strongRegex.test(string);
 }
+
+
+

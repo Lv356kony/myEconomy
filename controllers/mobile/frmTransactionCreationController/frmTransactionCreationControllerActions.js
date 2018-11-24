@@ -22,6 +22,15 @@ define({
         var self = this;
         return self.hideErrorMasage.call(this);
     },
+    /** onTextChange defined for txtExchange **/
+    AS_TextField_e7a7af5107774c0688f8a72edaf672ad: function AS_TextField_e7a7af5107774c0688f8a72edaf672ad(eventobject, changedtext) {
+        var self = this;
+        return self.exchange.call(this);
+    },
+    /** onTouchStart defined for lblCommentary **/
+    AS_Label_b02a125491fa4847a1e8c5b8ca3bb15a: function AS_Label_b02a125491fa4847a1e8c5b8ca3bb15a(eventobject, x, y) {
+        var self = this;
+    },
     /** onClick defined for btnTransactionSave **/
     AS_Button_e6fff834335e46e79a67fbcbe4f02abc: function AS_Button_e6fff834335e46e79a67fbcbe4f02abc(eventobject) {
         var self = this;

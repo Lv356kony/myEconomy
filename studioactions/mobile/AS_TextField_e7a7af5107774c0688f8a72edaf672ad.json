@@ -1,0 +1,31 @@
+{
+    "AS_TextField_e7a7af5107774c0688f8a72edaf672ad": {
+        "id": "AS_TextField_e7a7af5107774c0688f8a72edaf672ad",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "changedtext"
+        }],
+        "contextObj": {
+            "name": "frmTransactionCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___f559766beb504c88b45b46afe7cecb1a",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "exchange",
+            "display": "exchange",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

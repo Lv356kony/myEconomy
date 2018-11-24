@@ -42,7 +42,7 @@ define({
                 name: categoryName,
                 type: this.type,
                 user_id: CURRENT_USER.id,
-                currency:categoryCurrency 
+                currency: categoryCurrency 
             };
 
             serviceCategory.create(newCategory);

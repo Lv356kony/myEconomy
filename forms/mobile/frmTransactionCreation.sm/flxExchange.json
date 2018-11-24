@@ -1,13 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
+    "_height_": {
         "type": "string",
-        "value": "0dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
+        "value": "40dp"
     },
     "_margin_": [
         0,
@@ -26,7 +22,7 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "56dp"
+        "value": "20dp"
     },
     "_width_": {
         "type": "string",
@@ -36,26 +32,20 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxContainerFrom",
-        "flxconatainerTo",
-        "flxContainerExpence",
-        "flxErrorContainer",
-        "flxExchange",
-        "flxContainerCommentary",
-        "flxContainerDate",
-        "btnTransactionSave"
+        "lblExchange",
+        "txtExchange"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxMainContainer",
+    "id": "flxExchange",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "cf8c1b9887b84ec19231e5d904271a9c",
-    "layouttype": 4,
+    "kuid": "c8d15241cf084811a4f497483cf31955",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmTransactionCreation",
+    "parent": "flxMainContainer",
     "pf": "frmTransactionCreation",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
