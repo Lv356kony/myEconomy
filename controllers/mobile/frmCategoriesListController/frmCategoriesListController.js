@@ -55,7 +55,7 @@ define({
             if(element.from === categoryId) {
                 return element;
             }
-        }).map(i => i.amount).forEach(i => balance += i);
+        }).map(i => i.fromAmount).forEach(i => balance += i);
         return balance;
         
     },

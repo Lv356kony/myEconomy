@@ -99,7 +99,7 @@ const DATA = {
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
-            currency: 'UAH',
+            currency: 'USD',
             user_id: 1
         },  {
             id: 6,
@@ -382,7 +382,7 @@ const serviceTransactions = {
         let categoryBalance = 0;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].from === categoryId){
-                categoryBalance += parseFloat(DATA.transactions[i].amount);
+                categoryBalance += parseFloat(DATA.transactions[i].fromAmount);
             }
         }
         return parseFloat(categoryBalance.toFixed(2));
