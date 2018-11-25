@@ -12,15 +12,9 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
-            "lblCategories": {
+            "lblBalance": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "icnCategories": {
-                "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "imagedrag.png"
             },
             "lblCategories": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -32,15 +26,9 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
-            "lblCategories": {
+            "lblBalance": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "icnCategories": {
-                "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "imagedrag.png"
             },
             "lblCategories": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -52,15 +40,9 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
-            "lblCategories": {
+            "lblBalance": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "icnCategories": {
-                "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "imagedrag.png"
             },
             "lblCategories": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -72,15 +54,9 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
-            "lblCategories": {
+            "lblBalance": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
-            }
-        },
-        {
-            "icnCategories": {
-                "@class": "com.viz.ide.model.segment.ImageSegmentData",
-                "src": "imagedrag.png"
             },
             "lblCategories": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -92,6 +68,10 @@
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
+            "lblBalance": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
             "lblCategories": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "Label"
@@ -101,6 +81,66 @@
             "icnCategories": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
+            },
+            "lblBalance": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCategories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "icnCategories": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblBalance": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCategories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "icnCategories": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblBalance": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCategories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "icnCategories": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblBalance": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCategories": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            }
+        },
+        {
+            "icnCategories": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblBalance": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
             },
             "lblCategories": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
@@ -215,6 +255,7 @@
         "flxCategoriesImg": "flxCategoriesImg",
         "flxRowCategories": "flxRowCategories",
         "icnCategories": "icnCategories",
+        "lblBalance": "lblBalance",
         "lblCategories": "lblCategories"
     },
     "winphone8": {
