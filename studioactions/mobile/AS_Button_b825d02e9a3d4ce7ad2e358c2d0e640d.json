@@ -1,0 +1,31 @@
+{
+    "AS_Button_b825d02e9a3d4ce7ad2e358c2d0e640d": {
+        "id": "AS_Button_b825d02e9a3d4ce7ad2e358c2d0e640d",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___hd1438e4e6cc47e9b5709581fb9de6fd",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "deleteCategory",
+            "display": "deleteCategory",
+            "inputparams": [{
+                "name": "recursiveDelete",
+                "value": "true"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

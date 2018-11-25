@@ -1,6 +1,6 @@
 {
-    "AS_Form_b1b2a209c3ad4e07ba554a971bc82828": {
-        "id": "AS_Form_b1b2a209c3ad4e07ba554a971bc82828",
+    "AS_Button_i05115307c6242f1a7542cf8e8cfe91e": {
+        "id": "AS_Button_i05115307c6242f1a7542cf8e8cfe91e",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,30 +14,20 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___c19831c7705a4718a98533acc724ffcb",
+            "id": "INVOKE_FUNCTION___cca6a6d3ba8846e9ad7b02b160e59345",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showCategory",
-            "display": "showCategory",
+            "sequenceKUID": "showDeleteConfirmation",
+            "display": "showDeleteConfirmation",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
             "disabled": null,
             "source": "controller"
         }, {
-            "id": "INVOKE_FUNCTION___a6546f1670544f5a86fd94d8b74cb36d",
+            "id": "INVOKE_FUNCTION___fc2d79088f0a46deae31062a38972649",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showExpenses",
-            "display": "showExpenses",
-            "inputparams": [],
-            "parentId": null,
-            "callbackType": null,
-            "disabled": null,
-            "source": "controller"
-        }, {
-            "id": "INVOKE_FUNCTION___a417291e2fc045e4a7de099ac7f172c3",
-            "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "hideDeleteOptions",
-            "display": "hideDeleteOptions",
+            "sequenceKUID": "showRecursiveDeleteBtn",
+            "display": "showRecursiveDeleteBtn",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

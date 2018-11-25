@@ -71,43 +71,50 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
-            user_id: 1
+            user_id: 1,
+            visible: true
         }
     ],
 
@@ -611,51 +618,58 @@ const userService = {
 };
 
 const serviceCurrencies = {
-  findUserCurrencies: function (){
-    let categories = serviceCategory.getCategories();
-    let curr = [];
-    for(let i = 0; i < categories.length; i++){
-      const index = curr.findIndex(elem => elem === categories[i].currency);
-      if(index === -1) {
-        curr.push(categories[i].currency);
-      }
-    }
-    return curr;
-  },
-
-  generateCurrencySubsets: function(currencies){
-    let results = [];
-    for(let i = 0; i < currencies.length; i++){
-      let currenciesCopy = currencies.slice();
-      let index = currenciesCopy.indexOf(currencies[i]);
-      currenciesCopy.splice(index, 1);
-      for(let j = 0; j < currenciesCopy.length; j++){
-        results.push(currencies[i]+"_"+currenciesCopy[j]);
-      }
-    }
-    return results;
-  },
-
-  getCurrencies: function(currencySubsets){
-    currencySubsets.forEach(pairs => {
-      let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
-      let xhr = new XMLHttpRequest();
-      xhr.open('GET', requestURL);
-      xhr.onload = function(){
-        if (xhr.status != 200) {
-          alert( xhr.status + ': ' + xhr.statusText );
-        } else {
-          let exchangeSet = JSON.parse(xhr.responseText);
-          for(let currencyPair in exchangeSet){
-            for(let exchangeRate in exchangeSet[currencyPair]){
-              EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+    findUserCurrencies: function (){
+        let categories = serviceCategory.getCategories();
+        let curr = [];
+        for(let i = 0; i < categories.length; i++){
+            const index = curr.findIndex(elem => elem === categories[i].currency);
+            if(index === -1) {
+                curr.push(categories[i].currency);
             }
-          }
         }
-      };
-      xhr.send();
-    });
-  }
+        return curr;
+    },
+
+    generateCurrencySubsets: function(currencies){
+        let results = [];
+        for(let i = 0; i < currencies.length; i++){
+            let currenciesCopy = currencies.slice();
+            let index = currenciesCopy.indexOf(currencies[i]);
+            currenciesCopy.splice(index, 1);
+            for(let j = 0; j < currenciesCopy.length; j++){
+                results.push(currencies[i]+"_"+currenciesCopy[j]);
+            }
+        }
+        return results;
+    },
+
+    getCurrencies: function(currencySubsets){
+        currencySubsets.forEach(pairs => {
+            let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+            let xhr = new kony.net.HttpRequest();
+            xhr.open(constants.HTTP_METHOD_GET, requestURL);
+            xhr.onReadyStateChange = function(){
+                try 
+                {
+                    if(httpclient.readyState == 4)
+                    {
+                        let exchangeSet = JSON.parse(xhr.response);
+                        for(let currencyPair in exchangeSet){
+                            for(let exchangeRate in exchangeSet[currencyPair]){
+                                EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+                            }
+                        }
+                    }
+                }
+                catch(err)
+                { 
+                    //alert("exception is :: " + err.getMessage()); 
+                }
+
+            };
+            xhr.send();
+        });
+    }
 };
 
 function initCurrencies(){

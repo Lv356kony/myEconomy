@@ -1,14 +1,13 @@
 define({ 
 
     initIncomeCategoriesList: function(){
-       let categories = [];
+        let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            if(serviceCategory.getCategories()[i].type === "Income"){
+            if(serviceCategory.getCategories()[i].type === "Income" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
@@ -23,12 +22,11 @@ define({
     initCurrentCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            if(serviceCategory.getCategories()[i].type === "Current"){
+            if(serviceCategory.getCategories()[i].type === "Current" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
@@ -43,12 +41,11 @@ define({
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            if(serviceCategory.getCategories()[i].type === "Expenses"){
+            if(serviceCategory.getCategories()[i].type === "Expenses" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
@@ -147,7 +144,7 @@ define({
     setCategoryExpensesType: function() {
         navToForm('frmCategoryCreation', {categoryType: "Expenses"});
     },
-    
+
     goToCreationCuurentTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Income"});
     },
@@ -155,6 +152,4 @@ define({
     goToCreationExpensesTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Expenses"});
     }
-
-
 });
