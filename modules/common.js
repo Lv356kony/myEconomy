@@ -72,7 +72,6 @@ const DATA = {
             name: 'Groceries',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
             user_id: 1,
             visible: true
         },  {
@@ -81,7 +80,6 @@ const DATA = {
             name: 'Home',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
             user_id: 1,
             visible: true
         },  {
@@ -90,7 +88,6 @@ const DATA = {
             name: 'Transport',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
             user_id: 1,
             visible: true
         },  {
@@ -99,7 +96,6 @@ const DATA = {
             name: 'Cafe',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
             user_id: 1,
             visible: true
         },  {
@@ -108,7 +104,6 @@ const DATA = {
             name: 'Games',
             type: 'Expenses',
             currency: 'USD',
-            user_id: 1
             user_id: 1,
             visible: true
         },  {
@@ -117,7 +112,6 @@ const DATA = {
             name: 'Salary',
             type: 'Income',
             currency: 'USD',
-            user_id: 1
             user_id: 1,
             visible: true
         },  {
@@ -126,7 +120,6 @@ const DATA = {
             name: 'Monobank',
             type: 'Current',
             currency: 'UAH',
-            user_id: 1
             user_id: 1,
             visible: true
         }
@@ -721,7 +714,7 @@ const serviceCurrencies = {
             xhr.onReadyStateChange = function(){
                 try
                 {
-                    if(httpclient.readyState == 4)
+                    if(xhr.readyState == 4)
                     {
                         let exchangeSet = JSON.parse(xhr.response);
                         for(let currencyPair in exchangeSet){
@@ -733,7 +726,7 @@ const serviceCurrencies = {
                 }
                 catch(err)
                 {
-                    //alert("exception is :: " + err.getMessage());
+                    alert("exception is :: " + err);
                 }
 
             };
