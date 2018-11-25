@@ -40,7 +40,8 @@
     "canUpdateUI": true,
     "children": [
         "lblCategories",
-        "flxCategoriesImg"
+        "flxCategoriesImg",
+        "lblBalance"
     ],
     "clipbounds": true,
     "containerId": true,
