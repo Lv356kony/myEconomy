@@ -110,6 +110,7 @@ define({
         this.view.flxLogin.flxRegistration.flxConfirmation.lblConfirmationError.text ='';
 
     }
+    
 
 });
 

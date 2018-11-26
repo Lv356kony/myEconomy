@@ -1,0 +1,28 @@
+{
+    "AS_FlexContainer_g9907a156b2940c1bece2810b40e0192": {
+        "id": "AS_FlexContainer_g9907a156b2940c1bece2810b40e0192",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___d50e9abe98f84eadbe645a68688965bb",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteOptions",
+            "display": "hideDeleteOptions",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

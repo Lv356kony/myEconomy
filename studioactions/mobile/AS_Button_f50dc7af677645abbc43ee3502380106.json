@@ -1,0 +1,38 @@
+{
+    "AS_Button_f50dc7af677645abbc43ee3502380106": {
+        "id": "AS_Button_f50dc7af677645abbc43ee3502380106",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___jd6a1d6bf09a4b4ea0674439c588cbda",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showDeleteBtnWith",
+            "display": "showDeleteBtnWith",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___bc81a65f9a464b23b4dc1e4e492f8c3c",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showDeleteConfirmation",
+            "display": "showDeleteConfirmation",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

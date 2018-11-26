@@ -1,0 +1,30 @@
+{
+    "AS_Button_ge1396e8781145deb1b92ea5a2db3c0c": {
+        "id": "AS_Button_ge1396e8781145deb1b92ea5a2db3c0c",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_e6ba36494f4647c399e52d61bb5deb89",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "deleteTransaction",
+            "display": "deleteTransaction",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION__ide_onClick_b8f1bca586204a2592f815adbbccede2",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteConfirmationWindow",
+            "display": "hideDeleteConfirmationWindow",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

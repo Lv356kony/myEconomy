@@ -90,5 +90,6 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
+        initCurrencies.call(this);
     }
 });

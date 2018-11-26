@@ -33,7 +33,8 @@
     "canUpdateUI": true,
     "children": [
         "flxHistory",
-        "flxHistoryTopMenu"
+        "flxHistoryTopMenu",
+        "flxDeleteCategoryContainer"
     ],
     "containerweight": 100,
     "controllerInfo": {

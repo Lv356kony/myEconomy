@@ -1,0 +1,34 @@
+{
+    "AS_Button_b04babd7ea4544c288c62786a9bbea61": {
+        "id": "AS_Button_b04babd7ea4544c288c62786a9bbea61",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___gab3f18ca95c4fefa9d1e8776d5ab28e",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showDeleteConfirmation",
+            "display": "showDeleteConfirmation",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

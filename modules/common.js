@@ -72,52 +72,59 @@ const DATA = {
             name: 'Groceries',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
-            currency: 'UAH',
-            user_id: 1
+            currency: 'USD',
+            user_id: 1,
+            visible: true
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
             currency: 'USD',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         }
     ],
-    
+
     transactions: [
         {
             id: 1,
@@ -372,10 +379,20 @@ const serviceTransactions = {
         let categoryBalance = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].to === categoryId){
-                categoryBalance += parseInt(DATA.transactions[i].toAmount);
+                categoryBalance += parseFloat(DATA.transactions[i].toAmount);
             }
         }
-        return categoryBalance;
+        return parseFloat(categoryBalance.toFixed(2));
+    },
+
+    getIncomeBalanceByCategoryId: function(categoryId){
+        let categoryBalance = 0;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i].from === categoryId){
+                categoryBalance += parseFloat(DATA.transactions[i].fromAmount);
+            }
+        }
+        return parseFloat(categoryBalance.toFixed(2));
     },
 
     getCurrentBalanceByUserId: function(){
@@ -437,14 +454,22 @@ const serviceTransactions = {
         return null;
     },
 
+    getTransactionForCurrentUser: function () {
+        return DATA.transactions.filter((element, i) => {
+            if (DATA.transactions[i].user_id === CURRENT_USER.id){
+                return DATA.transactions[i];
+            }
+        });
+    },
+
     create: function(id, fromAmount, from, to, userId, date, comment, toAmount){
         let transaction = {};
         transaction.id = parseInt(id);
         transaction.from = parseInt(from);
         transaction.fromAmount = parseFloat(fromAmount);
         transaction.to = parseInt(to);
+        transaction.user_id = parseInt(userId);
         transaction.toAmount = parseFloat(toAmount);
-        transaction.userId = parseInt(userId);
         transaction.date = new Date(date);
         transaction.commentary = comment;
 
@@ -504,11 +529,11 @@ const serviceCategory = {
         }
         return categories;
     },
-    
+
     getCurrencyById: function(categoryId) {
    		return this.getById(categoryId).currency;
     },
-    
+
     getCurrencyByCatName: function(categoryName) {
         let element = DATA.categories.find(category => category.name === categoryName);
         return element.currency;
@@ -681,26 +706,33 @@ const serviceCurrencies = {
     return results;
   },
 
-  getCurrencies: function(currencySubsets){
-    currencySubsets.forEach(pairs => {
-      let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
-      let xhr = new XMLHttpRequest();
-      xhr.open('GET', requestURL);
-      xhr.onload = function(){
-        if (xhr.status != 200) {
-          alert( xhr.status + ': ' + xhr.statusText );
-        } else {
-          let exchangeSet = JSON.parse(xhr.responseText);
-          for(let currencyPair in exchangeSet){
-            for(let exchangeRate in exchangeSet[currencyPair]){
-              EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
-            }
-          }
-        }
-      };
-      xhr.send();
-    });
-  }
+    getCurrencies: function(currencySubsets){
+        currencySubsets.forEach(pairs => {
+            let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+            let xhr = new kony.net.HttpRequest();
+            xhr.open(constants.HTTP_METHOD_GET, requestURL);
+            xhr.onReadyStateChange = function(){
+                try
+                {
+                    if(xhr.readyState == 4)
+                    {
+                        let exchangeSet = JSON.parse(xhr.response);
+                        for(let currencyPair in exchangeSet){
+                            for(let exchangeRate in exchangeSet[currencyPair]){
+                                EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+                            }
+                        }
+                    }
+                }
+                catch(err)
+                {
+                    alert("exception is :: " + err);
+                }
+
+            };
+            xhr.send();
+        });
+    }
 };
 
 function initCurrencies(){
