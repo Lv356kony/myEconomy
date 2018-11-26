@@ -32,6 +32,7 @@ define({
         if(incomes.indexOf(this.categoryId) !== -1){
             expByCat = this.getByCategoryIdFrom(this.categoryId);
         }else if(currents.indexOf(this.categoryId) !== -1){
+            alert(currents);
             this.showCurrent();
             this.view.fldHistorySearch.text = '';
             return;
@@ -48,14 +49,14 @@ define({
         let dates = []; 
         let fldHistorySearch = this.view.fldHistorySearch.text;
         this.view.btnHistorySearch.text = 'Search';
-
         for(let i = 0; i < expByCat.length; i++){
             let day = getDay[expByCat[i].date.getDay()];
             let numDay = expByCat[i].date.getDate().toString();
             let date = getMonth[expByCat[i].date.getMonth()] + ' ' + expByCat[i].date.getFullYear();
             let imgSum = 'sum.png';
+            let commentary = expByCat[i].commentary;
             let imgDol = this.setCurrencyIcon(this.categoryId);
-
+			
             let outerDateKey = expByCat[i].date.getDate() + ' ' + expByCat[i].date.getMonth(); 
 
             let filtExpByDay = expByCat.filter(value => {
@@ -78,7 +79,7 @@ define({
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
                 if(fldHistorySearch) {
-                    let searchString = `${day} ${numDay} ${date} ${sum}`.toLowerCase();
+                    let searchString = `${day} ${numDay} ${date} ${sum} ${commentary}`.toLowerCase();
                     let searchIndex = searchString.indexOf(fldHistorySearch);
                     if(searchIndex !== -1) {
                         dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
@@ -158,7 +159,7 @@ define({
         let currents = this.filterByTypeOfTransaction("Current");
         let fldHistorySearch = this.view.fldHistorySearch.text;
         this.view.btnHistorySearch.text = 'Search';
-
+		alert(currents);
         let dates = []; 
 
         let day = getDay[now.getDay()];
