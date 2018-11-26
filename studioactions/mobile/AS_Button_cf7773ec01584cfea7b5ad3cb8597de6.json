@@ -1,0 +1,34 @@
+{
+    "AS_Button_cf7773ec01584cfea7b5ad3cb8597de6": {
+        "id": "AS_Button_cf7773ec01584cfea7b5ad3cb8597de6",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___cb1b1dda486c46059ea7f55d6e750432",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "showDeleteOptions",
+            "display": "showDeleteOptions",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

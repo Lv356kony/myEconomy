@@ -4,13 +4,12 @@ define({
        let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
             let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
-            if(serviceCategory.getCategories()[i].type === "Income"){
+            if(serviceCategory.getCategories()[i].type === "Income" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
                     balance: `${serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
@@ -27,7 +26,7 @@ define({
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
             let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
-            if(serviceCategory.getCategories()[i].type === "Current"){
+            if(serviceCategory.getCategories()[i].type === "Current" && serviceCategory.getCategories()[i].visible){
                 let income = serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id);
                 let expenses = this.getExpensesFromCurrentCategory(serviceCategory.getCategories()[i].id);
                 categories.push({
@@ -35,7 +34,6 @@ define({
                     icon: serviceCategory.getCategories()[i].icon,
                     balance: `${income - expenses} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
@@ -47,7 +45,7 @@ define({
         };
         segment.setData(categories);
     },
-    
+
     getExpensesFromCurrentCategory: function (categoryId) {
         let balance = 0;
         let transactions = serviceTransactions.getTransactionForCurrentUser();
@@ -57,20 +55,19 @@ define({
             }
         }).map(i => i.fromAmount).forEach(i => balance += i);
         return balance;
-        
+
     },
 
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
             let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
-            if(serviceCategory.getCategories()[i].type === "Expenses"){
+            if(serviceCategory.getCategories()[i].type === "Expenses" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
                     balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
@@ -158,7 +155,7 @@ define({
         let expensesLabel = this.view.lblExpensesCount;
         expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
     },
-    
+
     getCarenncySymbolForCategory: function (categoryId){
         let category = serviceCategory.getById(categoryId);
         let currency = category.currency;
@@ -190,7 +187,7 @@ define({
     setCategoryExpensesType: function() {
         navToForm('frmCategoryCreation', {categoryType: "Expenses"});
     },
-    
+
     goToCreationCuurentTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Income"});
     },
@@ -198,6 +195,4 @@ define({
     goToCreationExpensesTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Expenses"});
     }
-
-
 });
