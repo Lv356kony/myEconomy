@@ -3,10 +3,12 @@ define({
     initIncomeCategoriesList: function(){
        let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Income"){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: `${serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -15,7 +17,8 @@ define({
         let segment = this.view.segmIncome;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -23,10 +26,14 @@ define({
     initCurrentCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Current"){
+                let income = serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id);
+                let expenses = this.getExpensesFromCurrentCategory(serviceCategory.getCategories()[i].id);
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: `${income - expenses} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -35,18 +42,33 @@ define({
         let segment = this.view.segmCurrent;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
+    },
+    
+    getExpensesFromCurrentCategory: function (categoryId) {
+        let balance = 0;
+        let transactions = serviceTransactions.getTransactionForCurrentUser();
+        let filter = transactions.filter((element, i) => {
+            if(element.from === categoryId) {
+                return element;
+            }
+        }).map(i => i.fromAmount).forEach(i => balance += i);
+        return balance;
+        
     },
 
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Expenses"){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
 
                 });
@@ -55,7 +77,8 @@ define({
         let segment = this.view.segmExpenses;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -134,6 +157,26 @@ define({
         }
         let expensesLabel = this.view.lblExpensesCount;
         expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
+    },
+    
+    getCarenncySymbolForCategory: function (categoryId){
+        let category = serviceCategory.getById(categoryId);
+        let currency = category.currency;
+        let currencySymbol;
+        switch(currency) {
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "EUR":
+                currencySymbol = "€";
+                break;
+            case "PLN":
+                currencySymbol = "zł";
+                break;
+            default:
+                currencySymbol = "₴";
+        }
+        return currencySymbol;
     },
 
     setCategoryIncomeType: function() {

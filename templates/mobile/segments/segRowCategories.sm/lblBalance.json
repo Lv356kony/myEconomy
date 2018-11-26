@@ -2,6 +2,10 @@
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_height_": {
         "type": "string",
         "value": "50%"
@@ -25,10 +29,6 @@
     "_render_": true,
     "_skin_": "s6a5912176774b618421a4fe6f537d2d",
     "_text_": "Label",
-    "_top_": {
-        "type": "string",
-        "value": "0%"
-    },
     "_width_": {
         "type": "string",
         "value": "61.33%"
@@ -48,8 +48,8 @@
     },
     "containerId": true,
     "containerweight": 100,
-    "contentalignment": 5,
-    "id": "lblCategories",
+    "contentalignment": 2,
+    "id": "lblBalance",
     "info": null,
     "ipad": {
         "psp": {
@@ -64,8 +64,7 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ea622614b3804ac8880d8290bac504be",
-    "maxnumberoflines": 1,
+    "kuid": "aff54473b0254f79a6f10551aeb1dbef",
     "name": "kony.ui.Label",
     "parent": "flxRowCategories",
     "pf": "segRowCategories",
