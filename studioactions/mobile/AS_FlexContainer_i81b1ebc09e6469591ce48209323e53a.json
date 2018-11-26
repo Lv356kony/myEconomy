@@ -1,0 +1,21 @@
+{
+    "AS_FlexContainer_i81b1ebc09e6469591ce48209323e53a": {
+        "id": "AS_FlexContainer_i81b1ebc09e6469591ce48209323e53a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_dd4797ab3c5c46dc9537f805bd6127e3",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "incomeClick",
+            "display": "incomeClick",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
