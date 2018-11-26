@@ -123,9 +123,14 @@ define({
      
 exchange:function(){
   let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
-  //let cur= serviceCategory.getCurrencyByCatName("aaa"); 
+  let currencyFrom= serviceCategory.getCurrencyByCatName(from); 
     
-  let category = serviceCategory.getCategories(); 
+   let to = this.view.lstTransactionTo.selectedKeyValue[1];  
+   let currencyTo = serviceCategory.getCurrencyByCatName(to); 
+    
+
+    
+  /*let category = serviceCategory.getCategories(); 
  
   let currentCategory = category.filter((category)=>{
       return category.name == from;}); 
@@ -135,31 +140,31 @@ exchange:function(){
   let to = this.view.lstTransactionTo.selectedKeyValue[1];
      let currentCat = category.filter((category)=>{
       return category.name == to;}); 
-  let currency2 = currentCat[0].currency;
+  let currency2 = currentCat[0].currency;*/
     
     
-  let ammount =parseFloat(this.view.txbTransactionAmount.text);
-  let exchange = this.view.txtExchange.text;
+  //let ammount =parseFloat(this.view.txbTransactionAmount.text);
+  //let exchange = this.view.txtExchange.text;
     
     
-     if(currency1 != currency2 ){
+     if(currencyFrom != currencyTo ){
          this.view.flxExchange.isVisible = true;
-         this.view.lblCurrency.text = currency1;
-          this.view.lblAnotherCurrency.text = currency2;   
-      
-   let result = serviceCurrencies.calculate( 'UAH', 'USD', 700);
+         this.view.lblCurrency.text = currencyFrom;
+          this.view.lblAnotherCurrency.text = currencyTo; 
+     }
+
+    
+    
+ /* let result = serviceCurrencies.calculate( 'UAH', 'USD', 700);
           alert(result);
           alert(EXCHANGELIST);
          //this.view.txtExchange.text = result ;  
-     }
+     } */
+     
     
+ 
     
-    
-   
-    
-} 
-    
-
+}
     
 });     
   

@@ -33,9 +33,9 @@ define({
     addCategory: function() {
         let categoryName = this.view.txbInputCategoryName.text;
         let categoryIcon = this.view.imgAddIcon.src;
-        let categoryCurrency =  this.view.lstCurrency.selectedKeyValue[1];
+        let categoryCurrency =  this.view.lstCurrency.selectedKeyValue;
 
-        if(categoryName) {
+        if(categoryName && categoryCurrency) {
             let newCategory = {
                 id: parseInt(Date.now()), 
                 icon: categoryIcon,
@@ -49,7 +49,7 @@ define({
             navToForm('frmCategoriesList');
 
         } else {
-            kony.ui.Alert({message: 'Please enter category name'}, {});
+            kony.ui.Alert({message: 'Please enter category name and currency'}, {});
         }
     },
 

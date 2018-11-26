@@ -22,6 +22,10 @@ define({
         var self = this;
         self.exchange.call(this);
     },
+    /** onTouchEnd defined for txbTransactionAmount **/
+    AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2: function AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2(eventobject, x, y) {
+        var self = this;
+    },
     /** onTextChange defined for txtExchange **/
     AS_TextField_e7a7af5107774c0688f8a72edaf672ad: function AS_TextField_e7a7af5107774c0688f8a72edaf672ad(eventobject, changedtext) {
         var self = this;
@@ -39,9 +43,5 @@ define({
     AS_Form_b3c27e22f90343f3ae48febf44f9a91b: function AS_Form_b3c27e22f90343f3ae48febf44f9a91b(eventobject) {
         var self = this;
         return self.init.call(this);
-    },
-    /** onTouchEnd defined for txbTransactionAmount **/
-    AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2: function AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2(eventobject, x, y) {
-        var self = this;
     }
 });
