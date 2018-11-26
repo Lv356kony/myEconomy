@@ -38,6 +38,7 @@
     "displaytext": true,
     "focusskin": "scb1be65bb264a1ba4eb66ee098657b4",
     "id": "btnHistorySearch",
+    "ide_onClick": "AS_Button_dd8d184903ad4771aa5045414a02effe",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

@@ -16,10 +16,15 @@ define({
     AS_FlexContainer_db38504b27454600bb6b4ecd6c6999c6: function AS_FlexContainer_db38504b27454600bb6b4ecd6c6999c6(eventobject, x, y) {
         var self = this;
     },
+    /** onClick defined for btnHistorySearch **/
+    AS_Button_dd8d184903ad4771aa5045414a02effe: function AS_Button_dd8d184903ad4771aa5045414a02effe(eventobject) {
+        var self = this;
+        return self.onPreShow.call(this);
+    },
     /** preShow defined for frmHistory **/
     AS_Form_b1b2a209c3ad4e07ba554a971bc82828: function AS_Form_b1b2a209c3ad4e07ba554a971bc82828(eventobject) {
         var self = this;
+        self.onPreShow.call(this);
         self.showCategory.call(this);
-        self.showExpenses.call(this);
     }
 });
