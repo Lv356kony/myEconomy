@@ -72,49 +72,56 @@ const DATA = {
             name: 'Groceries',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
             currency: 'USD',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
             currency: 'USD',
-            user_id: 1
+            user_id: 1,
+            visible: true
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
             currency: 'UAH',
-            user_id: 1
+            user_id: 1,
+            visible: true
         }
     ],
 
@@ -699,34 +706,34 @@ const serviceCurrencies = {
     return results;
   },
 
-    
-    
-    
-    
-     calculate: function(from, to, value) {
- let key = from + "_" + to;
- return value*EXCHANGELIST[key];
-},
-  getCurrencies: function(currencySubsets){
-    currencySubsets.forEach(pairs => {
-      let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
-      let xhr = new XMLHttpRequest();
-      xhr.open('GET', requestURL,false);
-      xhr.onload = function(){
-        if (xhr.status != 200) {
-          alert( xhr.status + ': ' + xhr.statusText );
-        } else {
-          let exchangeSet = JSON.parse(xhr.responseText);
-          for(let currencyPair in exchangeSet){
-            for(let exchangeRate in exchangeSet[currencyPair]){
-              EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
-            }
-          }
-        }
-      };
-      xhr.send();
-    });
-  }
+    getCurrencies: function(currencySubsets){
+        currencySubsets.forEach(pairs => {
+            let requestURL = 'http://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+            let xhr = new kony.net.HttpRequest();
+            xhr.open(constants.HTTP_METHOD_GET, requestURL);
+            xhr.onReadyStateChange = function(){
+                try
+                {
+                    if(xhr.readyState == 4)
+                    {
+                        let exchangeSet = xhr.response;
+                        for(let currencyPair in exchangeSet){
+                            for(let exchangeRate in exchangeSet[currencyPair]){
+                                EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+                            }
+                        }
+                    }
+                }
+                catch(err)
+                {
+                    alert("exception is :: " + err);
+                }
+
+            };
+            xhr.send();
+        });
+
+    }
 };
 
 function initCurrencies(){
@@ -743,9 +750,3 @@ function validatePassword(string){
     let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
     return strongRegex.test(string);
 }
-
-
-
-
-
-

@@ -11,7 +11,7 @@ define({
         let transDetails = this.view.segHistoryExpense.selectedRowItems;
         navToForm("frmHistoryDetails", {categoryId: this.categoryId,
                                         date: `${transDetails[0].numDay} ${transDetails[0].date}`});
-    },    
+    },
 
     onNavigate: function(category) 
     {
@@ -55,9 +55,9 @@ define({
                 let innerDateKey = value.date.getDate() + ' ' + value.date.getMonth();
                 return outerDateKey == innerDateKey;
             });
-			
+
             const index = dates.findIndex(daySum => daySum.numDay === numDay && daySum.date === date);
-            
+
             if(index === -1){
                 let amounts = [];
                 if(serviceCategory.getById(this.categoryId).type === 'Income'){
@@ -159,7 +159,7 @@ define({
         };
         segHistoryExpense.setData(dates);
     },
-    
+
     setCurrencyIcon: function(categoryId) {
         let currency = serviceCategory.getCurrencyById(categoryId);
         switch (currency){
@@ -172,5 +172,50 @@ define({
             case 'PLN':
                 return 'zloty_symbol.png';
         }
+    },
+
+    deleteWithTransactions: function(){
+        serviceCategory.deleteById(this.categoryId);
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(this.categoryId === DATA.transactions[i].from || this.categoryId === DATA.transactions[i].to){
+                DATA.transactions.splice(i, 1);
+                i--;
+            }
+        }
+        this.goToCategories();
+    },
+
+    deleteWithoutTransactions: function(){
+        let category = serviceCategory.getById(this.categoryId);
+        category.visible = false;
+        this.goToCategories();
+    },
+
+    showDeleteOptions: function(){
+        this.view.flxDeleteCategoryContainer.setVisibility(true);
+        this.view.flxDeletionOptions.setVisibility(true);
+        this.view.flxDeleteConfirmation.setVisibility(false);
+    },
+
+    hideDeleteOptions: function(){
+        this.view.flxDeleteCategoryContainer.setVisibility(false);
+        this.view.flxDeletionOptions.setVisibility(false);
+        this.view.flxDeleteConfirmation.setVisibility(false);
+    },
+
+    showDeleteBtnWith: function(){
+        this.view.btnWDeleteYes.setVisibility(true);
+        this.view.btnWODeleteYes.setVisibility(false);
+    },
+
+    showDeleteBtnWithout: function(){
+        this.view.btnWDeleteYes.setVisibility(false);
+        this.view.btnWODeleteYes.setVisibility(true);
+    },
+
+    showDeleteConfirmation: function(){
+        this.view.flxDeleteCategoryContainer.setVisibility(true);
+        this.view.flxDeletionOptions.setVisibility(false);
+        this.view.flxDeleteConfirmation.setVisibility(true);
     }
 });

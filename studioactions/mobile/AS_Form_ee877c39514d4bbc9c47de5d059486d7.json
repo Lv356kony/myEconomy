@@ -83,6 +83,16 @@
             "callbackType": null,
             "disabled": null,
             "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___cc95b29d26354f25b89001fa7b248802",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "initCurrencies",
+            "display": "initCurrencies",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
         }]
     }
 }

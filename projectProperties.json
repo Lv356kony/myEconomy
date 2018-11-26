@@ -36,7 +36,7 @@
     "cloud_account_guid": "990b7119-9591-4481-a42a-75650efa137e",
     "nativeContainerProperties": {
         "isEnableJSContainerAndroid": true,
-        "isModified": true,
+        "isModified": false,
         "isEnableJSContaineriOS": true,
         "isEnableJSContainer": true
     },
