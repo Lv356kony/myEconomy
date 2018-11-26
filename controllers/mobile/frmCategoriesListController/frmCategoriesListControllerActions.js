@@ -90,5 +90,13 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
+    },
+    /** init defined for frmCategoriesList **/
+    AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2: function AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2(eventobject) {
+        var self = this;
+    },
+    /** postShow defined for frmCategoriesList **/
+    AS_Form_e4eb6432977f446fb17b17b488f1bf50: function AS_Form_e4eb6432977f446fb17b17b488f1bf50(eventobject) {
+        var self = this;
     }
 });

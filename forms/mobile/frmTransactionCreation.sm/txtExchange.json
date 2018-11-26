@@ -21,7 +21,7 @@
     "_placeholder_": "Exchange",
     "_right_": {
         "type": "string",
-        "value": "30dp"
+        "value": "80dp"
     },
     "_skin_": "s9290602f8ca4ad8891ea601444fec0b",
     "_text_": "",
@@ -31,13 +31,17 @@
     },
     "_width_": {
         "type": "string",
-        "value": "200dp"
+        "value": "150dp"
     },
     "autocapitalize": "none",
     "autocomplete": false,
     "autocorrect": false,
     "autofilter": false,
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerheight": "",
     "containerheightmode": 1,
     "containerweight": 100,

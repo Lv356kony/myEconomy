@@ -50,6 +50,8 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmCategoriesList",
+    "ide_init": "AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2",
+    "ide_postShow": "AS_Form_e4eb6432977f446fb17b17b488f1bf50",
     "ide_preShow": "AS_Form_ee877c39514d4bbc9c47de5d059486d7",
     "info": null,
     "initdone": false,

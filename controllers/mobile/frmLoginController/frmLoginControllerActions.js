@@ -40,6 +40,5 @@ define({
     /** init defined for frmLogin **/
     AS_Form_e720965a63cf4878a346a8bb736bc64b: function AS_Form_e720965a63cf4878a346a8bb736bc64b(eventobject) {
         var self = this;
-        return initCurrencies.call(this);
     }
 });

@@ -19,8 +19,17 @@
         "actions": [{
             "id": "INVOKE_FUNCTION___dd7a0e0423364238a89c032c8937c729",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "hideErrorMasage",
             "display": "hideErrorMasage",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___c1e9f62226fc4b368f892e52130ced20",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "exchange",
+            "display": "exchange",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

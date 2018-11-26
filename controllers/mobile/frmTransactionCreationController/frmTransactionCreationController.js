@@ -122,31 +122,44 @@ define({
     
      
 exchange:function(){
+  let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
+  //let cur= serviceCategory.getCurrencyByCatName("aaa"); 
     
   let category = serviceCategory.getCategories(); 
-  let from = this.view.lstTransactionFrom.selectedKeyValue[1];
+ 
   let currentCategory = category.filter((category)=>{
-      return category.name ==from;}); 
+      return category.name == from;}); 
   let currency1= currentCategory[0].currency;
     
      
   let to = this.view.lstTransactionTo.selectedKeyValue[1];
      let currentCat = category.filter((category)=>{
-      return category.name ==to;}); 
-  let currency2= currentCat[0].currency;
+      return category.name == to;}); 
+  let currency2 = currentCat[0].currency;
     
     
-  let ammount = this.view.txbTransactionAmount.text;
-  let exchange =this.view.txtExchange.text;
-    
-  let result = serviceCurrencies.calculate("UAH","USD",500);
-    
-     return alert(EXCHANGELIST);
+  let ammount =parseFloat(this.view.txbTransactionAmount.text);
+  let exchange = this.view.txtExchange.text;
     
     
-},
+     if(currency1 != currency2 ){
+         this.view.flxExchange.isVisible = true;
+         this.view.lblCurrency.text = currency1;
+          this.view.lblAnotherCurrency.text = currency2;   
+      
+   let result = serviceCurrencies.calculate( 'UAH', 'USD', 700);
+          alert(result);
+          alert(EXCHANGELIST);
+         //this.view.txtExchange.text = result ;  
+     }
+    
+    
     
    
+    
+} 
+    
+
     
 });     
   

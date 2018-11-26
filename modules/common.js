@@ -681,11 +681,19 @@ const serviceCurrencies = {
     return results;
   },
 
+    
+    
+    
+    
+     calculate: function(from, to, value) {
+ let key = from + "_" + to;
+ return value*EXCHANGELIST[key];
+},
   getCurrencies: function(currencySubsets){
     currencySubsets.forEach(pairs => {
       let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
       let xhr = new XMLHttpRequest();
-      xhr.open('GET', requestURL);
+      xhr.open('GET', requestURL,false);
       xhr.onload = function(){
         if (xhr.status != 200) {
           alert( xhr.status + ': ' + xhr.statusText );
@@ -717,3 +725,9 @@ function validatePassword(string){
     let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
     return strongRegex.test(string);
 }
+
+
+
+
+
+

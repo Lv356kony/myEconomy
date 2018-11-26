@@ -1,13 +1,16 @@
 {
-    "AS_TextField_e7a7af5107774c0688f8a72edaf672ad": {
-        "id": "AS_TextField_e7a7af5107774c0688f8a72edaf672ad",
+    "AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2": {
+        "id": "AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }, {
             "datatype": "string",
-            "name": "changedtext"
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
         }],
         "contextObj": {
             "name": "frmTransactionCreation",

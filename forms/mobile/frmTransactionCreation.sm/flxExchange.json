@@ -33,7 +33,8 @@
     "canUpdateUI": true,
     "children": [
         "lblExchange",
-        "txtExchange"
+        "txtExchange",
+        "lblAnotherCurrency"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -41,7 +42,7 @@
     "id": "flxExchange",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "c8d15241cf084811a4f497483cf31955",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
