@@ -708,7 +708,7 @@ const serviceCurrencies = {
 
     getCurrencies: function(currencySubsets){
         currencySubsets.forEach(pairs => {
-            let requestURL = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+            let requestURL = 'http://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
             let xhr = new kony.net.HttpRequest();
             xhr.open(constants.HTTP_METHOD_GET, requestURL);
             xhr.onReadyStateChange = function(){
@@ -716,7 +716,7 @@ const serviceCurrencies = {
                 {
                     if(xhr.readyState == 4)
                     {
-                        let exchangeSet = JSON.parse(xhr.response);
+                        let exchangeSet = xhr.response;
                         for(let currencyPair in exchangeSet){
                             for(let exchangeRate in exchangeSet[currencyPair]){
                                 EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
@@ -732,6 +732,7 @@ const serviceCurrencies = {
             };
             xhr.send();
         });
+
     }
 };
 
