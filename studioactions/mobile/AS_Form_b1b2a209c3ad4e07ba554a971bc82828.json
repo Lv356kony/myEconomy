@@ -16,8 +16,8 @@
         "actions": [{
             "id": "INVOKE_FUNCTION___c19831c7705a4718a98533acc724ffcb",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showCategory",
-            "display": "showCategory",
+            "sequenceKUID": "onPreShow",
+            "display": "onPreShow",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
@@ -26,8 +26,8 @@
         }, {
             "id": "INVOKE_FUNCTION___a6546f1670544f5a86fd94d8b74cb36d",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showExpenses",
-            "display": "showExpenses",
+            "sequenceKUID": "showCategory",
+            "display": "showCategory",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

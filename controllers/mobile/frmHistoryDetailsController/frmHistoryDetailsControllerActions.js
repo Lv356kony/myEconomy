@@ -20,7 +20,7 @@ define({
     /** onClick defined for btnDetailsSearch **/
     AS_Button_ea82bc2cf707429ca6f63ebb6c1979fc: function AS_Button_ea82bc2cf707429ca6f63ebb6c1979fc(eventobject) {
         var self = this;
-        return navToForm.call(this, null, null);
+        return self.showDetails.call(this);
     },
     /** onSelection defined for lstBoxTo **/
     AS_ListBox_h18089f5a59e4ab9b8c909a1fa0456cf: function AS_ListBox_h18089f5a59e4ab9b8c909a1fa0456cf(eventobject) {
