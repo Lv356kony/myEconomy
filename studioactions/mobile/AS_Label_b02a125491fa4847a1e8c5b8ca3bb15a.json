@@ -1,0 +1,24 @@
+{
+    "AS_Label_b02a125491fa4847a1e8c5b8ca3bb15a": {
+        "id": "AS_Label_b02a125491fa4847a1e8c5b8ca3bb15a",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmTransactionCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

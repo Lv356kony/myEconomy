@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "286dp"
+    },
     "_margin_": [
         1,
         1,
@@ -18,16 +22,8 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "70%"
-    },
-    "_skin_": "sb63a06db3cc4b9f9804b5118445d672",
-    "_text_": "Commentary:",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "sc47e1c5361d40f28fc100cc8cd2e817",
+    "_text_": "",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -46,8 +42,7 @@
     },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblCommentary",
-    "ide_onTouchStart": "AS_Label_b02a125491fa4847a1e8c5b8ca3bb15a",
+    "id": "lblAnotherCurrency",
     "info": null,
     "ipad": {
         "psp": {
@@ -61,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d9a5bfc1a1d34f50b2c58efcf44d03e8",
+    "kuid": "jcadee5df93041b7b612be1fc06bd713",
     "name": "kony.ui.Label",
-    "parent": "flxContainerCommentary",
+    "parent": "flxExchange",
     "pf": "frmTransactionCreation",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

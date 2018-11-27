@@ -1,23 +1,20 @@
 {
-    "AS_TextField_da66599987d84693a30f15a9d2344dc9": {
-        "id": "AS_TextField_da66599987d84693a30f15a9d2344dc9",
+    "AS_Button_f709decfc99d454998c13da51bcede84": {
+        "id": "AS_Button_f709decfc99d454998c13da51bcede84",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
-        }, {
-            "datatype": "string",
-            "name": "changedtext"
         }],
         "contextObj": {
-            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e",
             "name": "frmTransactionCreation",
+            "type": "forms",
             "platform": "",
-            "type": "forms"
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___dd7a0e0423364238a89c032c8937c729",
+            "id": "INVOKE_FUNCTION___f40d4a5cc7a74341be09a8939d171327",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "exchange",
             "display": "exchange",

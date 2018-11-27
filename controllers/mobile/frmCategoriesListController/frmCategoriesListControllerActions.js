@@ -80,6 +80,10 @@ define({
     AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88: function AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88(eventobject, x, y) {
         var self = this;
     },
+    /** init defined for frmCategoriesList **/
+    AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2: function AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2(eventobject) {
+        var self = this;
+    },
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
@@ -91,5 +95,9 @@ define({
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
         initCurrencies.call(this);
+    },
+    /** postShow defined for frmCategoriesList **/
+    AS_Form_e4eb6432977f446fb17b17b488f1bf50: function AS_Form_e4eb6432977f446fb17b17b488f1bf50(eventobject) {
+        var self = this;
     }
 });

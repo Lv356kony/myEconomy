@@ -750,3 +750,8 @@ function validatePassword(string){
     let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
     return strongRegex.test(string);
 }
+
+function calculate(from, to, value) {
+ let key = from + "_" + to;
+ return value*EXCHANGELIST[key];
+}
