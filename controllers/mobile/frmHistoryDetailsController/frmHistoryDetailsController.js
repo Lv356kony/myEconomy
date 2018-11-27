@@ -30,6 +30,9 @@ define({
             return element.id;
         });
         let expByCat = '';
+        this.view.btnDetailsSearch.text = 'Search';
+        let fldDetailsSearch = this.view.fldDetailsSearch.text;
+        
         if(incomeIds.indexOf(this.categoryId) !== -1){
             expByCat = this.getByCategoryIdFrom(this.categoryId);
         }else{
@@ -41,19 +44,35 @@ define({
 			
             var expDate = `${expByCat[i].date.getDate()} ${getMonth[expByCat[i].date.getMonth()]} ${expByCat[i].date.getFullYear()}`;
             if(expDate === date){
-                data.push({id: expByCat[i].id,
-                           from: this.getCategoryName(expByCat[i].from),
-                           commentary: expByCat[i].commentary,
-                           expense: serviceCategory.getById(this.categoryId).type === 'Income' ? 
-                           							expByCat[i].fromAmount.toString() : 
-                           							expByCat[i].toAmount.toString(),
-                           to: this.getCategoryName(expByCat[i].to),
-                           date: expByCat[i].date.toString(),
-                           expenseTo: expByCat[i].toAmount.toString(),
-                           imgDol: this.setCurrencyIconInRow(this.categoryId)
-                          });     
+                let rowData = {
+                    id: expByCat[i].id,
+                    from: this.getCategoryName(expByCat[i].from),
+                    commentary: expByCat[i].commentary,
+                    expense: serviceCategory.getById(this.categoryId).type === 'Income' ? 
+                    						expByCat[i].fromAmount.toString() : 
+                    						expByCat[i].toAmount.toString(),
+                    to: this.getCategoryName(expByCat[i].to),
+                    date: expByCat[i].date.toString(),
+                    expenseTo: expByCat[i].toAmount.toString(),
+                    imgDol: this.setCurrencyIconInRow(this.categoryId)
+                };
+                if(fldDetailsSearch) {
+                    let searchString = `${rowData.commentary} ${rowData.expense} ${rowData.from}`.toLowerCase();
+                    let searchIndex = searchString.indexOf(fldDetailsSearch);
+                    if(searchIndex !== -1) {
+                       data.push(rowData);  
+                       this.view.btnDetailsSearch.text = 'Reset';
+                    }
+                } else {
+                   data.push(rowData);  
+                }
             }
         }
+        if(data.length === 0) {
+            alert('No matches. Try ro find something different.');
+            this.view.btnDetailsSearch.text = 'Reset';
+        }
+        this.view.fldDetailsSearch.text = '';
         return data;
     },
 
@@ -68,6 +87,7 @@ define({
             imgDollar: 'imgDol'
         };
         segDetails.setData(data);
+        
     },
 
     hideEditForm: function(){

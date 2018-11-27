@@ -1,23 +1,23 @@
 {
-    "AS_Button_ea82bc2cf707429ca6f63ebb6c1979fc": {
-        "id": "AS_Button_ea82bc2cf707429ca6f63ebb6c1979fc",
+    "AS_Button_dd8d184903ad4771aa5045414a02effe": {
+        "id": "AS_Button_dd8d184903ad4771aa5045414a02effe",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
         "contextObj": {
-            "KUID": "c9af47bd87034153a0897765ac19e939",
-            "name": "frmHistoryDetails",
+            "name": "frmHistory",
+            "type": "forms",
             "platform": "",
-            "type": "forms"
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___ieb15c3746ee452cb9108d50ae62c2e1",
+            "id": "INVOKE_FUNCTION___h7a6a22498b742c1aebb29d7aaa700b3",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showDetails",
-            "display": "showDetails",
+            "sequenceKUID": "onPreShow",
+            "display": "onPreShow",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

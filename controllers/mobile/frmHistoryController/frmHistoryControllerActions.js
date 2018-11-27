@@ -21,6 +21,11 @@ define({
         var self = this;
         return self.showDeleteOptions.call(this);
     },
+    /** onClick defined for btnHistorySearch **/
+    AS_Button_dd8d184903ad4771aa5045414a02effe: function AS_Button_dd8d184903ad4771aa5045414a02effe(eventobject) {
+        var self = this;
+        return self.onPreShow.call(this);
+    },
     /** onClick defined for btnCancelCategoryDeletion **/
     AS_Button_hb7c584837b5403c8f23f9c0bb722e84: function AS_Button_hb7c584837b5403c8f23f9c0bb722e84(eventobject) {
         var self = this;
@@ -61,8 +66,8 @@ define({
     /** preShow defined for frmHistory **/
     AS_Form_b1b2a209c3ad4e07ba554a971bc82828: function AS_Form_b1b2a209c3ad4e07ba554a971bc82828(eventobject) {
         var self = this;
+        self.onPreShow.call(this);
         self.showCategory.call(this);
-        self.showExpenses.call(this);
         self.hideDeleteOptions.call(this);
     }
 });
