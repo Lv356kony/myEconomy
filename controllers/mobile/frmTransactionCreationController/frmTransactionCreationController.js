@@ -38,15 +38,15 @@ define({
 
     createTransaction: function() {
         let id = new Date().getTime();
-        let amount = this.view.txbTransactionAmount.text;
-        //let exchange =  this.view.txtExchange.text;
+        let fromAmount = this.view.txbTransactionAmount.text;
+        let toAmount =  this.view.txtExchange.text;
         let from = this.getSelectedCategory("from").id;
         let to = this.getSelectedCategory("to").id;
         let userId = CURRENT_USER.id;
         let date = this.view.calTransactionDate.formattedDate;
         let comment = this.view.txbTransactionComentarry.text;
         if (amount) {
-            serviceTransactions.create(id, amount, from, to, userId, date, comment);
+            serviceTransactions.create(id, fromAmount, toAmount, from, to, userId, date, comment);
             navToForm("frmCategoriesList");
 
         } else {
@@ -121,8 +121,6 @@ define({
     hideErrorMasage: function (){
         this.view.flxErrorContainer.isVisible = "false";
     },
-
-
 
     exchange: function(){
         
