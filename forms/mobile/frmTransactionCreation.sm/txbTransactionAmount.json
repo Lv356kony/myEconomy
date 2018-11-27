@@ -46,7 +46,6 @@
     "focusskin": "sab74807df994273ab3b0a9dc946fbbc",
     "id": "txbTransactionAmount",
     "ide_onTextChange": "AS_TextField_da66599987d84693a30f15a9d2344dc9",
-    "ide_onTouchEnd": "AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

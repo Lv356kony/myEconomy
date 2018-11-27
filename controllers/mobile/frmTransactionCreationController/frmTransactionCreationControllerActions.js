@@ -20,11 +20,7 @@ define({
     /** onTextChange defined for txbTransactionAmount **/
     AS_TextField_da66599987d84693a30f15a9d2344dc9: function AS_TextField_da66599987d84693a30f15a9d2344dc9(eventobject, changedtext) {
         var self = this;
-        self.exchange.call(this);
-    },
-    /** onTouchEnd defined for txbTransactionAmount **/
-    AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2: function AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2(eventobject, x, y) {
-        var self = this;
+        return self.exchange.call(this);
     },
     /** onTextChange defined for txtExchange **/
     AS_TextField_e7a7af5107774c0688f8a72edaf672ad: function AS_TextField_e7a7af5107774c0688f8a72edaf672ad(eventobject, changedtext) {

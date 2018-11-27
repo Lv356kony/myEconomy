@@ -20,25 +20,26 @@ define({
     clickSaveButton: function () {
         this.createTransaction();
     },
-    
-    
+
+
     clickBackwardButton: function () {
         navToForm("frmCategoriesList");
     },
-    
+
     selectionFromCategory : function (){
         this.view.imgCategoryFrom.src = this.getSelectedCategory("from").icon;
     },
-    
-    
+
+
     selectionToCategory : function (){
         this.view.imgCategoryTo.src = this.getSelectedCategory("to").icon;
     },
 
-    
+
     createTransaction: function() {
         let id = new Date().getTime();
         let amount = this.view.txbTransactionAmount.text;
+        //let exchange =  this.view.txtExchange.text;
         let from = this.getSelectedCategory("from").id;
         let to = this.getSelectedCategory("to").id;
         let userId = CURRENT_USER.id;
@@ -51,6 +52,8 @@ define({
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
+        
+        
     },
 
 
@@ -113,58 +116,52 @@ define({
         let year = curDate.getFullYear();
         this.view.calTransactionDate.dateComponents = [day, month, year];
     },
-    
-    
+
+
     hideErrorMasage: function (){
         this.view.flxErrorContainer.isVisible = "false";
     },
-    
-    
-     
-exchange:function(){
-  let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
-  let currencyFrom= serviceCategory.getCurrencyByCatName(from); 
-    
-   let to = this.view.lstTransactionTo.selectedKeyValue[1];  
-   let currencyTo = serviceCategory.getCurrencyByCatName(to); 
-    
 
-    
-  /*let category = serviceCategory.getCategories(); 
- 
-  let currentCategory = category.filter((category)=>{
-      return category.name == from;}); 
-  let currency1= currentCategory[0].currency;
-    
-     
-  let to = this.view.lstTransactionTo.selectedKeyValue[1];
-     let currentCat = category.filter((category)=>{
-      return category.name == to;}); 
-  let currency2 = currentCat[0].currency;*/
-    
-    
-  //let ammount =parseFloat(this.view.txbTransactionAmount.text);
-  //let exchange = this.view.txtExchange.text;
-    
-    
-     if(currencyFrom != currencyTo ){
-         this.view.flxExchange.isVisible = true;
-         this.view.lblCurrency.text = currencyFrom;
-          this.view.lblAnotherCurrency.text = currencyTo; 
-     }
 
-    
-    
- /* let result = serviceCurrencies.calculate( 'UAH', 'USD', 700);
-          alert(result);
-          alert(EXCHANGELIST);
-         //this.view.txtExchange.text = result ;  
-     } */
-     
-    
- 
-    
-}
-    
+
+    exchange: function(){
+        
+        let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
+        let currencyFrom= serviceCategory.getCurrencyByCatName(from); 
+
+        let to = this.view.lstTransactionTo.selectedKeyValue[1];  
+        let currencyTo = serviceCategory.getCurrencyByCatName(to); 
+
+        let ammount = parseFloat(this.view.txbTransactionAmount.text);
+        let exchange = this.view.txtExchange.text;
+
+
+        if( currencyFrom != currencyTo ){
+            this.view.flxExchange.isVisible = true;
+            this.view.lblCurrency.text = currencyFrom;
+            this.view.lblAnotherCurrency.text = currencyTo; 
+
+        } else{
+            this.view.flxExchange.isVisible = false;
+            this.view.lblCurrency.text = '';
+            this.view.lblAnotherCurrency.text = '';     
+        }
+
+        let result = calculate( currencyFrom, currencyTo, ammount);
+        
+        if( ammount ){   
+        let fixResult = result.toFixed(2);
+        this.view.txtExchange.text = fixResult; 
+            
+        } else {
+             this.view.txtExchange.text = '';
+            
+        }
+    } 
+
+
+
+
+
+
 });     
-  
