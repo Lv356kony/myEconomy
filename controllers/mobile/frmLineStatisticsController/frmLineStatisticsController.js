@@ -1,15 +1,15 @@
 define({ 
-    
+     
     init: function() {
         this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId() + " $";
         this.view.gridIncome.data = [{col1: this.getMinIncome(), 
            col2: this.getAVGIncome(), 
-           col3: this.getMaxIncome()}];
-        this.view.gridExpenses.data = [{col1: this.getMinExpenses(), 
-           col2: this.getAVGExpenses(), 
-           col3: this.getMaxExpenses()}];
-        alert(this.getListBalanceByCategory("Expenses"));
-		alert(this.getListBalanceByCategory("Income"));
+           col3: this.getMaxIncome("max","Income")}];
+        this.view.gridExpenses.data = [{col1: this.getMinExpenses("min","Expenses"), 
+           col2: this.getAVGExpenses("AVG","Expenses"), 
+           col3: this.getMaxExpenses("max","Expenses")}];
+        //alert(this.getListBalanceByCategory("Expenses"));
+		//alert(this.getListBalanceByCategory("Income"));
         
     },
     
@@ -17,6 +17,7 @@ define({
 		navToForm("frmCategoriesList");
     },
     
+    //return an array of id of Currents
     getCurrentCategoryId: function() {
     let categories = serviceCategory.getCategories();
     let current = [];
@@ -28,202 +29,60 @@ define({
     return current;    
 	},
 
-    getAmountByCategory: function(categoryType){
-        let transactions = DATA.transactions;
-        let current = this.getCurrentCategoryId();
-        let incomesBalance = [];
-        let expensesBalance = [];
-        for(let i = 0; i < current.length; i++){
-            for(let j = 0; j < transactions.length; j++){
-                if(transactions[j].to === current[i]){
-                    incomesBalance.push(transactions[j].amount);
-                }
-                else{
-                    expensesBalance.push(transactions[j].amount);
-                }
-            }
-        }
-        if (arguments[0] === "Expenses") {
-            return expensesBalance;
-        } else return incomesBalance;
-    },
-
-    getMaxIncome: function(){
-        let max = this.getAmountByCategory();
-        return Math.max(...max);
-    },
-
-    getAVGIncome: function(){
-        let incomes = this.getAmountByCategory();
-         let sum = incomes.reduce((accumulator, currentValue) => accumulator + currentValue);
-         return parseFloat(Math.round((sum/incomes.length)*100))/100;
-    },
-    
-    getMinIncome: function(){
-        let min = this.getAmountByCategory();
-        return Math.min(...min);
-    },
-
-    getMaxExpenses: function(){
-        let max = this.getAmountByCategory("Expenses");
-        return Math.max(...max);
-    },
-
-    getAVGExpenses: function(){
-        let incomes = this.getAmountByCategory("Expenses");
-         let sum = incomes.reduce((accumulator, currentValue) => accumulator + currentValue);
-         return parseFloat(Math.round((sum/incomes.length)*100))/100;
-    },
-    
-    getMinExpenses: function(){
-        let min = this.getAmountByCategory("Expenses");
-        return Math.min(...min);
-    },
-    
-    getTransactionsIdByMonth: function(){
-    let transMonthIds = [];
+    //get Balancy by Category Type of all period
+	getBalanceByCategoryType: function(categoryType){
     let transactions = DATA.transactions;
-        let currentDate = new Date();
-        for(let i = 0; i < transactions.length; i++){
-            if(transactions[i].date.getMonth() === currentDate.getMonth() && transactions[i].date.getFullYear() === currentDate.getFullYear()){
-                transMonthIds.push(transactions[i].from);
-                transMonthIds.push(transactions[i].to);
-            }
-        }
-    let unique = (value, index, self) => {
-            return self.indexOf(value) === index;
-        };
-        return transMonthIds.filter(unique);
-	},
-       
-    //this function returns categories where transactions were done this month
-	getCategoriesByMonth: function(){
-        transMonthIds = this.getTransactionsIdByMonth();
-        let categoriesOfMonth = [];
-        for(let i = 0; i<transMonthIds.length; i++){
-            categoriesOfMonth.push(serviceCategory.getById(transMonthIds[i]));
-        }
-    return categoriesOfMonth;
-    },
-      
-    getListOfCategoriesByType: function(categoryType) {
-        let categories = this.getCategoriesByMonth();
-        let expenses = [];
-        let income = [];
-        for(let i = 0; i < categories.length; i++){
-            if(categories[i].type === "Expenses"){
-                expenses.push(categories[i]);
-            } else if (categories[i].type === "Current") {
-                income.push(categories[i]);
-            }
-        }
-        if (arguments[0] === "Expenses") {
-            return expenses;
-        } else return income;
-    },
-    
-    getListBalanceByCategory: function(categoryType) {
-        let listBalanceByCategory = [];
-        let categoryList = this.getListOfCategoriesByType(categoryType);
-		let categoryTypeSum = 0.00;
-        categoryList.forEach( i => {
-            let categorySum = this.getBalanceByMonth(i.id);
-            if (categorySum) {
-                listBalanceByCategory.push(categorySum);
-            }
-        });
-        categoryTypeSum = listBalanceByCategory.reduce((accumulator, currentValue) => accumulator + currentValue);
-        return parseFloat(Math.round((categoryTypeSum)*100))/100;
-    },
-        
-    //this function returns balance for categories where transactions were done this month
-    getBalanceByMonth: function(categoryId){
-        let transMonth = [];
-        let transactions = DATA.transactions;
-        let currentDate = new Date();
-        for(let i = 0; i < transactions.length; i++){
-            if(transactions[i].date.getMonth() === currentDate.getMonth()&&transactions[i].date.getFullYear() === currentDate.getFullYear()){
-                transMonth.push(transactions[i]);
-            }
-        }
-
-        let categoryBalance = 0.00;
-        
-        for(let i = 0; i < this.getTransactionsIdByMonth().length; i++){
-            if(transMonth[i].to === categoryId){
-                categoryBalance += parseFloat(Math.round((transMonth[i].amount)*100))/100;
-            }
-        }
-        return categoryBalance;
-    },
-    
-    getBalanceByTypeOfCategories: function(categoryType) {
-        let listOfCategories = this.getListNamesAndBalanceByCategory(categoryType).map(i => i.balance);
-        return listOfCategories.reduce((accumulator, currentValue) => accumulator + currentValue); 
-    },
-    
-    
-//these functions I used for showing list of monthes in DB
-    getTransactionsByYear: function(year = new Date().getFullYear()){
-    let transOfYear = [];
-    let transactions = DATA.transactions;
-    transactions.forEach(i => {
-        if(i.date.getFullYear() === year){
-            transOfYear.push(i);
-        }
-    });
-    return transOfYear;
-	},
-
-	getListOfYearBalanceCategoryByType: function(categoryType){
-    let monthesOfYear = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-    let mockMonthes = [];
-    
-    let monthesFromDB = getDateByCategory(categoryType);//[6, 7, 8, 9, 10, 11]
-    for (let i = 0; i < monthesFromDB[0]; i++) {
-        mockMonthes.push(0);  
-    }
-    mockMonthes.push(...monthesFromDB);
-    let diff = monthesOfYear.length - mockMonthes.length;
-    if (diff > 0){
-        for (let i = 0; i < diff; i++) {
-            mockMonthes.push(0);  
-        } 
-    }
-    return mockMonthes;    
-},
-
-//returns list of incomes/expenses monthes
-	getDateByCategory: function(categoryType){
-    let transactions = getTransactionsByYear();
     let current = this.getCurrentCategoryId();
     let incomesBalance = [];
     let expensesBalance = [];
     for(let i = 0; i < current.length; i++){
         for(let j = 0; j < transactions.length; j++){
             if(transactions[j].to === current[i]){
-                incomesBalance.push(transactions[j].date.getMonth());
+                incomesBalance.push(transactions[j].amount);
             }
             else{
-                expensesBalance.push(transactions[j].date.getMonth());
+                expensesBalance.push(transactions[j].amount);
             }
         }
     }
-    let unique = (value, index, self) => {
-        return self.indexOf(value) === index;
-    };
-
     if (arguments[0] === "Expenses") {
-        let expences = expensesBalance.filter(unique);
-        return expences.sort((a,b)=>a-b);
-    } else{
-        let incomes = incomesBalance.filter(unique);
-    return incomes.sort((a,b)=>a-b);
-    }      
-},
-//end of functions for showing monthes of DB
+        return expensesBalance;
+    } else return incomesBalance;
+	},
+
+    getMaxIncome: function(){
+        let max = this.getBalanceByCategoryType();
+        return Math.max(...max);
+    },
+
+    getMinIncome: function(){
+        let min = this.getBalanceByCategoryType();
+        return Math.min(...min);
+    },
+
+    getAVGIncome: function(){
+        let incomes = this.getBalanceByCategoryType();
+         let sum = incomes.reduce((accumulator, currentValue) => accumulator + currentValue);
+         return parseFloat(Math.round((sum/incomes.length)*100))/100;
+    },
+
+    getMaxExpenses: function(){
+        let max = this.getBalanceByCategoryType("Expenses");
+        return Math.max(...max);
+    },
+
+    getMinExpenses: function(){
+        let min = this.getBalanceByCategoryType("Expenses");
+        return Math.min(...min);
+    },
+
+    getAVGExpenses: function(){
+        let incomes = this.getBalanceByCategoryType("Expenses");
+         let sum = incomes.reduce((accumulator, currentValue) => accumulator + currentValue);
+         return parseFloat(Math.round((sum/incomes.length)*100))/100;
+    },
     
-    
+   
     addChart: function(categoryType) {
         let chartWidjet = this.kdv_createChartWidget();
         this.view.flxLineChartContainer.add(chartWidjet);
@@ -249,7 +108,7 @@ define({
         var chartInfo = {
             "chartProperties": {
                 "chartHeight": 100,
-                "enableScrolling": false,
+                "enableScrolling": true,
                 "position": [0, 0, 100, 100], //[x1 y1 - top x2 y2 - bottom]
                 "title": {
                     "visible": false,
