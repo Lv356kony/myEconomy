@@ -36,9 +36,5 @@ define({
     AS_TextField_f13b47716e9c4e57910f748fd332a1f8: function AS_TextField_f13b47716e9c4e57910f748fd332a1f8(eventobject, changedtext) {
         var self = this;
         return self.cleanConfPasswordError.call(this);
-    },
-    /** onOrientationChange defined for frmLogin **/
-    AS_Form_bce8f418ade1455d8be2bdddf93637b1: function AS_Form_bce8f418ade1455d8be2bdddf93637b1(eventobject) {
-        var self = this;
     }
 });

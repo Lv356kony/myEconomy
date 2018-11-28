@@ -1,0 +1,28 @@
+{
+    "AS_Button_f709decfc99d454998c13da51bcede84": {
+        "id": "AS_Button_f709decfc99d454998c13da51bcede84",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmTransactionCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___f40d4a5cc7a74341be09a8939d171327",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "exchange",
+            "display": "exchange",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

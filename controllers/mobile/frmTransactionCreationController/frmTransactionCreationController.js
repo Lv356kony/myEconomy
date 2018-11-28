@@ -20,37 +20,40 @@ define({
     clickSaveButton: function () {
         this.createTransaction();
     },
-    
-    
+
+
     clickBackwardButton: function () {
         navToForm("frmCategoriesList");
     },
-    
+
     selectionFromCategory : function (){
         this.view.imgCategoryFrom.src = this.getSelectedCategory("from").icon;
     },
-    
-    
+
+
     selectionToCategory : function (){
         this.view.imgCategoryTo.src = this.getSelectedCategory("to").icon;
     },
 
-    
+
     createTransaction: function() {
         let id = new Date().getTime();
-        let amount = this.view.txbTransactionAmount.text;
         let from = this.getSelectedCategory("from").id;
+        let fromAmount = this.view.txbTransactionAmount.text;
         let to = this.getSelectedCategory("to").id;
+        let toAmount =  this.view.txtExchange.text;
         let userId = CURRENT_USER.id;
         let date = this.view.calTransactionDate.formattedDate;
         let comment = this.view.txbTransactionComentarry.text;
-        if (amount) {
-            serviceTransactions.create(id, amount, from, to, userId, date, comment);
+        if (fromAmount) {
+            serviceTransactions.create(id,from, fromAmount, to,toAmount, userId, date, comment);
             navToForm("frmCategoriesList");
 
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
+        
+        
     },
 
 
@@ -113,11 +116,50 @@ define({
         let year = curDate.getFullYear();
         this.view.calTransactionDate.dateComponents = [day, month, year];
     },
-    
-    
+
+
     hideErrorMasage: function (){
         this.view.flxErrorContainer.isVisible = "false";
-    }
+    },
+
+    exchange: function(){
+        
+        let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
+        let currencyFrom= serviceCategory.getCurrencyByCatName(from); 
+
+        let to = this.view.lstTransactionTo.selectedKeyValue[1];  
+        let currencyTo = serviceCategory.getCurrencyByCatName(to); 
+
+        let ammount = parseFloat(this.view.txbTransactionAmount.text);
+        let exchange = this.view.txtExchange.text;
 
 
-});
+        if( currencyFrom != currencyTo ){
+            this.view.flxExchange.isVisible = true;
+            this.view.lblCurrency.text = currencyFrom;
+            this.view.lblAnotherCurrency.text = currencyTo; 
+
+        } else{
+            this.view.flxExchange.isVisible = false;
+            this.view.lblCurrency.text = '';
+            this.view.lblAnotherCurrency.text = '';     
+        }
+
+        let result = calculate( currencyFrom, currencyTo, ammount);
+        
+        if( ammount ){   
+        let fixResult = result.toFixed(2);
+        this.view.txtExchange.text = fixResult; 
+            
+        } else {
+             this.view.txtExchange.text = '';
+            
+        }
+    } 
+
+
+
+
+
+
+});     

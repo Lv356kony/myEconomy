@@ -62,6 +62,15 @@ define({
         var self = this;
         return self.logOut.call(this);
     },
+    /** onDownloadComplete defined for imgSettings **/
+    AS_Image_cdfd0cd2849947a88bd355d3a3a41864: function AS_Image_cdfd0cd2849947a88bd355d3a3a41864(eventobject, imagesrc, issuccess) {
+        var self = this;
+    },
+    /** onTouchEnd defined for btnSettings **/
+    AS_Button_b2250ed362804eb791f0032738f080c6: function AS_Button_b2250ed362804eb791f0032738f080c6(eventobject, x, y) {
+        var self = this;
+        return self.goToSettings.call(this);
+    },
     /** onClick defined for btnHideMenu **/
     AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a: function AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a(eventobject) {
         var self = this;
@@ -71,9 +80,14 @@ define({
     AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88: function AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88(eventobject, x, y) {
         var self = this;
     },
+    /** init defined for frmCategoriesList **/
+    AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2: function AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2(eventobject) {
+        var self = this;
+    },
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
+        self.load.call(this);
         self.initIncomeCategoriesList.call(this);
         self.initCurrentCategoriesList.call(this);
         self.initExpensesCategoriesList.call(this);
@@ -81,5 +95,10 @@ define({
         self.calculateIncomeBalance.call(this);
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
+        initCurrencies.call(this);
+    },
+    /** postShow defined for frmCategoriesList **/
+    AS_Form_e4eb6432977f446fb17b17b488f1bf50: function AS_Form_e4eb6432977f446fb17b17b488f1bf50(eventobject) {
+        var self = this;
     }
 });

@@ -46,7 +46,8 @@
         "flxDate",
         "flxCommentary",
         "flxUpdate",
-        "lblTransactionId"
+        "lblTransactionId",
+        "flxExpenseTo"
     ],
     "clipbounds": true,
     "containerweight": 100,

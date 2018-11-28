@@ -20,7 +20,7 @@
         0,
         0,
         0,
-        0
+        1
     ],
     "_render_": true,
     "_skin_": "s6a5912176774b618421a4fe6f537d2d",
@@ -31,7 +31,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "61.33%"
+        "value": "55%"
     },
     "_wrapping_": 2,
     "android": {
@@ -48,7 +48,7 @@
     },
     "centery": {
         "type": "string",
-        "value": "49.76%"
+        "value": "41%"
     },
     "containerId": true,
     "containerweight": 100,
@@ -71,6 +71,7 @@
     "kuid": "ea622614b3804ac8880d8290bac504be",
     "maxnumberoflines": 1,
     "name": "kony.ui.Label",
+    "paddinginpixel": false,
     "parent": "flxRowCategories",
     "pf": "segRowCategories",
     "retaincontentalignment": false,

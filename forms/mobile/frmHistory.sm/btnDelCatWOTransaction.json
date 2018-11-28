@@ -1,0 +1,56 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        25,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sadb01c057764273a361ed6978c96564",
+    "_text_": "Delete without transactions",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50.00%"
+    },
+    "containerweight": 100,
+    "contentalignment": 4,
+    "disabledSkins": {
+        "focusSkin": "s1901fcac8f447b39705b120badbd2e6"
+    },
+    "displaytext": true,
+    "id": "btnDelCatWOTransaction",
+    "ide_onClick": "AS_Button_hc93b3d2626448299f4b39b2b37b41c5",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "j22795d577ed486b823aef4bcdb95120",
+    "name": "kony.ui.Button",
+    "paddinginpixel": false,
+    "parent": "flxDelCatWOTransaction",
+    "pf": "frmHistory",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "txbTransactionAmount",
-        "lblExpence"
+        "lblExpence",
+        "lblCurrency"
     ],
     "clipbounds": true,
     "containerweight": 100,

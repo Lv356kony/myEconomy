@@ -12,33 +12,56 @@ var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4'
                 '9': 'October', '10': 'November', '11': 'December'};
 var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
               '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
-var getCategory = {'1': 'Groceries', '2': 'Home', '3': 'Transport',
-                   '4': 'Cafe', '5': 'Games', '6': 'Salary', '7': 'Monobank'};
 
-const CURRENT_USER = {id: 1};
+const CURRENT_USER = {id: undefined};
+
+const EXCHANGELIST = {};
+
+const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
 
 const DATA = {
     users: [
         {
             id: 1,
             email: 'antti.raatali@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
+
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
-            password: 'intelwithradeon'
+            password: 'intelwithradeon',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 3,
             email: 'o.piaskovska@gmail.com',
-            password: 'somepassword'
+            password: 'somepassword',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 4,
             email: 'nakonechna.katja@gmail.com',
-            password: 'Ra$1'
+            password: 'Ra$1',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
-            password: 'onemoretime'
+            password: 'onemoretime',
+            firstName: "",
+            lastName: "",
+            currency: "UAH",
+            image: ""
         }
     ],
 
@@ -48,151 +71,304 @@ const DATA = {
             icon: 'bill.png',
             name: 'Groceries',
             type: 'Expenses',
-            user_id: 1
+            currency: 'UAH',
+            user_id: 1,
+            visible: true
         },  {
             id: 2,
             icon: 'home.png',
             name: 'Home',
             type: 'Expenses',
-            user_id: 1
+            currency: 'UAH',
+            user_id: 1,
+            visible: true
         },  {
             id: 3,
             icon: 'car.png',
             name: 'Transport',
             type: 'Expenses',
-            user_id: 1
+            currency: 'UAH',
+            user_id: 1,
+            visible: true
         },  {
             id: 4,
             icon: 'cocktail.png',
             name: 'Cafe',
             type: 'Expenses',
-            user_id: 1
+            currency: 'UAH',
+            user_id: 1,
+            visible: true
         },  {
             id: 5,
             icon: 'gamecontroller.png',
             name: 'Games',
             type: 'Expenses',
-            user_id: 1
+            currency: 'USD',
+            user_id: 1,
+            visible: true
         },  {
             id: 6,
             icon: 'dollar.png',
             name: 'Salary',
             type: 'Income',
-            user_id: 1
+            currency: 'USD',
+            user_id: 1,
+            visible: true
         },  {
             id: 7,
             icon: 'bank.png',
             name: 'Monobank',
             type: 'Current',
-            user_id: 1
+            currency: 'UAH',
+            user_id: 1,
+            visible: true
         }
     ],
 
     transactions: [
         {
             id: 1,
-            amount: 152.1,
             from: 7,
+            fromAmount: 152.1,
             to: 4,
+            toAmount: 152.1,
             user_id: 1,
-            date: new Date('June 19, 2018 23:15:30'),
+            date: new Date('August 19, 2018 23:15:30'),
             commentary: 'Вечеря'
         }, {
             id: 2,
-            amount: 5,
             from: 7,
+            fromAmount: 5,
             to: 3,
+            toAmount: 5,
             user_id: 1,
-            date: new Date('July 19, 2018 23:15:30'),
+            date: new Date('August 19, 2018 23:15:30'),
             commentary: 'Маршрутка'
         },  {
             id: 3,
-            amount: 67,
             from: 7,
+            fromAmount: 67,
             to: 1,
+            toAmount: 67,
             user_id: 1,
             date: new Date('August 18, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 4,
-            amount: 11.1,
             from: 7,
+            fromAmount: 11.1,
             to: 1,
+            toAmount: 11.1,
             user_id: 1,
-            date: new Date('September 17, 2018 23:15:30'),
+            date: new Date('August 17, 2018 23:15:30'),
             commentary: 'Морозиво'
         },  {
             id: 5,
-            amount: 85,
             from: 7,
+            fromAmount: 85,
             to: 2,
+            toAmount: 85,
             user_id: 1,
-            date: new Date('November 11, 2018 23:15:30'),
+            date: new Date('August 17, 2018 23:15:30'),
             commentary: 'Інтернет'
         },  {
             id: 6,
-            amount: 80.21,
             from: 7,
+            fromAmount: 80.21,
             to: 3,
+            toAmount: 80.21,
             user_id: 1,
-            date: new Date('November 17, 2018 23:15:30'),
+            date: new Date('August 17, 2018 23:15:30'),
             commentary: 'Таксі'
         },  {
             id: 7,
-            amount: 329,
             from: 7,
+            fromAmount: 329,
             to: 1,
+            toAmount: 329,
             user_id: 1,
-            date: new Date('November 16, 2018 23:15:30'),
+            date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Віскарь'
         },  {
             id: 8,
-            amount: 189,
             from: 7,
+            fromAmount: 189,
             to: 1,
+            toAmount: 189,
             user_id: 1,
-            date: new Date('November 18, 2018 23:15:30'),
+            date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 9,
-            amount: 11670,
             from: 7,
+            fromAmount: 11670,
             to: 5,
+            toAmount: 417,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Playstation 4'
         },  {
             id: 10,
-            amount: 46,
             from: 7,
+            fromAmount: 46,
             to: 1,
+            toAmount: 46,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: 'Абсент'
         },  {
             id: 11,
-            amount: 23,
             from: 7,
+            fromAmount: 23,
             to: 2,
+            toAmount: 23,
             user_id: 1,
             date: new Date('August 16, 2018 23:15:30'),
             commentary: ''
         },  {
             id: 12,
-            amount: 28200,
             from: 6,
+            fromAmount: 1000,
             to: 7,
-            user_id: 1,
-            date: new Date('November 15, 2018 23:15:30'),
-            commentary: 'Зарплата'
-        },  {
-            id: 13,
-            amount: 28200,
-            from: 6,
-            to: 7,
+            toAmount: 28200,
             user_id: 1,
             date: new Date('August 15, 2018 23:15:30'),
             commentary: 'Зарплата'
+        },  {
+            id: 13,
+            from: 6,
+            fromAmount: 1100,
+            to: 7,
+            toAmount: 30800,
+            user_id: 1,
+            date: new Date('August 15, 2018 23:15:30'),
+            commentary: 'Зарплата'
+        }, {
+            id: 14,
+            from: 7,
+            fromAmount: 38.25,
+            to: 4,
+            toAmount: 38.25,
+            user_id: 1,
+            date: new Date('August 14, 2018 23:15:30'),
+            commentary: 'Білий Лев'
+        }, {
+            id: 15,
+            from: 7,
+            fromAmount: 5,
+            to: 3,
+            toAmount: 5,
+            user_id: 1,
+            date: new Date('August 14, 2018 23:15:30'),
+            commentary: 'Тролейбус'
+        },  {
+            id: 16,
+            from: 7,
+            fromAmount: 95,
+            to: 1,
+            toAmount: 95,
+            user_id: 1,
+            date: new Date('August 14, 2018 23:15:30'),
+            commentary: 'Продукти'
+        },  {
+            id: 17,
+            from: 7,
+            fromAmount: 16.59,
+            to: 1,
+            toAmount: 16.59,
+            user_id: 1,
+            date: new Date('August 13, 2018 23:15:30'),
+            commentary: 'Халва'
+        },  {
+            id: 18,
+            from: 7,
+            fromAmount: 105,
+            to: 2,
+            toAmount: 105,
+            user_id: 1,
+            date: new Date('August 13, 2018 23:15:30'),
+            commentary: 'Мобільний звязок'
+        },  {
+            id: 19,
+            from: 7,
+            fromAmount: 60,
+            to: 3,
+            toAmount: 60,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Таксі'
+        },  {
+            id: 20,
+            from: 7,
+            fromAmount: 129,
+            to: 1,
+            toAmount: 129,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Рукавичка'
+        },  {
+            id: 21,
+            from: 7,
+            fromAmount: 74,
+            to: 1,
+            toAmount: 74,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Продукти'
+        },  {
+            id: 22,
+            from: 7,
+            fromAmount: 1699,
+            to: 5,
+            toAmount: 61,
+            user_id: 1,
+            date: new Date('August 12, 2018 23:15:30'),
+            commentary: 'Red Dead Redemption 2'
+        },  {
+            id: 23,
+            from: 7,
+            fromAmount: 53,
+            to: 1,
+            toAmount: 53,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Пиво'
+        },  {
+            id: 24,
+            from: 7,
+            fromAmount: 1990,
+            to: 2,
+            toAmount: 1990,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Стіл'
+        },  {
+            id: 25,
+            from: 7,
+            fromAmount: 4200,
+            to: 2,
+            toAmount: 4200,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Стільці'
+        },  {
+            id: 26,
+            from: 7,
+            fromAmount: 1207,
+            to: 2,
+            toAmount: 1207,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Килим'
+        },    {
+            id: 27,
+            from: 7,
+            fromAmount: 5,
+            to: 3,
+            toAmount: 5,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Метро'
         }
     ]
 };
@@ -203,10 +379,20 @@ const serviceTransactions = {
         let categoryBalance = 0.00;
         for(let i = 0; i < DATA.transactions.length; i++){
             if(DATA.transactions[i].to === categoryId){
-                categoryBalance += parseFloat(Math.round((DATA.transactions[i].amount)*100))/100;
+                categoryBalance += parseFloat(DATA.transactions[i].toAmount);
             }
         }
-        return categoryBalance;
+        return parseFloat(categoryBalance.toFixed(2));
+    },
+
+    getIncomeBalanceByCategoryId: function(categoryId){
+        let categoryBalance = 0;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i].from === categoryId){
+                categoryBalance += parseFloat(DATA.transactions[i].fromAmount);
+            }
+        }
+        return parseFloat(categoryBalance.toFixed(2));
     },
 
     getCurrentBalanceByUserId: function(){
@@ -233,7 +419,7 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += parseFloat(Math.round((DATA.transactions[i].amount)*100))/100;
+                    countExpenses += parseInt(DATA.transactions[i].toAmount);
                 }
             }
         }
@@ -241,15 +427,14 @@ const serviceTransactions = {
         for(let i = 0; i < DATA.transactions.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += parseFloat(Math.round((DATA.transactions[i].amount)*100))/100;
+                    countIncome += parseInt(DATA.transactions[i].toAmount);
                 }
             }
         }
 
         return countIncome - countExpenses;
     },
-    
-    
+
     getByCategoryId: function(categoryId){
         let transaction =[];
         for(let i = 0; i < DATA.transactions.length; i++){
@@ -269,23 +454,33 @@ const serviceTransactions = {
         return null;
     },
 
-    create: function(id, amount, from, to, userId, date, comment){
+    getTransactionForCurrentUser: function () {
+        return DATA.transactions.filter((element, i) => {
+            if (DATA.transactions[i].user_id === CURRENT_USER.id){
+                return DATA.transactions[i];
+            }
+        });
+    },
+
+    create: function(id, fromAmount, from, to, userId, date, comment, toAmount){
         let transaction = {};
         transaction.id = parseInt(id);
-        transaction.amount = parseFloat(Math.round((amount)*100))/100;
         transaction.from = parseInt(from);
+        transaction.fromAmount = parseFloat(fromAmount);
         transaction.to = parseInt(to);
         transaction.user_id = parseInt(userId);
+        transaction.toAmount = parseFloat(toAmount);
         transaction.date = new Date(date);
         transaction.commentary = comment;
 
         DATA.transactions.push(transaction);
     },
 
-    update: function(transactionId, amount, from, to, date, comment){
+    update: function(transactionId, from, fromAmount, to, toAmount, date, comment){
         let transaction = this.getById(transactionId);
-        
-        transaction.amount = parseInt(amount) || transaction.amount;
+
+        transaction.fromAmount = parseFloat(fromAmount) || transaction.fromAmount;
+        transaction.toAmount = parseFloat(toAmount) || transaction.toAmount;
         transaction.from = from || transaction.from;
         transaction.to = to || transaction.to;
         transaction.date = new Date(date) || transaction.date;
@@ -335,6 +530,15 @@ const serviceCategory = {
         return categories;
     },
 
+    getCurrencyById: function(categoryId) {
+   		return this.getById(categoryId).currency;
+    },
+
+    getCurrencyByCatName: function(categoryName) {
+        let element = DATA.categories.find(category => category.name === categoryName);
+        return element.currency;
+    },
+
     create: function(data) {
         DATA.categories.push(data);
         return DATA.categories;
@@ -351,7 +555,7 @@ const serviceCategory = {
     }
 };
 
-const userService = {
+const userService = { 
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
@@ -361,6 +565,17 @@ const userService = {
             return userMockArray[0];
         }
         return null;
+    },
+
+    updateUser: function (firstName, lastName, password, currency, image) {
+        let user = this.getById(CURRENT_USER.id);
+
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.password = password || user.password;
+        user.currency = currency || user.currency;
+        user.image = image || user.image;
+
     },
 
     login: function (email, password) {
@@ -456,10 +671,75 @@ const userService = {
         user.email = email;
         user.password = password;
         user.id = Date.now();
+        user.firstName = "";
+        user.lastName = "";
+        user.currency = "UAH";
+        user.image = "";
         DATA.users.push(user);
         return true;
     }
 };
+
+const serviceCurrencies = {
+  findUserCurrencies: function (){
+    let categories = serviceCategory.getCategories();
+    let curr = [];
+    for(let i = 0; i < categories.length; i++){
+      const index = curr.findIndex(elem => elem === categories[i].currency);
+      if(index === -1) {
+        curr.push(categories[i].currency);
+      }
+    }
+    return curr;
+  },
+
+  generateCurrencySubsets: function(currencies){
+    let results = [];
+    for(let i = 0; i < currencies.length; i++){
+      let currenciesCopy = currencies.slice();
+      let index = currenciesCopy.indexOf(currencies[i]);
+      currenciesCopy.splice(index, 1);
+      for(let j = 0; j < currenciesCopy.length; j++){
+        results.push(currencies[i]+"_"+currenciesCopy[j]);
+      }
+    }
+    return results;
+  },
+
+    getCurrencies: function(currencySubsets){
+        currencySubsets.forEach(pairs => {
+            let requestURL = 'http://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+            let xhr = new kony.net.HttpRequest();
+            xhr.open(constants.HTTP_METHOD_GET, requestURL);
+            xhr.onReadyStateChange = function(){
+                try
+                {
+                    if(xhr.readyState == 4)
+                    {
+                        let exchangeSet = xhr.response;
+                        for(let currencyPair in exchangeSet){
+                            for(let exchangeRate in exchangeSet[currencyPair]){
+                                EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+                            }
+                        }
+                    }
+                }
+                catch(err)
+                {
+                    alert("exception is :: " + err);
+                }
+
+            };
+            xhr.send();
+        });
+
+    }
+};
+
+function initCurrencies(){
+    let currencySubsets = serviceCurrencies.generateCurrencySubsets(serviceCurrencies.findUserCurrencies());
+    serviceCurrencies.getCurrencies(currencySubsets);
+}
 
 function validateEmail(str) {
     let pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -469,4 +749,9 @@ function validateEmail(str) {
 function validatePassword(string){
     let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
     return strongRegex.test(string);
+}
+
+function calculate(from, to, value) {
+ let key = from + "_" + to;
+ return value*EXCHANGELIST[key];
 }

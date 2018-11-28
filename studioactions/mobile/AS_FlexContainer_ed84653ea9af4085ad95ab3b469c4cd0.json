@@ -1,0 +1,28 @@
+{
+    "AS_FlexContainer_ed84653ea9af4085ad95ab3b469c4cd0": {
+        "id": "AS_FlexContainer_ed84653ea9af4085ad95ab3b469c4cd0",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmSettings",
+            "type": "forms",
+            "platform": "",
+            "KUID": "a82f7fff9d9b415698b96cec232b5a5e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___df0d7830c8954cfc86d3e7b774ed7ed2",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "clickBackwardButton",
+            "display": "clickBackwardButton",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

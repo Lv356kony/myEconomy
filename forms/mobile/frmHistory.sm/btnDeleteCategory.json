@@ -1,0 +1,60 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sb271ddb16844bafa09f2a5611ac26a8",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "android": {
+        "psp": {
+            "pressedSkin": "s4f257bfc4ba447699487cb1f1af9bf3"
+        }
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "disabledSkins": {
+        "focusSkin": "se476fbe853a455bacd460ec758915a5"
+    },
+    "displaytext": true,
+    "id": "btnDeleteCategory",
+    "ide_onTouchEnd": "AS_Button_cf7773ec01584cfea7b5ad3cb8597de6",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "ace6eef691c7452b97839a095002f262",
+    "name": "kony.ui.Button",
+    "parent": "flxDeleteThis",
+    "pf": "frmHistory",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}

@@ -1,16 +1,16 @@
 {
-    "AS_Form_bce8f418ade1455d8be2bdddf93637b1": {
-        "id": "AS_Form_bce8f418ade1455d8be2bdddf93637b1",
+    "AS_Form_e4eb6432977f446fb17b17b488f1bf50": {
+        "id": "AS_Form_e4eb6432977f446fb17b17b488f1bf50",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
         "contextObj": {
-            "name": "frmLogin",
+            "name": "frmCategoriesList",
             "type": "forms",
             "platform": "",
-            "KUID": "d42189327348471aa1ab445fc6ea76cd"
+            "KUID": "c7ffa35dd61e41be8d87029af9cf5943"
         },
         "language": "js",
         "actions": []

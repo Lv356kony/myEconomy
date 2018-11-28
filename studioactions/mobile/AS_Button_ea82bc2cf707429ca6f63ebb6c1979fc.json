@@ -16,18 +16,13 @@
         "actions": [{
             "id": "INVOKE_FUNCTION___ieb15c3746ee452cb9108d50ae62c2e1",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "navToForm",
-            "display": "navToForm",
-            "inputparams": [{
-                "name": "formName",
-                "value": ""
-            }, {
-                "name": "data"
-            }],
+            "sequenceKUID": "showDetails",
+            "display": "showDetails",
+            "inputparams": [],
             "parentId": null,
             "callbackType": null,
             "disabled": null,
-            "source": "module"
+            "source": "controller"
         }]
     }
 }

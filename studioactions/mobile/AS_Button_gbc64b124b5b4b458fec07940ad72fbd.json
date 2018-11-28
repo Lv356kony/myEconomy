@@ -1,0 +1,28 @@
+{
+    "AS_Button_gbc64b124b5b4b458fec07940ad72fbd": {
+        "id": "AS_Button_gbc64b124b5b4b458fec07940ad72fbd",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHistory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd15a9bc7cc7470aaf5463cd91a7a632"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c8aa85eff57c4bc998f731e899359f56",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "hideDeleteOptions",
+            "display": "hideDeleteOptions",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

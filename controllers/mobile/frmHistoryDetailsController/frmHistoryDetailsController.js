@@ -17,7 +17,7 @@ define({
                           date: this.date});
         }        
     },
-
+    
     onNavigate: function(context) 
     {
         this.date = context.date;
@@ -30,6 +30,9 @@ define({
             return element.id;
         });
         let expByCat = '';
+        this.view.btnDetailsSearch.text = 'Search';
+        let fldDetailsSearch = this.view.fldDetailsSearch.text;
+        
         if(incomeIds.indexOf(this.categoryId) !== -1){
             expByCat = this.getByCategoryIdFrom(this.categoryId);
         }else{
@@ -37,21 +40,39 @@ define({
         }
 
         let data = [];
-
         for(let i = 0; i < expByCat.length; i++){
-
+			
             var expDate = `${expByCat[i].date.getDate()} ${getMonth[expByCat[i].date.getMonth()]} ${expByCat[i].date.getFullYear()}`;
             if(expDate === date){
-                data.push({id: expByCat[i].id,
-                           from: this.getCategoryName(expByCat[i].from),
-                           commentary: expByCat[i].commentary,
-                           expense: expByCat[i].amount.toString(),
-                           to: this.getCategoryName(expByCat[i].to),
-                           date: expByCat[i].date.toString(),
-                           imgDol: 'dollar_symbol.png'
-                          });        
+                let rowData = {
+                    id: expByCat[i].id,
+                    from: this.getCategoryName(expByCat[i].from),
+                    commentary: expByCat[i].commentary,
+                    expense: serviceCategory.getById(this.categoryId).type === 'Income' ? 
+                    						expByCat[i].fromAmount.toString() : 
+                    						expByCat[i].toAmount.toString(),
+                    to: this.getCategoryName(expByCat[i].to),
+                    date: expByCat[i].date.toString(),
+                    expenseTo: expByCat[i].toAmount.toString(),
+                    imgDol: this.setCurrencyIconInRow(this.categoryId)
+                };
+                if(fldDetailsSearch) {
+                    let searchString = `${rowData.commentary} ${rowData.expense} ${rowData.from}`.toLowerCase();
+                    let searchIndex = searchString.indexOf(fldDetailsSearch);
+                    if(searchIndex !== -1) {
+                       data.push(rowData);  
+                       this.view.btnDetailsSearch.text = 'Reset';
+                    }
+                } else {
+                   data.push(rowData);  
+                }
             }
         }
+        if(data.length === 0) {
+            alert('No matches. Try ro find something different.');
+            this.view.btnDetailsSearch.text = 'Reset';
+        }
+        this.view.fldDetailsSearch.text = '';
         return data;
     },
 
@@ -66,6 +87,7 @@ define({
             imgDollar: 'imgDol'
         };
         segDetails.setData(data);
+        
     },
 
     hideEditForm: function(){
@@ -91,6 +113,7 @@ define({
         this.view.lstBoxTo.selectedKey = "";
         this.view.lstBoxFrom.selectedKey = "";
         this.view.inpExpense.text = "";
+        this.view.inpExpenseTo.text = "";
         this.view.inpCommentary.text = "";
     },
 
@@ -110,23 +133,27 @@ define({
         let selRowItems = this.view.segDetails.selectedRowItems;
         let categoriesFrom = this.view.lstBoxFrom.masterData;
         let categoriesTo = this.view.lstBoxTo.masterData;
-
         this.view.lblTransactionId.text = selRowItems[0].id;
         this.view.lstBoxFrom.selectedKey = this.findCategoryKey(categoriesFrom, selRowItems[0].from);
         this.view.lstBoxTo.selectedKey = this.findCategoryKey(categoriesTo, selRowItems[0].to);
-        this.view.inpExpense.text = selRowItems[0].expense;
+        this.view.inpExpense.text = selRowItems[0].expense;         
+        this.view.inpExpenseTo.text = selRowItems[0].expenseTo;
         this.view.inpCommentary.text = selRowItems[0].commentary;
         let date = new Date(this.date);
         this.view.calEdit.dateComponents = [date.getDate(), date.getMonth()+1, date.getFullYear()];     
         this.view.imgCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
+        this.view.imgCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
+        this.view.imgCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
 
         this.view.lblShowFromValue.text = selRowItems[0].from;
         this.view.lblShowCategory.text = selRowItems[0].to;
         this.view.lblShowExpenseValue.text = selRowItems[0].expense;
+        this.view.lblShowExpenseTo.text = selRowItems[0].expenseTo;
         this.view.lblShowCommValue.text = selRowItems[0].commentary;
         this.view.lblShowDateValue.text = this.date;
         this.view.imgShowCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
-
+        this.view.imgShowCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
+        this.view.imgShowCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
     },
 
     changeIconOnSelect: function(){
@@ -153,11 +180,12 @@ define({
         let categotyNameTo = this.view.lstBoxTo.selectedKeyValue[1];
         let toId = this.findByCategoryName(categotyNameTo).id; 
 
-        let amount = this.view.inpExpense.text;
+        let fromAmount = this.view.inpExpense.text;
+        let toAmount = this.view.inpExpenseTo.text;
         let comment = this.view.inpCommentary.text;
         let date = this.view.calEdit.month + ' ' + this.view.calEdit.day + ', ' + this.view.calEdit.year;
 
-        serviceTransactions.update(id, Number(amount), fromId, toId, date, comment);
+        serviceTransactions.update(id, fromId, Number(fromAmount), toId, Number(toAmount), date, comment);
         this.onEmptyPageReturn();
     },
 
@@ -210,11 +238,33 @@ define({
     findByCategoryName: function(categoryName){
         let category = DATA.categories.find(category => category.name === categoryName);
         return category;
-    },
+    }, 
 
     getCategoryName: function(id){
         let category = DATA.categories.find(category => category.id === id);
         return category.name;
+    },
+    
+    setCurrencyIconInRow: function(categoryId) {
+        let currency = serviceCategory.getCurrencyById(categoryId);
+        return this.setCurrency(currency);
+    },
+    
+    setCurrencyIconInDetails: function(categoryName) {
+        let currency = serviceCategory.getCurrencyByCatName(categoryName);
+        return this.setCurrency(currency);
+    },
+    
+    setCurrency: function(currency) {
+        switch (currency){
+            case 'UAH':
+                return 'hryvnia_symbol.png';
+            case 'USD':
+                return 'dollar_symbol.png';
+            case 'EUR':
+                return 'euro_symbol.png';
+            case 'PLN':
+                return 'zloty_symbol.png';
+        }
     }
-
 });

@@ -1,21 +1,37 @@
 define({ 
+    
+onNavigate:function(obj){
+    this.check = obj;
+    
+},
+ 
+    load: function(){
+        if(this.check){
+       this.view.flxLoader.isVisible = true;
+       let load = () =>{ this.view.flxLoader.isVisible = false;};    
+       kony.timer.schedule("mytimer", load, 3, false);
+        } 
+        
+},
 
     initIncomeCategoriesList: function(){
        let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            if(serviceCategory.getCategories()[i].type === "Income"){
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
+            if(serviceCategory.getCategories()[i].type === "Income" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: `${serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
         let segment = this.view.segmIncome;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -23,39 +39,57 @@ define({
     initCurrentCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            if(serviceCategory.getCategories()[i].type === "Current"){
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
+            if(serviceCategory.getCategories()[i].type === "Current" && serviceCategory.getCategories()[i].visible){
+                let income = serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id);
+                let expenses = this.getExpensesFromCurrentCategory(serviceCategory.getCategories()[i].id);
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: `${income - expenses} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
         let segment = this.view.segmCurrent;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
+    },
+
+    getExpensesFromCurrentCategory: function (categoryId) {
+        let balance = 0;
+        let transactions = serviceTransactions.getTransactionForCurrentUser();
+        let filter = transactions.filter((element, i) => {
+            if(element.from === categoryId) {
+                return element;
+            }
+        }).map(i => i.fromAmount).forEach(i => balance += i);
+        return balance;
+
     },
 
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            if(serviceCategory.getCategories()[i].type === "Expenses"){
+            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
+            if(serviceCategory.getCategories()[i].type === "Expenses" && serviceCategory.getCategories()[i].visible){
                 categories.push({
                     name: serviceCategory.getCategories()[i].name,
                     icon: serviceCategory.getCategories()[i].icon,
+                    balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
                     id:  serviceCategory.getCategories()[i].id
-
                 });
             }
         }
         let segment = this.view.segmExpenses;
         segment.widgetDataMap = {
             lblCategories: "name",
-            icnCategories: "icon"
+            icnCategories: "icon",
+            lblBalance: "balance"
         };
         segment.setData(categories);
     },
@@ -69,6 +103,10 @@ define({
     goToStatistics: function(){
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmStatistics");
+    },
+    goToSettings: function(){
+        this.view.flxSideMenuContainer.left = '-100%';
+        navToForm("frmSettings");
     },
     showMenu: function(){
         this.view.flxSideMenuContainer.left = '0%';
@@ -92,15 +130,16 @@ define({
                 incomeIds.push(serviceCategory.getCategories()[i].id);
             }
         }
-        
+
         let countIncome = 0.00;
         for(let i = 0; i < data.length; i++){
             for(let j = 0; j < incomeIds.length; j++){
                 if(data[i].from === incomeIds[j]){
-                    countIncome += data[i].amount;
+                    countIncome += parseFloat(Math.round(data[i].fromAmount*100))/100;
                 }
             }
-        }         
+        }
+
         let incomeLabel = this.view.lblIncomeCount;
         incomeLabel.text = parseFloat(Math.round(countIncome*100))/100;
     },
@@ -123,12 +162,32 @@ define({
         for(let i = 0; i < data.length; i++){
             for(let j = 0; j < expensesIds.length; j++){
                 if(data[i].to === expensesIds[j]){
-                    countExpenses += parseInt(data[i].amount);
+                    countExpenses += parseInt(data[i].toAmount);
                 }
             }
-        }        
+        }
         let expensesLabel = this.view.lblExpensesCount;
         expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
+    },
+
+    getCarenncySymbolForCategory: function (categoryId){
+        let category = serviceCategory.getById(categoryId);
+        let currency = category.currency;
+        let currencySymbol;
+        switch(currency) {
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "EUR":
+                currencySymbol = "€";
+                break;
+            case "PLN":
+                currencySymbol = "zł";
+                break;
+            default:
+                currencySymbol = "₴";
+        }
+        return currencySymbol;
     },
 
     setCategoryIncomeType: function() {
@@ -142,14 +201,12 @@ define({
     setCategoryExpensesType: function() {
         navToForm('frmCategoryCreation', {categoryType: "Expenses"});
     },
-    
+
     goToCreationCuurentTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Income"});
     },
-     
+
     goToCreationExpensesTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Expenses"});
     }
-
-
 });

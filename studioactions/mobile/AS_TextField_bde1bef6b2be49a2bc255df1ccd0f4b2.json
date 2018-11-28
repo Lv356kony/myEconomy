@@ -1,0 +1,24 @@
+{
+    "AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2": {
+        "id": "AS_TextField_bde1bef6b2be49a2bc255df1ccd0f4b2",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "frmTransactionCreation",
+            "type": "forms",
+            "platform": "",
+            "KUID": "bd8ffcf9359d44da8a151a6451cd7f5e"
+        },
+        "language": "js",
+        "actions": []
+    }
+}

@@ -33,12 +33,13 @@
     "canUpdateUI": true,
     "centery": {
         "type": "string",
-        "value": "45%"
+        "value": "45.00%"
     },
     "children": [
         "flxAddIconWrp",
         "flxInputCategoryName",
-        "btnAddNewCategory"
+        "btnAddNewCategory",
+        "flxCurrency"
     ],
     "clipbounds": true,
     "containerweight": 100,
