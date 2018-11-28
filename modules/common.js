@@ -555,7 +555,7 @@ const serviceCategory = {
     }
 };
 
-const userService = {
+const userService = { 
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
