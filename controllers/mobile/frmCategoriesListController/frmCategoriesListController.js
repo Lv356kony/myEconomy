@@ -206,17 +206,17 @@ define({
         this.view.flxSegmExpenses.top = '206dp';
     },
 
-    elements: {
-                calcHeightOfIncomeSeg: this.getNumberOfCategories('Income') * 60,
-                calcHeightOfCurrentSeg: this.getNumberOfCategories('Current') * 60,
-                calcHeightOfExpenseSeg: this.getNumberOfCategories('Expenses') * 60,
-                incomeFlxTopPosition: parseInt(this.view.flxIncome.top),
-                incomeSegmTopPosition: parseInt(this.view.flxSegmIncome.top),
-                currentFlxTopPosition: parseInt(this.view.flxCurrent.top),
-                currentSegTopPosition: parseInt(this.view.flxSegmCurrent.top),
-                expensesFlxTopPosition: parseInt(this.view.flxExpenses.top),
-                expensesSegTopPosition: parseInt(this.view.flxSegmExpenses.top)
-    },
+//     elements: {
+//                 calcHeightOfIncomeSeg: this.getNumberOfCategories('Income') * 60,
+//                 calcHeightOfCurrentSeg: this.getNumberOfCategories('Current') * 60,
+//                 calcHeightOfExpenseSeg: this.getNumberOfCategories('Expenses') * 60,
+//                 incomeFlxTopPosition: parseInt(this.view.flxIncome.top),
+//                 incomeSegmTopPosition: parseInt(this.view.flxSegmIncome.top),
+//                 currentFlxTopPosition: parseInt(this.view.flxCurrent.top),
+//                 currentSegTopPosition: parseInt(this.view.flxSegmCurrent.top),
+//                 expensesFlxTopPosition: parseInt(this.view.flxExpenses.top),
+//                 expensesSegTopPosition: parseInt(this.view.flxSegmExpenses.top)
+//     },
 
     onIncomeClick: function(){
         let calcHeightOfIncomeSeg = this.getNumberOfCategories('Income') * 60;
@@ -309,26 +309,29 @@ define({
         let expensesSegTopPosition = parseInt(this.view.flxSegmExpenses.top);
         let expenseSegDef = {};
         let config = {};
-        if(parseInt(this.view.flxSegmExpenses.height) === calcHeightOfExpenseSeg + parseInt(expensesSegTopPosition)){
+        alert(parseInt(this.view.flxSegmExpenses.height));
+        if(parseInt(this.view.flxSegmExpenses.height) === 400){
             expenseSegDef = {
-                0:{"height": expensesSegTopPosition + 'dp'},
-                100:{"height": expensesSegTopPosition - calcHeightOfExpenseSeg + 'dp'}
+                0:{"height": '400dp'},
+                //100:{"height": expensesSegTopPosition - calcHeightOfExpenseSeg + 'dp'}
+                100:{"height": '0dp'}
             };
             config = {
-                "duration": 3,
+                "duration": 1,
                 "iterationCount": 1,
-                "delay": 1,
-                "fillMode": kony.anim.FILL_MODE_BACKWARDS
+                "delay": 0,
+                "fillMode": kony.anim.FILL_MODE_FORWARDS
             };
         }else{
             expenseSegDef = {
                 0:{"height": '0dp'},
-                100:{"height": expensesSegTopPosition + calcHeightOfExpenseSeg + 'dp'}
+                //100:{"height": expensesSegTopPosition + calcHeightOfExpenseSeg + 'dp'}
+                100:{"height": '400dp'}
             };
             config = {
-                "duration": 3,
+                "duration": 1,
                 "iterationCount": 1,
-                "delay": 1,
+                "delay": 0,
                 "fillMode": kony.anim.FILL_MODE_FORWARDS
             };
         }
