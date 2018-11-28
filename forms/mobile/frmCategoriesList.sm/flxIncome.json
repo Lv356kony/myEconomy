@@ -48,6 +48,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxIncome",
+    "ide_onClick": "AS_FlexContainer_ef5cc74d0f4049cb9b35841c6c28c195",
     "info": null,
     "iphone": {
         "render": true

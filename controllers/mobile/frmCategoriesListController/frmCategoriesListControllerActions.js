@@ -12,6 +12,11 @@ define({
         var self = this;
         return self.setCategoryExpensesType.call(this);
     },
+    /** onClick defined for flxExpenses **/
+    AS_FlexContainer_je32ba2ff61244a081906f245fac0f07: function AS_FlexContainer_je32ba2ff61244a081906f245fac0f07(eventobject) {
+        var self = this;
+        return self.onExpenseClick.call(this);
+    },
     /** onRowClick defined for segmCurrent **/
     AS_Segment_cd1813046cc74b939f7c6de679ebf49a: function AS_Segment_cd1813046cc74b939f7c6de679ebf49a(eventobject, sectionNumber, rowNumber) {
         var self = this;
@@ -31,6 +36,11 @@ define({
     AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c: function AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c(eventobject) {
         var self = this;
         return self.setCategoryIncomeType.call(this);
+    },
+    /** onClick defined for flxIncome **/
+    AS_FlexContainer_ef5cc74d0f4049cb9b35841c6c28c195: function AS_FlexContainer_ef5cc74d0f4049cb9b35841c6c28c195(eventobject) {
+        var self = this;
+        return self.onIncomeClick.call(this);
     },
     /** onTouchEnd defined for btnHamburger **/
     AS_Button_ea6d136e3a1b4a29959d28d7c2431208: function AS_Button_ea6d136e3a1b4a29959d28d7c2431208(eventobject, x, y) {
@@ -83,6 +93,7 @@ define({
     /** init defined for frmCategoriesList **/
     AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2: function AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2(eventobject) {
         var self = this;
+        return self.onInit.call(this);
     },
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {

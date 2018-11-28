@@ -48,6 +48,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxExpenses",
+    "ide_onClick": "AS_FlexContainer_je32ba2ff61244a081906f245fac0f07",
     "info": null,
     "iphone": {
         "render": true

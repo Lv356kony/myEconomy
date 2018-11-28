@@ -1,7 +1,7 @@
 define({ 
 
     initIncomeCategoriesList: function(){
-       let categories = [];
+        let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
             let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Income" && serviceCategory.getCategories()[i].visible){
@@ -194,5 +194,151 @@ define({
 
     goToCreationExpensesTransaction: function () {
         navToForm("frmTransactionCreation", {categoryType: "Expenses"});
+    },
+
+    onInit: function(){
+        this.view.flxSegmIncome.height = '0dp';
+        this.view.flxSegmCurrent.height = '0dp';
+        this.view.flxSegmExpenses.height = '0dp';
+        this.view.flxCurrent.top = '106dp';
+        this.view.flxSegmCurrent.top = '156dp';
+        this.view.flxExpenses.top = '156dp';
+        this.view.flxSegmExpenses.top = '206dp';
+    },
+
+    elements: {
+                calcHeightOfIncomeSeg: this.getNumberOfCategories('Income') * 60,
+                calcHeightOfCurrentSeg: this.getNumberOfCategories('Current') * 60,
+                calcHeightOfExpenseSeg: this.getNumberOfCategories('Expenses') * 60,
+                incomeFlxTopPosition: parseInt(this.view.flxIncome.top),
+                incomeSegmTopPosition: parseInt(this.view.flxSegmIncome.top),
+                currentFlxTopPosition: parseInt(this.view.flxCurrent.top),
+                currentSegTopPosition: parseInt(this.view.flxSegmCurrent.top),
+                expensesFlxTopPosition: parseInt(this.view.flxExpenses.top),
+                expensesSegTopPosition: parseInt(this.view.flxSegmExpenses.top)
+    },
+
+    onIncomeClick: function(){
+        let calcHeightOfIncomeSeg = this.getNumberOfCategories('Income') * 60;
+        let calcHeightOfCurrentSeg = this.getNumberOfCategories('Current') * 60;
+        let calcHeightOfExpenseSeg = this.getNumberOfCategories('Expenses') * 60;
+        let incomeFlxTopPosition = parseInt(this.view.flxIncome.top);
+        let incomeSegmTopPosition = parseInt(this.view.flxSegmIncome.top);
+        let currentFlxTopPosition = parseInt(this.view.flxCurrent.top);
+        let currentSegTopPosition = parseInt(this.view.flxSegmCurrent.top);
+        let expensesFlxTopPosition = parseInt(this.view.flxExpenses.top);
+        let expensesSegTopPosition = parseInt(this.view.flxSegmExpenses.top);
+        let incomeSegDef = {};
+        let currentFlxDef = {};
+        let currentSegDef = {};
+        let expenseFlxDef = {};
+        let expenseSegDef = {};
+        let config = {};
+		alert(this.view.flxSegmIncome.height);
+        if(parseInt(this.view.flxSegmIncome.height) === calcHeightOfIncomeSeg){
+            incomeSegDef = {
+                0:{'height': calcHeightOfIncomeSeg + 'dp'},
+                100:{'height': '0dp'}
+            };
+            currentFlxDef = {
+                0:{"top": currentFlxTopPosition + 'dp'},
+                100:{"top": currentFlxTopPosition - calcHeightOfIncomeSeg + 'dp'}
+            };
+            currentSegDef = {
+                0:{"top": currentSegTopPosition + 'dp'},
+                100:{"top": currentSegTopPosition - calcHeightOfIncomeSeg + 'dp'}                
+            };
+            expenseFlxDef = {
+                0:{"top": expensesFlxTopPosition + 'dp'},
+                100:{"top": expensesFlxTopPosition - calcHeightOfIncomeSeg + 'dp'}
+            };
+            expenseSegDef = {
+                0:{"top": expensesSegTopPosition + 'dp'},
+                100:{"top": expensesSegTopPosition - calcHeightOfIncomeSeg + 'dp'}
+            };
+            config = {
+                "duration": 3,
+                "iterationCount": 1,
+                "delay": 1,
+                "fillMode": kony.anim.FILL_MODE_BACKWARDS
+            };
+        }else{
+            incomeSegDef = {
+                0:{'height': '0dp'},
+                100:{'height': calcHeightOfIncomeSeg + 'dp'}
+            };
+            currentFlxDef = {
+                0:{"top": currentFlxTopPosition + 'dp'},
+                100:{"top": currentFlxTopPosition + calcHeightOfIncomeSeg + 'dp'}
+            };
+            currentSegDef = {
+                0:{"top": currentSegTopPosition + 'dp'},
+                100:{"top": currentSegTopPosition + calcHeightOfIncomeSeg + 'dp'}
+            };
+
+            expenseFlxDef = {
+                0:{"top": expensesFlxTopPosition + 'dp'},
+                100:{"top": expensesFlxTopPosition + calcHeightOfIncomeSeg + 'dp'}
+            };
+            expenseSegDef = {
+                0:{"top": expensesSegTopPosition + 'dp'},
+                100:{"top": expensesSegTopPosition + calcHeightOfIncomeSeg + 'dp'}
+            };
+            config = {
+                "duration": 3,
+                "iterationCount": 1,
+                "delay": 1,
+                "fillMode": kony.anim.FILL_MODE_FORWARDS
+            };
+        }
+
+        let incSegDef = kony.ui.createAnimation(incomeSegDef);
+        let currFlxDef = kony.ui.createAnimation(currentFlxDef);
+        let currSegDef = kony.ui.createAnimation(currentSegDef);
+        let expFlxDef = kony.ui.createAnimation(expenseFlxDef);
+        let expSegDef = kony.ui.createAnimation(expenseSegDef);
+        this.view.flxSegmIncome.animate(incSegDef, config, null);
+        this.view.flxCurrent.animate(currFlxDef, config, null);
+        this.view.flxSegmCurrent.animate(currSegDef, config, null);
+        this.view.flxExpenses.animate(expFlxDef, config, null);
+        this.view.flxSegmExpenses.animate(expSegDef, config, null);
+    },
+
+    onExpenseClick: function(){
+        let calcHeightOfExpenseSeg = this.getNumberOfCategories('Expenses') * 60;
+        let expensesSegTopPosition = parseInt(this.view.flxSegmExpenses.top);
+        let expenseSegDef = {};
+        let config = {};
+        if(parseInt(this.view.flxSegmExpenses.height) === calcHeightOfExpenseSeg + parseInt(expensesSegTopPosition)){
+            expenseSegDef = {
+                0:{"height": expensesSegTopPosition + 'dp'},
+                100:{"height": expensesSegTopPosition - calcHeightOfExpenseSeg + 'dp'}
+            };
+            config = {
+                "duration": 3,
+                "iterationCount": 1,
+                "delay": 1,
+                "fillMode": kony.anim.FILL_MODE_BACKWARDS
+            };
+        }else{
+            expenseSegDef = {
+                0:{"height": '0dp'},
+                100:{"height": expensesSegTopPosition + calcHeightOfExpenseSeg + 'dp'}
+            };
+            config = {
+                "duration": 3,
+                "iterationCount": 1,
+                "delay": 1,
+                "fillMode": kony.anim.FILL_MODE_FORWARDS
+            };
+        }
+
+        let expSegDef = kony.ui.createAnimation(expenseSegDef);
+        this.view.flxSegmExpenses.animate(expSegDef, config, null);
+    },
+
+    getNumberOfCategories: function(type){
+        let categories = serviceCategory.getCategories();
+        return categories.filter(category => category.type === type).length;
     }
 });
