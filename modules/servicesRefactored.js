@@ -1,7 +1,7 @@
 const CATEGORY_TYPES = {
     INCOME: 'Income',
     CURRENT: 'Current',
-    EXPENSE: 'Expense'
+    EXPENSE: 'Expenses'
 };
 
 const serviceTransactionsRefactored = {
@@ -86,7 +86,7 @@ const serviceCategoryRefactored = {
         let incomes = 0.00;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
         for(let i = 0; i < DATA.transactions.length; i++){
-            if(DATA.transactions[i].type === CATEGORY_TYPES.INCOME){
+            if(serviceCategoryRefactored.getById(DATA.transactions[i].from).type === CATEGORY_TYPES.INCOME){
                 let categoryCurrency = this.getCurrencyById(DATA.transactions[i].from);
                 if(categoryCurrency !== defaultCurrency){
                     incomes += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].fromAmount);
@@ -106,7 +106,7 @@ const serviceCategoryRefactored = {
         let expense = 0.00;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
         for(let i = 0; i < DATA.transactions.length; i++){
-            if(DATA.transactions[i].type === CATEGORY_TYPES.EXPENSE){
+            if(serviceCategoryRefactored.getById(DATA.transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
                 let categoryCurrency = this.getCurrencyById(DATA.transactions[i].to);
                 if(categoryCurrency !== defaultCurrency){
                     expense += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].toAmount);
