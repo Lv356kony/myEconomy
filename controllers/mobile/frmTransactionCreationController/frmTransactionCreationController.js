@@ -38,15 +38,15 @@ define({
 
     createTransaction: function() {
         let id = new Date().getTime();
-        let fromAmount = this.view.txbTransactionAmount.text;
-        let toAmount =  this.view.txtExchange.text;
         let from = this.getSelectedCategory("from").id;
+        let fromAmount = this.view.txbTransactionAmount.text;
         let to = this.getSelectedCategory("to").id;
+        let toAmount =  this.view.txtExchange.text;
         let userId = CURRENT_USER.id;
         let date = this.view.calTransactionDate.formattedDate;
         let comment = this.view.txbTransactionComentarry.text;
-        if (amount) {
-            serviceTransactions.create(id, fromAmount, toAmount, from, to, userId, date, comment);
+        if (fromAmount) {
+            serviceTransactions.create(id,from, fromAmount, to,toAmount, userId, date, comment);
             navToForm("frmCategoriesList");
 
         } else {

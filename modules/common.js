@@ -184,7 +184,7 @@ const serviceCategory = {
     },
 
     getCurrencyById: function(categoryId) {
-        return this.getById(categoryId).currency;
+   		return this.getById(categoryId).currency;
     },
 
     getCurrencyByCatName: function(categoryName) {
@@ -205,6 +205,10 @@ const serviceCategory = {
             }
         });
         return element;
+    },
+
+    shareCategory: function (categotyId, userId) {
+        this.getById(categotyId).sharedUsers_id.push(userId);
     }
 };
 

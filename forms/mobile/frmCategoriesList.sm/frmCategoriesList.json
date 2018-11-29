@@ -15,7 +15,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sc88b2e2d3a0472ab0d2c7fc352d0573",
+    "_skin_": "s771c91b464b48e49092ba1aa8585f27",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
@@ -33,7 +33,8 @@
         "flxScrollMainContainer",
         "flxExpensesButton",
         "flxCurrentButton",
-        "flxSideMenuContainer"
+        "flxSideMenuContainer",
+        "flxLoader"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -48,7 +49,7 @@
     },
     "device": "GalaxyS8",
     "displayorientation": 1,
-    "enabledforidletimeout": false,
+    "enabledforidletimeout": true,
     "id": "frmCategoriesList",
     "ide_preShow": "AS_Form_ee877c39514d4bbc9c47de5d059486d7",
     "info": null,
