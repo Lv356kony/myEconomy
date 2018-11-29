@@ -15,7 +15,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sc88b2e2d3a0472ab0d2c7fc352d0573",
+    "_skin_": "sc2506d2715f435d8e34b79b1577dbf4",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
@@ -48,6 +48,7 @@
     "displayorientation": 1,
     "enabledforidletimeout": false,
     "id": "frmEditCategory",
+    "ide_preShow": "AS_Form_i8b9ab6c68474d199af1335dd3d17981",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

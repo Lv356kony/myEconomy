@@ -6,10 +6,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_margin_": [
         1,
         1,
@@ -26,7 +22,7 @@
     "_text_": "Edit category",
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "70%"
     },
     "_wrapping_": 2,
     "android": {
@@ -36,6 +32,10 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "centery": {
         "type": "string",
         "value": "50%"

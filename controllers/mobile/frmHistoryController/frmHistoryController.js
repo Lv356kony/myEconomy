@@ -17,9 +17,8 @@ define({
                                         date: `${transDetails[0].numDay} ${transDetails[0].date}`});
     },
 
-    onNavigate: function(category) 
-    {
-        this.categoryId = category.categoryId;
+    onNavigate: function(category) {
+            this.categoryId = category.categoryId;
     },
 
     showCategory: function(){
@@ -82,6 +81,8 @@ define({
                     }
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
+                
+                // filterring
                 if(fldHistorySearch) {
                     let searchString = `${day} ${numDay} ${date} ${sum} ${commentary}`.toLowerCase();
                     let searchIndex = searchString.indexOf(fldHistorySearch);
