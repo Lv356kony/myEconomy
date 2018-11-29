@@ -15,7 +15,7 @@ define({
     /** onClick defined for flxExpenses **/
     AS_FlexContainer_je32ba2ff61244a081906f245fac0f07: function AS_FlexContainer_je32ba2ff61244a081906f245fac0f07(eventobject) {
         var self = this;
-        return self.onExpenseClick.call(this);
+        return self.showExpense.call(this);
     },
     /** onRowClick defined for segmCurrent **/
     AS_Segment_cd1813046cc74b939f7c6de679ebf49a: function AS_Segment_cd1813046cc74b939f7c6de679ebf49a(eventobject, sectionNumber, rowNumber) {
@@ -26,6 +26,11 @@ define({
     AS_FlexContainer_c0ab460c24d645b49f8ee95460a64e4f: function AS_FlexContainer_c0ab460c24d645b49f8ee95460a64e4f(eventobject) {
         var self = this;
         return self.setCategoryCurrentType.call(this);
+    },
+    /** onClick defined for flxCurrent **/
+    AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a: function AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a(eventobject) {
+        var self = this;
+        return self.showCurrent.call(this);
     },
     /** onRowClick defined for segmIncome **/
     AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb: function AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb(eventobject, sectionNumber, rowNumber) {
@@ -38,9 +43,9 @@ define({
         return self.setCategoryIncomeType.call(this);
     },
     /** onClick defined for flxIncome **/
-    AS_FlexContainer_ef5cc74d0f4049cb9b35841c6c28c195: function AS_FlexContainer_ef5cc74d0f4049cb9b35841c6c28c195(eventobject) {
+    AS_FlexContainer_c20d782d3f0c41a39e2b244636427158: function AS_FlexContainer_c20d782d3f0c41a39e2b244636427158(eventobject) {
         var self = this;
-        return self.onIncomeClick.call(this);
+        return self.showIncome.call(this);
     },
     /** onTouchEnd defined for btnHamburger **/
     AS_Button_ea6d136e3a1b4a29959d28d7c2431208: function AS_Button_ea6d136e3a1b4a29959d28d7c2431208(eventobject, x, y) {
@@ -90,11 +95,6 @@ define({
     AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88: function AS_FlexContainer_bb6c0aa400e14c21a3a4eefbe2d6bc88(eventobject, x, y) {
         var self = this;
     },
-    /** init defined for frmCategoriesList **/
-    AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2: function AS_Form_j34a925ef19b4f9a8c2408b46c5a56b2(eventobject) {
-        var self = this;
-        return self.onInit.call(this);
-    },
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
@@ -106,6 +106,7 @@ define({
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
         initCurrencies.call(this);
+        self.onInit.call(this);
     },
     /** postShow defined for frmCategoriesList **/
     AS_Form_e4eb6432977f446fb17b17b488f1bf50: function AS_Form_e4eb6432977f446fb17b17b488f1bf50(eventobject) {

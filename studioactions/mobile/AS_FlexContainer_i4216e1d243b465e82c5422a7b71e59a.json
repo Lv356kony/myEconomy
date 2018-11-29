@@ -1,6 +1,6 @@
 {
-    "AS_FlexContainer_je32ba2ff61244a081906f245fac0f07": {
-        "id": "AS_FlexContainer_je32ba2ff61244a081906f245fac0f07",
+    "AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a": {
+        "id": "AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
@@ -14,10 +14,10 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___d2ac984436954c209c2c1a141fe798ac",
+            "id": "INVOKE_FUNCTION___fc6f8e85243a4374877b345c31a417e6",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "showExpense",
-            "display": "showExpense",
+            "sequenceKUID": "showCurrent",
+            "display": "showCurrent",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
