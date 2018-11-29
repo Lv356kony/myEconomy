@@ -52,6 +52,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 2,
@@ -60,6 +61,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 3,
@@ -68,6 +70,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 4,
@@ -76,6 +79,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 5,
@@ -84,6 +88,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'USD',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 6,
@@ -92,6 +97,7 @@ Object.assign(DATA, {
             type: 'Income',
             currency: 'USD',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 7,
@@ -100,6 +106,16 @@ Object.assign(DATA, {
             type: 'Current',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
+            visible: true
+        }, {
+            id: 8,
+            icon: 'bank.png',
+            name: 'Monobankkkk',
+            type: 'Current',
+            currency: 'UAH',
+            user_id: 2,
+            sharedUsers_id: [1],
             visible: true
         }
     ],

@@ -46,14 +46,14 @@ define({
         let date = this.view.calTransactionDate.formattedDate;
         let comment = this.view.txbTransactionComentarry.text;
         if (fromAmount) {
-            serviceTransactions.create(id,from, fromAmount, to,toAmount, userId, date, comment);
+            serviceTransactions.create(id, fromAmount, from, to, userId, date, comment, toAmount);
             navToForm("frmCategoriesList");
 
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
-        
-        
+
+
     },
 
 
@@ -123,7 +123,7 @@ define({
     },
 
     exchange: function(){
-        
+
         let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
         let currencyFrom= serviceCategory.getCurrencyByCatName(from); 
 
@@ -134,7 +134,7 @@ define({
         let exchange = this.view.txtExchange.text;
 
 
-        if( currencyFrom != currencyTo ){
+        if( currencyFrom !== currencyTo ){
             this.view.flxExchange.isVisible = true;
             this.view.lblCurrency.text = currencyFrom;
             this.view.lblAnotherCurrency.text = currencyTo; 
@@ -146,14 +146,15 @@ define({
         }
 
         let result = calculate( currencyFrom, currencyTo, ammount);
-        
-        if( ammount ){   
-        let fixResult = result.toFixed(2);
-        this.view.txtExchange.text = fixResult; 
-            
+        if(currencyFrom === currencyTo) {
+            this.view.txtExchange.text = ammount;
+        }else if( ammount ){   
+            let fixResult = parseFloat(result.toFixed(2));
+            this.view.txtExchange.text = fixResult; 
+
         } else {
-             this.view.txtExchange.text = '';
-            
+            this.view.txtExchange.text = '';
+
         }
     } 
 

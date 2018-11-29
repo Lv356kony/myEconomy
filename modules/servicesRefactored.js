@@ -88,11 +88,14 @@ const serviceCategoryRefactored = {
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
         for(let i = 0; i < transactions.length; i++){
             if(this.getById(transactions[i].from).type === CATEGORY_TYPES.INCOME){
-                let categoryCurrency = this.getCurrencyById(transactions[i].from);
-                if(categoryCurrency !== defaultCurrency){
-                    incomes += calculate(categoryCurrency, defaultCurrency, transactions[i].fromAmount);
-                }else{
+                let categoryFrom = this.getCurrencyById(transactions[i].from);
+                let categoryTo = this.getCurrencyById(transactions[i].to);
+                if(defaultCurrency === categoryFrom){
                     incomes += parseFloat(transactions[i].fromAmount);
+                }else if(defaultCurrency === categoryTo){
+                    incomes += parseFloat(transactions[i].toAmount);
+                }else{
+                    incomes += calculate(categoryFrom, defaultCurrency, transactions[i].fromAmount);
                 }
             }
         }
@@ -105,14 +108,15 @@ const serviceCategoryRefactored = {
 
     getExpenseBalance: function(){
         let expense = 0.00;
+        let transactions = serviceTransactionsRefactored.getAll();
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(serviceCategoryRefactored.getById(DATA.transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
-                let categoryCurrency = this.getCurrencyById(DATA.transactions[i].to);
+        for(let i = 0; i < transactions.length; i++){
+            if(serviceCategoryRefactored.getById(transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
+                let categoryCurrency = this.getCurrencyById(transactions[i].to);
                 if(categoryCurrency !== defaultCurrency){
-                    expense += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].toAmount);
+                    expense += calculate(categoryCurrency, defaultCurrency, transactions[i].toAmount);
                 }else{
-                    expense += parseFloat(DATA.transactions[i].toAmount);
+                    expense += parseFloat(transactions[i].toAmount);
                 }
             }
         }
@@ -174,6 +178,10 @@ const serviceCategoryRefactored = {
         }
         return DATA.categories;
     },
+    
+    shareCategory: function (categotyId, userId) {
+        this.getById(categotyId).sharedUsers_id.push(userId);
+    }
 };
 
 const userServiceRefactored = {

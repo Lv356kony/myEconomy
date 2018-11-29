@@ -114,52 +114,25 @@ define({
         navToForm("frmLogin");
     },
     calculateIncomeBalance: function(){
-//         let data = DATA.transactions;
-//         let incomeIds = [];
-//         for(let i = 0; i < serviceCategory.getCategories().length; i++){
-//             if(serviceCategory.getCategories()[i].type === 'Income'){
-//                 incomeIds.push(serviceCategory.getCategories()[i].id);
-//             }
-//         }
-
-//         let countIncome = 0.00;
-//         for(let i = 0; i < data.length; i++){
-//             for(let j = 0; j < incomeIds.length; j++){
-//                 if(data[i].from === incomeIds[j]){
-//                     countIncome += parseFloat(Math.round(data[i].fromAmount*100))/100;
-//                 }
-//             }
-//         }
-
         let incomeLabel = this.view.lblIncomeCount;
         incomeLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getIncomeBalance()*100))/100;
-//         alert(serviceCategoryRefactored.getIncomeBalance());
     },
 
     calculateCurrentBalance: function(){
         let incomeLabel = this.view.lblCurrentCount;
-        incomeLabel.text = parseFloat(Math.round(serviceTransactions.getCurrentBalanceByUserId()*100))/100;
+        let sharedCategories = [];
+        let categories = DATA.categories;
+        for (let i = 0; i < categories.length; i++){
+            if (~categories[i].sharedUsers_id.indexOf(CURRENT_USER.id)){
+                sharedCategories.push(categories[i]);
+            }
+        }
+        incomeLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getCurrentBalance()*100))/100;
     },
 
     calculateExpensesBalance: function(){
-        let data = DATA.transactions;
-        let expensesIds = [];
-        for(let i = 0; i < serviceCategory.getCategories().length; i++){
-            if(serviceCategory.getCategories()[i].type === 'Expenses'){
-                expensesIds.push(serviceCategory.getCategories()[i].id);
-            }
-        }
-
-        let countExpenses = 0.00;
-        for(let i = 0; i < data.length; i++){
-            for(let j = 0; j < expensesIds.length; j++){
-                if(data[i].to === expensesIds[j]){
-                    countExpenses += parseInt(data[i].toAmount);
-                }
-            }
-        }
         let expensesLabel = this.view.lblExpensesCount;
-        expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
+        expensesLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getExpenseBalance()*100))/100;
     },
 
     getCarenncySymbolForCategory: function (categoryId){
