@@ -1,21 +1,22 @@
 define({ 
-    
-onNavigate:function(obj){
-    this.check = obj;
-    
-},
- 
+
+    onNavigate:function(obj){
+        this.check = obj;
+
+    },
+
     load: function(){
         if(this.check){
-       this.view.flxLoader.isVisible = true;
-       let load = () =>{ this.view.flxLoader.isVisible = false;};    
-       kony.timer.schedule("mytimer", load, 3, false);
+            this.view.flxLoader.isVisible = true;
+            let load = () =>{ this.view.flxLoader.isVisible = false;};    
+            kony.timer.schedule("mytimer", load, 3, false);
         } 
-        
-},
 
+    },
+
+    //use varible for serviceCategory.getCategories()
     initIncomeCategoriesList: function(){
-       let categories = [];
+        let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
             let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
             if(serviceCategory.getCategories()[i].type === "Income" && serviceCategory.getCategories()[i].visible){
@@ -36,6 +37,7 @@ onNavigate:function(obj){
         segment.setData(categories);
     },
 
+    //use varible for serviceCategory.getCategories()
     initCurrentCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
@@ -60,6 +62,7 @@ onNavigate:function(obj){
         segment.setData(categories);
     },
 
+    //Recalculace using currensy service
     getExpensesFromCurrentCategory: function (categoryId) {
         let balance = 0;
         let transactions = serviceTransactions.getTransactionForCurrentUser();
@@ -72,6 +75,7 @@ onNavigate:function(obj){
 
     },
 
+    //use varible for serviceCategory.getCategories()
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
