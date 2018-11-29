@@ -73,6 +73,7 @@ const DATA = {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 2,
@@ -81,6 +82,7 @@ const DATA = {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 3,
@@ -89,6 +91,7 @@ const DATA = {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 4,
@@ -97,6 +100,7 @@ const DATA = {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 5,
@@ -105,6 +109,7 @@ const DATA = {
             type: 'Expenses',
             currency: 'USD',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 6,
@@ -113,6 +118,7 @@ const DATA = {
             type: 'Income',
             currency: 'USD',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 7,
@@ -121,6 +127,7 @@ const DATA = {
             type: 'Current',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
             visible: true
         }
     ],
@@ -552,10 +559,14 @@ const serviceCategory = {
             }
         });
         return element;
+    }, 
+    
+    shareCategory: function (categotyId, userId) {
+        this.getById(categotyId).sharedUsers_id.push(userId);
     }
 };
 
-const userService = {
+const userService = { 
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
