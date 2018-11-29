@@ -2,6 +2,10 @@ define({
     goToCategories: function(){
         navToForm("frmCategoriesList");
     },
+    
+    goToEditCategory: function() {
+        navToForm("frmEditCategory", {categoryId: this.categoryId});
+    },
 
     goToHistoryDetails: function(){  
         let currents = this.filterByTypeOfTransaction("Current");

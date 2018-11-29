@@ -28,7 +28,7 @@
         0
     ],
     "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
-    "_src_": "share.png",
+    "_src_": "share_icon.png",
     "_width_": {
         "type": "string",
         "value": "20dp"
@@ -50,12 +50,12 @@
     "isvisible": true,
     "kuid": "db2af4dcb70b46efa5c6b1cd7d6d8416",
     "name": "kony.ui.Image2",
-    "parent": "FlexContainer0h8cfefda6e374c",
+    "parent": "flxSharing",
     "pf": "frmEditCategory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,
     "wType": "Image",
     "widgetalignment": 5,
-    "zindex": 1
+    "zindex": 10
 }

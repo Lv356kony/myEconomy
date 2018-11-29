@@ -42,6 +42,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxUpdateCategory",
+    "ide_onClick": "AS_FlexContainer_c030014205d44a60ae1f907d09600277",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

@@ -42,7 +42,7 @@
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxEditCategoryHeaderWrp",
+    "id": "flxEditCategoryIconWrp",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

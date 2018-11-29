@@ -48,7 +48,7 @@
     "kuid": "geff6792e49f4a08abfc84e64a37d75b",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxEditCategoryHeaderWrp",
+    "parent": "flxEditCategoryIconWrp",
     "pf": "frmEditCategory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

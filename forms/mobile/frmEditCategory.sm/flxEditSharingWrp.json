@@ -37,7 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "lblEditCategoryShare",
-        "FlexContainer0h8cfefda6e374c"
+        "flxSharing"
     ],
     "clipbounds": true,
     "containerweight": 100,
