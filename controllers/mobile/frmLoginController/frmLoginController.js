@@ -21,12 +21,19 @@ define({
             }
         } else {
             this.view.flxLogin.flxEmail.txtEmail.text = '';
-            this.view.flxLogin.flxPassword.txtPassword.text = '';   
-            navToForm("frmCategoriesList", {} );
-            
-    
+            this.view.flxLogin.flxPassword.txtPassword.text = '';
+            this.view.flxLoader.isVisible = true;
+            initCurrencies();
+            let load = () => { 
+                navToForm("frmCategoriesList");
+                this.view.flxLoader.isVisible = false;
+            };    
+            kony.timer.schedule("mytimer", load, 3, false);
+
+
+
         }   
-           
+
     },
 
     registration : function() {

@@ -1,18 +1,5 @@
 define({ 
 
-    onNavigate:function(obj){
-        this.check = obj;
-
-    },
-
-    load: function(){
-        if(this.check){
-            this.view.flxLoader.isVisible = true;
-            let load = () =>{ this.view.flxLoader.isVisible = false;};    
-            kony.timer.schedule("mytimer", load, 3, false);
-        } 
-
-    },
 
     //use varible for serviceCategory.getCategories()
     initIncomeCategoriesList: function(){
@@ -127,25 +114,26 @@ define({
         navToForm("frmLogin");
     },
     calculateIncomeBalance: function(){
-        let data = DATA.transactions;
-        let incomeIds = [];
-        for(let i = 0; i < serviceCategory.getCategories().length; i++){
-            if(serviceCategory.getCategories()[i].type === 'Income'){
-                incomeIds.push(serviceCategory.getCategories()[i].id);
-            }
-        }
+//         let data = DATA.transactions;
+//         let incomeIds = [];
+//         for(let i = 0; i < serviceCategory.getCategories().length; i++){
+//             if(serviceCategory.getCategories()[i].type === 'Income'){
+//                 incomeIds.push(serviceCategory.getCategories()[i].id);
+//             }
+//         }
 
-        let countIncome = 0.00;
-        for(let i = 0; i < data.length; i++){
-            for(let j = 0; j < incomeIds.length; j++){
-                if(data[i].from === incomeIds[j]){
-                    countIncome += parseFloat(Math.round(data[i].fromAmount*100))/100;
-                }
-            }
-        }
+//         let countIncome = 0.00;
+//         for(let i = 0; i < data.length; i++){
+//             for(let j = 0; j < incomeIds.length; j++){
+//                 if(data[i].from === incomeIds[j]){
+//                     countIncome += parseFloat(Math.round(data[i].fromAmount*100))/100;
+//                 }
+//             }
+//         }
 
         let incomeLabel = this.view.lblIncomeCount;
-        incomeLabel.text = parseFloat(Math.round(countIncome*100))/100;
+        incomeLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getIncomeBalance()*100))/100;
+//         alert(serviceCategoryRefactored.getIncomeBalance());
     },
 
     calculateCurrentBalance: function(){

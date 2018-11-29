@@ -84,14 +84,15 @@ const serviceCategoryRefactored = {
 
     getIncomeBalance: function(){
         let incomes = 0.00;
+        let transactions = serviceTransactionsRefactored.getAll();
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(serviceCategoryRefactored.getById(DATA.transactions[i].from).type === CATEGORY_TYPES.INCOME){
-                let categoryCurrency = this.getCurrencyById(DATA.transactions[i].from);
+        for(let i = 0; i < transactions.length; i++){
+            if(this.getById(transactions[i].from).type === CATEGORY_TYPES.INCOME){
+                let categoryCurrency = this.getCurrencyById(transactions[i].from);
                 if(categoryCurrency !== defaultCurrency){
-                    incomes += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].fromAmount);
+                    incomes += calculate(categoryCurrency, defaultCurrency, transactions[i].fromAmount);
                 }else{
-                    incomes += parseFloat(DATA.transactions[i].fromAmount);
+                    incomes += parseFloat(transactions[i].fromAmount);
                 }
             }
         }
