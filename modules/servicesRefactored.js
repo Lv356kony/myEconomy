@@ -112,11 +112,14 @@ const serviceCategoryRefactored = {
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
         for(let i = 0; i < transactions.length; i++){
             if(serviceCategoryRefactored.getById(transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
-                let categoryCurrency = this.getCurrencyById(transactions[i].to);
-                if(categoryCurrency !== defaultCurrency){
-                    expense += calculate(categoryCurrency, defaultCurrency, transactions[i].toAmount);
-                }else{
+                let categoryFrom = this.getCurrencyById(transactions[i].from);
+                let categoryTo = this.getCurrencyById(transactions[i].to);
+               if(defaultCurrency === categoryTo){
                     expense += parseFloat(transactions[i].toAmount);
+                }else if(defaultCurrency === categoryFrom){
+                    expense += parseFloat(transactions[i].fromAmount);
+                }else{
+                    expense += calculate(categoryTo, defaultCurrency, transactions[i].fromAmount);
                 }
             }
         }
@@ -181,6 +184,15 @@ const serviceCategoryRefactored = {
     
     shareCategory: function (categotyId, userId) {
         this.getById(categotyId).sharedUsers_id.push(userId);
+    },
+    
+    getSharedCategories: function () {
+        let sharedCategories = [];
+        let categories = DATA.categories.filter((category) => {
+            if (~category.sharedUsers_id.indexOf(CURRENT_USER.id)){
+                return category;
+            }
+        });
     }
 };
 

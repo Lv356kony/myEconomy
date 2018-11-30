@@ -1,7 +1,7 @@
 define({ 
 
 
-    //use varible for serviceCategory.getCategories()
+    //TODO use varible for serviceCategory.getCategories()
     initIncomeCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
@@ -120,13 +120,6 @@ define({
 
     calculateCurrentBalance: function(){
         let incomeLabel = this.view.lblCurrentCount;
-        let sharedCategories = [];
-        let categories = DATA.categories;
-        for (let i = 0; i < categories.length; i++){
-            if (~categories[i].sharedUsers_id.indexOf(CURRENT_USER.id)){
-                sharedCategories.push(categories[i]);
-            }
-        }
         incomeLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getCurrentBalance()*100))/100;
     },
 
