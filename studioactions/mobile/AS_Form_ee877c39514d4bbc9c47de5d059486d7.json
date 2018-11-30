@@ -14,15 +14,25 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___cc95b29d26354f25b89001fa7b248802",
+            "id": "INVOKE_FUNCTION___ed713f5c668449f1a83d78a068c07328",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "initCurrencies",
-            "display": "initCurrencies",
+            "sequenceKUID": "setDafaultValues",
+            "display": "setDafaultValues",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
             "disabled": null,
-            "source": "module"
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___d75154412e46476fbafae174676a64ca",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "load",
+            "display": "load",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
         }, {
             "id": "INVOKE_FUNCTION___ieceb98ab5cb4889bd7cb1a63ee01ade",
             "type": "INVOKE_FUNCTION",
@@ -93,6 +103,16 @@
             "callbackType": null,
             "disabled": null,
             "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___cc95b29d26354f25b89001fa7b248802",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "initCurrencies",
+            "display": "initCurrencies",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "module"
         }]
     }
 }
