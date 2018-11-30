@@ -1,4 +1,5 @@
 define({ 
+
     
 onNavigate:function(obj){
     this.check = obj;
@@ -10,8 +11,7 @@ onNavigate:function(obj){
        this.view.flxLoader.isVisible = true;
        let load = () =>{ this.view.flxLoader.isVisible = false;};    
        kony.timer.schedule("mytimer", load, 3, false);
-        } 
-        
+        }        
 },
 
     initIncomeCategoriesList: function(){

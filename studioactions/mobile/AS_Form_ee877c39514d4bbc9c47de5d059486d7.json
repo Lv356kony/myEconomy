@@ -14,16 +14,6 @@
         },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___d75154412e46476fbafae174676a64ca",
-            "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "load",
-            "display": "load",
-            "inputparams": [],
-            "parentId": null,
-            "callbackType": null,
-            "disabled": null,
-            "source": "controller"
-        }, {
             "id": "INVOKE_FUNCTION___ieceb98ab5cb4889bd7cb1a63ee01ade",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "initIncomeCategoriesList",
@@ -84,16 +74,6 @@
             "disabled": null,
             "source": "controller"
         }, {
-            "id": "INVOKE_FUNCTION___af05bd580257432aa28dabfa4c836a9a",
-            "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "calculateExpensesBalance",
-            "display": "calculateExpensesBalance",
-            "inputparams": [],
-            "parentId": null,
-            "callbackType": null,
-            "disabled": null,
-            "source": "controller"
-        }, {
             "id": "INVOKE_FUNCTION___cc95b29d26354f25b89001fa7b248802",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "initCurrencies",
@@ -103,6 +83,26 @@
             "callbackType": null,
             "disabled": null,
             "source": "module"
+        }, {
+            "id": "INVOKE_FUNCTION___d75154412e46476fbafae174676a64ca",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "load",
+            "display": "load",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___af05bd580257432aa28dabfa4c836a9a",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "calculateExpensesBalance",
+            "display": "calculateExpensesBalance",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
         }]
     }
 }

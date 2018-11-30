@@ -1,0 +1,30 @@
+{
+    "AS_Form_b21cb7fe015049bcbc9b1607a9f0c798": {
+        "id": "AS_Form_b21cb7fe015049bcbc9b1607a9f0c798",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmExpensesHistory",
+            "type": "forms",
+            "platform": null,
+            "KUID": "ia3e08ac505c4964a303334fc78710c2"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___ce40971e066948c8976dcbcca3bcfa68",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "init",
+            "display": "init",
+            "inputparams": [{
+                "name": "year"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

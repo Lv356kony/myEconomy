@@ -1,96 +1,88 @@
 define({ 
-     
-    init: function() {
-//         this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId() + " $";
-//         this.view.gridIncome.data = [{col1: this.getMinIncome(), 
-//            col2: this.getAVGIncome(), 
-//            col3: this.getMaxIncome("max","Income")}];
-//         this.view.gridExpenses.data = [{col1: this.getMinExpenses("min","Expenses"), 
-//            col2: this.getAVGExpenses("AVG","Expenses"), 
-//            col3: this.getMaxExpenses("max","Expenses")}];
-        alert(calculate("UAH", "USD", 10));
-       
+    
+    getTransactionsInDefaultCurrency: function(){
+        let currencyDefault = DATA.users[CURRENT_USER.id - 1].currency;//"UAH"
+        let trans = serviceTransactions.getTransactionForCurrentUser();
+        let categories =  serviceCategory.getCategories();
+        let defaultTrans = [];
+        let  currencyTo = [];
+        for(let i = 0; i < trans.length; i++){
+        	currencyTo = categories[trans[i].to].currency;
+            defaultTrans.push({
+                    id: trans[i].id,
+                    from: trans[i].from,
+                    amount: calculate(currencyTo, currencyDefault, trans[i].fromAmount),
+                    to: trans[i].to,
+                    date: trans[i].date,
+                    comment: trans[i].commentary});
+       }
+        return defaultTrans;
+    },
+
+  init: function (year) { 
+       //alert(calculate("USD", "UAH", 2000));
+      	year = year || new Date().getFullYear();
+        this.addChart(year);
+      	this.view.lblMinIncomeValue.text = Math.min(...this.getBalanceForEachMonthByType("Current", year));
+      	this.view.lblAvarageIncomeValue.text = (Math.min(...this.getBalanceForEachMonthByType("Current", year)) + 
+                                                Math.max(...this.getBalanceForEachMonthByType("Current", year))) / 2;
+      	this.view.lblMaxIncomeValue.text = Math.max(...this.getBalanceForEachMonthByType("Current", year));
+      	this.view.lblMinExpensesValue.text = Math.min(...this.getBalanceForEachMonthByType("Expenses", year));
+      	this.view.lblAvarageExpensesValue.text = (Math.min(...this.getBalanceForEachMonthByType("Expenses", year)) + 
+                                                  Math.max(...this.getBalanceForEachMonthByType("Expenses", year))) / 2;
+      	this.view.lblMaxExpensesValue.text = Math.max(...this.getBalanceForEachMonthByType("Expenses", year));
+      	this.view.lblExpensesYear.text = year + " Year";
+    },
+        
+    getTransactionsByType: function (type) {
+        let categories = serviceCategory.getCategories();
+        let transactions = this.getTransactionsInDefaultCurrency();
+        let categoriesByType = [];
+        let transactionsByType = [];
+        for(let i = 0; i < categories.length; i++) {
+            if(categories[i].type === type) {
+                categoriesByType.push(categories[i]);
+            }
+        }
+        for(let i = 0; i < categoriesByType.length; i++) {
+            for(let j = 0; j < transactions.length; j++) {
+                if(categoriesByType[i].id === transactions[j].to) {
+                    transactionsByType.push(transactions[j]);
+                }
+            }
+        }
+        return transactionsByType;
+    },
+    
+    getBalanceForEachMonthByType: function (type, year) {
+        year = year || new Date().getFullYear();
+        let transactions = this.getTransactionsByType(type);
+        let transactionsForEachMonth = [];
+        for (let i = 0; i <= 11; i ++) {
+            let sum = 0;
+            for (let j = 0; j < transactions.length; j++) {
+                if (transactions[j].date.getMonth() === i && transactions[j].date.getFullYear() === year) {
+                    sum += transactions[j].amount;
+                }
+            }
+            transactionsForEachMonth.push(sum);
+        } 
+        return transactionsForEachMonth;
         
     },
-    
-     backwardClick: function() {
-		navToForm("frmCategoriesList");
-    },
-    
-    //return an array of id of Currents
-    getCurrentCategoryId: function() {
-    let categories = serviceCategory.getCategories();
-    let current = [];
-    categories.forEach(i => {
-        if (i.type === "Current") {
-            current.push(i.id);
-        }
-    });
-    return current;    
-	},
 
-    //get Balancy by Category Type of all period
-	getBalanceByCategoryType: function(categoryType){
-    let transactions = DATA.transactions;
-    let current = this.getCurrentCategoryId();
-    let incomesBalance = [];
-    let expensesBalance = [];
-    for(let i = 0; i < current.length; i++){
-        for(let j = 0; j < transactions.length; j++){
-            if(transactions[j].to === current[i]){
-                incomesBalance.push(transactions[j].amount);
-            }
-            else{
-                expensesBalance.push(transactions[j].amount);
-            }
-        }
-    }
-    if (arguments[0] === "Expenses") {
-        return expensesBalance;
-    } else return incomesBalance;
-	},
+    addChart : function (year) {
+        year = year || new Date().getFullYear();
+        var chartWidjet = this.kdv_createChartWidget(year);
+        this.view.flxChartContainer.removeAll();
+        this.view.flxChartContainer.add(chartWidjet);
 
-    getMaxIncome: function(){
-        let max = this.getBalanceByCategoryType();
-        return Math.max(...max);
     },
-
-    getMinIncome: function(){
-        let min = this.getBalanceByCategoryType();
-        return Math.min(...min);
-    },
-
-    getAVGIncome: function(){
-        let incomes = this.getBalanceByCategoryType();
-         let sum = incomes.reduce((accumulator, currentValue) => accumulator + currentValue);
-         return parseFloat(Math.round((sum/incomes.length)*100))/100;
-    },
-
-    getMaxExpenses: function(){
-        let max = this.getBalanceByCategoryType("Expenses");
-        return Math.max(...max);
-    },
-
-    getMinExpenses: function(){
-        let min = this.getBalanceByCategoryType("Expenses");
-        return Math.min(...min);
-    },
-
-    getAVGExpenses: function(){
-        let incomes = this.getBalanceByCategoryType("Expenses");
-         let sum = incomes.reduce((accumulator, currentValue) => accumulator + currentValue);
-         return parseFloat(Math.round((sum/incomes.length)*100))/100;
-    },
-    
    
-    addChart: function(categoryType) {
-        let chartWidjet = this.kdv_createChartWidget();
-        this.view.flxLineChartContainer.add(chartWidjet);
-    },
-    
+    //creating chart widget...
+    kdv_createChartWidget: function (year) {
+        var chartObj = this.kdv_createChartJSObject(year);
 
-     kdv_createChartWidget: function() {
-        var chartObj = this.kdv_createChartJSObject();
         var chartWidget = new kony.ui.Chart2D3D({
             "id": "chartid",
             "isVisible": true
@@ -103,22 +95,21 @@ define({
     },
 
     //creating chart object with chart properties and chart data...
-     kdv_createChartJSObject: function() {
-        let data = [234, 236, 224, 244, 240, 218, 256, 254, 248, 226, 234, 228];
+    kdv_createChartJSObject: function (year) {
         var chartInfo = {
             "chartProperties": {
                 "chartHeight": 100,
                 "enableScrolling": true,
-                "position": [0, 0, 100, 100], //[x1 y1 - top x2 y2 - bottom]
+                "position": [0, 0, 100, 100],
                 "title": {
                     "visible": false,
-                    "text": "",
+                    "text": "" + year,
                     "font": {
                         "size": ["20"],
                         "family": ["Verdana"],
                         "style": ["Bold"],
                         "color": ["0x000000ff"],
-                        "transparency": [30]
+                        "transparency": [0]
                     },
                     "position": "top",
                     "alignment": "center",
@@ -135,47 +126,47 @@ define({
                 },
                 "legend": {
                     "visible": true,
-                    "indicators": ["marker", "textLabel"],//indicators to be displayed in the legend
+                    "indicators": ["marker", "textLabel"],
                     "separator": "space",
                     "marker": {
                         "type": "colorBox",
-                        "color": ["0x9fd500ff", "0x22b8dbff"]
+                        "color": ["0xa9e200ff", "0x22b8dbff"]
                     },
                     "rowName": {
-                        "color": ["0x169EECFF", "0xBE0056ff", "0xFCC40EFF"],
+                        "color": ["0x169EECFF", "0xBE0056ff"],
                         "margin": [5, 5, 0, 0]
                     },
                     "numberValue": {
-                        "color": ["0x169EECFF", "0xBE0056ff", "0xFCC40EFF"],
+                        "color": ["0x169EECFF", "0xBE0056ff"],
                         "margin": [5, 5, 0, 0]
                     },
                     "percentValue": {
-                        "color": ["0x169EECFF", "0xBE0056ff", "0xFCC40EFF"],
+                        "color": ["0x169EECFF", "0xBE0056ff"],
                         "margin": [5, 5, 0, 0]
                     },
                     "columnName": {
-                        "color": ["0x169EECFF", "0xBE0056ff", "0xFCC40EFF"],
+                        "color": ["0x169EECFF", "0xBE0056ff"],
                         "margin": [5, 5, 0, 0]
                     },
                     "textLabel": {
-                        "text": ["Income", "Expenses"],
-                        "color": ["0x9fd500ff", "0x22b8dbff"],
+                        "text": ["Expenses", "Incomes"],
+                        "color": ["0x000000ff", "0x000000ff"],
                         "margin": [3, 5, 1, 1]
                     },
                     "textValue": {
-                        "text": ["$909", "$309", "$609"],
-                        "color": ["0x169EECFF", "0xBE0056ff", "0xFCC40EFF"],
+                        "text": ["$909", "$309"],
+                        "color": ["0x169EECFF", "0xBE0056ff"],
                         "margin": [5, 5, 0, 0]
                     },
                     "font": {
-                        "size": [12],
+                        "size": [20],
                         "family": ["Verdana"],
                         "style": ["normal"],
                         "color": ["0xaaaaaaff"],
                         "transparency": [0]
                     },
-                    "position": "bottom",
-                    "alignment": "right",
+                    "position": "top",
+                    "alignment": "left",
                     "layout": "horizantal",
                     "containerWt": 8,
                     "margin": [10, 10, 10, 10],
@@ -209,13 +200,15 @@ define({
                             "gap": 150
                         },
                         "axisLine": {
-                            "visible": false,
-                            "crossOtherAxisAt": "value"
+                            "crossOtherAxisAt": "value",
+                            "line": {
+                                "color": ["0xaaaaaaff"]
+                            }
                         },
                         "labels": {
-                            "orientationAngle": 90,
+                            "orientationAngle": 50,
                             "font": {
-                                "size": [12],
+                                "size": [20],
                                 "family": ["Verdana"],
                                 "style": ["normal"],
                                 "color": ["0x000000ff"],
@@ -224,32 +217,62 @@ define({
                         }
                     },
                     "yAxis": {
+                        "scale": {
+                            "minValue": 0,
+                            "maxValue": Math.max(...this.getBalanceForEachMonthByType("Current", year)) * 1.6,
+                            "majorInterval": 0,
+                            "minorInterval": 0,
+                            "offset": {
+                                "value": [0, 0],
+                                "type": "pixels"
+                            }
+                        },
                         "axisLine": {
-                            "visible": false,
-                            "crossOtherAxisAt": "start"
+                            "line": {
+                                "color": ["0xaaaaaaff"]
+                            }
                         },
                         "labels": {
                             "margin": [30, 0, 0, 0],
                             "font": {
-                                "size": [12],
+                                "size": [20],
                                 "family": ["Verdana"],
                                 "style": ["normal"],
                                 "color": ["0x000000ff"],
-                                "transparency": [10]
+                                "transparency": [0]
                             }
+                        },
+                        "intervalMarks": {
+                            "major": {
+                                "line": {
+                                    "color": ["0xaaaaaaff"]
+                                }
+                            },
+                            "minor": {
+                                "line": {
+                                    "color": ["0xaaaaaaff"]
+                                }
+                            },
+                            "placement": "atLabels"
                         }
                     }
                 },
                 "grid": {
-                    "type": ["xAxisMajorGrid"],
+                    "type": ["xAxisMajorGrid", "yAxisMajorGrid"],
                     "xAxisMajorGrid": {
+                        "line": {
+                            "color": ["0xaaaaaaff"]
+                        }
+                    },
+                    "yAxisMajorGrid": {
                         "line": {
                             "color": ["0xaaaaaaff"]
                         }
                     }
                 },
+                "drawEntities": ["axis", "grid", "lineChart"],
                 "lineChart": {
-                    "columnId": [0, 1],
+                    "columnId": [0, 1, 2],
                     "animations": {
                         "onInitAnimation": true
                     },
@@ -258,12 +281,12 @@ define({
                     "dataAlignToAxis": ["primaryYAxis"],
                     "plotMissingValues": "assumeZero",
                     "line": {
-                        "color": ["0x9fd500ff", "0x22b8dbff"],
+                        "color": ["0x9fd500ff", "0x22b8dbff", "0xf7d700ff"],
                         "width": [3],
                         "transparency": [0]
                     },
                     "plotPoints": {
-                        "visible": false,
+                        "visible": true,
                         "colorIndicator": "columns",
                         "marker": {
                             "type": ["bubble", "bubble", "bubble"],
@@ -271,56 +294,27 @@ define({
                         },
                         "color": ["0xa9e200ff", "0x22b8dbff", "0xf7d700ff"],
                         "transparency": [0],
-                        "size": [12]
-                    },
-                    "dataLabels": null
-                },
-                "drawEntities": ["axis", "grid", "areaChart", "lineChart"],
-                "areaChart": {
-                    "columnId": [3],
-                    "animations": {
-                        "onInitAnimation": true
-                    },
-                    "graphType": "normal",
-                    "lineType": "normal",
-                    "dataAlignToAxis": ["primaryYAxis"],
-                    "plotMissingValues": "assumeZero",
-                    "area": {
-                        "fillType": ["color"],
-                        "transparency": [20],
-                        "color": ["0x00ff00ff"],
-                        "colorAboveXAxis": ["0xB4B4B4FF"],
-                        "colorBelowXAxis": ["0xff0000ff"],
-                        "visible": true
-                    },
-                    "line": {
-                        "visible": false,
-                        "color": ["0xff0000ff"],
-                        "width": [1],
-                        "transparency": [0]
-                    },
-                    "plotPoints": {
-                        "visible": false
+                        "size": [20]
                     }
                 }
             },
             "chartData": {
                 "rowNames": {
-                    "values": ["01/2018", "02/2018", "03/2018", "04/2018", "05/2018", "06/2018", "07/2018", "08/2018", "09/2018", "10/2018", "11/2018", "12/2018"]
+                    "values": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
                 },
                 "columnNames": {
-                    "values": ["Income", "Expenses"]
+                    "values": ["Expenses", "Current"]
                 },
                 "data": {
-                    "Income": data,
-                    "Expenses": [524, 512, 514, 526, 534, 536, 522, 544, 342, 318, 328, 324],
-                    "Target": [220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220, 220]
+                    "Expenses": this.getBalanceForEachMonthByType("Expenses", year),
+                    "Current": this.getBalanceForEachMonthByType("Current", year)
                 }
             },
             "chartEvents": {
+                "onSwipe": null,
                 "onPinchZoom": {
                     "minimumZoomScale": 1,
-                    "maximumZoomScale": 2
+                    "maximumZoomScale": 1
                 },
                 "onTouch": {
                     "crossHair": {
@@ -335,7 +329,7 @@ define({
                         "indicators": ["numberValue"],
                         "separator": "space",
                         "font": {
-                            "size": [14],
+                            "size": [20],
                             "family": ["Verdana"],
                             "style": ["Bold"],
                             "color": ["0xAAAAAAFF"],
@@ -363,4 +357,4 @@ define({
         return chartInfo;
     }
 
-     });
+ });

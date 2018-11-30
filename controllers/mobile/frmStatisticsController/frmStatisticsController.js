@@ -1,8 +1,9 @@
 define({ 
-
+        
     init: function() {
-        this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId(CURRENT_USER.id) + " $";
-        this.outcomeClick();
+        alert(EXCHANGELIST);
+        //this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId(CURRENT_USER.id) + " $";
+        //this.outcomeClick();
     },
 
 
