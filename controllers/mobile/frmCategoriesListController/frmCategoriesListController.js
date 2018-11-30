@@ -115,22 +115,41 @@ define({
     },
     calculateIncomeBalance: function(){
         let incomeLabel = this.view.lblIncomeCount;
-        incomeLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getIncomeBalance()*100))/100;
+        incomeLabel.text = `${serviceCategoryRefactored.getIncomeBalance()} ${this.getCarenncySymbolForCurrentUser()}`;
     },
 
     calculateCurrentBalance: function(){
         let incomeLabel = this.view.lblCurrentCount;
-        incomeLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getCurrentBalance()*100))/100;
+        incomeLabel.text = `${serviceCategoryRefactored.getCurrentBalance(true)} ${this.getCarenncySymbolForCurrentUser()}`;
     },
 
     calculateExpensesBalance: function(){
         let expensesLabel = this.view.lblExpensesCount;
-        expensesLabel.text = parseFloat(Math.round(serviceCategoryRefactored.getExpenseBalance()*100))/100;
+        expensesLabel.text = `${serviceCategoryRefactored.getExpenseBalance(true)} ${this.getCarenncySymbolForCurrentUser()}`;
     },
 
     getCarenncySymbolForCategory: function (categoryId){
         let category = serviceCategory.getById(categoryId);
         let currency = category.currency;
+        let currencySymbol;
+        switch(currency) {
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "EUR":
+                currencySymbol = "€";
+                break;
+            case "PLN":
+                currencySymbol = "zł";
+                break;
+            default:
+                currencySymbol = "₴";
+        }
+        return currencySymbol;
+    },
+    
+    getCarenncySymbolForCurrentUser: function (){
+        let currency = userServiceRefactored.getById(CURRENT_USER.id).currency;
         let currencySymbol;
         switch(currency) {
             case "USD":
