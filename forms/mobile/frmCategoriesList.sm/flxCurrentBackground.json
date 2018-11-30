@@ -1,9 +1,17 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "98dp"
     },
     "_margin_": [
         0,
@@ -19,35 +27,27 @@
         0
     ],
     "_percent_": true,
-    "_right_": {
-        "type": "string",
-        "value": "20dp"
-    },
-    "_skin_": "s2df366a1e494b9890c7885b25867f17",
+    "_skin_": "s65501bf24f84736b0983faac305bf64",
     "_width_": {
         "type": "string",
-        "value": "100dp"
+        "value": "0%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centery": {
+    "centerx": {
         "type": "string",
         "value": "50%"
     },
-    "children": [
-        "imgAddCurrent",
-        "lblAddCurrent"
-    ],
+    "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxAddCurrent",
-    "ide_onClick": "AS_FlexContainer_c0ab460c24d645b49f8ee95460a64e4f",
+    "id": "flxCurrentBackground",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "afa1cd67feeb47f28025a72d244997bc",
+    "kuid": "h24a6623b165434ab7fc2b3c22c9de97",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "flxCurrent",
@@ -58,5 +58,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 2
+    "zindex": 1
 }

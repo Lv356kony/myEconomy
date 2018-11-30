@@ -12,6 +12,7 @@ var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4'
                 '9': 'October', '10': 'November', '11': 'December'};
 var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
               '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
+let categoryAnimProps = {getAnimationStatus: true, timerIdMemory: ''};
 
 const CURRENT_USER = {id: undefined};
 

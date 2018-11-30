@@ -98,6 +98,7 @@ define({
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
+        self.setDafaultValues.call(this);
         self.initIncomeCategoriesList.call(this);
         self.initCurrentCategoriesList.call(this);
         self.initExpensesCategoriesList.call(this);
@@ -106,10 +107,5 @@ define({
         self.calculateCurrentBalance.call(this);
         self.calculateExpensesBalance.call(this);
         initCurrencies.call(this);
-        self.onInit.call(this);
-    },
-    /** postShow defined for frmCategoriesList **/
-    AS_Form_e4eb6432977f446fb17b17b488f1bf50: function AS_Form_e4eb6432977f446fb17b17b488f1bf50(eventobject) {
-        var self = this;
     }
 });
