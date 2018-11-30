@@ -21,9 +21,12 @@ define({
             }
         } else {
             this.view.flxLogin.flxEmail.txtEmail.text = '';
-            this.view.flxLogin.flxPassword.txtPassword.text = '';
-            navToForm("frmCategoriesList");    
-        }    
+            this.view.flxLogin.flxPassword.txtPassword.text = '';   
+            navToForm("frmCategoriesList", {} );
+            
+    
+        }   
+           
     },
 
     registration : function() {

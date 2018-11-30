@@ -24,6 +24,16 @@
             "disabled": null,
             "source": "controller"
         }, {
+            "id": "INVOKE_FUNCTION___d75154412e46476fbafae174676a64ca",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "load",
+            "display": "load",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }, {
             "id": "INVOKE_FUNCTION___ieceb98ab5cb4889bd7cb1a63ee01ade",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "initIncomeCategoriesList",

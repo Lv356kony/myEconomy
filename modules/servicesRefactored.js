@@ -1,96 +1,13 @@
-function navToForm(formName, data){
-    let target = new kony.mvc.Navigation(formName);
-    if(data){
-        target.navigate(data);
-    } else{
-        target.navigate();
-    }
-}
-
-var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4': 'May',
-                '5': 'June', '6': 'July', '7': 'August', '8': 'September',
-                '9': 'October', '10': 'November', '11': 'December'};
-var getDay = {'0': 'Sunday', '1': 'Monday', '2': 'Tuesday', '3': 'Wednesday',
-              '4': 'Thursday', '5': 'Friday', '6': 'Saturday'};
-let categoryAnimProps = {getAnimationStatus: true, timerIdMemory: ''};
-
-//When creating transaction we need to set current user as default user_id
-const CURRENT_USER = {id: undefined};
-
-const EXCHANGELIST = {};
-
-const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
-
-const DATA = {
-    users:[],
-    categories:[],
-    transactions:[]
+const CATEGORY_TYPES = {
+    INCOME: 'Income',
+    CURRENT: 'Current',
+    EXPENSE: 'Expenses'
 };
 
-const serviceTransactions = {
-
-    getBalanceByCategoryId: function(categoryId){
-        let categoryBalance = 0.00;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(DATA.transactions[i].to === categoryId){
-                categoryBalance += parseFloat(DATA.transactions[i].toAmount);
-            }
-        }
-        return parseFloat(categoryBalance.toFixed(2));
-    },
-
-    getIncomeBalanceByCategoryId: function(categoryId){
-        let categoryBalance = 0;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(DATA.transactions[i].from === categoryId){
-                categoryBalance += parseFloat(DATA.transactions[i].fromAmount);
-            }
-        }
-        return parseFloat(categoryBalance.toFixed(2));
-    },
-
-    getCurrentBalanceByUserId: function(){
-        let categories = [];
-        for(let i = 0; i < DATA.categories.length; i++){
-            if(CURRENT_USER.id === DATA.categories[i].user_id){
-                categories.push(DATA.categories[i]);
-            }
-        }
-
-        let expensesIds = [];
-        let incomeIds = [];
-        for(let i = 0; i < categories.length; i++){
-            if(categories[i].type === 'Expenses'){
-                expensesIds.push(categories[i].id);
-            }
-            else if(categories[i].type === 'Income'){
-                incomeIds.push(categories[i].id);
-            }
-        }
-
-        let countExpenses = 0.00;
-        let countIncome = 0.00;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            for(let j = 0; j < expensesIds.length; j++){
-                if(DATA.transactions[i].to === expensesIds[j]){
-                    countExpenses += parseInt(DATA.transactions[i].toAmount);
-                }
-            }
-        }
-
-        for(let i = 0; i < DATA.transactions.length; i++){
-            for(let j = 0; j < incomeIds.length; j++){
-                if(DATA.transactions[i].from === incomeIds[j]){
-                    countIncome += parseInt(DATA.transactions[i].toAmount);
-                }
-            }
-        }
-
-        return countIncome - countExpenses;
-    },
+const serviceTransactionsRefactored = {
 
     getByCategoryId: function(categoryId){
-        let transaction =[];
+        let transaction = [];
         for(let i = 0; i < DATA.transactions.length; i++){
             if(categoryId === DATA.transactions[i].to){
                 transaction.push(DATA.transactions[i]);
@@ -108,7 +25,7 @@ const serviceTransactions = {
         return null;
     },
 
-    getTransactionForCurrentUser: function () {
+    getAll: function () {
         return DATA.transactions.filter((element, i) => {
             if (DATA.transactions[i].user_id === CURRENT_USER.id){
                 return DATA.transactions[i];
@@ -116,13 +33,13 @@ const serviceTransactions = {
         });
     },
 
-    create: function(id, fromAmount, from, to, userId, date, comment, toAmount){
+    create: function(id, fromAmount, from, to, date, comment, toAmount){
         let transaction = {};
-        transaction.id = parseInt(id);
-        transaction.from = parseInt(from);
+        transaction.id = id;
+        transaction.from = from;
         transaction.fromAmount = parseFloat(fromAmount);
-        transaction.to = parseInt(to);
-        transaction.user_id = parseInt(userId);
+        transaction.to = to;
+        transaction.user_id = CURRENT_USER.id;
         transaction.toAmount = parseFloat(toAmount);
         transaction.date = new Date(date);
         transaction.commentary = comment;
@@ -151,27 +68,58 @@ const serviceTransactions = {
     }
 };
 
-const serviceCategory = {
-    deleteById: function(id) {
-        const index = DATA.categories.findIndex(category => category.id === id);
-        if(index !== -1) {
-            DATA.categories.splice(index, 1);
+const serviceCategoryRefactored = {
+
+    getBalanceByType: function(categoryId){
+        let amount = CATEGORY_TYPES.INCOME === this.getById(categoryId).type ? 'fromAmount' : 'toAmount';
+        let type = CATEGORY_TYPES.INCOME === this.getById(categoryId).type ? 'from' : 'to';
+        let categoryBalance = 0.00;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i][type] === categoryId){
+                categoryBalance += parseFloat(DATA.transactions[i][amount]);
+            }
         }
-        return DATA.categories;
+        return parseFloat(categoryBalance.toFixed(2));
+    },
+
+    getIncomeBalance: function(){
+        let incomes = 0.00;
+        let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(serviceCategoryRefactored.getById(DATA.transactions[i].from).type === CATEGORY_TYPES.INCOME){
+                let categoryCurrency = this.getCurrencyById(DATA.transactions[i].from);
+                if(categoryCurrency !== defaultCurrency){
+                    incomes += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].fromAmount);
+                }else{
+                    incomes += parseFloat(DATA.transactions[i].fromAmount);
+                }
+            }
+        }
+        return parseFloat(incomes.toFixed(2));
+    },
+
+    getCurrentBalance: function(){
+        return this.getIncomeBalance() - this.getExpenseBalance();
+    },
+
+    getExpenseBalance: function(){
+        let expense = 0.00;
+        let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(serviceCategoryRefactored.getById(DATA.transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
+                let categoryCurrency = this.getCurrencyById(DATA.transactions[i].to);
+                if(categoryCurrency !== defaultCurrency){
+                    expense += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].toAmount);
+                }else{
+                    expense += parseFloat(DATA.transactions[i].toAmount);
+                }
+            }
+        }
+        return parseFloat(expense.toFixed(2));
     },
 
     getById: categoryId => {
         return DATA.categories.find(category => category.id === categoryId);
-    },
-
-    deleteByUserId: function(userId) {
-        for(let i = 0; i < DATA.categories.length; i++) {
-            if(DATA.categories[i].user_id === userId) {
-                DATA.categories.splice([i], 1);
-                i--;
-            }
-        }
-        return DATA.categories;
     },
 
     getCategories: function() {
@@ -185,7 +133,7 @@ const serviceCategory = {
     },
 
     getCurrencyById: function(categoryId) {
-   		return this.getById(categoryId).currency;
+        return this.getById(categoryId).currency;
     },
 
     getCurrencyByCatName: function(categoryName) {
@@ -208,15 +156,40 @@ const serviceCategory = {
         return element;
     },
 
-    shareCategory: function (categotyId, userId) {
-        this.getById(categotyId).sharedUsers_id.push(userId);
-    }
+    deleteByUserId: function(userId) {
+        for(let i = 0; i < DATA.categories.length; i++) {
+            if(DATA.categories[i].user_id === userId) {
+                DATA.categories.splice([i], 1);
+                i--;
+            }
+        }
+        return DATA.categories;
+    },
+
+    deleteById: function(id) {
+        const index = DATA.categories.findIndex(category => category.id === id);
+        if(index !== -1) {
+            DATA.categories.splice(index, 1);
+        }
+        return DATA.categories;
+    },
 };
 
-const userService = {
+const userServiceRefactored = {
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
+        });
+
+        if (userMockArray && userMockArray.length) {
+            return userMockArray[0];
+        }
+        return null;
+    },
+
+    getByEmail: function (email) {
+        let userMockArray = DATA.users.filter(function (user) {
+            return user.email === email;
         });
 
         if (userMockArray && userMockArray.length) {
@@ -338,7 +311,7 @@ const userService = {
     }
 };
 
-const serviceCurrencies = {
+const serviceCurrenciesRefactored = {
     findUserCurrencies: function (){
         let categories = serviceCategory.getCategories();
         let curr = [];
@@ -393,23 +366,3 @@ const serviceCurrencies = {
 
     }
 };
-
-function initCurrencies(){
-    let currencySubsets = serviceCurrencies.generateCurrencySubsets(serviceCurrencies.findUserCurrencies());
-    serviceCurrencies.getCurrencies(currencySubsets);
-}
-
-function validateEmail(str) {
-    let pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return pattern.test(str);
-}
-
-function validatePassword(string){
-    let strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,16})/;
-    return strongRegex.test(string);
-}
-
-function calculate(from, to, value) {
-    let key = from + "_" + to;
-    return value*EXCHANGELIST[key];
-}
