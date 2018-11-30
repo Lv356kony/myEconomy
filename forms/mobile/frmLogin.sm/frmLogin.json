@@ -33,7 +33,8 @@
     "canUpdateUI": true,
     "children": [
         "flxImage",
-        "flxLogin"
+        "flxLogin",
+        "flxLoader"
     ],
     "containerweight": 100,
     "controllerInfo": {

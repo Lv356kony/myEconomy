@@ -1,19 +1,7 @@
 define({ 
-    
-onNavigate:function(obj){
-    this.check = obj;
-    
-},
- 
-    load: function(){
-        if(this.check){
-       this.view.flxLoader.isVisible = true;
-       let load = () =>{ this.view.flxLoader.isVisible = false;};    
-       kony.timer.schedule("mytimer", load, 3, false);
-        } 
-        
-},
 
+
+    //TODO use varible for serviceCategory.getCategories()
     initIncomeCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
@@ -36,6 +24,7 @@ onNavigate:function(obj){
         segment.setData(categories);
     },
 
+    //use varible for serviceCategory.getCategories()
     initCurrentCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
@@ -60,6 +49,7 @@ onNavigate:function(obj){
         segment.setData(categories);
     },
 
+    //Recalculace using currensy service
     getExpensesFromCurrentCategory: function (categoryId) {
         let balance = 0;
         let transactions = serviceTransactions.getTransactionForCurrentUser();
@@ -72,6 +62,7 @@ onNavigate:function(obj){
 
     },
 
+    //use varible for serviceCategory.getCategories()
     initExpensesCategoriesList: function(){
         let categories = [];
         for (let i = 0; i < serviceCategory.getCategories().length; i++) {
@@ -123,56 +114,42 @@ onNavigate:function(obj){
         navToForm("frmLogin");
     },
     calculateIncomeBalance: function(){
-        let data = DATA.transactions;
-        let incomeIds = [];
-        for(let i = 0; i < serviceCategory.getCategories().length; i++){
-            if(serviceCategory.getCategories()[i].type === 'Income'){
-                incomeIds.push(serviceCategory.getCategories()[i].id);
-            }
-        }
-
-        let countIncome = 0.00;
-        for(let i = 0; i < data.length; i++){
-            for(let j = 0; j < incomeIds.length; j++){
-                if(data[i].from === incomeIds[j]){
-                    countIncome += parseFloat(Math.round(data[i].fromAmount*100))/100;
-                }
-            }
-        }
-
         let incomeLabel = this.view.lblIncomeCount;
-        incomeLabel.text = parseFloat(Math.round(countIncome*100))/100;
+        incomeLabel.text = `${serviceCategoryRefactored.getIncomeBalance()} ${this.getCarenncySymbolForCurrentUser()}`;
     },
 
     calculateCurrentBalance: function(){
         let incomeLabel = this.view.lblCurrentCount;
-        incomeLabel.text = parseFloat(Math.round(serviceTransactions.getCurrentBalanceByUserId()*100))/100;
+        incomeLabel.text = `${serviceCategoryRefactored.getCurrentBalance(true)} ${this.getCarenncySymbolForCurrentUser()}`;
     },
 
     calculateExpensesBalance: function(){
-        let data = DATA.transactions;
-        let expensesIds = [];
-        for(let i = 0; i < serviceCategory.getCategories().length; i++){
-            if(serviceCategory.getCategories()[i].type === 'Expenses'){
-                expensesIds.push(serviceCategory.getCategories()[i].id);
-            }
-        }
-
-        let countExpenses = 0.00;
-        for(let i = 0; i < data.length; i++){
-            for(let j = 0; j < expensesIds.length; j++){
-                if(data[i].to === expensesIds[j]){
-                    countExpenses += parseInt(data[i].toAmount);
-                }
-            }
-        }
         let expensesLabel = this.view.lblExpensesCount;
-        expensesLabel.text = parseFloat(Math.round(countExpenses*100))/100;
+        expensesLabel.text = `${serviceCategoryRefactored.getExpenseBalance(true)} ${this.getCarenncySymbolForCurrentUser()}`;
     },
 
     getCarenncySymbolForCategory: function (categoryId){
         let category = serviceCategory.getById(categoryId);
         let currency = category.currency;
+        let currencySymbol;
+        switch(currency) {
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "EUR":
+                currencySymbol = "€";
+                break;
+            case "PLN":
+                currencySymbol = "zł";
+                break;
+            default:
+                currencySymbol = "₴";
+        }
+        return currencySymbol;
+    },
+    
+    getCarenncySymbolForCurrentUser: function (){
+        let currency = userServiceRefactored.getById(CURRENT_USER.id).currency;
         let currencySymbol;
         switch(currency) {
             case "USD":
