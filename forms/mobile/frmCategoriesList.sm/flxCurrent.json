@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "7%"
     },
     "_left_": {
         "type": "string",
@@ -42,12 +42,15 @@
     "children": [
         "lblCurrent",
         "lblCurrentCount",
-        "flxAddCurrent"
+        "flxAddCurrent",
+        "flxCurrentBackground",
+        "flxcurrentUnderline"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxCurrent",
+    "ide_onClick": "AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a",
     "info": null,
     "iphone": {
         "render": true
@@ -80,5 +83,5 @@
     "winphone8": {
         "render": true
     },
-    "zindex": 1
+    "zindex": 2
 }
