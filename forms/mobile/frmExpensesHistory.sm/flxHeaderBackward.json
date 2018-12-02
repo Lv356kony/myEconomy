@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "60%"
+        "value": "56dp"
     },
     "_left_": {
         "type": "string",
@@ -29,35 +29,27 @@
         "value": "0dp"
     },
     "_width_": {
-        "type": "string",
-        "value": "90%"
+        "type": "number",
+        "value": "56"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "children": [
-        "fxlMinIncome",
-        "fxlAvarageIncome",
-        "fxlMaxIncome",
-        "flxMinExpenses",
-        "flxAvarageExpenses",
-        "flxMaxExpenses"
+        "imgStatisticHeader"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "fxlTableWrapper",
+    "id": "flxHeaderBackward",
+    "ide_onClick": "AS_FlexContainer_e4848548284f4715a0d10f9fa41d7afd",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h317adc0347a48de8f66fc6570ae7439",
+    "kuid": "d8e515f216f04f6d8789b055612d7b7e",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxTableContainer",
+    "parent": "flxHeader",
     "pf": "frmExpensesHistory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

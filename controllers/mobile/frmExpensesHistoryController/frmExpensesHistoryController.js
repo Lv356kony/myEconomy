@@ -1,41 +1,59 @@
 define({ 
     
+	init: function (year) { 
+        this.addChart(year);
+       	this.view.grdIncome.data = [{col1: Math.min(...this.getBalanceForEachYearByType("Current")), 
+           col2: (Math.min(...this.getBalanceForEachYearByType("Current")) + Math.max(...this.getBalanceForEachYearByType("Current"))) / 2, 
+           col3:  Math.max(...this.getBalanceForEachYearByType("Current"))}];
+		this.view.grdExpenses.data = [{col1: Math.min(...this.getBalanceForEachYearByType("Expenses")), 
+           col2: (Math.min(...this.getBalanceForEachYearByType("Expenses")) + Math.max(...this.getBalanceForEachYearByType("Expenses"))) / 2, 
+           col3:  Math.max(...this.getBalanceForEachYearByType("Expenses"))}];   
+    },
+    
+    backwardClick: function() {
+		navToForm("frmCategoriesList");
+    },
+    
     getTransactionsInDefaultCurrency: function(){
-        let currencyDefault = DATA.users[CURRENT_USER.id - 1].currency;//"UAH"
-        let trans = serviceTransactions.getTransactionForCurrentUser();
-        let categories =  serviceCategory.getCategories();
+        let currencyDefault = DATA.users[CURRENT_USER.id - 1].currency;
+        let trans = serviceTransactionsRefactored.getAll();
+        let categories =  serviceCategoryRefactored.getCategories();
         let defaultTrans = [];
-        let  currencyTo = [];
+        let  currencyTo, currencyFrom;
         for(let i = 0; i < trans.length; i++){
-        	currencyTo = categories[trans[i].to].currency;
-            defaultTrans.push({
+			currencyTo = categories[trans[i].to - 1].currency;
+			currencyFrom = categories[trans[i].from - 1].currency;
+			if(currencyTo === currencyFrom && currencyTo === currencyDefault){
+				defaultTrans.push({
                     id: trans[i].id,
                     from: trans[i].from,
-                    amount: calculate(currencyTo, currencyDefault, trans[i].fromAmount),
+                    amount: trans[i].fromAmount,
                     to: trans[i].to,
                     date: trans[i].date,
-                    comment: trans[i].commentary});
+                    comment: trans[i].commentary});	
+			}else if(currencyFrom === currencyDefault){
+				defaultTrans.push({
+                    id: trans[i].id,
+                    from: trans[i].from,
+                    amount: calculate(currencyTo, currencyDefault, trans[i].toAmount),
+                    to: trans[i].to,
+                    date: trans[i].date,
+                    comment: trans[i].commentary});				
+			}else{
+			defaultTrans.push({
+                    id: trans[i].id,
+                    from: trans[i].from,
+                    amount: calculate(currencyFrom, currencyDefault, trans[i].fromAmount),
+                    to: trans[i].to,
+                    date: trans[i].date,
+                    comment: trans[i].commentary});	
+		}
        }
-        return defaultTrans;
-    },
-
-  init: function (year) { 
-       //alert(calculate("USD", "UAH", 2000));
-      	year = year || new Date().getFullYear();
-        this.addChart(year);
-      	this.view.lblMinIncomeValue.text = Math.min(...this.getBalanceForEachMonthByType("Current", year));
-      	this.view.lblAvarageIncomeValue.text = (Math.min(...this.getBalanceForEachMonthByType("Current", year)) + 
-                                                Math.max(...this.getBalanceForEachMonthByType("Current", year))) / 2;
-      	this.view.lblMaxIncomeValue.text = Math.max(...this.getBalanceForEachMonthByType("Current", year));
-      	this.view.lblMinExpensesValue.text = Math.min(...this.getBalanceForEachMonthByType("Expenses", year));
-      	this.view.lblAvarageExpensesValue.text = (Math.min(...this.getBalanceForEachMonthByType("Expenses", year)) + 
-                                                  Math.max(...this.getBalanceForEachMonthByType("Expenses", year))) / 2;
-      	this.view.lblMaxExpensesValue.text = Math.max(...this.getBalanceForEachMonthByType("Expenses", year));
-      	this.view.lblExpensesYear.text = year + " Year";
+        return defaultTrans;  
     },
         
     getTransactionsByType: function (type) {
-        let categories = serviceCategory.getCategories();
+        let categories = serviceCategoryRefactored.getCategories();
         let transactions = this.getTransactionsInDefaultCurrency();
         let categoriesByType = [];
         let transactionsByType = [];
@@ -54,7 +72,7 @@ define({
         return transactionsByType;
     },
     
-    getBalanceForEachMonthByType: function (type, year) {
+    getBalanceForEachMonthByType: function (type, year,start,end) {
         year = year || new Date().getFullYear();
         let transactions = this.getTransactionsByType(type);
         let transactionsForEachMonth = [];
@@ -70,7 +88,86 @@ define({
         return transactionsForEachMonth;
         
     },
+  
+	formDate: function(startMonth = 0, endMonth = 11, year = new Date().getFullYear()){
+		let monthes = [];
+    	for(let i = startMonth; i <= endMonth; i++){
+        	monthes.push( i+1 + "/" + year);
+    	} 
+	return monthes;  
+	},
 
+    getBalanceForEachYearByType: function(type){
+        let trans = this.getTransactionsInDefaultCurrency();
+        let min = trans[0].date.getFullYear();
+        let max = trans[0].date.getFullYear();
+        trans.forEach(i => {
+            if(i.date.getFullYear() > max){
+                max = i.date.getFullYear();
+            }if(i.date.getFullYear() < min){
+                min = i.date.getFullYear();
+            }
+        });
+        let allTrans = [];
+        let dateRows = [];
+        let startMonth = trans[0].date.getMonth();
+        let endMonth = trans[0].date.getMonth();
+        if(min === max){
+            trans.forEach(i=>{
+                if(i.date.getMonth() < startMonth){
+                        startMonth = i.date.getMonth();
+                }
+                if(i.date.getMonth() > endMonth){
+                        endMonth = i.date.getMonth();
+                }
+            });
+        if(arguments[0] === "date"){
+        return this.formDate(startMonth, endMonth, min);
+        }else{
+        return this.getBalanceForEachMonthByType(type, endYear, startMonth, endMonth);
+        }
+        }
+
+        for(let year = min; year <= max; year++){
+            if(min < year && year < max){
+                if(arguments[0] === "date"){
+                    dateRows.push(this.formDate(0, 11, year));
+                }else{
+                    allTrans.push(this.getBalanceForEachMonthByType(type, year, 0, 11));
+                }
+            }
+            if(year === min && year+1 <= max){
+                trans.forEach(i => {
+                    if(i.date.getMonth() < startMonth && i.date.getFullYear() === year){
+                        startMonth = i.date.getMonth();
+                    }
+                });
+                if(arguments[0] === "date"){
+                    dateRows.push(this.formDate(startMonth, 11, year));
+                }else{
+                    allTrans.push(this.getBalanceForEachMonthByType(type, year, startMonth, 11));
+                }
+            }
+            if(year === max && year-1 >= min){
+                trans.forEach(i => {
+                    if(i.date.getMonth() > endMonth && i.date.getFullYear() === year){
+                        endMonth = i.date.getMonth();
+                    }
+                });
+                if(arguments[0] === "date"){
+                    dateRows.push(this.formDate(0, endMonth, year));
+                }else{
+                    allTrans.push(this.getBalanceForEachMonthByType(type, year, 0, endMonth));
+                }
+            }
+       }
+        if(arguments[0] === "date"){
+            return [].concat.apply([], dateRows);
+        }else{
+            return [].concat.apply([], allTrans);
+        }
+    },
+    
     addChart : function (year) {
         year = year || new Date().getFullYear();
         var chartWidjet = this.kdv_createChartWidget(year);
@@ -219,7 +316,7 @@ define({
                     "yAxis": {
                         "scale": {
                             "minValue": 0,
-                            "maxValue": Math.max(...this.getBalanceForEachMonthByType("Current", year)) * 1.6,
+                            "maxValue": parseInt(Math.max(...this.getBalanceForEachYearByType())+100),
                             "majorInterval": 0,
                             "minorInterval": 0,
                             "offset": {
@@ -300,14 +397,14 @@ define({
             },
             "chartData": {
                 "rowNames": {
-                    "values": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                    "values": this.getBalanceForEachYearByType("date")
                 },
                 "columnNames": {
                     "values": ["Expenses", "Current"]
                 },
                 "data": {
-                    "Expenses": this.getBalanceForEachMonthByType("Expenses", year),
-                    "Current": this.getBalanceForEachMonthByType("Current", year)
+                    "Expenses": this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE),
+                    "Current": this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT)
                 }
             },
             "chartEvents": {

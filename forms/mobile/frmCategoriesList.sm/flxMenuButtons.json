@@ -38,7 +38,8 @@
     "children": [
         "flxStatisticsSection",
         "btnLogOut",
-        "flxSettingsSection"
+        "flxSettingsSection",
+        "flxExpHistorySection"
     ],
     "clipbounds": true,
     "containerweight": 100,

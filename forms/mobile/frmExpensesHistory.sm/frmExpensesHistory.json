@@ -30,8 +30,8 @@
     },
     "canUpdateUI": true,
     "children": [
-        "FlexContainer0j62d56c8882144",
-        "flxMainContainer"
+        "flxMainContainer",
+        "flxHeader"
     ],
     "containerweight": 100,
     "controllerInfo": {

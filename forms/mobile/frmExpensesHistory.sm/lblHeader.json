@@ -18,12 +18,8 @@
         0,
         0
     ],
-    "_skin_": "sab7fb55b099488b98baf84e4ee1aa4c",
-    "_text_": "Max income",
-    "_top_": {
-        "type": "string",
-        "value": "10dp"
-    },
+    "_skin_": "s3c31424c56b4e91b1a510688423613b",
+    "_text_": "Expenses History",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -40,9 +36,13 @@
         "type": "string",
         "value": "50%"
     },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblMaxIncomeName",
+    "id": "lblHeader",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +56,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "db9e97e7b7474410b2cf47520196dd6d",
+    "kuid": "f7540057c40f48dea2bd9f2fb703c22e",
     "name": "kony.ui.Label",
-    "parent": "fxlMaxIncome",
+    "parent": "flxHeader",
     "pf": "frmExpensesHistory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

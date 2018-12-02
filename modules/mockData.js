@@ -121,7 +121,7 @@ Object.assign(DATA, {
             to: 3,
             toAmount: 5,
             user_id: 1,
-            date: new Date('August 19, 2018 23:15:30'),
+            date: new Date('September 19, 2018 23:15:30'),
             commentary: 'Маршрутка'
         },  {
             id: 3,
@@ -130,7 +130,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 67,
             user_id: 1,
-            date: new Date('August 18, 2018 23:15:30'),
+            date: new Date('November 18, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 4,
@@ -139,7 +139,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 11.1,
             user_id: 1,
-            date: new Date('August 17, 2018 23:15:30'),
+            date: new Date('November 17, 2018 23:15:30'),
             commentary: 'Морозиво'
         },  {
             id: 5,
@@ -148,7 +148,7 @@ Object.assign(DATA, {
             to: 2,
             toAmount: 85,
             user_id: 1,
-            date: new Date('August 17, 2018 23:15:30'),
+            date: new Date('October 17, 2018 23:15:30'),
             commentary: 'Інтернет'
         },  {
             id: 6,
@@ -157,7 +157,7 @@ Object.assign(DATA, {
             to: 3,
             toAmount: 80.21,
             user_id: 1,
-            date: new Date('August 17, 2018 23:15:30'),
+            date: new Date('October 20, 2018 23:15:30'),
             commentary: 'Таксі'
         },  {
             id: 7,
@@ -166,7 +166,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 329,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
+            date: new Date('October 16, 2018 23:15:30'),
             commentary: 'Віскарь'
         },  {
             id: 8,
@@ -175,7 +175,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 189,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
+            date: new Date('June 16, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 9,
@@ -184,7 +184,7 @@ Object.assign(DATA, {
             to: 5,
             toAmount: 417,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
+            date: new Date('July 16, 2018 23:15:30'),
             commentary: 'Playstation 4'
         },  {
             id: 10,
@@ -193,7 +193,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 46,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
+            date: new Date('August 16, 2017 23:15:30'),
             commentary: 'Абсент'
         },  {
             id: 11,
@@ -202,7 +202,7 @@ Object.assign(DATA, {
             to: 2,
             toAmount: 23,
             user_id: 1,
-            date: new Date('August 16, 2018 23:15:30'),
+            date: new Date('November 17, 2018 23:15:30'),
             commentary: ''
         },  {
             id: 12,
@@ -220,7 +220,7 @@ Object.assign(DATA, {
             to: 7,
             toAmount: 30800,
             user_id: 1,
-            date: new Date('August 15, 2018 23:15:30'),
+            date: new Date('Mars 15, 2018 23:15:30'),
             commentary: 'Зарплата'
         }, {
             id: 14,
@@ -229,7 +229,7 @@ Object.assign(DATA, {
             to: 4,
             toAmount: 38.25,
             user_id: 1,
-            date: new Date('August 14, 2018 23:15:30'),
+            date: new Date('Mars 14, 2018 23:15:30'),
             commentary: 'Білий Лев'
         }, {
             id: 15,
@@ -238,7 +238,7 @@ Object.assign(DATA, {
             to: 3,
             toAmount: 5,
             user_id: 1,
-            date: new Date('August 14, 2018 23:15:30'),
+            date: new Date('April 14, 2017 23:15:30'),
             commentary: 'Тролейбус'
         },  {
             id: 16,
@@ -247,7 +247,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 95,
             user_id: 1,
-            date: new Date('August 14, 2018 23:15:30'),
+            date: new Date('April 14, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 17,
@@ -256,7 +256,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 16.59,
             user_id: 1,
-            date: new Date('August 13, 2018 23:15:30'),
+            date: new Date('May 13, 2018 23:15:30'),
             commentary: 'Халва'
         },  {
             id: 18,
@@ -265,7 +265,7 @@ Object.assign(DATA, {
             to: 2,
             toAmount: 105,
             user_id: 1,
-            date: new Date('August 13, 2018 23:15:30'),
+            date: new Date('February 13, 2018 23:15:30'),
             commentary: 'Мобільний звязок'
         },  {
             id: 19,
@@ -274,7 +274,7 @@ Object.assign(DATA, {
             to: 3,
             toAmount: 60,
             user_id: 1,
-            date: new Date('August 12, 2018 23:15:30'),
+            date: new Date('January 12, 2018 23:15:30'),
             commentary: 'Таксі'
         },  {
             id: 20,
@@ -283,7 +283,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 129,
             user_id: 1,
-            date: new Date('August 12, 2018 23:15:30'),
+            date: new Date('January 12, 2017 23:15:30'),
             commentary: 'Рукавичка'
         },  {
             id: 21,
@@ -292,7 +292,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 74,
             user_id: 1,
-            date: new Date('August 12, 2018 23:15:30'),
+            date: new Date('February 12, 2018 23:15:30'),
             commentary: 'Продукти'
         },  {
             id: 22,
@@ -301,7 +301,7 @@ Object.assign(DATA, {
             to: 5,
             toAmount: 61,
             user_id: 1,
-            date: new Date('August 12, 2018 23:15:30'),
+            date: new Date('Mars 12, 2017 23:15:30'),
             commentary: 'Red Dead Redemption 2'
         },  {
             id: 23,
@@ -310,7 +310,7 @@ Object.assign(DATA, {
             to: 1,
             toAmount: 53,
             user_id: 1,
-            date: new Date('August 11, 2018 23:15:30'),
+            date: new Date('May 11, 2017 23:15:30'),
             commentary: 'Пиво'
         },  {
             id: 24,
@@ -319,7 +319,7 @@ Object.assign(DATA, {
             to: 2,
             toAmount: 1990,
             user_id: 1,
-            date: new Date('August 11, 2018 23:15:30'),
+            date: new Date('June 11, 2017 23:15:30'),
             commentary: 'Стіл'
         },  {
             id: 25,
@@ -328,7 +328,7 @@ Object.assign(DATA, {
             to: 2,
             toAmount: 4200,
             user_id: 1,
-            date: new Date('August 11, 2018 23:15:30'),
+            date: new Date('November 11, 2017 23:15:30'),
             commentary: 'Стільці'
         },  {
             id: 26,
@@ -337,7 +337,7 @@ Object.assign(DATA, {
             to: 2,
             toAmount: 1207,
             user_id: 1,
-            date: new Date('August 11, 2018 23:15:30'),
+            date: new Date('June 5, 2018 23:15:30'),
             commentary: 'Килим'
         },    {
             id: 27,
@@ -346,7 +346,7 @@ Object.assign(DATA, {
             to: 3,
             toAmount: 5,
             user_id: 1,
-            date: new Date('August 11, 2018 23:15:30'),
+            date: new Date('Mars 21, 2018 23:15:30'),
             commentary: 'Метро'
         }
     ]

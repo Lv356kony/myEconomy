@@ -11,7 +11,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "50%"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -39,16 +39,16 @@
     },
     "android": {
         "psp": {
-            "gridlineColor": "fcfcfc00"
+            "gridlineColor": "ffffff00"
         }
     },
     "canUpdateUI": true,
-    "cellBorder": "4px solid #fcfcfc",
+    "cellBorder": "4px solid #ffffff",
     "columnheadersconfig": [
         {
             "columnContentAlignment": 5,
             "columnHeaderTemplate": null,
-            "columnHeaderText": "MIN INCOME",
+            "columnHeaderText": "MIN EXPENSES",
             "columnHeaderType": "text",
             "columnID": "col1",
             "columnOnClick": null,
@@ -57,12 +57,12 @@
             "columnWidthInPercentage": 33,
             "ide_onClick": null,
             "isColumnSortable": false,
-            "kuid": "d5cc8ebbfcf14eb7a2d4a406cc353a46"
+            "kuid": "b71b56c16a0b4ff4b9f365701b66606b"
         },
         {
             "columnContentAlignment": 5,
             "columnHeaderTemplate": null,
-            "columnHeaderText": "AVG INCOME",
+            "columnHeaderText": "AVG EXPENSES",
             "columnHeaderType": "text",
             "columnID": "col2",
             "columnOnClick": null,
@@ -71,12 +71,12 @@
             "columnWidthInPercentage": 34,
             "ide_onClick": null,
             "isColumnSortable": false,
-            "kuid": "e0455ba104d442bf8d620399ff8aafa0"
+            "kuid": "fa49ea9b89a04c2ca0568c45bcbe7c5b"
         },
         {
             "columnContentAlignment": 5,
             "columnHeaderTemplate": null,
-            "columnHeaderText": "MAX INCOME",
+            "columnHeaderText": "MAX EXPENSES",
             "columnHeaderType": "text",
             "columnID": "col3",
             "columnOnClick": null,
@@ -85,7 +85,7 @@
             "columnWidthInPercentage": 33,
             "ide_onClick": null,
             "isColumnSortable": false,
-            "kuid": "c0225db0e5364c0593c793685d2f07c7"
+            "kuid": "c5385ac22af5487782c324171639a774"
         }
     ],
     "columnids": [
@@ -102,7 +102,7 @@
     "contentalignment": 5,
     "context": {
         "channel": "mobile",
-        "formID": "frmLineStatistics",
+        "formID": "frmExpensesHistory",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
@@ -111,16 +111,16 @@
     "focusedindex": null,
     "focuseditem": null,
     "gridlinestyle": "solid",
-    "headerskin": "sd59fdcccd1242ff9573a7feaaca92c9",
-    "id": "gridIncome",
+    "headerskin": "s48007d1e4404efabc39ce7609f62d1e",
+    "id": "grdExpenses",
     "info": null,
     "iscustomlayout": false,
     "ismultiselect": false,
     "isvisible": true,
-    "kuid": "b72f6a67bf3f4aac8dd4cb9a2a8ab266",
+    "kuid": "d8e497dbeb1b4062b6b0e33b2477f64f",
     "name": "kony.ui.DataGrid",
-    "parent": "flxGridContainer",
-    "pf": "frmLineStatistics",
+    "parent": "flxForExpenses",
+    "pf": "frmExpensesHistory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "rowalternateskin": "s61e04c2e4f04bfe88a1b3e9b8604445",

@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
+    "_height_": {
         "type": "string",
-        "value": "0dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -26,31 +26,30 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "56dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "60dp"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxContainerBalance",
-        "flxLineChartGridContainer"
+        "imgExpHistory"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxMainContainer",
+    "id": "flxExpHistoryImage",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "a1c1a71d1b3f46dbadb134aaef22c64b",
+    "kuid": "j9c74f3fcc3a46b381fcaa7bb3c0f472",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmLineStatistics",
-    "pf": "frmLineStatistics",
+    "parent": "flxExpHistorySection",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,

@@ -37,8 +37,7 @@
     "canUpdateUI": true,
     "children": [
         "flxChartContainer",
-        "flxTableContainer",
-        "flxYearContainer"
+        "flxTableContainer"
     ],
     "clipbounds": true,
     "containerweight": 100,

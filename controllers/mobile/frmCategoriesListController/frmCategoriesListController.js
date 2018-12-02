@@ -104,6 +104,12 @@ onNavigate:function(obj){
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmStatistics");
     },
+    
+    goToExpensesHistory: function(){
+        this.view.flxSideMenuContainer.left = '-100%';
+        navToForm("frmExpensesHistory");
+    },
+    
     goToSettings: function(){
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmSettings");

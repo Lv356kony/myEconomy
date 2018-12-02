@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "50%"
     },
     "_left_": {
         "type": "string",
@@ -29,28 +29,27 @@
         "value": "0dp"
     },
     "_width_": {
-        "type": "number",
-        "value": "50"
+        "type": "string",
+        "value": "100%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgStatisticHeader"
+        "grdIncome"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxHeaderBackward",
-    "ide_onClick": "AS_FlexContainer_b4b208859c1144b9901d36cf12bf0f4e",
+    "id": "flxForIncomeGrid",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "h6bbc94babc14299a5273bfe60d59c00",
+    "kuid": "i902cf2b6a82468d9bc0bfd00fb8218c",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxHeader",
-    "pf": "frmLineStatistics",
+    "parent": "flxTableContainer",
+    "pf": "frmExpensesHistory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
