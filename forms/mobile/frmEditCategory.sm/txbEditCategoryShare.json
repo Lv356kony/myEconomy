@@ -2,13 +2,17 @@
     "@class": "com.kony.gen.viz.model.component.KVizTextBox2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_blur_": {
+        "enabled": false,
+        "value": 0
+    },
     "_bottom_": {
         "type": "number",
         "value": "0"
     },
     "_height_": {
         "type": "string",
-        "value": "60dp"
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
@@ -34,7 +38,7 @@
         "value": "100%"
     },
     "android": {},
-    "autocapitalize": "none",
+    "autocapitalize": "sentences",
     "autocomplete": false,
     "autocorrect": false,
     "autofilter": false,
@@ -49,6 +53,7 @@
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
+    "keyboardstyle": "emailpad",
     "keyboardtype": "A",
     "kuid": "be9cd0db2a9946c3bdc0fd9595dab1e2",
     "mode": "A",

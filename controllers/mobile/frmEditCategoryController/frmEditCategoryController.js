@@ -1,36 +1,68 @@
 define({ 
     
-    onNavigate: function(category) {
-        this.categoryId = category.categoryId;
+    onNavigate: function(context) {
+        this.categoryId = context.categoryId;
+        this.context = context;
+         
     },
     
     goToHistory: function() {
         navToForm('frmHistory', {categoryId: this.categoryId});
     },
     
+    goToIcons: function() {
+        navToForm('frmIcons', {categoryId: this.categoryId});
+    },
+    
+    refresh: function(){
+        navToForm("frmEditCategory", {categoryId: this.categoryId});
+        this.view.txbEditCategoryShare.text = '';
+        alert('refresh');
+    },
+    
     onPreShow: function() {
         this.showDefaultValues(this.categoryId);
+        let category = serviceCategoryRefactored.getById(this.categoryId);
+       
+        if(category.type === CATEGORY_TYPES.INCOME) {
+            this.hideSharedField();
+        }
+//         if(category.user_id !== CURRENT_USER.id) {
+//             this.view.lblEditCategoryCreator.text = `Creator: `;
+//         }
     },
     
     showDefaultValues: function(id) {
-        let category = serviceCategory.getById(id);
-        this.view.imgEditCategoryIcon.src = category.icon;
+        let category = serviceCategoryRefactored.getById(id);
+        this.view.imgEditCategoryIcon.src = this.context.chosenIconSrc || category.icon;
         this.view.lblEditCategoryType.text = category.type;
         this.view.lblEditCategoryCurrency.text = category.currency;
-        let creator = '';
 		this.view.txbEditCategoryName.text = category.name;
     },
     
     editCategory: function() {
+        const iconSrc = this.view.imgEditCategoryIcon.src;
         const name = this.view.txbEditCategoryName.text;
-        alert(name);
-//         let updateCategory 
-//         serviceCategory.updateById(this.categoryId, )
-        
-// 		let sharedUserEmail = this.view.txbEditCategoryShare.text;
-//      serviceCategory.shareCategory(this.categotyId, );
+        const sharedUserEmail = this.view.txbEditCategoryShare.text;
+		let editedCategory = {
+            name: name,
+            icon: iconSrc
+        };
+        if(sharedUserEmail) {
+            const sharedUser = userServiceRefactored.getByEmail(sharedUserEmail);
+            if(sharedUser) {
+                serviceCategoryRefactored.shareCategory(this.categoryId, sharedUser.id);
+                this.view.lblEditCategoryCreator.text = `Shared with: ${sharedUser.firstName}`;
+            } else {
+                alert('User with this email doesn`t exist.');
+            }
+        }
+        serviceCategoryRefactored.updateById(this.categoryId, editedCategory);
+        this.refresh();
+    },
+    
+    hideSharedField: function() {
+        this.view.flxEditCategoryShare.top = '-100dp';
+        this.view.flxEditCategoryName.centerY = '50%';
     }
-
-    
-    
  });

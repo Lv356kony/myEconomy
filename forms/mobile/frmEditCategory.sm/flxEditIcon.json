@@ -42,6 +42,7 @@
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxEditIcon",
+    "ide_onClick": "AS_FlexContainer_bc228e8bff524179862223ccb88bc7ab",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

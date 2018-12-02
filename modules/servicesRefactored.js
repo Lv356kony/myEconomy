@@ -155,6 +155,10 @@ const serviceCategoryRefactored = {
         });
         return element;
     },
+    
+    shareCategory: function (categotyId, userId) {
+       this.getById(categotyId).sharedUsers_id.push(userId);
+    },
 
     deleteByUserId: function(userId) {
         for(let i = 0; i < DATA.categories.length; i++) {

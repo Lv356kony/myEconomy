@@ -1,11 +1,24 @@
 define({ 
+    onNavigate: function(context) {
+        this.context = context;
+        if(context) {
+            if(context.categoryId) {
+                this.categoryId = context.categoryId;
+            }
+        }
+    },
     
     backToCategotyCreation: function() {
-        navToForm('frmCategoryCreation', {chosenIconSrc: null});
+        let target = new kony.mvc.Navigation(kony.application.getPreviousForm().id);
+        target.navigate({
+            categoryId: this.categoryId,
+            chosenIconSrc: null
+
+        });
     },
     
     generatePreview: function() {
-        
+        let categoryId = this.categoryId;
         const iconsList = ['bank.png', 'home.png', 'cash.png','currency.png', 
                            'cocktail.png', 'visa_icon.png', 'mastercard.png', 'deposit.png',
                            'creditcard.png', 'car.png', 'dollar.png', 'euro.png',
@@ -16,7 +29,11 @@ define({
         
         function getIconSrc(eventobject) {
             let chosenIconSrc = eventobject.src;
-            navToForm('frmCategoryCreation', {chosenIconSrc: chosenIconSrc});
+            let target = new kony.mvc.Navigation(kony.application.getPreviousForm().id);
+			target.navigate({
+                categoryId: categoryId,
+            	chosenIconSrc: chosenIconSrc
+            });
         }
         
         let flexIconList = this.view.flxPopUpIcons.flxIconsList;
