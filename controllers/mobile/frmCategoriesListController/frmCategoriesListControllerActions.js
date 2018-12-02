@@ -108,7 +108,6 @@ define({
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
         self.setDafaultValues.call(this);
-        self.load.call(this);
         self.initIncomeCategoriesList.call(this);
         self.initCurrentCategoriesList.call(this);
         self.initExpensesCategoriesList.call(this);
