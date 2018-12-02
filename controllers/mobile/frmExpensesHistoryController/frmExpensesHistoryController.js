@@ -23,35 +23,27 @@ define({
         let trans = serviceTransactionsRefactored.getAll();
         let categories =  serviceCategoryRefactored.getCategories();
         let defaultTrans = [];
+		let data ={};
         let currencyTo, currencyFrom;
         for(let i = 0; i < trans.length; i++){
+			data = {id: trans[i].id,
+                    from: trans[i].from,
+                    to: trans[i].to,
+                    date: trans[i].date,
+                    comment: trans[i].commentary};
 			currencyTo = serviceCategoryRefactored.getCurrencyById(trans[i].to);
 			currencyFrom = serviceCategoryRefactored.getCurrencyById(trans[i].from);
 			if(currencyTo === currencyFrom && currencyTo === currencyDefault){
-				defaultTrans.push({
-                    id: trans[i].id,
-                    from: trans[i].from,
-                    amount: trans[i].fromAmount,
-                    to: trans[i].to,
-                    date: trans[i].date,
-                    comment: trans[i].commentary});	
+				data.amount = trans[i].fromAmount;
+			
 			}else if(currencyFrom === currencyDefault){
-				defaultTrans.push({
-                    id: trans[i].id,
-                    from: trans[i].from,
-                    amount: calculate(currencyTo, currencyDefault, trans[i].toAmount),
-                    to: trans[i].to,
-                    date: trans[i].date,
-                    comment: trans[i].commentary});				
+                    data.amount = calculate(currencyTo, currencyDefault, trans[i].toAmount);
+          		
 			}else{
-			defaultTrans.push({
-                    id: trans[i].id,
-                    from: trans[i].from,
-                    amount: calculate(currencyFrom, currencyDefault, trans[i].fromAmount),
-                    to: trans[i].to,
-                    date: trans[i].date,
-                    comment: trans[i].commentary});	
+			data.amount = calculate(currencyFrom, currencyDefault, trans[i].fromAmount);
+				
 		}
+			defaultTrans.push(data);
        }
         return defaultTrans;  
     },
@@ -104,8 +96,8 @@ define({
 //this function returns list of dataset for chart and name of rows if type = "date"
     getBalanceForEachYearByType: function(type){
         let trans = this.getTransactionsInDefaultCurrency();
-        let min = trans[0].date.getFullYear();
-        let max = trans[0].date.getFullYear();
+        let min = serviceTransactions.getById(1).date.getFullYear();
+        let max = serviceTransactions.getById(1).date.getFullYear();
         trans.forEach(i => {
             if(i.date.getFullYear() > max){
                 max = i.date.getFullYear();
@@ -115,8 +107,8 @@ define({
         });
         let allTrans = [];
         let dateRows = [];
-        let startMonth = trans[0].date.getMonth();
-        let endMonth = trans[0].date.getMonth();
+        let startMonth = serviceTransactions.getById(1).date.getMonth();
+        let endMonth = serviceTransactions.getById(1).date.getMonth();
         if(min === max){
             trans.forEach(i=>{
                 if(i.date.getMonth() < startMonth){

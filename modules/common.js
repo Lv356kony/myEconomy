@@ -17,7 +17,8 @@ let categoryAnimProps = {getAnimationStatus: true, timerIdMemory: ''};
 //When creating transaction we need to set current user as default user_id
 const CURRENT_USER = {id: undefined};
 
-const EXCHANGELIST = {};
+const EXCHANGELIST = {UAH_USD: 0.035473,
+USD_UAH: 28.190367};
 
 const CURRENCIES = ["UAH", "USD", "EUR", "PLN"];
 
