@@ -454,6 +454,24 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'SSD'
-        }       
+        },    {
+            id: 33,
+            from: 9,
+            fromAmount: 4500,
+            to: 13,
+            toAmount: 4500,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'колеса'
+        },    {
+            id: 34,
+            from: 7,
+            fromAmount: 1000,
+            to: 9,
+            toAmount: 1000,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: ''
+        }             
     ]
 });

@@ -51,6 +51,15 @@ const serviceTransactionsRefactored = {
         });
     },
 
+    getAllExternalFromSharedCategories: function () {
+        let categoriesId = serviceCategoryRefactored.getCategories().concat(serviceCategoryRefactored.getSharedCategories()).map(i => i.id);
+        return DATA.transactions.filter(transaction => {
+            if(~categoriesId.indexOf(transaction.from) && transaction.user_id !== CURRENT_USER.id){
+                return transaction;
+            }
+        });
+    },
+
     create: function(id, fromAmount, from, to, date, comment, toAmount){
         let transaction = {};
         transaction.id = id;
@@ -100,7 +109,7 @@ const serviceCategoryRefactored = {
         return parseFloat(categoryBalance.toFixed(2));
     },
 
-  	//Argument "allTransactions" only for calculate getCurrentBalance
+    //Argument "allTransactions" only for calculate getCurrentBalance
     getIncomeBalance: function(allTransactions){
         let incomes = 0.00;
         let transactionsWithoutShare = serviceTransactionsRefactored.getAll();
@@ -146,8 +155,15 @@ const serviceCategoryRefactored = {
                     }
                 }
             }
+            let externalTransactionsForm = serviceTransactionsRefactored.getAllExternalFromSharedCategories();
+            externalTransactionsForm.forEach(i => {
+                if(this.getById(i.to).user_id !== CURRENT_USER.id && 
+                  	!(~this.getById(i.to).sharedUsers_id.indexOf(CURRENT_USER.id))){
+					current -= i.fromAmount;
+                }
+            });
         }
-        return current;
+        return parseFloat(current.toFixed(2));
     },
 
     //If "allTransactions" = true then function will return balance with external transactions into shared categories
