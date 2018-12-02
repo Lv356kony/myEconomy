@@ -13,17 +13,13 @@ define({
     backwardClick: function() {
 		navToForm("frmCategoriesList");
     },
-    
-    test: function(){
-        
-	},
-    
+      
     getTransactionsInDefaultCurrency: function(){
         let currencyDefault = DATA.users[CURRENT_USER.id - 1].currency;
         let trans = serviceTransactionsRefactored.getAll();
         let categories =  serviceCategoryRefactored.getCategories();
         let defaultTrans = [];
-		let data ={};
+		let data = {};
         let currencyTo, currencyFrom;
         for(let i = 0; i < trans.length; i++){
 			data = {id: trans[i].id,
@@ -35,13 +31,10 @@ define({
 			currencyFrom = serviceCategoryRefactored.getCurrencyById(trans[i].from);
 			if(currencyTo === currencyFrom && currencyTo === currencyDefault){
 				data.amount = trans[i].fromAmount;
-			
 			}else if(currencyFrom === currencyDefault){
-                    data.amount = calculate(currencyTo, currencyDefault, trans[i].toAmount);
-          		
+                    data.amount = calculate(currencyTo, currencyDefault, trans[i].toAmount);	
 			}else{
-			data.amount = calculate(currencyFrom, currencyDefault, trans[i].fromAmount);
-				
+			data.amount = calculate(currencyFrom, currencyDefault, trans[i].fromAmount);		
 		}
 			defaultTrans.push(data);
        }
