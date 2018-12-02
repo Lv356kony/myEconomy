@@ -14,15 +14,19 @@ define({
 		navToForm("frmCategoriesList");
     },
     
+    test: function(){
+        
+	},
+    
     getTransactionsInDefaultCurrency: function(){
         let currencyDefault = DATA.users[CURRENT_USER.id - 1].currency;
         let trans = serviceTransactionsRefactored.getAll();
         let categories =  serviceCategoryRefactored.getCategories();
         let defaultTrans = [];
-        let  currencyTo, currencyFrom;
+        let currencyTo, currencyFrom;
         for(let i = 0; i < trans.length; i++){
-			currencyTo = categories[trans[i].to - 1].currency;
-			currencyFrom = categories[trans[i].from - 1].currency;
+			currencyTo = serviceCategoryRefactored.getCurrencyById(trans[i].to);
+			currencyFrom = serviceCategoryRefactored.getCurrencyById(trans[i].from);
 			if(currencyTo === currencyFrom && currencyTo === currencyDefault){
 				defaultTrans.push({
                     id: trans[i].id,
@@ -97,6 +101,7 @@ define({
 	return monthes;  
 	},
 
+//this function returns list of dataset for chart and name of rows if type = "date"
     getBalanceForEachYearByType: function(type){
         let trans = this.getTransactionsInDefaultCurrency();
         let min = trans[0].date.getFullYear();
