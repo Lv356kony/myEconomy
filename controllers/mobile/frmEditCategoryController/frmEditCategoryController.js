@@ -6,6 +6,7 @@ define({
     
     goToHistory: function() {
         navToForm('frmHistory', {categoryId: this.categoryId});
+        this.view.txbEditCategoryShare.text = '';
     },
     
     goToIcons: function() {
@@ -22,6 +23,8 @@ define({
         let category = serviceCategoryRefactored.getById(this.categoryId);
         if(category.type === CATEGORY_TYPES.INCOME) {
             this.hideSharedField();
+        } else {
+            this.showSharedField();
         }
         if(category.sharedUsers_id.indexOf(id => CURRENT_USER.id === id) !== -1) {
             let creator = userServiceRefactored.getById(CURRENT_USER).firstName;
@@ -52,14 +55,21 @@ define({
                 this.view.lblEditCategoryCreator.text = `Shared with: ${sharedUser.firstName}`;
             } else {
                 alert('User with this email doesn`t exist.');
+                return;
             }
         }
         serviceCategoryRefactored.updateById(this.categoryId, editedCategory);
         this.refresh();
+        this.goToHistory();
     },
     
     hideSharedField: function() {
         this.view.flxEditCategoryShare.top = '-100dp';
         this.view.flxEditCategoryName.centerY = '50%';
+    },
+    showSharedField: function() {
+        this.view.flxEditCategoryShare.top = '120dp';
+        this.view.flxEditCategoryName.top = '10dp';
+        this.view.flxEditCategoryName.centerY = 'default';
     }
  });

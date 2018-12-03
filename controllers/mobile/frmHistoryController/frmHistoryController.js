@@ -88,16 +88,16 @@ define({
                     if(searchIndex !== -1) {
                         dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
                         this.view.btnHistorySearch.text = 'Reset';
+                    } else {
+                        alert('No matches. Try ro find something different.');
+                        this.view.btnHistorySearch.text = 'Reset';
                     }
                 } else {
                     dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
                 }
             }
         }
-        if(dates.length === 0) {
-            alert('No matches. Try ro find something different.');
-            this.view.btnHistorySearch.text = 'Reset';
-        }
+
 		
         let segHistoryExpense = this.view.segHistoryExpense;
         segHistoryExpense.widgetDataMap = {
@@ -178,14 +178,12 @@ define({
             if(searchIndex !== -1) {
                 dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
                 this.view.btnHistorySearch.text = 'Reset';
+            } else {
+                alert('No matches. Try ro find something different.');
+            	this.view.btnHistorySearch.text = 'Reset';
             }
         } else {
             dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
-        }
-        
-		if(dates.length === 0) {
-            alert('No matches. Try ro find something different.');
-            this.view.btnHistorySearch.text = 'Reset';
         }
 
         let segHistoryExpense = this.view.segHistoryExpense;
