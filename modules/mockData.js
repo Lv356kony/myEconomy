@@ -173,7 +173,7 @@ Object.assign(DATA, {
             to: 4,
             toAmount: 152.1,
             user_id: 1,
-            date: new Date('August 19, 2018 23:15:30'),
+            date: new Date('December 01, 2018 23:15:30'),
             commentary: 'Вечеря'
         }, {
             id: 2,
@@ -182,7 +182,7 @@ Object.assign(DATA, {
             to: 3,
             toAmount: 5,
             user_id: 1,
-            date: new Date('September 19, 2018 23:15:30'),
+            date: new Date('December 2, 2018 23:15:30'),
             commentary: 'Маршрутка'
         },  {
             id: 3,
@@ -454,6 +454,15 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'SSD'
-        }       
+        },	{
+            id: 33,
+            from: 6,
+            fromAmount: 1100,
+            to: 7,
+            toAmount: 30800,
+            user_id: 1,
+            date: new Date('December 01, 2018 23:15:30'),
+            commentary: 'Зарплата'
+        },      
     ]
 });

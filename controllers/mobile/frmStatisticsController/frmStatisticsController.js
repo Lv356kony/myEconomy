@@ -1,36 +1,59 @@
 define({ 
         
     init: function() {
-        alert(EXCHANGELIST);
-        //this.view.lblCurrentBalanceValue.text = serviceTransactions.getCurrentBalanceByUserId(CURRENT_USER.id) + " $";
-        //this.outcomeClick();
+        this.view.flxNextMonth.isVisible = false;
+        this.view.lblCurrentBalanceValue.text = serviceCategoryRefactored.getCurrentBalance() + userServiceRefactored.getById(CURRENT_USER.id).currency;
+      	this.outcomeClick(DATE.month, DATE.year);
+        this.view.lblDate.text = getMonth[DATE.month] + "/" + DATE.year;
     },
 
-
-    incomeClick: function() {
+    incomeClick: function(month = DATE.month, year = DATE.year) {
         let selectedItem = this.view.flxTabHeaderIncome;
         this.view.flxChartContainer.removeAll();
-        this.addChart("Current");
+        this.addChart(CATEGORY_TYPES.CURRENT);
         this.changeTabHeaderColor(selectedItem);
         this.changeTabSumInfo(selectedItem);
-        this.setSegmentLabels("Current");
+        this.setSegmentLabels(CATEGORY_TYPES.CURRENT, month, year);
     },
 
-
-    outcomeClick: function() {
+    outcomeClick: function(month , year) {
         let selectedItem = this.view.flxTabHeaderOutcome;
         this.view.flxChartContainer.removeAll();
-        this.addChart("Expenses");
+        this.addChart(CATEGORY_TYPES.EXPENSE);
         this.changeTabHeaderColor(selectedItem);
         this.changeTabSumInfo(selectedItem);
-        this.setSegmentLabels("Expenses");
+       	this.setSegmentLabels(CATEGORY_TYPES.EXPENSE, month, year);
     },
-
 
     backwardClick: function() {
 		navToForm("frmCategoriesList");
     },
-
+    
+    goToNextMonth: function(){
+        if(DATE.month + 1 <= 11){
+            DATE.month = DATE.month + 1;
+        }
+        else{
+            DATE.month = 0;
+            DATE.year = DATE.year + 1;
+        }
+        this.view.lblDate.text = getMonth[DATE.month] + "/" + DATE.year;
+        this.outcomeClick(DATE.month, DATE.year);
+        
+	},
+    
+    goToPreviousMonth: function(){
+        if(DATE.month - 1 >= 0){
+            DATE.month = DATE.month - 1;
+        }
+        else{
+            DATE.month = 11;
+            DATE.year = DATE.year - 1;
+        }
+        this.view.lblDate.text = getMonth[DATE.month] + "/" + DATE.year;
+        this.outcomeClick(DATE.month, DATE.year);
+        this.view.flxNextMonth.isVisible = true;
+	},
 
     changeTabHeaderColor: function(selectedItem) {
         if (selectedItem === this.view.flxTabHeaderIncome){
@@ -43,25 +66,87 @@ define({
 
     },
 
-
     changeTabSumInfo: function(selectedItem) {
         if (selectedItem === this.view.flxTabHeaderIncome) {
             this.view.lblTabSumInfo.text = "Income";
-            this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Current") + " $";
+            this.view.lblTabSumInfoValue.text = 
+                this.getBalanceForEachMonthByType(CATEGORY_TYPES.CURRENT, new Date().getFullYear(), new Date().getMonth()) + userServiceRefactored.getById(CURRENT_USER.id).currency;
         } else {
             this.view.lblTabSumInfo.text = "Outcome";
-            this.view.lblTabSumInfoValue.text = this.getBalanceByTypeOfCategories("Expenses") + " $";
+            this.view.lblTabSumInfoValue.text = 
+                this.getBalanceForEachMonthByType(CATEGORY_TYPES.EXPENSE, new Date().getFullYear(), new Date().getMonth()) + userServiceRefactored.getById(CURRENT_USER.id).currency;
         }
     },
     
+	getTransactionsInDefaultCurrency: function(){
+        let currencyDefault = userServiceRefactored.getById(CURRENT_USER.id).currency;
+        let trans = serviceTransactionsRefactored.getAll();
+        let categories =  serviceCategoryRefactored.getCategories();
+        let defaultTrans = [];
+		let data = {};
+        let currencyTo, currencyFrom;
+        for(let i = 0; i < trans.length; i++){
+			data = {id: trans[i].id,
+                    from: trans[i].from,
+                    to: trans[i].to,
+                    date: trans[i].date,
+                    comment: trans[i].commentary};
+			currencyTo = serviceCategoryRefactored.getCurrencyById(trans[i].to);
+			currencyFrom = serviceCategoryRefactored.getCurrencyById(trans[i].from);
+			if(currencyTo === currencyFrom && currencyTo === currencyDefault){
+				data.amount = trans[i].fromAmount;
+			}else if(currencyFrom === currencyDefault){
+                    data.amount = calculate(currencyTo, currencyDefault, trans[i].toAmount);	
+			}else{
+			data.amount = calculate(currencyFrom, currencyDefault, trans[i].fromAmount);		
+		}
+			defaultTrans.push(data);
+       }
+        return defaultTrans;  
+    },
     
+    getTransactionsByType: function (type) {
+        let categories = serviceCategoryRefactored.getCategories();
+        let transactions = this.getTransactionsInDefaultCurrency();
+        let categoriesByType = [];
+        let transactionsByType = [];
+        for(let i = 0; i < categories.length; i++) {
+            if(categories[i].type === type) {
+                categoriesByType.push(categories[i]);
+            }
+        }
+        for(let i = 0; i < categoriesByType.length; i++) {
+            for(let j = 0; j < transactions.length; j++) {
+                if(categoriesByType[i].id === transactions[j].to) {
+                    transactionsByType.push(transactions[j]);
+                }
+            }
+        }
+        return transactionsByType;
+    },
+    
+    getBalanceForEachMonthByType: function (type, year, month) {
+        year = year || new Date().getFullYear();
+        let transactions = this.getTransactionsByType(type);
+        let transactionsForEachMonth = [];
+        let sum = 0;
+        for (let j = 0; j < transactions.length; j++) {
+             if (transactions[j].date.getMonth() === month && transactions[j].date.getFullYear() === year) {
+                sum += transactions[j].amount;
+             }
+        }
+            transactionsForEachMonth.push(sum);
+        
+        return transactionsForEachMonth;
+        
+    },
+
     //this function returns ids of transactions where transactions were done this month
-	getTransactionsIdByMonth: function(){
+	getTransactionsIdByMonth: function(month, year){
     let transMonthIds = [];
-    let transactions = DATA.transactions;
-        let currentDate = new Date();
+    let transactions = this.getTransactionsInDefaultCurrency();
         for(let i = 0; i < transactions.length; i++){
-            if(transactions[i].date.getMonth() === currentDate.getMonth() && transactions[i].date.getFullYear() === currentDate.getFullYear()){
+            if(transactions[i].date.getMonth() === month && transactions[i].date.getFullYear() === year){
                 transMonthIds.push(transactions[i].from);
                 transMonthIds.push(transactions[i].to);
             }
@@ -71,58 +156,53 @@ define({
         };
         return transMonthIds.filter(unique);
 	},
-    
-    
+       
     //this function returns categories where transactions were done this month
-	getCategoriesByMonth: function(){
-        transMonthIds = this.getTransactionsIdByMonth();
+	getCategoriesByMonth: function(month,year){
+        transMonthIds = this.getTransactionsIdByMonth(month, year);
         let categoriesOfMonth = [];
-        for(let i = 0; i<transMonthIds.length; i++){
-            categoriesOfMonth.push(serviceCategory.getById(transMonthIds[i]));
+        for(let i = 0; i < transMonthIds.length; i++){
+            categoriesOfMonth.push(serviceCategoryRefactored.getById(transMonthIds[i]));
         }
     return categoriesOfMonth;
-    },
-    
+    },    
     
 	//this function returns balance for categories where transactions were done this month
-    getBalanceByMonth: function(categoryId){
+    getBalanceByMonth: function(categoryId, month, year){
         let transMonth = [];
-        let transactions = DATA.transactions;
-        let currentDate = new Date();
+        let transactions = this.getTransactionsInDefaultCurrency();
         for(let i = 0; i < transactions.length; i++){
-            if(transactions[i].date.getMonth() === currentDate.getMonth()&&transactions[i].date.getFullYear() === currentDate.getFullYear()){
+            if(transactions[i].date.getMonth() === month && transactions[i].date.getFullYear() === year){
                 transMonth.push(transactions[i]);
             }
         }
-
         let categoryBalance = 0.00;
         
-        for(let i = 0; i < this.getTransactionsIdByMonth().length; i++){
+        for(let i = 0; i < transMonth.length; i++){
             if(transMonth[i].to === categoryId){
-                categoryBalance += parseFloat(Math.round((transMonth[i].amount)*100))/100;
+                categoryBalance += parseFloat((transMonth[i].amount).toFixed(2));
+                
             }
         }
         return categoryBalance;
-    },
+    },//correct
     
-
-    getListNamesAndBalanceByCategory: function(categoryType) {
-        let listNameAndBalanceByCategiry = [];
-        let categoryList = this.getListOfCategoriesByType(categoryType);
+    getListNamesAndBalanceByCategory: function(categoryType, month, year) {
+        let listNameAndBalanceByCategory = [];
+        let categoryList = this.getListOfCategoriesByType(categoryType, month, year);
 
         categoryList.forEach( i => {
-            let categorySum = this.getBalanceByMonth(i.id);
+            let categorySum = this.getBalanceByMonth(i.id, month, year);
             if (categorySum) {
-                listNameAndBalanceByCategiry.push({balance : categorySum,
+                listNameAndBalanceByCategory.push({balance : categorySum,
                                                    name : i.name});
             }
         });
-        return listNameAndBalanceByCategiry;
+        return listNameAndBalanceByCategory;
     },
 
-
-    getListOfCategoriesByType: function(categoryType) {
-        let categories = this.getCategoriesByMonth();
+    getListOfCategoriesByType: function(categoryType, month, year) {
+        let categories = this.getCategoriesByMonth(month, year);
         let expenses = [];
         let income = [];
         for(let i = 0; i < categories.length; i++){
@@ -135,22 +215,20 @@ define({
         if (arguments[0] === "Expenses") {
             return expenses;
         } else return income;
-    },
+    },//correct
 
-
-    getBalanceByTypeOfCategories: function(categoryType) {
-        let listOfCategories = this.getListNamesAndBalanceByCategory(categoryType).map(i => i.balance);
+    getBalanceByTypeOfCategories: function(categoryType, month, year) {
+        let listOfCategories = this.getListNamesAndBalanceByCategory(categoryType, month, year).map(i => i.balance);
         return listOfCategories.reduce((accumulator, currentValue) => accumulator + currentValue); 
     },
 
-
-    setSegmentLabels: function(categoryType) {
+    setSegmentLabels: function(categoryType, month, year) {
         let segment = this.view.segLabels;
         // I copied and modified the array so that I could display values and currency
-        let segmentData = this.getListNamesAndBalanceByCategory(categoryType).map(i => {
+        let segmentData = this.getListNamesAndBalanceByCategory(categoryType, month, year).map(i => {
             return {
                 name: i.name,
-                balance: i.balance + " $"
+                balance: i.balance + userServiceRefactored.getById(CURRENT_USER.id).currency
             };
         });
 
@@ -165,8 +243,7 @@ define({
     addChart: function(categoryType) {
         let chartWidjet = this.kdv_createChartWidget(categoryType);
         this.view.flxChartContainer.add(chartWidjet);
-    },
-
+    },  
 
     kdv_createChartWidget: function(categoryType) {
         let chartObj = this.kdv_createChartJSObject(categoryType);
@@ -192,7 +269,7 @@ define({
                 "position": [0, 0, 100, 100],
                 "title": {
                     "visible": false,
-                    "text": "Olympic Medals : SpinWheel, onTouch indicators",
+                    "text": "",
                     "font": {
                         "size": [18],
                         "family": ["Helvetica"],
@@ -311,13 +388,13 @@ define({
             },
             "chartData": {
                 "rowNames": {
-                    "values": this.getListNamesAndBalanceByCategory(categoryType).map(i => i.name)
+                    "values": this.getListNamesAndBalanceByCategory(categoryType, DATE.month, DATE.year).map(i => i.name)
                 },
                 "columnNames": {
                     "values": ["Amount"]
                 },
                 "data": {
-                    "Amount": this.getListNamesAndBalanceByCategory(categoryType).map(i => i.balance)
+                    "Amount": this.getListNamesAndBalanceByCategory(categoryType, DATE.month, DATE.year).map(i => i.balance)
                 }
             },
             "chartEvents": {
@@ -363,4 +440,4 @@ define({
         return chartInfo;
     },
 
-});
+ });

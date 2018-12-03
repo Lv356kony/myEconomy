@@ -2,12 +2,12 @@ define({
     
 	init: function (year) { 
         this.addChart(year);
-       	this.view.grdIncome.data = [{col1: Math.min(...this.getBalanceForEachYearByType("Current")), 
-           col2: (Math.min(...this.getBalanceForEachYearByType("Current")) + Math.max(...this.getBalanceForEachYearByType("Current"))) / 2, 
-           col3:  Math.max(...this.getBalanceForEachYearByType("Current"))}];
-		this.view.grdExpenses.data = [{col1: Math.min(...this.getBalanceForEachYearByType("Expenses")), 
-           col2: (Math.min(...this.getBalanceForEachYearByType("Expenses")) + Math.max(...this.getBalanceForEachYearByType("Expenses"))) / 2, 
-           col3:  Math.max(...this.getBalanceForEachYearByType("Expenses"))}];   
+       	this.view.grdIncome.data = [{col1: Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT)), 
+           col2: (Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT)) + Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT))) / 2, 
+           col3:  Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT))}];
+		this.view.grdExpenses.data = [{col1: Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE)), 
+           col2: (Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE)) + Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE))) / 2, 
+           col3:  Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE))}];   
     },
     
     backwardClick: function() {
@@ -15,7 +15,7 @@ define({
     },
       
     getTransactionsInDefaultCurrency: function(){
-        let currencyDefault = DATA.users[CURRENT_USER.id - 1].currency;
+        let currencyDefault = userServiceRefactored.getById(CURRENT_USER.id).currency;
         let trans = serviceTransactionsRefactored.getAll();
         let categories =  serviceCategoryRefactored.getCategories();
         let defaultTrans = [];
@@ -89,8 +89,8 @@ define({
 //this function returns list of dataset for chart and name of rows if type = "date"
     getBalanceForEachYearByType: function(type){
         let trans = this.getTransactionsInDefaultCurrency();
-        let min = serviceTransactions.getById(1).date.getFullYear();
-        let max = serviceTransactions.getById(1).date.getFullYear();
+        let min = serviceTransactionsRefactored.getById(1).date.getFullYear();
+        let max = serviceTransactionsRefactored.getById(1).date.getFullYear();
         trans.forEach(i => {
             if(i.date.getFullYear() > max){
                 max = i.date.getFullYear();
@@ -100,8 +100,8 @@ define({
         });
         let allTrans = [];
         let dateRows = [];
-        let startMonth = serviceTransactions.getById(1).date.getMonth();
-        let endMonth = serviceTransactions.getById(1).date.getMonth();
+        let startMonth = serviceTransactionsRefactored.getById(1).date.getMonth();
+        let endMonth = serviceTransactionsRefactored.getById(1).date.getMonth();
         if(min === max){
             trans.forEach(i=>{
                 if(i.date.getMonth() < startMonth){
