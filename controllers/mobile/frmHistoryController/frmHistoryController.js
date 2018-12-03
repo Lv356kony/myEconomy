@@ -3,6 +3,10 @@ define({
         navToForm("frmCategoriesList");
     },
 
+    goToEditCategory: function() {
+        navToForm("frmEditCategory", {categoryId: this.categoryId});
+    },
+
     goToHistoryDetails: function(){  
         let currents = this.getCategoriesByType("Current");
         if(currents.indexOf(this.categoryId) !== -1){
@@ -13,9 +17,8 @@ define({
                                         date: `${transDetails[0].numDay} ${transDetails[0].date}`});
     },
 
-    onNavigate: function(category) 
-    {
-        this.categoryId = category.categoryId;
+    onNavigate: function(category) {
+            this.categoryId = category.categoryId;
     },
 
     showCategory: function(){
@@ -57,7 +60,7 @@ define({
             let imgCurrency = this.setCurrencyIcon(this.categoryId);
             let isShared = '';
 
-            let outerDateKey = expenseByCategory[i].date.getDate() + ' ' + expenseByCategory[i].date.getMonth(); 
+            let outerDateKey = expenseByCategory[i].date.getDate() + ' ' + expenseByCategory[i].date.getMonth();
             let getExpensesForSingleDay = expenseByCategory.filter(value => {
                 let innerDateKey = value.date.getDate() + ' ' + value.date.getMonth();
                 return outerDateKey == innerDateKey;
@@ -83,23 +86,23 @@ define({
                     }
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
+
+                // filterring
                 if(fldHistorySearch) {
                     let searchString = `${day} ${numDay} ${date} ${sum} ${commentary}`.toLowerCase();
                     let searchIndex = searchString.indexOf(fldHistorySearch);
                     if(searchIndex !== -1) {
-                        dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), 
+                        dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(),
                                     imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
+                        this.view.btnHistorySearch.text = 'Reset';
+                    } else {
+                        alert('No matches. Try ro find something different.');
                         this.view.btnHistorySearch.text = 'Reset';
                     }
                 } else {
-                    dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), 
-                                imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
+                    dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                 }
             }
-        }
-        if(dates.length === 0) {
-            alert('Nope. There is nothing here.');
-            this.view.btnHistorySearch.text = 'Reset';
         }
 
         let segHistoryExpense = this.view.segHistoryExpense;
@@ -151,7 +154,7 @@ define({
         let transactionsToCurrentCategory = initTo.concat(serviceTransactionsRefactored.getAllByType(this.categoryId, 'to', 'toAmount'));
         let transactionsFromCurrentCategory = initFrom.concat(serviceTransactionsRefactored.getAllByType(this.categoryId, 'from', 'fromAmount'));
         let result = transactionsToCurrentCategory.reduce((prev, curr) => prev + curr) - transactionsFromCurrentCategory.reduce((prev, curr) => prev + curr);
-        return result.toFixed(2); 
+        return result.toFixed(2);
     },
 
     showCurrent: function(){
@@ -174,14 +177,12 @@ define({
             if(searchIndex !== -1) {
                 dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency});
                 this.view.btnHistorySearch.text = 'Reset';
+            } else {
+                alert('No matches. Try ro find something different.');
+            	this.view.btnHistorySearch.text = 'Reset';
             }
         } else {
             dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency});
-        }
-
-        if(dates.length === 0) {
-            alert('No matches. Try ro find something different.');
-            this.view.btnHistorySearch.text = 'Reset';
         }
 
         let segHistoryExpense = this.view.segHistoryExpense;

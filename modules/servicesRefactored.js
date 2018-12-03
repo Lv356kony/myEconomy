@@ -61,6 +61,15 @@ const serviceTransactionsRefactored = {
         });
     },
 
+    getAllExternalFromSharedCategories: function () {
+        let categoriesId = serviceCategoryRefactored.getCategories().concat(serviceCategoryRefactored.getSharedCategories()).map(i => i.id);
+        return DATA.transactions.filter(transaction => {
+            if(~categoriesId.indexOf(transaction.from) && transaction.user_id !== CURRENT_USER.id){
+                return transaction;
+            }
+        });
+    },
+
     create: function(id, fromAmount, from, to, date, comment, toAmount){
         let transaction = {};
         transaction.id = id;
@@ -156,6 +165,13 @@ const serviceCategoryRefactored = {
                     }
                 }
             }
+            let externalTransactionsForm = serviceTransactionsRefactored.getAllExternalFromSharedCategories();
+            externalTransactionsForm.forEach(i => {
+                if(this.getById(i.to).user_id !== CURRENT_USER.id && 
+                  	!(~this.getById(i.to).sharedUsers_id.indexOf(CURRENT_USER.id))){
+					current -= i.fromAmount;
+                }
+            });
         }
         return parseFloat(current.toFixed(2));
     },
@@ -230,6 +246,10 @@ const serviceCategoryRefactored = {
             }
         });
         return element;
+    },
+    
+    shareCategory: function (categotyId, userId) {
+       this.getById(categotyId).sharedUsers_id.push(userId);
     },
 
     deleteByUserId: function(userId) {

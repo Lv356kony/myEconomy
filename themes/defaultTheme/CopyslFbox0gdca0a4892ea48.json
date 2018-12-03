@@ -1,40 +1,19 @@
 {
   "android": {
-    "font_name": "Helvetica",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    }
+    "font_name": "default"
   },
   "androidwearos": {
-    "font_name": "default",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    }
+    "font_name": "default"
   },
-  "background_color": "ffffffff",
+  "background_color": "00000000",
   "bg_type": "one",
-  "border_color": "333333ff",
+  "border_color": "000000ff",
   "border_style": "plain",
   "border_type": 0,
   "border_width": 0,
   "desktopweb": {
     "font_name": "Helvetica"
   },
-  "font_color": "646464ff",
-  "font_name": "iphoneSystem",
-  "font_size": 107,
-  "font_style": "normal",
-  "font_weight": "normal",
   "ipad": {
     "font_name": "System"
   },
@@ -45,7 +24,7 @@
   "kiosk": {
     "font_name": "None"
   },
-  "kuid": "s6f26d16d5bd457f9f01fd73e99583f8",
+  "kuid": "se19100ea01f4269a2a7f1831993a0e2",
   "spaan": {
     "font_name": "Helvetica"
   },
@@ -68,17 +47,9 @@
     "font_name": "Helvetica"
   },
   "tabrcandroid": {
-    "font_name": "default",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    }
+    "font_name": "default"
   },
-  "wType": "TextField",
+  "wType": "FlexContainer",
   "watchos": {
     "font_name": "System"
   },

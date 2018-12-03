@@ -1,38 +1,23 @@
 {
   "android": {
-    "font_name": "Helvetica",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    }
+    "font_name": "default"
   },
   "androidwearos": {
-    "font_name": "default",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    }
+    "font_name": "default"
   },
-  "background_color": "ffffffff",
+  "background_color": "34bf9eb2",
   "bg_type": "one",
-  "border_color": "333333ff",
-  "border_style": "plain",
+  "border_color": "34bf9eb2",
+  "border_radius": 99,
+  "border_style": "custom",
   "border_type": 0,
-  "border_width": 0,
+  "border_width": 1,
   "desktopweb": {
     "font_name": "Helvetica"
   },
-  "font_color": "646464ff",
+  "font_color": "ffffffff",
   "font_name": "iphoneSystem",
-  "font_size": 107,
+  "font_size": 150,
   "font_style": "normal",
   "font_weight": "normal",
   "ipad": {
@@ -45,7 +30,7 @@
   "kiosk": {
     "font_name": "None"
   },
-  "kuid": "s6f26d16d5bd457f9f01fd73e99583f8",
+  "kuid": "sbb4b4d1bf7d45f0a979501c3ea2e038",
   "spaan": {
     "font_name": "Helvetica"
   },
@@ -68,17 +53,9 @@
     "font_name": "Helvetica"
   },
   "tabrcandroid": {
-    "font_name": "default",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    }
+    "font_name": "default"
   },
-  "wType": "TextField",
+  "wType": "Button",
   "watchos": {
     "font_name": "System"
   },
