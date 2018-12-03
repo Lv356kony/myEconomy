@@ -48,12 +48,9 @@ define({
         if (fromAmount) {
             serviceTransactions.create(id, fromAmount, from, to, userId, date, comment, toAmount);
             navToForm("frmCategoriesList");
-
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
-
-
     },
 
 
@@ -74,16 +71,17 @@ define({
 
     setListBoxData: function () {
         let category = serviceCategory.getCategories();
+        // add shared categories
         let listBoxFrom = this.view.lstTransactionFrom;
         let listBoxTo = this.view.lstTransactionTo;
         let dataFrom = [];
         let dataTo = [];
-        if (this.category === "Expenses") {
-            dataFrom = this.getDataForListBox("Current");
-            dataTo = this.getDataForListBox("Expenses");
+        if (this.category === CATEGORY_TYPES.EXPENSE) {
+            dataFrom = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
+            dataTo = this.getDataForListBox(CATEGORY_TYPES.EXPENSE);
         } else {
-            dataFrom = this.getDataForListBox("Income");
-            dataTo = this.getDataForListBox("Current");
+            dataFrom = this.getDataForListBox(CATEGORY_TYPES.INCOME);
+            dataTo = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
         }
         listBoxFrom.masterData = dataFrom;
         listBoxFrom.selectedKey = dataFrom[0][0];
@@ -154,13 +152,7 @@ define({
 
         } else {
             this.view.txtExchange.text = '';
-
         }
     } 
-
-
-
-
-
 
 });     
