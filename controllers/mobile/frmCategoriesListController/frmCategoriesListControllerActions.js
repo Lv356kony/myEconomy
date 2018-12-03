@@ -12,6 +12,11 @@ define({
         var self = this;
         return self.setCategoryExpensesType.call(this);
     },
+    /** onClick defined for flxExpenses **/
+    AS_FlexContainer_je32ba2ff61244a081906f245fac0f07: function AS_FlexContainer_je32ba2ff61244a081906f245fac0f07(eventobject) {
+        var self = this;
+        return self.showExpense.call(this);
+    },
     /** onRowClick defined for segmCurrent **/
     AS_Segment_cd1813046cc74b939f7c6de679ebf49a: function AS_Segment_cd1813046cc74b939f7c6de679ebf49a(eventobject, sectionNumber, rowNumber) {
         var self = this;
@@ -22,6 +27,11 @@ define({
         var self = this;
         return self.setCategoryCurrentType.call(this);
     },
+    /** onClick defined for flxCurrent **/
+    AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a: function AS_FlexContainer_i4216e1d243b465e82c5422a7b71e59a(eventobject) {
+        var self = this;
+        return self.showCurrent.call(this);
+    },
     /** onRowClick defined for segmIncome **/
     AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb: function AS_Segment_b5841b0ab0f442209d15bdb5c840d8eb(eventobject, sectionNumber, rowNumber) {
         var self = this;
@@ -31,6 +41,11 @@ define({
     AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c: function AS_FlexContainer_c6dd2fe96d594d789ff7a72aef585a0c(eventobject) {
         var self = this;
         return self.setCategoryIncomeType.call(this);
+    },
+    /** onClick defined for flxIncome **/
+    AS_FlexContainer_c20d782d3f0c41a39e2b244636427158: function AS_FlexContainer_c20d782d3f0c41a39e2b244636427158(eventobject) {
+        var self = this;
+        return self.showIncome.call(this);
     },
     /** onTouchEnd defined for btnHamburger **/
     AS_Button_ea6d136e3a1b4a29959d28d7c2431208: function AS_Button_ea6d136e3a1b4a29959d28d7c2431208(eventobject, x, y) {
@@ -83,7 +98,7 @@ define({
     /** preShow defined for frmCategoriesList **/
     AS_Form_ee877c39514d4bbc9c47de5d059486d7: function AS_Form_ee877c39514d4bbc9c47de5d059486d7(eventobject) {
         var self = this;
-        self.load.call(this);
+        self.setDafaultValues.call(this);
         self.initIncomeCategoriesList.call(this);
         self.initCurrentCategoriesList.call(this);
         self.initExpensesCategoriesList.call(this);

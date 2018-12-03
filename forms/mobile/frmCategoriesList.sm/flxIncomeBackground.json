@@ -1,9 +1,17 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_height_": {
         "type": "string",
         "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "98dp"
     },
     "_margin_": [
         0,
@@ -19,36 +27,30 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sf43633d831f43728feeff86d43ff6c2",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "s65501bf24f84736b0983faac305bf64",
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "0%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "50.02%"
+        "value": "50%"
     },
-    "children": [
-        "imgLoader"
-    ],
+    "children": [],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxLoader",
+    "id": "flxIncomeBackground",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": false,
-    "kuid": "g43b9778e0cb4900904c8e10d91b8676",
+    "isvisible": true,
+    "kuid": "aa815c85c5c74892962215e760b73823",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmCategoriesList",
+    "parent": "flxIncome",
     "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
@@ -56,5 +58,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 100
+    "zindex": 1
 }

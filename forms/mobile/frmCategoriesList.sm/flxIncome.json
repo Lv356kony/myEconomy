@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "7%"
     },
     "_left_": {
         "type": "string",
@@ -27,7 +27,7 @@
     "_skin_": "sceacf79e68641969d454a3ed777700f",
     "_top_": {
         "type": "string",
-        "value": "56dp"
+        "value": "7.80%"
     },
     "_width_": {
         "type": "string",
@@ -42,12 +42,15 @@
     "children": [
         "lblIncome",
         "lblIncomeCount",
-        "flxAddIncome"
+        "flxAddIncome",
+        "flxIncomeBackground",
+        "flxIncomeUnderline"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
     "id": "flxIncome",
+    "ide_onClick": "AS_FlexContainer_c20d782d3f0c41a39e2b244636427158",
     "info": null,
     "iphone": {
         "render": true
@@ -80,5 +83,5 @@
     "winphone8": {
         "render": true
     },
-    "zindex": 1
+    "zindex": 2
 }

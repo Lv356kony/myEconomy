@@ -26,9 +26,27 @@ const serviceTransactionsRefactored = {
     },
 
     getAll: function () {
-        return DATA.transactions.filter((element, i) => {
-            if (DATA.transactions[i].user_id === CURRENT_USER.id){
-                return DATA.transactions[i];
+        return DATA.transactions.filter((element) => {
+            if (element.user_id === CURRENT_USER.id){
+                return element;
+            }
+        });
+    },
+
+    getAllExternalIntoSharedForMeCategories: function () {
+        let categoriesId = serviceCategoryRefactored.getSharedCategories().map(i => i.id);
+        return DATA.transactions.filter(transaction => {
+            if (~categoriesId.indexOf(transaction.to) && transaction.user_id !== CURRENT_USER.id){
+                return transaction;
+            }
+        });
+    },
+
+    getAllExternalIntoMySharedCategories: function () {
+        let categoriesId = serviceCategoryRefactored.getCategories().map(i => i.id);
+        return DATA.transactions.filter(transaction => {
+            if(~categoriesId.indexOf(transaction.to) && transaction.user_id !== CURRENT_USER.id){
+                return transaction;
             }
         });
     },
@@ -82,36 +100,74 @@ const serviceCategoryRefactored = {
         return parseFloat(categoryBalance.toFixed(2));
     },
 
-    getIncomeBalance: function(){
+  	//Argument "allTransactions" only for calculate getCurrentBalance
+    getIncomeBalance: function(allTransactions){
         let incomes = 0.00;
+        let transactionsWithoutShare = serviceTransactionsRefactored.getAll();
+        let transactionsWithshare = transactionsWithoutShare.concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
+        let transactions = allTransactions ? transactionsWithshare : transactionsWithoutShare;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(serviceCategoryRefactored.getById(DATA.transactions[i].from).type === CATEGORY_TYPES.INCOME){
-                let categoryCurrency = this.getCurrencyById(DATA.transactions[i].from);
-                if(categoryCurrency !== defaultCurrency){
-                    incomes += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].fromAmount);
+        for(let i = 0; i < transactions.length; i++){
+            if(this.getById(transactions[i].from).type === CATEGORY_TYPES.INCOME){
+                let categoryFrom = this.getCurrencyById(transactions[i].from);
+                let categoryTo = this.getCurrencyById(transactions[i].to);
+                if(defaultCurrency === categoryFrom){
+                    incomes += parseFloat(transactions[i].fromAmount);
+                }else if(defaultCurrency === categoryTo){
+                    incomes += parseFloat(transactions[i].toAmount);
                 }else{
-                    incomes += parseFloat(DATA.transactions[i].fromAmount);
+                    incomes += calculate(categoryFrom, defaultCurrency, transactions[i].fromAmount);
                 }
             }
         }
         return parseFloat(incomes.toFixed(2));
     },
 
-    getCurrentBalance: function(){
-        return this.getIncomeBalance() - this.getExpenseBalance();
+    //If "allTransactions" = true then function will return balance with external transactions into shared categories
+    getCurrentBalance: function(allTransactions){
+        let current = this.getIncomeBalance(allTransactions) - this.getExpenseBalance();
+        if(allTransactions){
+            let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
+            .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
+            let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
+            for(let i = 0; i < externalTransations.length; i++){
+                if(this.getById(externalTransations[i].from).type === CATEGORY_TYPES.CURRENT &&
+                   this.getById(externalTransations[i].to).type === CATEGORY_TYPES.CURRENT &&
+                   this.getById(externalTransations[i].from).user_id !== CURRENT_USER.id)
+                {
+                    let categoryFrom = this.getCurrencyById(externalTransations[i].from);
+                    let categoryTo = this.getCurrencyById(externalTransations[i].to);
+                    if(defaultCurrency === categoryFrom){
+                        current += parseFloat(externalTransations[i].fromAmount);
+                    }else if(defaultCurrency === categoryTo){
+                        current += parseFloat(externalTransations[i].toAmount);
+                    }else{
+                        current += calculate(categoryFrom, defaultCurrency, externalTransations[i].fromAmount);
+                    }
+                }
+            }
+        }
+        return current;
     },
 
-    getExpenseBalance: function(){
+    //If "allTransactions" = true then function will return balance with external transactions into shared categories
+    getExpenseBalance: function(allTransactions){
         let expense = 0.00;
+        let transactionsWithoutShare = serviceTransactionsRefactored.getAll();
+        let transactionsWithshare = transactionsWithoutShare.concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories(), 
+                                                                    serviceTransactionsRefactored.getAllExternalIntoMySharedCategories());
+        let transactions = allTransactions ? transactionsWithshare : transactionsWithoutShare;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(serviceCategoryRefactored.getById(DATA.transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
-                let categoryCurrency = this.getCurrencyById(DATA.transactions[i].to);
-                if(categoryCurrency !== defaultCurrency){
-                    expense += calculate(categoryCurrency, defaultCurrency, DATA.transactions[i].toAmount);
+        for(let i = 0; i < transactions.length; i++){
+            if(this.getById(transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
+                let categoryFrom = this.getCurrencyById(transactions[i].from);
+                let categoryTo = this.getCurrencyById(transactions[i].to);
+                if(defaultCurrency === categoryTo){
+                    expense += parseFloat(transactions[i].toAmount);
+                }else if(defaultCurrency === categoryFrom){
+                    expense += parseFloat(transactions[i].fromAmount);
                 }else{
-                    expense += parseFloat(DATA.transactions[i].toAmount);
+                    expense += calculate(categoryTo, defaultCurrency, transactions[i].fromAmount);
                 }
             }
         }
@@ -177,6 +233,20 @@ const serviceCategoryRefactored = {
         }
         return DATA.categories;
     },
+
+    shareCategory: function (categotyId, userId) {
+        this.getById(categotyId).sharedUsers_id.push(userId);
+    },
+
+    getSharedCategories: function () {
+        let sharedCategories = [];
+        let categories = DATA.categories.filter((category) => {
+            if (~category.sharedUsers_id.indexOf(CURRENT_USER.id)){
+                return category;
+            }
+        });
+        return categories;
+    }
 };
 
 const userServiceRefactored = {

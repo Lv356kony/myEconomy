@@ -42,6 +42,7 @@ define({
                 name: categoryName,
                 type: this.type,
                 user_id: CURRENT_USER.id,
+                sharedUsers_id: [],
                 currency: categoryCurrency[1],
                 visible: true
             };

@@ -37,7 +37,7 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmCategoriesList",
+        "formID": "frmLogin",
         "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
@@ -48,10 +48,10 @@
     "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "fcb7e778fc114a55b181f37cf9e7593d",
+    "kuid": "ca21df339c174299b95318cc1c925dc1",
     "name": "kony.ui.Image2",
     "parent": "flxLoader",
-    "pf": "frmCategoriesList",
+    "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,

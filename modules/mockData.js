@@ -79,7 +79,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
-            sharedUsers_id: [],
+            sharedUsers_id: [2],
             visible: true
         },  {
             id: 5,
@@ -106,6 +106,60 @@ Object.assign(DATA, {
             type: 'Current',
             currency: 'UAH',
             user_id: 1,
+            sharedUsers_id: [],
+            visible: true
+        },  {
+            id: 8,
+            icon: 'bank.png',
+            name: 'Aval bank',
+            type: 'Current',
+            currency: 'UAH',
+            user_id: 1,
+            sharedUsers_id: [2],
+            visible: true
+        }, {
+            id: 9,
+            icon: 'bank.png',
+            name: 'For trip',
+            type: 'Current',
+            currency: 'UAH',
+            user_id: 2,
+            sharedUsers_id: [1],
+            visible: true
+        },  {
+            id: 10,
+            icon: 'bank.png',
+            name: 'Privat',
+            type: 'Current',
+            currency: 'UAH',
+            user_id: 2,
+            sharedUsers_id: [],
+            visible: true
+        },  {
+            id: 11,
+            icon: 'dollar.png',
+            name: 'Salary',
+            type: 'Income',
+            currency: 'USD',
+            user_id: 2,
+            sharedUsers_id: [],
+            visible: true
+        },  {
+            id: 12,
+            icon: 'gamecontroller.png',
+            name: 'Entertainment',
+            type: 'Expenses',
+            currency: 'USD',
+            user_id: 2,
+            sharedUsers_id: [1],
+            visible: true
+        },  {
+            id: 13,
+            icon: 'gamecontroller.png',
+            name: 'Car',
+            type: 'Expenses',
+            currency: 'UAH',
+            user_id: 2,
             sharedUsers_id: [],
             visible: true
         }
@@ -355,6 +409,51 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'Метро'
+        },    {
+            id: 28,
+            from: 9,
+            fromAmount: 5000,
+            to: 2,
+            toAmount: 5000,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Salmon'
+        },    {
+            id: 29,
+            from: 10,
+            fromAmount: 28000,
+            to: 12,
+            toAmount: 1000,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Відеокарта'
+        },    {
+            id: 30,
+            from: 11,
+            fromAmount: 2000,
+            to: 10,
+            toAmount: 56000,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'Зарплата'
+        },    {
+            id: 31,
+            from: 10,
+            fromAmount: 5000,
+            to: 9,
+            toAmount: 5000,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'На подорож'
+        },    {
+            id: 32,
+            from: 7,
+            fromAmount: 2800,
+            to: 12,
+            toAmount: 100,
+            user_id: 1,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'SSD'
         }
     ]
 });
