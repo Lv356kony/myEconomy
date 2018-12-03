@@ -126,7 +126,7 @@ define({
     },
 
     getCategoriesByType: function(typeOfTransaction){
-        let cetegoriesForCurrentUser = serviceCategory.getCategories();
+        let cetegoriesForCurrentUser = serviceCategory.getCategories().concat(serviceCategoryRefactored.getSharedCategories());
         let categories = [];
         for(let i = 0; i < cetegoriesForCurrentUser.length; i++){
             if(typeOfTransaction === cetegoriesForCurrentUser[i].type){
@@ -148,7 +148,6 @@ define({
     },
 
     getCurrentBalance: function(){
-        let categoryCurrency = serviceCategoryRefactored.getCurrencyById(this.categoryId);
         let initTo = [0];
         let initFrom = [0];
         let transactionsToCurrentCategory = initTo.concat(serviceTransactionsRefactored.getAllByType(this.categoryId, 'to', 'toAmount'));
@@ -162,7 +161,7 @@ define({
         let currents = this.getCategoriesByType("Current");
         let fldHistorySearch = this.view.fldHistorySearch.text;
         this.view.btnHistorySearch.text = 'Search';
-        let dates = []; 
+        let dates = [];
 
         let day = getDay[now.getDay()];
         let numDay = now.getDate().toString();
