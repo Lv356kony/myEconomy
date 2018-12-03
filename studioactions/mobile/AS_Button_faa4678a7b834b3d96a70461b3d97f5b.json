@@ -1,0 +1,28 @@
+{
+    "AS_Button_faa4678a7b834b3d96a70461b3d97f5b": {
+        "id": "AS_Button_faa4678a7b834b3d96a70461b3d97f5b",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmEditCategory",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c60e506654994380910a11de730d529e"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___jf34ff0cd5bd4958a47348b8a401e368",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "editCategory",
+            "display": "editCategory",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

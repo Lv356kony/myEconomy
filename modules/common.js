@@ -208,9 +208,9 @@ const serviceCategory = {
         return element;
     },
 
-    shareCategory: function (categotyId, userId) {
-        this.getById(categotyId).sharedUsers_id.push(userId);
-    }
+//     shareCategory: function (categotyId, userId) {
+//         this.getById(categotyId).sharedUsers_id.push(userId);
+//     }
 };
 
 const userService = {

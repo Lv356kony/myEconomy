@@ -21,7 +21,7 @@ Object.assign(DATA, {
             id: 3,
             email: 'o.piaskovska@gmail.com',
             password: 'somepassword',
-            firstName: "",
+            firstName: "Oksana",
             lastName: "",
             currency: "UAH",
             image: ""
@@ -472,6 +472,6 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: ''
-        }             
+        }
     ]
 });
