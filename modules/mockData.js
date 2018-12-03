@@ -4,7 +4,7 @@ Object.assign(DATA, {
             id: 1,
             email: 'antti.raatali@gmail.com',
             password: 'Ra$1',
-            firstName: "",
+            firstName: "Andriy",
             lastName: "",
             currency: "UAH",
             image: ""
@@ -13,7 +13,7 @@ Object.assign(DATA, {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
             password: 'intelwithradeon',
-            firstName: "",
+            firstName: "Taras",
             lastName: "",
             currency: "UAH",
             image: ""

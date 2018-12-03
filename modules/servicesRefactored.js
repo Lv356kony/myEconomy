@@ -250,10 +250,6 @@ const serviceCategoryRefactored = {
         return DATA.categories;
     },
 
-    shareCategory: function (categotyId, userId) {
-        this.getById(categotyId).sharedUsers_id.push(userId);
-    },
-
     getSharedCategories: function () {
         let sharedCategories = [];
         let categories = DATA.categories.filter((category) => {

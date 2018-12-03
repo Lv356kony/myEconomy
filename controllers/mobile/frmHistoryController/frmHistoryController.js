@@ -36,6 +36,7 @@ define({
             expByCat = this.getByCategoryIdFrom(this.categoryId);
         }else if(currents.indexOf(this.categoryId) !== -1){
             this.showCurrent();
+            this.checkIfOwner();
             this.view.fldHistorySearch.text = '';
             return;
         }else{
@@ -43,6 +44,7 @@ define({
         }
         this.showExpenses(expByCat);
         this.view.fldHistorySearch.text = '';
+        this.checkIfOwner();
     },
 
 
@@ -255,5 +257,14 @@ define({
         this.view.flxDeleteCategoryContainer.setVisibility(true);
         this.view.flxDeletionOptions.setVisibility(false);
         this.view.flxDeleteConfirmation.setVisibility(true);
+    },
+    
+    checkIfOwner: function() {
+        let category = serviceCategoryRefactored.getById(this.categoryId);
+        if(~category.sharedUsers_id.indexOf(CURRENT_USER.id)) {
+            this.view.flxUpdateCategory.isVisible = false;			
+        } else {
+            this.view.flxUpdateCategory.isVisible = true;
+        }
     }
 });

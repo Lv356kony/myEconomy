@@ -55,7 +55,9 @@ define({
 
 
     getDataForListBox: function (categoryType) {
-        let category = serviceCategory.getCategories();
+        const category = serviceCategoryRefactored.getCategories();
+        const sharedCategories = serviceCategoryRefactored.getSharedCategories();
+        alert(sharedCategories);
         let dataForFrom = category
         .filter((obj) => {
             if (obj.type === categoryType) {
