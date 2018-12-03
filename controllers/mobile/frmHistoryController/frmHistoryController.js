@@ -2,6 +2,10 @@ define({
     goToCategories: function(){
         navToForm("frmCategoriesList");
     },
+    
+    goToEditCategory: function() {
+        navToForm("frmEditCategory", {categoryId: this.categoryId});
+    },
 
     goToHistoryDetails: function(){  
         let currents = this.filterByTypeOfTransaction("Current");
@@ -13,9 +17,8 @@ define({
                                         date: `${transDetails[0].numDay} ${transDetails[0].date}`});
     },
 
-    onNavigate: function(category) 
-    {
-        this.categoryId = category.categoryId;
+    onNavigate: function(category) {
+            this.categoryId = category.categoryId;
     },
 
     showCategory: function(){
@@ -32,7 +35,6 @@ define({
         if(incomes.indexOf(this.categoryId) !== -1){
             expByCat = this.getByCategoryIdFrom(this.categoryId);
         }else if(currents.indexOf(this.categoryId) !== -1){
-            alert(currents);
             this.showCurrent();
             this.view.fldHistorySearch.text = '';
             return;
@@ -78,11 +80,16 @@ define({
                     }
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
+                
+                // filterring
                 if(fldHistorySearch) {
                     let searchString = `${day} ${numDay} ${date} ${sum} ${commentary}`.toLowerCase();
                     let searchIndex = searchString.indexOf(fldHistorySearch);
                     if(searchIndex !== -1) {
                         dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
+                        this.view.btnHistorySearch.text = 'Reset';
+                    } else {
+                        alert('No matches. Try ro find something different.');
                         this.view.btnHistorySearch.text = 'Reset';
                     }
                 } else {
@@ -90,10 +97,7 @@ define({
                 }
             }
         }
-        if(dates.length === 0) {
-            alert('No matches. Try ro find something different.');
-            this.view.btnHistorySearch.text = 'Reset';
-        }
+
 		
         let segHistoryExpense = this.view.segHistoryExpense;
         segHistoryExpense.widgetDataMap = {
@@ -159,7 +163,6 @@ define({
         let currents = this.filterByTypeOfTransaction("Current");
         let fldHistorySearch = this.view.fldHistorySearch.text;
         this.view.btnHistorySearch.text = 'Search';
-		alert(currents);
         let dates = []; 
 
         let day = getDay[now.getDay()];
@@ -175,14 +178,12 @@ define({
             if(searchIndex !== -1) {
                 dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
                 this.view.btnHistorySearch.text = 'Reset';
+            } else {
+                alert('No matches. Try ro find something different.');
+            	this.view.btnHistorySearch.text = 'Reset';
             }
         } else {
             dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgSum: imgSum, imgDol: imgDol});
-        }
-        
-		if(dates.length === 0) {
-            alert('No matches. Try ro find something different.');
-            this.view.btnHistorySearch.text = 'Reset';
         }
 
         let segHistoryExpense = this.view.segHistoryExpense;

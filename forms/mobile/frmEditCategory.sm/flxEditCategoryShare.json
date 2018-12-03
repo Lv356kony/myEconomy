@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "56dp"
+        "value": "90dp"
     },
     "_left_": {
         "type": "string",
@@ -23,10 +23,10 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s6545dc0a30f47cba6034f5bb58f4db7",
+    "_skin_": "sb28eb21f53141baac325d1262e73a04",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "120dp"
     },
     "_width_": {
         "type": "string",
@@ -36,23 +36,22 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxHistoryBackButton",
-        "flxHistoryCategory",
-        "flxDeleteThis",
-        "flxUpdateCategory"
+        "txbEditCategoryShare",
+        "flxUnderlineEditShare",
+        "flxEditSharingWrp"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxHistoryTopSection",
+    "id": "flxEditCategoryShare",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f9c03ffeb035426f802af354a6d99597",
+    "kuid": "b3fcf74e295d49a58536e2e29e7e08fc",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxHistoryTopMenu",
-    "pf": "frmHistory",
+    "parent": "flxEditCategoryInputs",
+    "pf": "frmEditCategory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "snapgridsize": 10,
