@@ -8,7 +8,11 @@
     },
     "_data_": [
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -34,7 +38,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -60,7 +68,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -86,7 +98,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -112,7 +128,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -138,7 +158,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -164,7 +188,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -190,7 +218,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -216,7 +248,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -242,7 +278,11 @@
             }
         },
         {
-            "imgDollar": {
+            "imgCurrency": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "imgIsShared": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
             },
@@ -372,7 +412,9 @@
     "widgetdatamap": {
         "flxHeader": "flxHeader",
         "flxSectionHistory": "flxSectionHistory",
-        "imgDollar": "imgDollar",
+        "flxShadow": "flxShadow",
+        "imgCurrency": "imgCurrency",
+        "imgIsShared": "imgIsShared",
         "imgSummary": "imgSummary",
         "numDay": "numDay",
         "txtDate": "txtDate",

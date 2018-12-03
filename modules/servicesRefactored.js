@@ -33,6 +33,16 @@ const serviceTransactionsRefactored = {
         });
     },
 
+    getAllByType: function(categoryId, type, fromOrTo){
+        let transactions = [];
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i][type] === categoryId){
+                transactions.push(DATA.transactions[i][fromOrTo]);
+            }
+        }
+        return transactions;
+    },
+
     getAllExternalIntoSharedForMeCategories: function () {
         let categoriesId = serviceCategoryRefactored.getSharedCategories().map(i => i.id);
         return DATA.transactions.filter(transaction => {
@@ -204,6 +214,16 @@ const serviceCategoryRefactored = {
         return categories;
     },
 
+    getWithSharedCategories: function() {
+        let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++) {
+            if(DATA.categories[i].user_id === CURRENT_USER.id || DATA.categories[i].sharedUsers_id.indexOf(CURRENT_USER.id) !== -1) {
+                categories.push(DATA.categories[i]);
+            }
+        }
+        return categories;
+    },
+
     getCurrencyById: function(categoryId) {
         return this.getById(categoryId).currency;
     },
@@ -250,12 +270,7 @@ const serviceCategoryRefactored = {
         return DATA.categories;
     },
 
-    shareCategory: function (categotyId, userId) {
-        this.getById(categotyId).sharedUsers_id.push(userId);
-    },
-
     getSharedCategories: function () {
-        let sharedCategories = [];
         let categories = DATA.categories.filter((category) => {
             if (~category.sharedUsers_id.indexOf(CURRENT_USER.id)){
                 return category;

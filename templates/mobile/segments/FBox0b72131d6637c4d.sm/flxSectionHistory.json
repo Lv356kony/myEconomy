@@ -36,7 +36,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxHeader"
+        "flxHeader",
+        "flxShadow"
     ],
     "clipbounds": true,
     "containerId": true,

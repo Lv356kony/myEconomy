@@ -2,10 +2,6 @@
     "@class": "com.kony.gen.viz.model.component.KVizRichText",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
-        "type": "string",
-        "value": "25dp"
-    },
     "_left_": {
         "type": "string",
         "value": "40dp"
@@ -26,7 +22,7 @@
     "_text_": "RichText",
     "_top_": {
         "type": "string",
-        "value": "25dp"
+        "value": "15dp"
     },
     "_width_": {
         "type": "string",
@@ -34,9 +30,13 @@
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerId": true,
     "containerweight": 100,
-    "contentalignment": 1,
+    "contentalignment": 4,
     "id": "txtCommentary",
     "info": null,
     "iscustomlayout": false,
