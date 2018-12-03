@@ -1,0 +1,28 @@
+{
+    "AS_FlexContainer_bf56cee056c040af878de1bcce188cc9": {
+        "id": "AS_FlexContainer_bf56cee056c040af878de1bcce188cc9",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmStatistics",
+            "type": "forms",
+            "platform": "",
+            "KUID": "ca24dc4851f94e0493a6f0f7fcd75fad"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___ge02b171708d41beafdbeb07fdf4dc8f",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "goToPreviousMonth",
+            "display": "goToPreviousMonth",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

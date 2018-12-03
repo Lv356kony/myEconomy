@@ -1,0 +1,21 @@
+{
+    "AS_FlexContainer_e4848548284f4715a0d10f9fa41d7afd": {
+        "id": "AS_FlexContainer_e4848548284f4715a0d10f9fa41d7afd",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_i1d3b914db484c83903a47d2c8178756",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "backwardClick",
+            "display": "backwardClick",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

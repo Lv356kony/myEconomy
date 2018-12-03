@@ -3,8 +3,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "string",
-        "value": "100%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_margin_": [
         1,
@@ -18,16 +18,8 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "10dp"
-    },
-    "_skin_": "sce5e2b3f74a48e39575b5b756dc852d",
-    "_text_": "0.00",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "s3c31424c56b4e91b1a510688423613b",
+    "_text_": "Expenses History",
     "_width_": {
         "type": "ref",
         "value": "preferred"
@@ -40,9 +32,17 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblTabSumInfoValue",
+    "id": "lblHeader",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,10 +56,10 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "fa3efa2bdf0b4147a6c8ca4102218824",
+    "kuid": "f7540057c40f48dea2bd9f2fb703c22e",
     "name": "kony.ui.Label",
-    "parent": "flxTabSumInfo",
-    "pf": "frmStatistics",
+    "parent": "flxHeader",
+    "pf": "frmExpensesHistory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

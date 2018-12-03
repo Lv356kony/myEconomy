@@ -7,6 +7,16 @@ define({
         var self = this;
         return self.backwardClick.call(this);
     },
+    /** onClick defined for flxPreviousMonth **/
+    AS_FlexContainer_bf56cee056c040af878de1bcce188cc9: function AS_FlexContainer_bf56cee056c040af878de1bcce188cc9(eventobject) {
+        var self = this;
+        return self.goToPreviousMonth.call(this);
+    },
+    /** onClick defined for flxNextMonth **/
+    AS_FlexContainer_b12ee4d77989481d93a0eeb3862f7657: function AS_FlexContainer_b12ee4d77989481d93a0eeb3862f7657(eventobject) {
+        var self = this;
+        return self.goToNextMonth.call(this);
+    },
     /** onClick defined for flxTabHeaderOutcome **/
     AS_FlexContainer_caf5253879de48d3afe79f8023334e32: function AS_FlexContainer_caf5253879de48d3afe79f8023334e32(eventobject) {
         var self = this;

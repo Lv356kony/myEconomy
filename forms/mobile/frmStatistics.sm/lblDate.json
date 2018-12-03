@@ -6,6 +6,10 @@
         "type": "string",
         "value": "100%"
     },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_margin_": [
         1,
         1,
@@ -18,19 +22,15 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "10dp"
-    },
-    "_skin_": "sce5e2b3f74a48e39575b5b756dc852d",
-    "_text_": "0.00",
+    "_skin_": "s9b9a6b348694782a29824bf871a4f1c",
+    "_text_": "Date",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
@@ -40,9 +40,13 @@
         }
     },
     "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "lblTabSumInfoValue",
+    "contentalignment": 5,
+    "id": "lblDate",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,9 +60,9 @@
     },
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "fa3efa2bdf0b4147a6c8ca4102218824",
+    "kuid": "hff09065278e47bab442fab6332cbc3b",
     "name": "kony.ui.Label",
-    "parent": "flxTabSumInfo",
+    "parent": "flxDateName",
     "pf": "frmStatistics",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

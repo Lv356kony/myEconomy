@@ -1,9 +1,11 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "80dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -15,15 +17,14 @@
         0,
         0
     ],
-    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_percent_": true,
-    "_skin_": "s60652c290f646e2acd1c203e28ea01e",
+    "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
+    "_src_": "left_black.png",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -32,32 +33,29 @@
         "type": "string",
         "value": "100%"
     },
-    "allboxes": [],
-    "autogrowmode": 0,
     "canUpdateUI": true,
-    "children": [
-        "flxBalance",
-        "flxPreviousMonth",
-        "flxNextMonth",
-        "flxDateName"
-    ],
-    "clipbounds": true,
     "containerweight": 100,
-    "enablescrolling": true,
-    "id": "flxContainerBalance",
+    "context": {
+        "channel": "mobile",
+        "formID": "frmStatistics",
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "id": "imgPreviousMonth",
+    "imagescalemode": 1,
     "info": null,
+    "invokedProperty": "src",
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d0a7f28da53042d6a930193b5bdea75c",
-    "layouttype": 2,
-    "name": "kony.ui.FlexContainer",
-    "parent": "flxMainContainer",
+    "kuid": "b9b22e46ef8a4941a0f629663b00d05e",
+    "name": "kony.ui.Image2",
+    "parent": "flxPreviousMonth",
     "pf": "frmStatistics",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "snapgridsize": 10,
-    "snaptogrid": true,
-    "wType": "FlexContainer",
-    "widgetalignment": 1,
+    "srcType": 1,
+    "wType": "Image",
+    "widgetalignment": 5,
     "zindex": 1
 }

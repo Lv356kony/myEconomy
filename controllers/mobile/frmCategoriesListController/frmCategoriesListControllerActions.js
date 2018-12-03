@@ -86,6 +86,15 @@ define({
         var self = this;
         return self.goToSettings.call(this);
     },
+    /** onDownloadComplete defined for imgExpHistory **/
+    AS_Image_d574e963b94b4df38c53861cc766e486: function AS_Image_d574e963b94b4df38c53861cc766e486(eventobject, imagesrc, issuccess) {
+        var self = this;
+    },
+    /** onTouchEnd defined for btnExpHistory **/
+    AS_Button_h39b7ecf56e1468385787ccbd24fc3b7: function AS_Button_h39b7ecf56e1468385787ccbd24fc3b7(eventobject, x, y) {
+        var self = this;
+        return self.goToExpensesHistory.call(this);
+    },
     /** onClick defined for btnHideMenu **/
     AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a: function AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a(eventobject) {
         var self = this;
