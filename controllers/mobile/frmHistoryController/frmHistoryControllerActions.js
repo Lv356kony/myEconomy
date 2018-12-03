@@ -21,6 +21,11 @@ define({
         var self = this;
         return self.showDeleteOptions.call(this);
     },
+    /** onClick defined for flxUpdateCategory **/
+    AS_FlexContainer_c030014205d44a60ae1f907d09600277: function AS_FlexContainer_c030014205d44a60ae1f907d09600277(eventobject) {
+        var self = this;
+        return self.goToEditCategory.call(this);
+    },
     /** onClick defined for btnHistorySearch **/
     AS_Button_dd8d184903ad4771aa5045414a02effe: function AS_Button_dd8d184903ad4771aa5045414a02effe(eventobject) {
         var self = this;

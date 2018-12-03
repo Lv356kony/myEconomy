@@ -1,55 +1,59 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "5dp"
     },
     "_left_": {
         "type": "string",
         "value": "0dp"
     },
     "_margin_": [
-        6,
-        6,
-        6,
-        6
+        0,
+        0,
+        0,
+        0
     ],
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_skin_": "s78c4c94c68f45a1ab3e8cd9fb2eb754",
-    "_text_": "Button",
+    "_percent_": true,
+    "_skin_": "s7ec01f23d7e4a5dab2a386c81b8fb2f",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "55dp"
     },
     "_width_": {
         "type": "string",
-        "value": "50%"
+        "value": "100%"
     },
+    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
+    "children": [],
+    "clipbounds": true,
     "containerId": true,
     "containerweight": 100,
-    "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
-    },
-    "displaytext": true,
-    "id": "btnDetailsEdit",
+    "enablescrolling": true,
+    "id": "flxShadow",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "eede53fc3f1e4ed181ec0a43307bbc82",
-    "name": "kony.ui.Button",
-    "parent": "flxDetailsUD",
+    "kuid": "geb52cada81141949da8c11d7af5f331",
+    "layouttype": 2,
+    "name": "kony.ui.FlexContainer",
+    "parent": "FBox0c96427e3131345",
     "pf": "FBox0c96427e3131345",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "Button",
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
     "zindex": 1
 }

@@ -43,7 +43,8 @@
         "txtFrom",
         "txtCommentary",
         "txtExpense",
-        "imgDollar"
+        "imgDollar",
+        "txtMadeBy"
     ],
     "clipbounds": true,
     "containerId": true,

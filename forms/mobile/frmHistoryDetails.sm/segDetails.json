@@ -8,14 +8,6 @@
     },
     "_data_": [
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -31,17 +23,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -57,17 +45,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -83,17 +67,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -109,17 +89,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -135,17 +111,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -161,17 +133,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -187,17 +155,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -213,17 +177,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -239,17 +199,13 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         },
         {
-            "btnDetailsDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
-            "btnDetailsEdit": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "Button"
-            },
             "imgDollar": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
                 "src": "imagedrag.png"
@@ -265,6 +221,10 @@
             "txtFrom": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                 "text": "from"
+            },
+            "txtMadeBy": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "By:"
             }
         }
     ],
@@ -353,7 +313,7 @@
     "selectedindex": null,
     "selectedindices": null,
     "selecteditems": null,
-    "selectedsectionindex": 0,
+    "selectedsectionindex": null,
     "selectionbehavior": "default",
     "separatorcolor": "aaaaaa00",
     "separatorrequired": true,
@@ -364,14 +324,13 @@
     "wType": "Segment",
     "widgetalignment": 5,
     "widgetdatamap": {
-        "btnDetailsDelete": "btnDetailsDelete",
-        "btnDetailsEdit": "btnDetailsEdit",
         "flxDetailsSection": "flxDetailsSection",
-        "flxDetailsUD": "flxDetailsUD",
+        "flxShadow": "flxShadow",
         "imgDollar": "imgDollar",
         "txtCommentary": "txtCommentary",
         "txtExpense": "txtExpense",
-        "txtFrom": "txtFrom"
+        "txtFrom": "txtFrom",
+        "txtMadeBy": "txtMadeBy"
     },
     "zindex": 1
 }

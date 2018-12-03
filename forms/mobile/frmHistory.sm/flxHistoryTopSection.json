@@ -38,7 +38,8 @@
     "children": [
         "flxHistoryBackButton",
         "flxHistoryCategory",
-        "flxDeleteThis"
+        "flxDeleteThis",
+        "flxUpdateCategory"
     ],
     "clipbounds": true,
     "containerweight": 100,

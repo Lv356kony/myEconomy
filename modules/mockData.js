@@ -21,7 +21,7 @@ Object.assign(DATA, {
             id: 3,
             email: 'o.piaskovska@gmail.com',
             password: 'somepassword',
-            firstName: "",
+            firstName: "Oksana",
             lastName: "",
             currency: "UAH",
             image: ""
@@ -454,15 +454,33 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('August 11, 2018 23:15:30'),
             commentary: 'SSD'
-        },	{
+        },    {
             id: 33,
-            from: 6,
-            fromAmount: 1100,
-            to: 7,
-            toAmount: 30800,
+            from: 9,
+            fromAmount: 4500,
+            to: 13,
+            toAmount: 4500,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'колеса'
+        },    {
+            id: 34,
+            from: 7,
+            fromAmount: 1000,
+            to: 9,
+            toAmount: 1000,
             user_id: 1,
-            date: new Date('December 01, 2018 23:15:30'),
-            commentary: 'Зарплата'
-        },      
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: ''
+        },	{
+                     id: 35,
+                     from: 6,
+                     fromAmount: 1100,
+                     to: 7,
+                     toAmount: 30800,
+                     user_id: 1,
+                     date: new Date('December 01, 2018 23:15:30'),
+                     commentary: 'Зарплата'
+                 }
     ]
 });

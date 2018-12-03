@@ -27,7 +27,7 @@
     "canUpdateUI": true,
     "children": [
         "flxDetailsSection",
-        "flxDetailsUD"
+        "flxShadow"
     ],
     "clipbounds": false,
     "containerId": true,

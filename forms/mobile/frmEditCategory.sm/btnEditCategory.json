@@ -2,13 +2,17 @@
     "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "40dp"
     },
     "_left_": {
         "type": "string",
-        "value": "50%"
+        "value": "0dp"
     },
     "_margin_": [
         6,
@@ -22,36 +26,26 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "0dp"
-    },
-    "_skin_": "s44e6394746c4dfbbd2c1156ddaa55a2",
-    "_text_": "Button",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "s44ab7d3fd464791b52d4e8edd696cf4",
+    "_text_": "Edit ",
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "canUpdateUI": true,
-    "containerId": true,
     "containerweight": 100,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
-    },
     "displaytext": true,
-    "id": "btnDetailsDelete",
+    "focusskin": "s44ab7d3fd464791b52d4e8edd696cf4",
+    "id": "btnEditCategory",
+    "ide_onClick": "AS_Button_faa4678a7b834b3d96a70461b3d97f5b",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "icaa587638834783aef88fdb59db0637",
+    "kuid": "e9964d55dce1414baac99e72d4cba037",
     "name": "kony.ui.Button",
-    "parent": "flxDetailsUD",
-    "pf": "FBox0c96427e3131345",
+    "parent": "flxEditCategorywrp",
+    "pf": "frmEditCategory",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "wType": "Button",

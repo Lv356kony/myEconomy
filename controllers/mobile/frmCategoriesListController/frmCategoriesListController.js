@@ -1,17 +1,16 @@
 define({ 
 
-
-    //TODO use varible for serviceCategory.getCategories()
     initIncomeCategoriesList: function(){
-        let categories = [];
-        for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
-            if(serviceCategory.getCategories()[i].type === "Income" && serviceCategory.getCategories()[i].visible){
-                categories.push({
-                    name: serviceCategory.getCategories()[i].name,
-                    icon: serviceCategory.getCategories()[i].icon,
-                    balance: `${serviceTransactions.getIncomeBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
-                    id:  serviceCategory.getCategories()[i].id
+        let incomeCategories = [];
+        let categories = serviceCategoryRefactored.getCategories();
+        for (let i = 0; i < categories.length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(categories[i].id);
+            if(categories[i].type === "Income" && categories[i].visible){
+                incomeCategories.push({
+                    name: categories[i].name,
+                    icon: categories[i].icon,
+                    balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
+                    id:  categories[i].id
                 });
             }
         }
@@ -21,22 +20,30 @@ define({
             icnCategories: "icon",
             lblBalance: "balance"
         };
-        segment.setData(categories);
+        segment.setData(incomeCategories);
     },
 
-    //use varible for serviceCategory.getCategories()
     initCurrentCategoriesList: function(){
-        let categories = [];
-        for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
-            if(serviceCategory.getCategories()[i].type === "Current" && serviceCategory.getCategories()[i].visible){
-                let income = serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id);
-                let expenses = this.getExpensesFromCurrentCategory(serviceCategory.getCategories()[i].id);
-                categories.push({
-                    name: serviceCategory.getCategories()[i].name,
-                    icon: serviceCategory.getCategories()[i].icon,
+        let currentCategories = [];
+        let categories = serviceCategoryRefactored.getCategories()
+        .concat(serviceCategoryRefactored.getSharedCategories());
+        let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
+        .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
+        for (let i = 0; i < categories.length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(categories[i].id);
+            if(categories[i].type === "Current" && categories[i].visible){
+                let income = serviceCategoryRefactored.getBalanceByType(categories[i].id);
+                externalTransations.filter(trans => {
+                    if (trans.to === categories[i].id) {
+                        return trans;
+                    }
+                }).forEach(trans => income += trans.toAmount);
+                let expenses = this.getExpensesFromCurrentCategory(categories[i].id);
+                currentCategories.push({
+                    name: categories[i].name,
+                    icon: categories[i].icon,
                     balance: `${income - expenses} ${symbol}`,
-                    id:  serviceCategory.getCategories()[i].id
+                    id:  categories[i].id
                 });
             }
         }
@@ -46,13 +53,13 @@ define({
             icnCategories: "icon",
             lblBalance: "balance"
         };
-        segment.setData(categories);
+        segment.setData(currentCategories);
     },
 
-    //Recalculace using currensy service
     getExpensesFromCurrentCategory: function (categoryId) {
         let balance = 0;
-        let transactions = serviceTransactions.getTransactionForCurrentUser();
+        let transactions = serviceTransactionsRefactored.getAll()
+        .concat(serviceTransactionsRefactored.getAllExternalFromSharedCategories());
         let filter = transactions.filter((element, i) => {
             if(element.from === categoryId) {
                 return element;
@@ -62,17 +69,18 @@ define({
 
     },
 
-    //use varible for serviceCategory.getCategories()
     initExpensesCategoriesList: function(){
-        let categories = [];
-        for (let i = 0; i < serviceCategory.getCategories().length; i++) {
-            let symbol = this.getCarenncySymbolForCategory(serviceCategory.getCategories()[i].id);
-            if(serviceCategory.getCategories()[i].type === "Expenses" && serviceCategory.getCategories()[i].visible){
-                categories.push({
-                    name: serviceCategory.getCategories()[i].name,
-                    icon: serviceCategory.getCategories()[i].icon,
-                    balance: `${serviceTransactions.getBalanceByCategoryId(serviceCategory.getCategories()[i].id)} ${symbol}`,
-                    id:  serviceCategory.getCategories()[i].id
+        let expensesCategories = [];
+        let categories = serviceCategoryRefactored.getCategories()
+        .concat(serviceCategoryRefactored.getSharedCategories());
+        for (let i = 0; i < categories.length; i++) {
+            let symbol = this.getCarenncySymbolForCategory(categories[i].id);
+            if(categories[i].type === "Expenses" && categories[i].visible){
+                expensesCategories.push({
+                    name: categories[i].name,
+                    icon: categories[i].icon,
+                    balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
+                    id:  categories[i].id
                 });
             }
         }
@@ -82,7 +90,7 @@ define({
             icnCategories: "icon",
             lblBalance: "balance"
         };
-        segment.setData(categories);
+        segment.setData(expensesCategories);
     },
 
     goToHistory: function(seguiWidget){
@@ -355,7 +363,7 @@ define({
                 categoryAnimProps.getAnimationStatus = true;
                 categoryAnimProps.timerIdMemory = '';
             }, 0.5, false);
-            
+
         }
     }
 });
