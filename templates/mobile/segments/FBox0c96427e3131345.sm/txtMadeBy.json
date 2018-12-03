@@ -2,6 +2,10 @@
     "@class": "com.kony.gen.viz.model.component.KVizRichText",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
     "_height_": {
         "type": "string",
         "value": "15dp"
@@ -22,27 +26,23 @@
         0,
         0
     ],
-    "_skin_": "sc0c63a33d9e48d2bd01e44ebb840925",
+    "_skin_": "se8122d42cfe43e493cbc7f3169b0f69",
     "_text_": "RichText",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_width_": {
         "type": "string",
-        "value": "180dp"
+        "value": "50%"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
     "containerId": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "txtFrom",
+    "id": "txtMadeBy",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "g778053ecf4b4cd9aa1f1b05249033ef",
-    "linkskin": "sbb94eebb18c407f9c3e8aaa008fdb1d",
+    "kuid": "eb517d20380d490cab649c5b8a31e914",
+    "linkskin": "s8f1776a6193465781fd3fdeecf5084a",
     "name": "kony.ui.RichText",
     "parent": "flxDetailsSection",
     "pf": "FBox0c96427e3131345",

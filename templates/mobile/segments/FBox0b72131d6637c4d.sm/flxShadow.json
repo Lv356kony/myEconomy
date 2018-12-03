@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "5dp"
     },
     "_left_": {
         "type": "string",
@@ -23,10 +23,10 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s1f99ac15d404ab99178f766b3986c6e",
+    "_skin_": "s7ec01f23d7e4a5dab2a386c81b8fb2f",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "55dp"
     },
     "_width_": {
         "type": "string",
@@ -35,28 +35,16 @@
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centery": {
-        "type": "string",
-        "value": "50%"
-    },
-    "children": [
-        "numDay",
-        "txtDay",
-        "txtDate",
-        "txtResult",
-        "imgSummary",
-        "imgCurrency",
-        "imgIsShared"
-    ],
+    "children": [],
     "clipbounds": true,
     "containerId": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxHeader",
+    "id": "flxShadow",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f7201c81938f44f4a3d8fab60c1cff91",
+    "kuid": "aecb70e31ef5491683fc966c6549607e",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "flxSectionHistory",

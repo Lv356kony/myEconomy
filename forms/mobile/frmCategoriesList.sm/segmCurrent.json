@@ -146,7 +146,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "150dp"
+        "value": "100%"
     },
     "_indicator_": "none",
     "_left_": {

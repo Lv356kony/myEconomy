@@ -17,7 +17,7 @@ define({
                           date: this.date});
         }        
     },
-    
+
     onNavigate: function(context) 
     {
         this.date = context.date;
@@ -25,46 +25,51 @@ define({
     },
 
     __showDetails: function(categoryId, date){
-        let incomes = this.filterByTypeOfTransaction("Income");
+        let incomes = this.getCategoriesByType("Income");
         let incomeIds = incomes.map(function(element){
             return element.id;
         });
-        let expByCat = '';
+        let expenseByCategory = '';
         this.view.btnDetailsSearch.text = 'Search';
         let fldDetailsSearch = this.view.fldDetailsSearch.text;
-        
+
         if(incomeIds.indexOf(this.categoryId) !== -1){
-            expByCat = this.getByCategoryIdFrom(this.categoryId);
+            expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
         }else{
-            expByCat = serviceTransactions.getByCategoryId(categoryId);
+            expenseByCategory = serviceTransactions.getByCategoryId(categoryId);
         }
 
         let data = [];
-        for(let i = 0; i < expByCat.length; i++){
-			
-            var expDate = `${expByCat[i].date.getDate()} ${getMonth[expByCat[i].date.getMonth()]} ${expByCat[i].date.getFullYear()}`;
+        for(let i = 0; i < expenseByCategory.length; i++){
+
+            var expDate = `${expenseByCategory[i].date.getDate()} ${getMonth[expenseByCategory[i].date.getMonth()]} ${expenseByCategory[i].date.getFullYear()}`;
             if(expDate === date){
+                let whoMadeTransaction = (expenseByCategory[i].user_id === CURRENT_USER.id) ? 
+                    `by: ${userServiceRefactored.getById(CURRENT_USER.id).email}` : `by: ${userServiceRefactored.getById(expenseByCategory[i].user_id).email}`;
                 let rowData = {
-                    id: expByCat[i].id,
-                    from: this.getCategoryName(expByCat[i].from),
-                    commentary: expByCat[i].commentary,
-                    expense: serviceCategory.getById(this.categoryId).type === 'Income' ? 
-                    						expByCat[i].fromAmount.toString() : 
-                    						expByCat[i].toAmount.toString(),
-                    to: this.getCategoryName(expByCat[i].to),
-                    date: expByCat[i].date.toString(),
-                    expenseTo: expByCat[i].toAmount.toString(),
+                    id: expenseByCategory[i].id,
+                    spender: whoMadeTransaction,
+                    from: this.getCategoryName(expenseByCategory[i].from),
+                    commentary: expenseByCategory[i].commentary,
+                    expense: (serviceCategoryRefactored.getById(this.categoryId).type === 'Income' || 
+                              serviceCategoryRefactored.getById(this.categoryId).currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ? 
+                    		  expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
+                    to: this.getCategoryName(expenseByCategory[i].to),
+                    date: expenseByCategory[i].date.toString(),
+                    expenseTo: (serviceCategoryRefactored.getById(this.categoryId).type === 'Income') ? 
+                    			expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
                     imgDol: this.setCurrencyIconInRow(this.categoryId)
                 };
+
                 if(fldDetailsSearch) {
                     let searchString = `${rowData.commentary} ${rowData.expense} ${rowData.from}`.toLowerCase();
                     let searchIndex = searchString.indexOf(fldDetailsSearch);
                     if(searchIndex !== -1) {
-                       data.push(rowData);  
-                       this.view.btnDetailsSearch.text = 'Reset';
+                        data.push(rowData);  
+                        this.view.btnDetailsSearch.text = 'Reset';
                     }
                 } else {
-                   data.push(rowData);  
+                    data.push(rowData);  
                 }
             }
         }
@@ -83,11 +88,12 @@ define({
         segDetails.widgetDataMap = {
             txtFrom: 'from',
             txtCommentary: 'commentary',
-            txtExpense: 'expense',
-            imgDollar: 'imgDol'
+            txtExpense: 'expenseTo',
+            imgDollar: 'imgDol',
+            txtMadeBy: 'spender'
         };
         segDetails.setData(data);
-        
+
     },
 
     hideEditForm: function(){
@@ -118,11 +124,10 @@ define({
     },
 
     setEditDefaultValues: function(){
-        let incomes = this.filterByTypeOfTransaction("Income");
+        let incomes = this.getCategoriesByType("Income");
         let incomeIds = incomes.map(function(element){
             return element.id;
         });
-
         if(incomeIds.indexOf(this.categoryId) !== -1){
             this.loadCategories("Income", 'lstBoxFrom');
             this.loadCategories("Current", 'lstBoxTo');          
@@ -132,14 +137,15 @@ define({
         }
         let selRowItems = this.view.segDetails.selectedRowItems;
         let categoriesFrom = this.view.lstBoxFrom.masterData;
-        let categoriesTo = this.view.lstBoxTo.masterData;
+        let categoriesTo = this.view.lstBoxTo.masterData; 
+        let date = new Date(this.date);
+
         this.view.lblTransactionId.text = selRowItems[0].id;
         this.view.lstBoxFrom.selectedKey = this.findCategoryKey(categoriesFrom, selRowItems[0].from);
         this.view.lstBoxTo.selectedKey = this.findCategoryKey(categoriesTo, selRowItems[0].to);
         this.view.inpExpense.text = selRowItems[0].expense;         
         this.view.inpExpenseTo.text = selRowItems[0].expenseTo;
         this.view.inpCommentary.text = selRowItems[0].commentary;
-        let date = new Date(this.date);
         this.view.calEdit.dateComponents = [date.getDate(), date.getMonth()+1, date.getFullYear()];     
         this.view.imgCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
         this.view.imgCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
@@ -204,7 +210,7 @@ define({
     },
 
     loadCategories: function(typeOfTransaction, listBoxId){
-        let categories = this.filterByTypeOfTransaction(typeOfTransaction);
+        let categories = this.getCategoriesByType(typeOfTransaction);
         let prepForList = [];
         for(var i = 0; i < categories.length; i++){
             let lblId = typeOfTransaction + i;
@@ -215,21 +221,23 @@ define({
         this.view[listBoxId].masterData = prepForList;
     },
 
-    filterByTypeOfTransaction: function(typeOfTransaction){
+    getCategoriesByType: function(typeOfTransaction){
+        let cetegoriesForCurrentUser = serviceCategoryRefactored.getWithSharedCategories();
         let categories = [];
-        for(let i = 0; i < DATA.categories.length; i++){
-            if(typeOfTransaction === DATA.categories[i].type){
-                categories.push(DATA.categories[i]);
+        for(let i = 0; i < cetegoriesForCurrentUser.length; i++){
+            if(typeOfTransaction === cetegoriesForCurrentUser[i].type){
+                categories.push(cetegoriesForCurrentUser[i]);
             }
         }
         return categories;
-    }, 
+    },
 
-    getByCategoryIdFrom: function(categoryId){
-        let transaction =[];
-        for(let i = 0; i < DATA.transactions.length; i++){
-            if(categoryId === DATA.transactions[i].from){
-                transaction.push(DATA.transactions[i]);
+    getTransactionsByKeyFrom: function(categoryId){
+        let transactionsForCurrentUser = serviceTransactionsRefactored.getAll();
+        let transaction = [];
+        for(let i = 0; i < transactionsForCurrentUser.length; i++){
+            if(categoryId === transactionsForCurrentUser[i].from){
+                transaction.push(transactionsForCurrentUser[i]);
             }
         }
         return transaction;
@@ -244,17 +252,17 @@ define({
         let category = DATA.categories.find(category => category.id === id);
         return category.name;
     },
-    
+
     setCurrencyIconInRow: function(categoryId) {
         let currency = serviceCategory.getCurrencyById(categoryId);
         return this.setCurrency(currency);
     },
-    
+
     setCurrencyIconInDetails: function(categoryName) {
         let currency = serviceCategory.getCurrencyByCatName(categoryName);
         return this.setCurrency(currency);
     },
-    
+
     setCurrency: function(currency) {
         switch (currency){
             case 'UAH':

@@ -33,6 +33,16 @@ const serviceTransactionsRefactored = {
         });
     },
 
+    getAllByType: function(categoryId, type, fromOrTo){
+        let transactions = [];
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i][type] === categoryId){
+                transactions.push(DATA.transactions[i][fromOrTo]);
+            }
+        }
+        return transactions;
+    },
+
     getAllExternalIntoSharedForMeCategories: function () {
         let categoriesId = serviceCategoryRefactored.getSharedCategories().map(i => i.id);
         return DATA.transactions.filter(transaction => {
@@ -100,7 +110,7 @@ const serviceCategoryRefactored = {
         return parseFloat(categoryBalance.toFixed(2));
     },
 
-  	//Argument "allTransactions" only for calculate getCurrentBalance
+    //Argument "allTransactions" only for calculate getCurrentBalance
     getIncomeBalance: function(allTransactions){
         let incomes = 0.00;
         let transactionsWithoutShare = serviceTransactionsRefactored.getAll();
@@ -147,7 +157,7 @@ const serviceCategoryRefactored = {
                 }
             }
         }
-        return current;
+        return parseFloat(current.toFixed(2));
     },
 
     //If "allTransactions" = true then function will return balance with external transactions into shared categories
@@ -182,6 +192,16 @@ const serviceCategoryRefactored = {
         let categories = [];
         for(let i = 0; i < DATA.categories.length; i++) {
             if(DATA.categories[i].user_id === CURRENT_USER.id) {
+                categories.push(DATA.categories[i]);
+            }
+        }
+        return categories;
+    },
+
+    getWithSharedCategories: function() {
+        let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++) {
+            if(DATA.categories[i].user_id === CURRENT_USER.id || DATA.categories[i].sharedUsers_id.indexOf(CURRENT_USER.id) !== -1) {
                 categories.push(DATA.categories[i]);
             }
         }
