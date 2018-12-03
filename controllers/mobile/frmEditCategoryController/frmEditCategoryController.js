@@ -1,9 +1,7 @@
 define({ 
-    
     onNavigate: function(context) {
         this.categoryId = context.categoryId;
         this.context = context;
-         
     },
     
     goToHistory: function() {
@@ -17,19 +15,18 @@ define({
     refresh: function(){
         navToForm("frmEditCategory", {categoryId: this.categoryId});
         this.view.txbEditCategoryShare.text = '';
-        alert('refresh');
     },
     
     onPreShow: function() {
         this.showDefaultValues(this.categoryId);
         let category = serviceCategoryRefactored.getById(this.categoryId);
-       
         if(category.type === CATEGORY_TYPES.INCOME) {
             this.hideSharedField();
         }
-//         if(category.user_id !== CURRENT_USER.id) {
-//             this.view.lblEditCategoryCreator.text = `Creator: `;
-//         }
+        if(category.sharedUsers_id.indexOf(id => CURRENT_USER.id === id) !== -1) {
+            let creator = userServiceRefactored.getById(CURRENT_USER).firstName;
+            this.view.lblEditCategoryCreator.text = `Creator: ${creator}`;
+        }
     },
     
     showDefaultValues: function(id) {

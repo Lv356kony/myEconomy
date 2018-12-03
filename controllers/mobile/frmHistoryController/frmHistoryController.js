@@ -35,7 +35,6 @@ define({
         if(incomes.indexOf(this.categoryId) !== -1){
             expByCat = this.getByCategoryIdFrom(this.categoryId);
         }else if(currents.indexOf(this.categoryId) !== -1){
-            alert(currents);
             this.showCurrent();
             this.view.fldHistorySearch.text = '';
             return;
@@ -164,7 +163,6 @@ define({
         let currents = this.filterByTypeOfTransaction("Current");
         let fldHistorySearch = this.view.fldHistorySearch.text;
         this.view.btnHistorySearch.text = 'Search';
-		alert(currents);
         let dates = []; 
 
         let day = getDay[now.getDay()];

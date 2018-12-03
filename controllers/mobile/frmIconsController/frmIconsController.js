@@ -13,7 +13,6 @@ define({
         target.navigate({
             categoryId: this.categoryId,
             chosenIconSrc: null
-
         });
     },
     
