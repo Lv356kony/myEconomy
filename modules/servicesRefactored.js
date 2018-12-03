@@ -151,8 +151,7 @@ const serviceCategoryRefactored = {
     getCurrentBalance: function(allTransactions){
         let current = this.getIncomeBalance(allTransactions) - this.getExpenseBalance();
         if(allTransactions){
-            let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
-            .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
+            let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories();
             let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
             for(let i = 0; i < externalTransations.length; i++){
                 if(this.getById(externalTransations[i].from).type === CATEGORY_TYPES.CURRENT &&

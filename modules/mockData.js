@@ -473,14 +473,14 @@ Object.assign(DATA, {
             date: new Date('August 11, 2018 23:15:30'),
             commentary: ''
         },	{
-                     id: 35,
-                     from: 6,
-                     fromAmount: 1100,
-                     to: 7,
-                     toAmount: 30800,
-                     user_id: 1,
-                     date: new Date('December 01, 2018 23:15:30'),
-                     commentary: 'Зарплата'
-                 }
+            id: 35,
+            from: 6,
+            fromAmount: 1100,
+            to: 7,
+            toAmount: 30800,
+            user_id: 1,
+            date: new Date('December 01, 2018 23:15:30'),
+            commentary: 'Зарплата'
+        }
     ]
 });
