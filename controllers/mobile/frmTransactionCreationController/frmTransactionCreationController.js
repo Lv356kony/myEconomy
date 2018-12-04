@@ -53,19 +53,17 @@ define({
         }
     },
 
-
     getDataForListBox: function (categoryType) {
-        const category = serviceCategoryRefactored.getCategories();
+        let category = serviceCategory.getCategories();
         const sharedCategories = serviceCategoryRefactored.getSharedCategories();
-        alert(sharedCategories);
-        let dataForFrom = category
+        let dataForFrom = category.concat(sharedCategories)
         .filter((obj) => {
             if (obj.type === categoryType) {
                 return obj;
             }
         })
-        .map((obj, i) => {
-            return[i, obj.name];
+        .map((obj) => {
+            return[obj.id, obj.name];
         });
         return dataForFrom;
     },
@@ -73,14 +71,15 @@ define({
 
     setListBoxData: function () {
         let category = serviceCategory.getCategories();
-        // add shared categories
         let listBoxFrom = this.view.lstTransactionFrom;
         let listBoxTo = this.view.lstTransactionTo;
         let dataFrom = [];
         let dataTo = [];
         if (this.category === CATEGORY_TYPES.EXPENSE) {
             dataFrom = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
-            dataTo = this.getDataForListBox(CATEGORY_TYPES.EXPENSE);
+            dataTo = this.getDataForListBox(CATEGORY_TYPES.EXPENSE)
+                			.concat(this.getDataForListBox(CATEGORY_TYPES.CURRENT));
+            alert(dataTo);
         } else {
             dataFrom = this.getDataForListBox(CATEGORY_TYPES.INCOME);
             dataTo = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
@@ -99,7 +98,8 @@ define({
         } else if (type === "to"){
             selectedItem = this.view.lstTransactionTo.selectedKeyValue;
         }
-        let categories = serviceCategory.getCategories();
+        let categories = serviceCategory.getCategories()
+        .concat(serviceCategoryRefactored.getSharedCategories());
         let cuurentCategory = {};
         for(let i = 0; i < categories.length; i++) {
             if(selectedItem[1] === categories[i].name){
