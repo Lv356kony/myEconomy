@@ -1,5 +1,4 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
@@ -11,45 +10,51 @@
         "value": "0dp"
     },
     "_margin_": [
-        6,
-        6,
-        6,
-        6
+        0,
+        0,
+        0,
+        0
     ],
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_skin_": "s78c4c94c68f45a1ab3e8cd9fb2eb754",
-    "_text_": "Button",
+    "_percent_": true,
+    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
         "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "50%"
+        "value": "60dp"
     },
+    "allboxes": [],
+    "autogrowmode": 0,
     "canUpdateUI": true,
-    "containerId": true,
+    "children": [
+        "imgExpHistory"
+    ],
+    "clipbounds": true,
     "containerweight": 100,
-    "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "sbe987a2b9a446a586fe227729c03fee"
-    },
-    "displaytext": true,
-    "id": "btnDetailsEdit",
+    "enablescrolling": true,
+    "id": "flxExpHistoryImage",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "eede53fc3f1e4ed181ec0a43307bbc82",
-    "name": "kony.ui.Button",
-    "parent": "flxDetailsUD",
-    "pf": "FBox0c96427e3131345",
+    "kuid": "j9c74f3fcc3a46b381fcaa7bb3c0f472",
+    "layouttype": 2,
+    "name": "kony.ui.FlexContainer",
+    "parent": "flxExpHistorySection",
+    "pf": "frmCategoriesList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "Button",
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
     "zindex": 1
 }

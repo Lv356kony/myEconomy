@@ -1,0 +1,139 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTable",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_data_": [
+        {
+            "col1": "0.00",
+            "col2": "0.00",
+            "col3": "0.00"
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "android": {
+        "psp": {
+            "gridlineColor": "ffffff00"
+        }
+    },
+    "canUpdateUI": true,
+    "cellBorder": "4px solid #ffffff",
+    "columnheadersconfig": [
+        {
+            "columnContentAlignment": 5,
+            "columnHeaderTemplate": null,
+            "columnHeaderText": "MIN INCOME",
+            "columnHeaderType": "text",
+            "columnID": "col1",
+            "columnOnClick": null,
+            "columnText": "Not Defined",
+            "columnType": "text",
+            "columnWidthInPercentage": 33,
+            "ide_onClick": null,
+            "isColumnSortable": false,
+            "kuid": "b71b56c16a0b4ff4b9f365701b66606b"
+        },
+        {
+            "columnContentAlignment": 5,
+            "columnHeaderTemplate": null,
+            "columnHeaderText": "AVG INCOME",
+            "columnHeaderType": "text",
+            "columnID": "col2",
+            "columnOnClick": null,
+            "columnText": "Not Defined",
+            "columnType": "text",
+            "columnWidthInPercentage": 34,
+            "ide_onClick": null,
+            "isColumnSortable": false,
+            "kuid": "fa49ea9b89a04c2ca0568c45bcbe7c5b"
+        },
+        {
+            "columnContentAlignment": 5,
+            "columnHeaderTemplate": null,
+            "columnHeaderText": "MAX INCOME",
+            "columnHeaderType": "text",
+            "columnID": "col3",
+            "columnOnClick": null,
+            "columnText": "Not Defined",
+            "columnType": "text",
+            "columnWidthInPercentage": 33,
+            "ide_onClick": null,
+            "isColumnSortable": false,
+            "kuid": "c5385ac22af5487782c324171639a774"
+        }
+    ],
+    "columnids": [
+        "col1",
+        "col2",
+        "col3"
+    ],
+    "columntype": [
+        "text",
+        "text",
+        "text"
+    ],
+    "containerweight": 100,
+    "contentalignment": 5,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmExpensesHistory",
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "counter": "02",
+    "focusedindex": null,
+    "focuseditem": null,
+    "gridlinestyle": "solid",
+    "headerskin": "s48007d1e4404efabc39ce7609f62d1e",
+    "id": "grdIncome",
+    "info": null,
+    "iscustomlayout": false,
+    "ismultiselect": false,
+    "isvisible": true,
+    "kuid": "f24d79adae4640b5bb282830c4ca6ca8",
+    "name": "kony.ui.DataGrid",
+    "parent": "flxForIncomeGrid",
+    "pf": "frmExpensesHistory",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "rowalternateskin": "s61e04c2e4f04bfe88a1b3e9b8604445",
+    "rowcount": 1,
+    "rowfocusskin": "sc058eef533946bea2ce5732ced45fb6",
+    "rownormalskin": "s7842cdc6df3481d95a846609122a0a1",
+    "selectedcellindex": null,
+    "selectedcellitem": null,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditem": null,
+    "selecteditems": null,
+    "showcolumnheaders": true,
+    "wType": "DataGrid",
+    "zindex": 1
+}

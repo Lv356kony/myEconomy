@@ -411,5 +411,5 @@ function validatePassword(string){
 
 function calculate(from, to, value) {
     let key = from + "_" + to;
-    return value*EXCHANGELIST[key];
+    return parseFloat((value*EXCHANGELIST[key]).toFixed(2));
 }

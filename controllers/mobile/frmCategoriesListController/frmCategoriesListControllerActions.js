@@ -5,7 +5,7 @@ define({
     /** onRowClick defined for segmExpenses **/
     AS_Segment_f353746986dd4760aa4632d92f13dc00: function AS_Segment_f353746986dd4760aa4632d92f13dc00(eventobject, sectionNumber, rowNumber) {
         var self = this;
-        return self.goToHistory.call(this, eventobject);
+        return self.goToHistory.call(this, eventobject, sectionNumber, rowNumber);
     },
     /** onClick defined for flxAddExpenses **/
     AS_FlexContainer_e1f8bac1ba84451a855e2ea89fec8761: function AS_FlexContainer_e1f8bac1ba84451a855e2ea89fec8761(eventobject) {
@@ -85,6 +85,15 @@ define({
     AS_Button_b2250ed362804eb791f0032738f080c6: function AS_Button_b2250ed362804eb791f0032738f080c6(eventobject, x, y) {
         var self = this;
         return self.goToSettings.call(this);
+    },
+    /** onDownloadComplete defined for imgExpHistory **/
+    AS_Image_d574e963b94b4df38c53861cc766e486: function AS_Image_d574e963b94b4df38c53861cc766e486(eventobject, imagesrc, issuccess) {
+        var self = this;
+    },
+    /** onTouchEnd defined for btnExpHistory **/
+    AS_Button_h39b7ecf56e1468385787ccbd24fc3b7: function AS_Button_h39b7ecf56e1468385787ccbd24fc3b7(eventobject, x, y) {
+        var self = this;
+        return self.goToExpensesHistory.call(this);
     },
     /** onClick defined for btnHideMenu **/
     AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a: function AS_Button_b6f3601e45bb4dbda75c1e7834e11d7a(eventobject) {

@@ -4,6 +4,11 @@ const CATEGORY_TYPES = {
     EXPENSE: 'Expenses'
 };
 
+let DATE = {
+    	month: new Date().getMonth(),
+    	year: new Date().getFullYear()
+};
+
 const serviceTransactionsRefactored = {
 
     getByCategoryId: function(categoryId){
@@ -31,6 +36,16 @@ const serviceTransactionsRefactored = {
                 return element;
             }
         });
+    },
+
+    getAllByType: function(categoryId, type, fromOrTo){
+        let transactions = [];
+        for(let i = 0; i < DATA.transactions.length; i++){
+            if(DATA.transactions[i][type] === categoryId){
+                transactions.push(DATA.transactions[i][fromOrTo]);
+            }
+        }
+        return transactions;
     },
 
     getAllExternalIntoSharedForMeCategories: function () {
@@ -136,8 +151,7 @@ const serviceCategoryRefactored = {
     getCurrentBalance: function(allTransactions){
         let current = this.getIncomeBalance(allTransactions) - this.getExpenseBalance();
         if(allTransactions){
-            let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
-            .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
+            let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories();
             let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
             for(let i = 0; i < externalTransations.length; i++){
                 if(this.getById(externalTransations[i].from).type === CATEGORY_TYPES.CURRENT &&
@@ -204,6 +218,16 @@ const serviceCategoryRefactored = {
         return categories;
     },
 
+    getWithSharedCategories: function() {
+        let categories = [];
+        for(let i = 0; i < DATA.categories.length; i++) {
+            if(DATA.categories[i].user_id === CURRENT_USER.id || DATA.categories[i].sharedUsers_id.indexOf(CURRENT_USER.id) !== -1) {
+                categories.push(DATA.categories[i]);
+            }
+        }
+        return categories;
+    },
+
     getCurrencyById: function(categoryId) {
         return this.getById(categoryId).currency;
     },
@@ -251,7 +275,6 @@ const serviceCategoryRefactored = {
     },
 
     getSharedCategories: function () {
-        let sharedCategories = [];
         let categories = DATA.categories.filter((category) => {
             if (~category.sharedUsers_id.indexOf(CURRENT_USER.id)){
                 return category;

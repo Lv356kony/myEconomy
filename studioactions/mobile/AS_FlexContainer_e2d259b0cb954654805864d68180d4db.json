@@ -1,0 +1,21 @@
+{
+    "AS_FlexContainer_e2d259b0cb954654805864d68180d4db": {
+        "id": "AS_FlexContainer_e2d259b0cb954654805864d68180d4db",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_fe87d507028d4ccb8e22382df2a139df",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "outcomeClick",
+            "display": "outcomeClick",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

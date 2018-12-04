@@ -36,7 +36,10 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxBalance"
+        "flxBalance",
+        "flxPreviousMonth",
+        "flxNextMonth",
+        "flxDateName"
     ],
     "clipbounds": true,
     "containerweight": 100,

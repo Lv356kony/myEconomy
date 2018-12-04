@@ -45,7 +45,8 @@
         "txtDate",
         "txtResult",
         "imgSummary",
-        "imgDollar"
+        "imgCurrency",
+        "imgIsShared"
     ],
     "clipbounds": true,
     "containerId": true,

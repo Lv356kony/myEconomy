@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "25dp"
+        "value": "15dp"
     },
     "_left_": {
         "type": "string",
@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "containerId": true,
     "containerweight": 100,
-    "contentalignment": 7,
+    "contentalignment": 4,
     "id": "txtFrom",
     "info": null,
     "iscustomlayout": false,

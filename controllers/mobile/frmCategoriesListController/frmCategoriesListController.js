@@ -27,8 +27,7 @@ define({
         let currentCategories = [];
         let categories = serviceCategoryRefactored.getCategories()
         .concat(serviceCategoryRefactored.getSharedCategories());
-        let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
-        .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
+        let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories();
         for (let i = 0; i < categories.length; i++) {
             let symbol = this.getCarenncySymbolForCategory(categories[i].id);
             if(categories[i].type === "Current" && categories[i].visible){
@@ -103,6 +102,12 @@ define({
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmStatistics");
     },
+
+    goToExpensesHistory: function(){
+        this.view.flxSideMenuContainer.left = '-100%';
+        navToForm("frmExpensesHistory");
+    },
+
     goToSettings: function(){
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmSettings");

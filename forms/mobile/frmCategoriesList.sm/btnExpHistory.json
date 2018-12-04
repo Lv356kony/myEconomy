@@ -1,0 +1,53 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s0f946c6d9bb40d5a8bdad7d0caca14b",
+    "_text_": "Exchange History",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "contentalignment": 5,
+    "displaytext": true,
+    "focusskin": "s1901fcac8f447b39705b120badbd2e6",
+    "id": "btnExpHistory",
+    "ide_onTouchEnd": "AS_Button_h39b7ecf56e1468385787ccbd24fc3b7",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "ef6b60ca4d58494f82346b04dee5b666",
+    "name": "kony.ui.Button",
+    "parent": "flxExpHistoryText",
+    "pf": "frmCategoriesList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "wType": "Button",
+    "zindex": 1
+}
