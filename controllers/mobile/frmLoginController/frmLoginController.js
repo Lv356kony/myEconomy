@@ -59,6 +59,7 @@ define({
                 this.view.flxLogin.flxRegistration.flxConfirmation.lblConfirmationError.text = result.error.message;
             } 
         } else {
+            this.createDefaultCategories(result);
             this.view.flxLogin.flxRegistration.isVisible=false; 
             this.view.flxLogin.flxButtonLogin.isVisible=true;
 
@@ -87,10 +88,10 @@ define({
         this.view.flxLogin.flxButtonLogin.isVisible=false;
         this.view.flxLogin.flxCreateAccount.isVisible=false;
         this.view.flxLogin.flxRegistration.isVisible=true;
-        
+
         this.view.flxLogin.flxEmail.txtEmail.setFocus(true);
-        
-        
+
+
 
     },
 
@@ -119,8 +120,62 @@ define({
     cleanConfPasswordError(){
         this.view.flxLogin.flxRegistration.flxConfirmation.lblConfirmationError.text ='';
 
+    },
+
+    createDefaultCategories: function (userId) {
+        let namesAndIcons = [
+            {
+                name: 'Groceries',
+                icon : 'bill.png',
+                type: 'Expenses'
+            },
+            {
+                name: 'Home',
+                icon : 'home.png',
+                type: 'Expenses'
+            },
+            {
+                name: 'Transport',
+                icon : 'car.png',
+                type: 'Expenses'
+            },
+            {
+                name: 'Cafe',
+                icon : 'cocktail.png',
+                type: 'Expenses'
+            },
+            {
+                name: 'Games',
+                icon : 'gamecontroller.png',
+                type: 'Expenses'
+            },
+            {
+                name: 'Salary',
+                icon : 'dollar.png',
+                type: 'Income'
+            },
+            {
+                name: 'Bank',
+                icon : 'bank.png',
+                type: 'Current'
+            }
+        ];
+        namesAndIcons.forEach(arr => {
+            let data = {
+                id: Date.now(),
+                icon: arr.icon,
+                name: arr.name,
+                type: arr.type,
+                currency: 'UAH',
+                user_id: userId,
+                sharedUsers_id: [],
+                visible: true 
+            };
+            serviceCategoryRefactored.create(data); 
+        });
+
     }
-    
+
 
 });
 
