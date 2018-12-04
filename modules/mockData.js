@@ -52,7 +52,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
-            sharedUsers_id: [],
+            sharedUsers_id: [1],
             visible: true
         },  {
             id: 2,
@@ -79,7 +79,7 @@ Object.assign(DATA, {
             type: 'Expenses',
             currency: 'UAH',
             user_id: 1,
-            sharedUsers_id: [2],
+            sharedUsers_id: [],
             visible: true
         },  {
             id: 5,
@@ -142,7 +142,7 @@ Object.assign(DATA, {
             type: 'Income',
             currency: 'USD',
             user_id: 2,
-            sharedUsers_id: [],
+            sharedUsers_id: [7],
             visible: true
         },  {
             id: 12,

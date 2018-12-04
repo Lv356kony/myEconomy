@@ -10,15 +10,20 @@ define({
                     name: categories[i].name,
                     icon: categories[i].icon,
                     balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
-                    id:  categories[i].id
+                    id:  categories[i].id,
+
+
+
                 });
             }
         }
+
         let segment = this.view.segmIncome;
         segment.widgetDataMap = {
             lblCategories: "name",
             icnCategories: "icon",
-            lblBalance: "balance"
+            lblBalance: "balance",
+            imgShare: ""
         };
         segment.setData(incomeCategories);
     },
@@ -27,7 +32,8 @@ define({
         let currentCategories = [];
         let categories = serviceCategoryRefactored.getCategories()
         .concat(serviceCategoryRefactored.getSharedCategories());
-        let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories();
+        let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
+        .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
         for (let i = 0; i < categories.length; i++) {
             let symbol = this.getCarenncySymbolForCategory(categories[i].id);
             if(categories[i].type === "Current" && categories[i].visible){
@@ -42,15 +48,28 @@ define({
                     name: categories[i].name,
                     icon: categories[i].icon,
                     balance: `${income - expenses} ${symbol}`,
-                    id:  categories[i].id
+                    id:  categories[i].id,
+                    sharedUsers_id: categories[i].sharedUsers_id,
+                    share: ""
                 });
             }
         }
+
+          currentCategories.forEach( (category) => {
+            let sharedUsers = category.sharedUsers_id.length;
+            if(  sharedUsers ){
+                category.share = "network.png";
+            } else {
+               category.share = "";
+            }    
+        });
+
         let segment = this.view.segmCurrent;
         segment.widgetDataMap = {
             lblCategories: "name",
             icnCategories: "icon",
-            lblBalance: "balance"
+            lblBalance: "balance",
+            imgShare: "share"
         };
         segment.setData(currentCategories);
     },
@@ -79,15 +98,28 @@ define({
                     name: categories[i].name,
                     icon: categories[i].icon,
                     balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
-                    id:  categories[i].id
+                    id:  categories[i].id,
+                    sharedUsers_id: categories[i].sharedUsers_id,
+                    share: ""
                 });
             }
         }
+
+        expensesCategories.forEach( (category) => {
+            let sharedUsers = category.sharedUsers_id.length;
+            if(  sharedUsers ){
+                category.share = "network.png";
+            } else {
+               category.share = "";
+            }    
+        });
+
         let segment = this.view.segmExpenses;
         segment.widgetDataMap = {
             lblCategories: "name",
             icnCategories: "icon",
-            lblBalance: "balance"
+            lblBalance: "balance",
+            imgShare: "share"
         };
         segment.setData(expensesCategories);
     },
@@ -102,12 +134,6 @@ define({
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmStatistics");
     },
-
-    goToExpensesHistory: function(){
-        this.view.flxSideMenuContainer.left = '-100%';
-        navToForm("frmExpensesHistory");
-    },
-
     goToSettings: function(){
         this.view.flxSideMenuContainer.left = '-100%';
         navToForm("frmSettings");
