@@ -416,7 +416,7 @@ const userServiceRefactored = {
         user.currency = "UAH";
         user.image = "";
         DATA.users.push(user);
-        return true;
+        return user.id;
     }
 };
 
