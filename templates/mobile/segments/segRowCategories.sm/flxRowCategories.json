@@ -41,7 +41,8 @@
     "children": [
         "lblCategories",
         "flxCategoriesImg",
-        "lblBalance"
+        "lblBalance",
+        "imgShare"
     ],
     "clipbounds": true,
     "containerId": true,
