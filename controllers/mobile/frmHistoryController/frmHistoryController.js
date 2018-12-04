@@ -212,7 +212,8 @@ define({
     },
 
     deleteWithTransactions: function(){
-        let transactionsForCurrentUser = serviceTransactions.getTransactionForCurrentUser();
+        let transactionsForCurrentUser = serviceTransactions.getTransactionForCurrentUser()
+        .concat(serviceTransactionsRefactored.getAllExternalIntoMySharedCategories());
         serviceCategory.deleteById(this.categoryId);
         for(let i = 0; i < transactionsForCurrentUser.length; i++){
             if(this.categoryId === transactionsForCurrentUser[i].from || this.categoryId === transactionsForCurrentUser[i].to){

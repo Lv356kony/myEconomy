@@ -334,7 +334,7 @@ const userService = {
         user.currency = "UAH";
         user.image = "";
         DATA.users.push(user);
-        return true;
+        return user.id;
     }
 };
 
