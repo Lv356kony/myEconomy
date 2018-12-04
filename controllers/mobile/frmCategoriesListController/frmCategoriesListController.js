@@ -49,11 +49,21 @@ define({
                 });
             }
         }
+        
+        
+        
+
         currentCategories.forEach( (category) => {
             let sharedUsers = category.sharedUsers_id.length;
             if(  sharedUsers ){
-                category.share = "network.png";
-            } else {
+                let userId = CURRENT_USER.id;
+               let search = ~category.sharedUsers_id.indexOf(userId);
+                if(search){
+                    category.share = "tomeshare.png"; 
+                } else 
+                category.share = "ishare.png";
+            } 
+            else {
                category.share = "";
             }    
         });
@@ -101,7 +111,12 @@ define({
         expensesCategories.forEach( (category) => {
             let sharedUsers = category.sharedUsers_id.length;
             if(  sharedUsers ){
-                category.share = "network.png";
+                let userId = CURRENT_USER.id;
+               let search = ~category.sharedUsers_id.indexOf(userId);
+                if(search){
+                    category.share = "tomeshare.png"; 
+                } else 
+                category.share = "ishare.png";
             } else {
                category.share = "";
             }    
