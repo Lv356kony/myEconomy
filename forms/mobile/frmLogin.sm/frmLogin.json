@@ -34,7 +34,8 @@
     "children": [
         "flxImage",
         "flxLogin",
-        "flxLoader"
+        "flxLoader",
+        "flxRegistration"
     ],
     "containerweight": 100,
     "controllerInfo": {

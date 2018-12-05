@@ -37,10 +37,11 @@
     },
     "children": [
         "flxEmail",
+        "flxEmailError",
         "flxPassword",
-        "flxCreateAccount",
+        "flxPasswordError",
         "flxButtonLogin",
-        "flxRegistration"
+        "flxCreateAccount"
     ],
     "clipbounds": true,
     "containerweight": 100,
@@ -50,7 +51,7 @@
     "iscustomlayout": false,
     "isvisible": true,
     "kuid": "aaef07d562744049b6d7e73fd26ad261",
-    "layouttype": 2,
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
     "parent": "frmLogin",
     "pf": "frmLogin",

@@ -3,7 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "35dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -19,7 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s8d1752ecd8a4cfe8a62b090f2f067d7",
+    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -36,16 +40,16 @@
         "value": "50%"
     },
     "children": [
-        "txtConfirmation"
+        "lblConfirmationError"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxConfirmation",
+    "id": "flxConfirmationError",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "d3cf357f37744de7b68e6cf8b2f290bb",
+    "isvisible": false,
+    "kuid": "c146de61c8b84ac4936b82e6db7ec695",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
     "parent": "flxRegistration",
@@ -55,6 +59,5 @@
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1,
-    "zindex": 1
+    "widgetalignment": 1
 }

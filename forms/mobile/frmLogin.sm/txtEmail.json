@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "100%"
     },
     "_margin_": [
         0,
@@ -23,11 +23,11 @@
     "_text_": "antti.raatali@gmail.com",
     "_top_": {
         "type": "number",
-        "value": "0"
+        "value": 0
     },
     "_width_": {
         "type": "string",
-        "value": "250dp"
+        "value": "100%"
     },
     "android": {},
     "autocapitalize": "none",
@@ -37,7 +37,7 @@
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
-        "value": "49.95%"
+        "value": "50%"
     },
     "containerheight": "",
     "containerheightmode": 1,
