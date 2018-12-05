@@ -7,6 +7,18 @@ function navToForm(formName, data){
     }
 }
 
+const service = {
+    integration: undefined
+};
+
+function initServices(){
+    service.integration = kony.sdk.getCurrentInstance().getIntegrationService("CurrenciesAPI");
+}
+
+function getIntegrationService(){
+    return service.integration;
+}
+
 var getMonth = {'0': 'January', '1': 'February', '2': 'March', '3': 'April', '4': 'May',
                 '5': 'June', '6': 'July', '7': 'August', '8': 'September',
                 '9': 'October', '10': 'November', '11': 'December'};
@@ -185,7 +197,7 @@ const serviceCategory = {
     },
 
     getCurrencyById: function(categoryId) {
-   		return this.getById(categoryId).currency;
+        return this.getById(categoryId).currency;
     },
 
     getCurrencyByCatName: function(categoryName) {
@@ -208,9 +220,9 @@ const serviceCategory = {
         return element;
     },
 
-//     shareCategory: function (categotyId, userId) {
-//         this.getById(categotyId).sharedUsers_id.push(userId);
-//     }
+    //     shareCategory: function (categotyId, userId) {
+    //         this.getById(categotyId).sharedUsers_id.push(userId);
+    //     }
 };
 
 const userService = {
@@ -365,32 +377,44 @@ const serviceCurrencies = {
     },
 
     getCurrencies: function(currencySubsets){
-        currencySubsets.forEach(pairs => {
-            let requestURL = 'http://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
-            let xhr = new kony.net.HttpRequest();
-            xhr.open(constants.HTTP_METHOD_GET, requestURL);
-            xhr.onReadyStateChange = function(){
-                try
-                {
-                    if(xhr.readyState == 4)
-                    {
-                        let exchangeSet = xhr.response;
-                        for(let currencyPair in exchangeSet){
-                            for(let exchangeRate in exchangeSet[currencyPair]){
-                                EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
-                            }
-                        }
-                    }
-                }
-                catch(err)
-                {
-                    alert("exception is :: " + err);
-                }
+        let requestData = currencySubsets.join(',');
+        alert(requestData);
+        let currencyService = getIntegrationService();
+        currencyService.invokeOperation("convert", null, {pairs: requestData}, 
+            function(response){
+                alert(response);
+            }, 
+            function(error){
+                alert('Integration service error' + JSON.stringify(error));
+            }
+        );
 
-            };
-            xhr.send();
-        });
 
+//         currencySubsets.forEach(pairs => {
+//             let requestURL = 'http://free.currencyconverterapi.com/api/v6/convert?q=' + pairs + '&compact=y';
+//             let xhr = new kony.net.HttpRequest();
+//             xhr.open(constants.HTTP_METHOD_GET, requestURL);
+//             xhr.onReadyStateChange = function(){
+//                 try
+//                 {
+//                     if(xhr.readyState == 4)
+//                     {
+//                         let exchangeSet = xhr.response;
+//                         for(let currencyPair in exchangeSet){
+//                             for(let exchangeRate in exchangeSet[currencyPair]){
+//                                 EXCHANGELIST[currencyPair] = exchangeSet[currencyPair][exchangeRate];
+//                             }
+//                         }
+//                     }
+//                 }
+//                 catch(err)
+//                 {
+//                     alert("exception is :: " + err);
+//                 }
+
+//             };
+//             xhr.send();
+//         });
     }
 };
 

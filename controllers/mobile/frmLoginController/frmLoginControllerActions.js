@@ -36,5 +36,10 @@ define({
     AS_TextField_f13b47716e9c4e57910f748fd332a1f8: function AS_TextField_f13b47716e9c4e57910f748fd332a1f8(eventobject, changedtext) {
         var self = this;
         return self.cleanConfPasswordError.call(this);
+    },
+    /** postShow defined for frmLogin **/
+    AS_Form_d6fb3c209f0544a58cc3a952c687c593: function AS_Form_d6fb3c209f0544a58cc3a952c687c593(eventobject) {
+        var self = this;
+        return initServices.call(this);
     }
 });
