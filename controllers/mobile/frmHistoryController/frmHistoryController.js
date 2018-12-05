@@ -8,10 +8,6 @@ define({
     },
 
     goToHistoryDetails: function(){  
-//         let currents = this.getCategoriesByType("Current");
-//         if(currents.indexOf(this.categoryId) !== -1){
-//             return;
-//         }
         let transDetails = this.view.segHistoryExpense.selectedRowItems;
         navToForm("frmHistoryDetails", {categoryId: this.categoryId,
                                         date: `${transDetails[0].numDay} ${transDetails[0].date}`});
@@ -35,21 +31,19 @@ define({
         if(incomes.indexOf(this.categoryId) !== -1){
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
         } else if(currents.indexOf(this.categoryId) !== -1){
-            expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);
-//             this.showCurrent();
-            
+            expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);          
             this.checkIfOwner();
             this.view.fldHistorySearch.text = '';
-//             return;
+
         }else {
             expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);
         }
-        this.showExpenses(expenseByCategory);
+        this.showHistory(expenseByCategory);
         this.view.fldHistorySearch.text = '';
         this.checkIfOwner();
     },
 
-    showExpenses: function(data) {
+    showHistory: function(data) {
         let expenseByCategory = this.sortTransactions(data);
         let dates = []; 
         let fldHistorySearch = this.view.fldHistorySearch.text;
@@ -158,47 +152,6 @@ define({
         let transactionsFromCurrentCategory = initFrom.concat(serviceTransactionsRefactored.getAllByType(this.categoryId, 'from', 'fromAmount'));
         let result = transactionsToCurrentCategory.reduce((prev, curr) => prev + curr) - transactionsFromCurrentCategory.reduce((prev, curr) => prev + curr);
         return result.toFixed(2);
-    },
-
-    showCurrent: function(){
-        let now = new Date();
-        let currents = this.getCategoriesByType("Current");
-        let fldHistorySearch = this.view.fldHistorySearch.text;
-        this.view.btnHistorySearch.text = 'Search';
-        let dates = [];
-
-        let day = getDay[now.getDay()];
-        let numDay = now.getDate().toString();
-        let date = getMonth[now.getMonth()] + ' ' + now.getFullYear();
-        let imgTotal = 'sum.png';
-        let imgCurrency = this.setCurrencyIcon(this.categoryId);
-        let sum = this.getCurrentBalance();
-
-        if(fldHistorySearch) {
-            let searchString = `${day} ${numDay} ${date} ${sum}`.toLowerCase();
-            let searchIndex = searchString.indexOf(fldHistorySearch);
-            if(searchIndex !== -1) {
-                dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency});
-                this.view.btnHistorySearch.text = 'Reset';
-            } else {
-                alert('No matches. Try ro find something different.');
-            	this.view.btnHistorySearch.text = 'Reset';
-            }
-        } else {
-            dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency});
-        }
-
-        let segHistoryExpense = this.view.segHistoryExpense;
-        segHistoryExpense.widgetDataMap = {
-            numDay: 'numDay',
-            txtDay: 'day',
-            txtDate: 'date',
-            txtResult: 'sum',
-            imgSummary: 'imgTotal',
-            imgCurrency: 'imgCurrency',
-            imgIsShared: 'isShared'
-        };
-        segHistoryExpense.setData(dates);
     },
 
     setCurrencyIcon: function(categoryId) {
