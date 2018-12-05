@@ -18,7 +18,8 @@ define({
         segment.widgetDataMap = {
             lblCategories: "name",
             icnCategories: "icon",
-            lblBalance: "balance"
+            lblBalance: "balance",
+            imgShare: ""
         };
         segment.setData(incomeCategories);
     },
@@ -42,15 +43,37 @@ define({
                     name: categories[i].name,
                     icon: categories[i].icon,
                     balance: `${income - expenses} ${symbol}`,
-                    id:  categories[i].id
+                    id:  categories[i].id,
+                    sharedUsers_id: categories[i].sharedUsers_id,
+                    share: ""
                 });
             }
         }
+        
+        
+        
+
+        currentCategories.forEach( (category) => {
+            let sharedUsers = category.sharedUsers_id.length;
+            if(  sharedUsers ){
+                let userId = CURRENT_USER.id;
+               let search = ~category.sharedUsers_id.indexOf(userId);
+                if(search){
+                    category.share = "tomeshare.png"; 
+                } else 
+                category.share = "ishare.png";
+            } 
+            else {
+               category.share = "";
+            }    
+        });
+
         let segment = this.view.segmCurrent;
         segment.widgetDataMap = {
             lblCategories: "name",
             icnCategories: "icon",
-            lblBalance: "balance"
+            lblBalance: "balance",
+            imgShare: "share"
         };
         segment.setData(currentCategories);
     },
@@ -79,15 +102,31 @@ define({
                     name: categories[i].name,
                     icon: categories[i].icon,
                     balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
-                    id:  categories[i].id
+                    id:  categories[i].id,
+                    sharedUsers_id: categories[i].sharedUsers_id,
+                    share: ""
                 });
             }
         }
+        expensesCategories.forEach( (category) => {
+            let sharedUsers = category.sharedUsers_id.length;
+            if(  sharedUsers ){
+                let userId = CURRENT_USER.id;
+               let search = ~category.sharedUsers_id.indexOf(userId);
+                if(search){
+                    category.share = "tomeshare.png"; 
+                } else 
+                category.share = "ishare.png";
+            } else {
+               category.share = "";
+            }    
+        });
         let segment = this.view.segmExpenses;
         segment.widgetDataMap = {
             lblCategories: "name",
             icnCategories: "icon",
-            lblBalance: "balance"
+            lblBalance: "balance",
+            imgShare: "share"
         };
         segment.setData(expensesCategories);
     },

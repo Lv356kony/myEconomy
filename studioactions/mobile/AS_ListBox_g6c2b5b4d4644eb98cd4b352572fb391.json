@@ -23,6 +23,16 @@
             "callbackType": null,
             "disabled": null,
             "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___cbb680ab293945c6b62c6053d5f0575c",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "cleanFields",
+            "display": "cleanFields",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
         }]
     }
 }

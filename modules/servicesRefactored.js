@@ -285,6 +285,12 @@ const serviceCategoryRefactored = {
 };
 
 const userServiceRefactored = {
+    
+    getUserId: function(){
+        let userId =[]
+        
+    },
+    
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
