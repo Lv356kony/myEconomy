@@ -7,10 +7,6 @@
         "type": "string",
         "value": "30dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "270dp"
-    },
     "_margin_": [
         0,
         0,
@@ -23,6 +19,10 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "30dp"
+    },
     "_skin_": "s2691853b15d43b58e583dfd63ad7e02",
     "_src_": "imagedrag.png",
     "_width_": {
@@ -38,7 +38,7 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "segRowCategories",
+        "platform": "android",
         "templateType": "segments",
         "topLevelBox": null
     },

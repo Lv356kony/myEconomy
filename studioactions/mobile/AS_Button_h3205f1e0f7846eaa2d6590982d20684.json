@@ -1,0 +1,21 @@
+{
+    "AS_Button_h3205f1e0f7846eaa2d6590982d20684": {
+        "id": "AS_Button_h3205f1e0f7846eaa2d6590982d20684",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onClick_c3674d515dcf49b99f3b0b00945b0903",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "registration",
+            "display": "registration",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

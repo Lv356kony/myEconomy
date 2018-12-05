@@ -50,18 +50,15 @@ define({
             }
         }
         
-        
-        
-
         currentCategories.forEach( (category) => {
             let sharedUsers = category.sharedUsers_id.length;
             if(  sharedUsers ){
                 let userId = CURRENT_USER.id;
                let search = ~category.sharedUsers_id.indexOf(userId);
                 if(search){
-                    category.share = "tomeshare.png"; 
+                    category.share = "sharepeople.png"; 
                 } else 
-                category.share = "ishare.png";
+                category.share = "network.png";
             } 
             else {
                category.share = "";
@@ -114,9 +111,9 @@ define({
                 let userId = CURRENT_USER.id;
                let search = ~category.sharedUsers_id.indexOf(userId);
                 if(search){
-                    category.share = "tomeshare.png"; 
+                    category.share = "sharepeople.png"; 
                 } else 
-                category.share = "ishare.png";
+                category.share = "network.png";
             } else {
                category.share = "";
             }    
