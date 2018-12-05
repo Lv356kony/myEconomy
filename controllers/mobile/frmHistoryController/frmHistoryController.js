@@ -8,10 +8,10 @@ define({
     },
 
     goToHistoryDetails: function(){  
-        let currents = this.getCategoriesByType("Current");
-        if(currents.indexOf(this.categoryId) !== -1){
-            return;
-        }
+//         let currents = this.getCategoriesByType("Current");
+//         if(currents.indexOf(this.categoryId) !== -1){
+//             return;
+//         }
         let transDetails = this.view.segHistoryExpense.selectedRowItems;
         navToForm("frmHistoryDetails", {categoryId: this.categoryId,
                                         date: `${transDetails[0].numDay} ${transDetails[0].date}`});
@@ -34,19 +34,20 @@ define({
 
         if(incomes.indexOf(this.categoryId) !== -1){
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
-        }else if(currents.indexOf(this.categoryId) !== -1){
-            this.showCurrent();
+        } else if(currents.indexOf(this.categoryId) !== -1){
+            expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);
+//             this.showCurrent();
+            
             this.checkIfOwner();
             this.view.fldHistorySearch.text = '';
-            return;
-        }else{
+//             return;
+        }else {
             expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);
         }
         this.showExpenses(expenseByCategory);
         this.view.fldHistorySearch.text = '';
         this.checkIfOwner();
     },
-
 
     showExpenses: function(data) {
         let expenseByCategory = this.sortTransactions(data);
@@ -89,7 +90,7 @@ define({
                 }
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
 
-                // filterring
+                // filtering
                 if(fldHistorySearch) {
                     let searchString = `${day} ${numDay} ${date} ${sum} ${commentary}`.toLowerCase();
                     let searchIndex = searchString.indexOf(fldHistorySearch);
@@ -101,6 +102,7 @@ define({
                         alert('No matches. Try ro find something different.');
                         this.view.btnHistorySearch.text = 'Reset';
                     }
+                
                 } else {
                     dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                 }

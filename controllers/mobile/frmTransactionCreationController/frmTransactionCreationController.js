@@ -79,7 +79,6 @@ define({
             dataFrom = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
             dataTo = this.getDataForListBox(CATEGORY_TYPES.EXPENSE)
                 			.concat(this.getDataForListBox(CATEGORY_TYPES.CURRENT));
-            alert(dataTo);
         } else {
             dataFrom = this.getDataForListBox(CATEGORY_TYPES.INCOME);
             dataTo = this.getDataForListBox(CATEGORY_TYPES.CURRENT);

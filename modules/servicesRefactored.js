@@ -37,7 +37,7 @@ const serviceTransactionsRefactored = {
             }
         });
     },
-
+    
     getAllByType: function(categoryId, type, fromOrTo){
         let transactions = [];
         for(let i = 0; i < DATA.transactions.length; i++){

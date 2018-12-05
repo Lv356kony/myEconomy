@@ -481,6 +481,25 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('December 01, 2018 23:15:30'),
             commentary: 'Зарплата'
+        }, {
+            id: 36,
+            from: 7,
+            fromAmount: 100,
+            to: 8,
+            toAmount: 100,
+            user_id: 1,
+            date: new Date('December 02, 2018 23:15:30'),
+            commentary: 'Збереження'
+        }, {
+            id: 37,
+            from: 7,
+            fromAmount: 1000,
+            to: 9,
+            toAmount: 1000,
+            user_id: 1,
+            date: new Date('December 03, 2018 23:15:30'),
+            commentary: 'На Балі'
         }
+        
     ]
 });
