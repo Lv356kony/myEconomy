@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <plugins>
-    <pluginInfo version-no="8.3.8.v201811230929" plugin-id="com.kony.ide.paas.branding" plugin-name="Branding"/>
+    <pluginInfo version-no="8.3.9.v201811292055" plugin-id="com.kony.ide.paas.branding" plugin-name="Branding"/>
     <pluginInfo version-no="8.3.7.v201811141527" plugin-id="com.pat.tool.keditor" plugin-name="Kony Studio"/>
     <pluginInfo version-no="8.3.3.v201810171742" plugin-id="com.kony.thirdparty.jars" plugin-name="Third Party Jars Plug-in"/>
     <pluginInfo version-no="8.3.3.v201810171742" plugin-id="com.pat.soapui" plugin-name="Soap UI Plugin"/>
-    <pluginInfo version-no="8.3.6.v201811081754" plugin-id="com.kony.codegen" plugin-name="Kony Codegenerator"/>
+    <pluginInfo version-no="8.3.9.v201811291559" plugin-id="com.kony.codegen" plugin-name="Kony Codegenerator"/>
     <pluginInfo version-no="8.3.3.v201810171742" plugin-id="com.kony.license" plugin-name="Kony Studio Licensing"/>
     <pluginInfo version-no="8.3.1.GA_v201811131250_r2" plugin-id="com.kony.cloudmiddleware" plugin-name="CloudMiddlewarePlugin"/>
     <pluginInfo version-no="8.3.1.GA_v201811131250_r2" plugin-id="com.kony.cloudthirdparty" plugin-name="CloudThirdPartyPlugin"/>
@@ -23,8 +23,8 @@
     <pluginInfo version-no="8.3.4.v201810241550" plugin-id="com.kony.windows10" plugin-name="Windows 10 Plug-in"/>
     <pluginInfo version-no="8.3.5.v201810312035" plugin-id="com.pat.android" plugin-name="Android"/>
     <pluginInfo version-no="8.3.1.v201810041622" plugin-id="com.kony.windows" plugin-name="Windows Desktop Plug-in"/>
-    <pluginInfo version-no="8.3.8.v201811221044" plugin-id="com.kony.spa" plugin-name="SPA"/>
-    <pluginInfo version-no="8.3.8.v201811221047" plugin-id="com.kony.desktopweb" plugin-name="Kony Desktop Web"/>
+    <pluginInfo version-no="8.3.9.v201811291609" plugin-id="com.kony.spa" plugin-name="SPA"/>
+    <pluginInfo version-no="8.3.9.v201811291605" plugin-id="com.kony.desktopweb" plugin-name="Kony Desktop Web"/>
     <pluginInfo version-no="8.3.5.201810311651" plugin-id="com.kony.webcommons" plugin-name="Kony Web Commons"/>
     <pluginInfo version-no="8.3.8.v201811221744" plugin-id="com.kony.ios" plugin-name="iOS Plugin"/>
     <pluginInfo version-no="8.3.6.v201811081853" plugin-id="com.kony.mobile.fabric.client.sdk" plugin-name="MobileFabric Client SDK"/>

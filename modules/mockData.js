@@ -4,7 +4,7 @@ Object.assign(DATA, {
             id: 1,
             email: 'antti.raatali@gmail.com',
             password: 'Ra$1',
-            firstName: "",
+            firstName: "Andriy",
             lastName: "",
             currency: "UAH",
             image: ""
@@ -13,7 +13,7 @@ Object.assign(DATA, {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
             password: 'intelwithradeon',
-            firstName: "",
+            firstName: "Taras",
             lastName: "",
             currency: "UAH",
             image: ""
@@ -481,6 +481,25 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('December 01, 2018 23:15:30'),
             commentary: 'Зарплата'
+        }, {
+            id: 36,
+            from: 7,
+            fromAmount: 100,
+            to: 8,
+            toAmount: 100,
+            user_id: 1,
+            date: new Date('December 02, 2018 23:15:30'),
+            commentary: 'Збереження'
+        }, {
+            id: 37,
+            from: 7,
+            fromAmount: 1000,
+            to: 9,
+            toAmount: 1000,
+            user_id: 1,
+            date: new Date('December 03, 2018 23:15:30'),
+            commentary: 'На Балі'
         }
+        
     ]
 });

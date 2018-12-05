@@ -7,6 +7,7 @@ define({
     goToHistory: function() {
         navToForm('frmHistory', {categoryId: this.categoryId});
         this.view.txbEditCategoryShare.text = '';
+        this.view.lblEditCategoryCreator.text = '';
     },
     
     goToIcons: function() {
@@ -16,6 +17,7 @@ define({
     refresh: function(){
         navToForm("frmEditCategory", {categoryId: this.categoryId});
         this.view.txbEditCategoryShare.text = '';
+        this.view.lblEditCategoryCreator.text = '';
     },
     
     onPreShow: function() {
@@ -25,10 +27,6 @@ define({
             this.hideSharedField();
         } else {
             this.showSharedField();
-        }
-        if(category.sharedUsers_id.indexOf(id => CURRENT_USER.id === id) !== -1) {
-            let creator = userServiceRefactored.getById(CURRENT_USER).firstName;
-            this.view.lblEditCategoryCreator.text = `Creator: ${creator}`;
         }
     },
     
