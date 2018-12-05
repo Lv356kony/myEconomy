@@ -285,6 +285,7 @@ const serviceCategoryRefactored = {
 };
 
 const userServiceRefactored = {
+    
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
@@ -416,7 +417,7 @@ const userServiceRefactored = {
         user.currency = "UAH";
         user.image = "";
         DATA.users.push(user);
-        return true;
+        return user.id;
     }
 };
 

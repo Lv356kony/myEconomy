@@ -154,6 +154,19 @@ define({
         } else {
             this.view.txtExchange.text = '';
         }
-    } 
+    } ,
+      cleanFields: function(){
+     this.view.txbTransactionAmount.text ="";
+     this.view.txtExchange.text = "";
+     this.view.flxExchange.isVisible = false;
+     this.view.lblCurrency.text = "";
+     this.view.lblAnotherCurrency.text = "";
+
+   }
+
+
+
+
+
 
 });     
