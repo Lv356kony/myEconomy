@@ -32,7 +32,7 @@ const serviceTransactionsRefactored = {
             }
         });
     },
-
+    
     getAllByType: function(categoryId, type, fromOrTo){
         let transactions = [];
         for(let i = 0; i < DATA.transactions.length; i++){
@@ -280,6 +280,7 @@ const serviceCategoryRefactored = {
 };
 
 const userServiceRefactored = {
+    
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;
@@ -411,7 +412,7 @@ const userServiceRefactored = {
         user.currency = "UAH";
         user.image = "";
         DATA.users.push(user);
-        return true;
+        return user.id;
     }
 };
 

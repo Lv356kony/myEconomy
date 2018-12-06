@@ -26,23 +26,27 @@ define({
 
     __showDetails: function(categoryId, date){
         let incomes = this.getCategoriesByType("Income");
+        const currentsCateg = this.getCategoriesByType('Current');
         let incomeIds = incomes.map(function(element){
             return element.id;
         });
+        const currentIds = currentsCateg.map(element => element.id);
         let expenseByCategory = '';
         this.view.btnDetailsSearch.text = 'Search';
         let fldDetailsSearch = this.view.fldDetailsSearch.text;
 
         if(incomeIds.indexOf(this.categoryId) !== -1){
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
-        }else{
+        }else if(currentIds.indexOf(this.categoryId) !== -1) {
+            expenseByCategory = serviceTransactions.getByCategoryId(categoryId);
+        } else {
             expenseByCategory = serviceTransactions.getByCategoryId(categoryId);
         }
-
+		
         let data = [];
         for(let i = 0; i < expenseByCategory.length; i++){
-
             var expDate = `${expenseByCategory[i].date.getDate()} ${getMonth[expenseByCategory[i].date.getMonth()]} ${expenseByCategory[i].date.getFullYear()}`;
+            
             if(expDate === date){
                 let whoMadeTransaction = (expenseByCategory[i].user_id === CURRENT_USER.id) ? 
                     `by: ${userServiceRefactored.getById(CURRENT_USER.id).email}` : `by: ${userServiceRefactored.getById(expenseByCategory[i].user_id).email}`;
@@ -67,17 +71,18 @@ define({
                     if(searchIndex !== -1) {
                         data.push(rowData);  
                         this.view.btnDetailsSearch.text = 'Reset';
+                    
+                    } else {
+                        alert('No matches. Try ro find something different.');
+                        this.view.btnDetailsSearch.text = 'Reset';
                     }
                 } else {
                     data.push(rowData);  
                 }
             }
         }
-        if(data.length === 0) {
-            alert('No matches. Try ro find something different.');
-            this.view.btnDetailsSearch.text = 'Reset';
-        }
         this.view.fldDetailsSearch.text = '';
+		
         return data;
     },
 

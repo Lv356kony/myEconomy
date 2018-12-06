@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "100%"
     },
     "_margin_": [
         0,
@@ -27,7 +27,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "250dp"
+        "value": "100%"
     },
     "android": {},
     "autocapitalize": "none",
@@ -45,7 +45,7 @@
     "contentalignment": 4,
     "focusskin": "sab74807df994273ab3b0a9dc946fbbc",
     "id": "txtConfirmation",
-    "ide_onTextChange": "AS_TextField_f13b47716e9c4e57910f748fd332a1f8",
+    "ide_onTextChange": "AS_TextField_b52af6ca702346c197669d0bf1e0730c",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

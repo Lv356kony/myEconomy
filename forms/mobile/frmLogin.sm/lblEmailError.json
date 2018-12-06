@@ -22,7 +22,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "45dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "ref",
@@ -58,7 +58,7 @@
     "isvisible": true,
     "kuid": "id166763496b421d9296c625e013bc33",
     "name": "kony.ui.Label",
-    "parent": "flxEmail",
+    "parent": "flxEmailError",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

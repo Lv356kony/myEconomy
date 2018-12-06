@@ -48,25 +48,22 @@ define({
         if (fromAmount) {
             serviceTransactions.create(id, fromAmount, from, to, userId, date, comment, toAmount);
             navToForm("frmCategoriesList");
-
         } else {
             this.view.flxErrorContainer.isVisible = "true";
         }
-
-
     },
-
 
     getDataForListBox: function (categoryType) {
         let category = serviceCategory.getCategories();
-        let dataForFrom = category
+        const sharedCategories = serviceCategoryRefactored.getSharedCategories();
+        let dataForFrom = category.concat(sharedCategories)
         .filter((obj) => {
             if (obj.type === categoryType) {
                 return obj;
             }
         })
-        .map((obj, i) => {
-            return[i, obj.name];
+        .map((obj) => {
+            return[obj.id, obj.name];
         });
         return dataForFrom;
     },
@@ -78,12 +75,13 @@ define({
         let listBoxTo = this.view.lstTransactionTo;
         let dataFrom = [];
         let dataTo = [];
-        if (this.category === "Expenses") {
-            dataFrom = this.getDataForListBox("Current");
-            dataTo = this.getDataForListBox("Expenses");
+        if (this.category === CATEGORY_TYPES.EXPENSE) {
+            dataFrom = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
+            dataTo = this.getDataForListBox(CATEGORY_TYPES.EXPENSE)
+                			.concat(this.getDataForListBox(CATEGORY_TYPES.CURRENT));
         } else {
-            dataFrom = this.getDataForListBox("Income");
-            dataTo = this.getDataForListBox("Current");
+            dataFrom = this.getDataForListBox(CATEGORY_TYPES.INCOME);
+            dataTo = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
         }
         listBoxFrom.masterData = dataFrom;
         listBoxFrom.selectedKey = dataFrom[0][0];
@@ -99,7 +97,8 @@ define({
         } else if (type === "to"){
             selectedItem = this.view.lstTransactionTo.selectedKeyValue;
         }
-        let categories = serviceCategory.getCategories();
+        let categories = serviceCategory.getCategories()
+        .concat(serviceCategoryRefactored.getSharedCategories());
         let cuurentCategory = {};
         for(let i = 0; i < categories.length; i++) {
             if(selectedItem[1] === categories[i].name){
@@ -154,9 +153,16 @@ define({
 
         } else {
             this.view.txtExchange.text = '';
-
         }
-    } 
+    } ,
+      cleanFields: function(){
+     this.view.txbTransactionAmount.text ="";
+     this.view.txtExchange.text = "";
+     this.view.flxExchange.isVisible = false;
+     this.view.lblCurrency.text = "";
+     this.view.lblAnotherCurrency.text = "";
+
+   }
 
 
 
