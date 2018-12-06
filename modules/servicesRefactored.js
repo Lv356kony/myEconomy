@@ -4,11 +4,6 @@ const CATEGORY_TYPES = {
     EXPENSE: 'Expenses'
 };
 
-let DATE = {
-    	month: new Date().getMonth(),
-    	year: new Date().getFullYear()
-};
-
 const serviceTransactionsRefactored = {
 
     getByCategoryId: function(categoryId){

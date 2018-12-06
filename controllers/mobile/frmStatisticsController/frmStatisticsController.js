@@ -1,13 +1,17 @@
 define({ 
+    DATE:{
+        month: new Date().getMonth(),
+    	year: new Date().getFullYear()
+    },
         
     init: function() {
         this.view.flxNextMonth.isVisible = false;
         this.view.lblCurrentBalanceValue.text = serviceCategoryRefactored.getCurrentBalance() + userServiceRefactored.getById(CURRENT_USER.id).currency;
-      	this.outcomeClick(DATE.month, DATE.year);
-        this.view.lblDate.text = getMonth[DATE.month] + "/" + DATE.year;
+      	this.outcomeClick(this.DATE.month, this.DATE.year);
+        this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
     },
 
-    incomeClick: function(month = DATE.month, year = DATE.year) {
+    incomeClick: function(month = this.DATE.month, year = this.DATE.year) {
         let selectedItem = this.view.flxTabHeaderIncome;
         this.view.flxChartContainer.removeAll();
         this.addChart(CATEGORY_TYPES.CURRENT);
@@ -30,28 +34,28 @@ define({
     },
     
     goToNextMonth: function(){
-        if(DATE.month + 1 <= 11){
-            DATE.month = DATE.month + 1;
+        if(this.DATE.month + 1 <= 11){
+            this.DATE.month = this.DATE.month + 1;
         }
         else{
-            DATE.month = 0;
-            DATE.year = DATE.year + 1;
+            this.DATE.month = 0;
+            this.DATE.year = this.DATE.year + 1;
         }
-        this.view.lblDate.text = getMonth[DATE.month] + "/" + DATE.year;
-        this.outcomeClick(DATE.month, DATE.year);
+        this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
+        this.outcomeClick(this.DATE.month, this.DATE.year);
         
 	},
     
     goToPreviousMonth: function(){
-        if(DATE.month - 1 >= 0){
-            DATE.month = DATE.month - 1;
+        if(this.DATE.month - 1 >= 0){
+            this.DATE.month = this.DATE.month - 1;
         }
         else{
-            DATE.month = 11;
-            DATE.year = DATE.year - 1;
+            this.DATE.month = 11;
+            this.DATE.year = DATE.year - 1;
         }
-        this.view.lblDate.text = getMonth[DATE.month] + "/" + DATE.year;
-        this.outcomeClick(DATE.month, DATE.year);
+        this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
+        this.outcomeClick(this.DATE.month, this.DATE.year);
         this.view.flxNextMonth.isVisible = true;
 	},
 
@@ -388,13 +392,13 @@ define({
             },
             "chartData": {
                 "rowNames": {
-                    "values": this.getListNamesAndBalanceByCategory(categoryType, DATE.month, DATE.year).map(i => i.name)
+                    "values": this.getListNamesAndBalanceByCategory(categoryType, this.DATE.month, this.DATE.year).map(i => i.name)
                 },
                 "columnNames": {
                     "values": ["Amount"]
                 },
                 "data": {
-                    "Amount": this.getListNamesAndBalanceByCategory(categoryType, DATE.month, DATE.year).map(i => i.balance)
+                    "Amount": this.getListNamesAndBalanceByCategory(categoryType, this.DATE.month, this.DATE.year).map(i => i.balance)
                 }
             },
             "chartEvents": {

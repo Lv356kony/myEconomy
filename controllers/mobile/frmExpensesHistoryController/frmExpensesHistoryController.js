@@ -185,7 +185,7 @@ define({
     kdv_createChartJSObject: function (year) {
         var chartInfo = {
             "chartProperties": {
-                "chartHeight": 100,
+                "chartHeight": 200,
                 "enableScrolling": true,
                 "position": [0, 0, 100, 100],
                 "title": {
@@ -246,7 +246,7 @@ define({
                         "margin": [5, 5, 0, 0]
                     },
                     "font": {
-                        "size": [20],
+                        "size": [40],
                         "family": ["Verdana"],
                         "style": ["normal"],
                         "color": ["0xaaaaaaff"],
@@ -295,7 +295,7 @@ define({
                         "labels": {
                             "orientationAngle": 50,
                             "font": {
-                                "size": [20],
+                                "size": [30],
                                 "family": ["Verdana"],
                                 "style": ["normal"],
                                 "color": ["0x000000ff"],
@@ -322,7 +322,7 @@ define({
                         "labels": {
                             "margin": [30, 0, 0, 0],
                             "font": {
-                                "size": [20],
+                                "size": [30],
                                 "family": ["Verdana"],
                                 "style": ["normal"],
                                 "color": ["0x000000ff"],
