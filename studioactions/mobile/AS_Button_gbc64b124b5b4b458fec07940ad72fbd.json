@@ -16,8 +16,8 @@
         "actions": [{
             "id": "INVOKE_FUNCTION___c8aa85eff57c4bc998f731e899359f56",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "hideDeleteOptions",
-            "display": "hideDeleteOptions",
+            "sequenceKUID": "hideDeleteConfirmation",
+            "display": "hideDeleteConfirmation",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,

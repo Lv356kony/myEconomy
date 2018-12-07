@@ -18,13 +18,14 @@
         0,
         0
     ],
-    "_placeholder_": "Placeholder",
+    "_placeholder_": "",
     "_skin_": "sf40fc1f27ad4f979ccf419aadc29b64",
     "_text_": "",
     "_width_": {
         "type": "string",
         "value": "160dp"
     },
+    "android": {},
     "autocapitalize": "none",
     "autocomplete": false,
     "autocorrect": false,
