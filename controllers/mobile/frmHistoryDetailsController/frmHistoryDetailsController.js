@@ -51,7 +51,7 @@ define({
                 let expenseTo = '';
 
                 if(cetegory.type === CATEGORY_TYPES.INCOME){
-                    expenseTo = expenseByCategory[i].fromAmount;
+                    expenseTo = expenseByCategory[i].toAmount;
                 } else if(cetegory.type === CATEGORY_TYPES.EXPENSE){
                     expenseTo = -expenseByCategory[i].toAmount;
                 } else if(expenseByCategory[i].from === this.categoryId){
@@ -104,7 +104,7 @@ define({
         segDetails.widgetDataMap = {
             txtFrom: 'from',
             txtCommentary: 'commentary',
-            txtExpense: 'expenseTo',
+            txtExpense: serviceCategoryRefactored.getById(this.categoryId).type === CATEGORY_TYPES.INCOME ?  'expense' : 'expenseTo',
             imgDollar: 'imgDol',
             txtMadeBy: 'spender'
         };
@@ -221,8 +221,6 @@ define({
         this.view.imgShowCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
 
         this.checkIfEqualCurrency(this.view.lblShowFromValue.text, this.view.lblShowCategory.text);
-        alert(this.view.lblShowFromValue.text);
-        alert(this.view.lblShowCategory.text);
     },
 
     changeIconOnSelect: function(){
@@ -241,6 +239,7 @@ define({
     },
 
     updateTransaction: function(){
+        let selRowItems = this.view.segDetails.selectedRowItems;
         let id = this.view.lblTransactionId.text;
 
         let categotyNameFrom = this.view.lstBoxFrom.selectedKeyValue[1];
@@ -250,7 +249,7 @@ define({
         let toId = this.findByCategoryName(categotyNameTo).id; 
 
         let fromAmount = this.view.inpExpense.text;
-        let toAmount = this.view.inpExpenseTo.text;
+        let toAmount = this.view.inpExpenseTo.text || selRowItems[0].expenseTo;
         let comment = this.view.inpCommentary.text;
         let date = this.view.calEdit.month + ' ' + this.view.calEdit.day + ', ' + this.view.calEdit.year;
 
@@ -342,8 +341,6 @@ define({
     checkIfEqualCurrency: function(categoryFrom, categoryTo) {
         const currencyFrom = serviceCategoryRefactored.getCurrencyByCatName(categoryFrom);
         const currencyTo = serviceCategoryRefactored.getCurrencyByCatName(categoryTo);
-//         this.view.flxShowExpenseTo.isVisible = currencyFrom === currencyTo ? false : true;
-//         this.view.flxExpenseTo.isVisible = currencyFrom === currencyTo ? false : true;
         if(currencyFrom === currencyTo) {
             this.view.flxShowExpenseTo.isVisible = false;
             this.view.flxExpenseTo.isVisible = false;
@@ -359,6 +356,5 @@ define({
             this.view.flxShowCommentary.top = '200dp';
             this.view.flxShowDate.top = '250dp';
         }
-        alert(currencyFrom, currencyTo);
     }
 });
