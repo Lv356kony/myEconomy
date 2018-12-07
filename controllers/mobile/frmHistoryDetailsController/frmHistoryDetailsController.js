@@ -27,7 +27,7 @@ define({
     __showDetails: function(categoryId, date){
         const incomeIds = this.getCategoriesByType(CATEGORY_TYPES.INCOME).map(element => element.id);
         const currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id);
-        
+
         let expenseByCategory = '';
         this.view.btnDetailsSearch.text = 'Search';
         let fldDetailsSearch = this.view.fldDetailsSearch.text;
@@ -51,7 +51,7 @@ define({
                 let expenseTo = '';
 
                 if(cetegory.type === CATEGORY_TYPES.INCOME){
-                    expenseTo = expenseByCategory[i].fromAmount;
+                    expenseTo = expenseByCategory[i].toAmount;
                 } else if(cetegory.type === CATEGORY_TYPES.EXPENSE){
                     expenseTo = -expenseByCategory[i].toAmount;
                 } else if(expenseByCategory[i].from === this.categoryId){
@@ -65,8 +65,8 @@ define({
                     spender: whoMadeTransaction,
                     from: this.getCategoryName(expenseByCategory[i].from),
                     commentary: expenseByCategory[i].commentary,
-                    expense: (cetegory.type === CATEGORY_TYPES.INCOME || 
-                              cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ? 
+                    expense: (cetegory.type === CATEGORY_TYPES.INCOME ||
+                              cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ?
                     expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
                     to: this.getCategoryName(expenseByCategory[i].to),
                     date: expenseByCategory[i].date.toString(),
@@ -82,13 +82,15 @@ define({
                         this.view.btnDetailsSearch.text = 'Reset';
 
                     } else {
-                        alert('No matches. Try ro find something different.');
                         this.view.btnDetailsSearch.text = 'Reset';
                     }
                 } else {
                     data.push(rowData);  
                 }
             }
+        }
+        if(data.length === 0) {
+            alert('Nope. There is nothing here.');
         }
         this.view.fldDetailsSearch.text = '';
 
@@ -102,7 +104,7 @@ define({
         segDetails.widgetDataMap = {
             txtFrom: 'from',
             txtCommentary: 'commentary',
-            txtExpense: 'expenseTo',
+            txtExpense: serviceCategoryRefactored.getById(this.categoryId).type === CATEGORY_TYPES.INCOME ?  'expense' : 'expenseTo',
             imgDollar: 'imgDol',
             txtMadeBy: 'spender'
         };
@@ -140,7 +142,7 @@ define({
                     'bottom': '0dp'
                 }
             };
-            this.createEditAnimation(flxDef, 'flxEdit');           
+            this.createEditAnimation(flxDef, 'flxEdit');
         }
     },
 
@@ -161,7 +163,7 @@ define({
             "fillMode": kony.anim.FILL_MODE_FORWARDS
         };
         let animDef = kony.ui.createAnimation(animationDef);
-        this.view[flxId].animate(animDef, config, null);        
+        this.view[flxId].animate(animDef, config, null);
     },
 
     clearInputs: function(){
@@ -175,10 +177,10 @@ define({
     setEditDefaultValues: function(){
         let incomeIds = this.getCategoriesByType(CATEGORY_TYPES.INCOME).map(element => element.id);
         let currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id);
-        
+
         if(incomeIds.indexOf(this.categoryId) !== -1){
             this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.INCOME);
-            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);          
+            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);
         } else if(currentIds.indexOf(this.categoryId) !== -1){
             let currentExceptThis = this.loadCategories(CATEGORY_TYPES.CURRENT).filter(element => {
                 if(element.indexOf(serviceCategoryRefactored.getById(this.categoryId).name) === -1){
@@ -186,10 +188,10 @@ define({
                 }
             });
             this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);
-            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE).concat(currentExceptThis);            
+            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE).concat(currentExceptThis);
         } else{
             this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);
-            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE);      
+            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE);
         }
 
         let selRowItems = this.view.segDetails.selectedRowItems;
@@ -200,7 +202,7 @@ define({
         this.view.lblTransactionId.text = selRowItems[0].id;
         this.view.lstBoxFrom.selectedKey = this.findCategoryKey(categoriesFrom, selRowItems[0].from);
         this.view.lstBoxTo.selectedKey = this.findCategoryKey(categoriesTo, selRowItems[0].to);
-        this.view.inpExpense.text = selRowItems[0].expense >= 0 ? selRowItems[0].expense : (selRowItems[0].expense * -1).toString();         
+        this.view.inpExpense.text = selRowItems[0].expense >= 0 ? selRowItems[0].expense : (selRowItems[0].expense * -1).toString();
         this.view.inpExpenseTo.text = selRowItems[0].expenseTo >= 0 ? selRowItems[0].expenseTo : (selRowItems[0].expenseTo * -1).toString();
         this.view.inpCommentary.text = selRowItems[0].commentary;
         this.view.calEdit.dateComponents = [date.getDate(), date.getMonth()+1, date.getFullYear()];     
@@ -217,6 +219,8 @@ define({
         this.view.imgShowCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
         this.view.imgShowCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
         this.view.imgShowCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
+
+        this.checkIfEqualCurrency(this.view.lblShowFromValue.text, this.view.lblShowCategory.text);
     },
 
     changeIconOnSelect: function(){
@@ -235,6 +239,7 @@ define({
     },
 
     updateTransaction: function(){
+        let selRowItems = this.view.segDetails.selectedRowItems;
         let id = this.view.lblTransactionId.text;
 
         let categotyNameFrom = this.view.lstBoxFrom.selectedKeyValue[1];
@@ -244,7 +249,7 @@ define({
         let toId = this.findByCategoryName(categotyNameTo).id; 
 
         let fromAmount = this.view.inpExpense.text;
-        let toAmount = this.view.inpExpenseTo.text;
+        let toAmount = this.view.inpExpenseTo.text || selRowItems[0].expenseTo;
         let comment = this.view.inpCommentary.text;
         let date = this.view.calEdit.month + ' ' + this.view.calEdit.day + ', ' + this.view.calEdit.year;
 
@@ -330,6 +335,26 @@ define({
                 return 'euro_symbol.png';
             case 'PLN':
                 return 'zloty_symbol.png';
+        }
+    },
+
+    checkIfEqualCurrency: function(categoryFrom, categoryTo) {
+        const currencyFrom = serviceCategoryRefactored.getCurrencyByCatName(categoryFrom);
+        const currencyTo = serviceCategoryRefactored.getCurrencyByCatName(categoryTo);
+        if(currencyFrom === currencyTo) {
+            this.view.flxShowExpenseTo.isVisible = false;
+            this.view.flxExpenseTo.isVisible = false;
+            this.view.flxCommentary.top = '150dp';
+            this.view.flxDate.top = '200dp';
+            this.view.flxShowCommentary.top = '150dp';
+            this.view.flxShowDate.top = '200dp';
+        } else {
+            this.view.flxShowExpenseTo.isVisible = true;
+            this.view.flxExpenseTo.isVisible = true;
+            this.view.flxCommentary.top = '200dp';
+            this.view.flxDate.top = '250dp';
+            this.view.flxShowCommentary.top = '200dp';
+            this.view.flxShowDate.top = '250dp';
         }
     }
 });

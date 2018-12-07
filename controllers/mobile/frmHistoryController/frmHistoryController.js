@@ -31,10 +31,7 @@ define({
         if(incomes.indexOf(this.categoryId) !== -1){
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
         } else if(currents.indexOf(this.categoryId) !== -1){
-            expenseByCategory = serviceTransactionsRefactored.getByCategoryId(this.categoryId);          
-            this.checkIfOwner();
-            this.view.fldHistorySearch.text = '';
-
+            expenseByCategory = serviceTransactionsRefactored.getByCategoryId(this.categoryId);
         }else {
             expenseByCategory = serviceTransactionsRefactored.getByCategoryId(this.categoryId);
         }
@@ -85,7 +82,7 @@ define({
                         if(getExpensesForSingleDay[j].user_id !== CURRENT_USER.id){
                             isShared = 'share.png';
                         }
-                    }   
+                    }
                 } else if(serviceCategory.getById(this.categoryId).type === CATEGORY_TYPES.EXPENSE){
                     for(let j = 0; j < getExpensesForSingleDay.length; j++){
                         amounts.push(-getExpensesForSingleDay[j].toAmount);
@@ -93,7 +90,7 @@ define({
                             isShared = 'share.png';
                         }
                     }
-                } 
+                }
 
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
 
@@ -106,7 +103,6 @@ define({
                                     imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                         this.view.btnHistorySearch.text = 'Reset';
                     } else {
-                        alert('No matches. Try ro find something different.');
                         this.view.btnHistorySearch.text = 'Reset';
                     }
 
@@ -114,6 +110,9 @@ define({
                     dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                 }
             }
+        }
+        if(dates.length === 0) {
+            alert('Nope. There is nothing here.');
         }
 
         let segHistoryExpense = this.view.segHistoryExpense;
@@ -269,7 +268,7 @@ define({
             "fillMode": kony.anim.FILL_MODE_FORWARDS
         };
         let animDef = kony.ui.createAnimation(animationDef);
-        this.view[flxId].animate(animDef, config, null);        
+        this.view[flxId].animate(animDef, config, null);
     },
 
     checkIfOwner: function() {
