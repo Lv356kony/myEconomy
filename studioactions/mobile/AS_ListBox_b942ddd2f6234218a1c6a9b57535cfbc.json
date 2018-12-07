@@ -1,0 +1,21 @@
+{
+    "AS_ListBox_b942ddd2f6234218a1c6a9b57535cfbc": {
+        "id": "AS_ListBox_b942ddd2f6234218a1c6a9b57535cfbc",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__ide_onSelection_f6832efd84b44a409c74445bdb73f943",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "changeIconOnSelect",
+            "display": "changeIconOnSelect",
+            "inputparams": [],
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

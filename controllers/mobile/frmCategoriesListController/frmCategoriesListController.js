@@ -49,19 +49,19 @@ define({
                 });
             }
         }
-        
+
         currentCategories.forEach( (category) => {
             let sharedUsers = category.sharedUsers_id.length;
             if(  sharedUsers ){
                 let userId = CURRENT_USER.id;
-               let search = ~category.sharedUsers_id.indexOf(userId);
+                let search = ~category.sharedUsers_id.indexOf(userId);
                 if(search){
                     category.share = "sharepeople.png"; 
                 } else 
-                category.share = "network.png";
+                    category.share = "network.png";
             } 
             else {
-               category.share = "";
+                category.share = "";
             }    
         });
 
@@ -109,13 +109,13 @@ define({
             let sharedUsers = category.sharedUsers_id.length;
             if(  sharedUsers ){
                 let userId = CURRENT_USER.id;
-               let search = ~category.sharedUsers_id.indexOf(userId);
+                let search = ~category.sharedUsers_id.indexOf(userId);
                 if(search){
                     category.share = "sharepeople.png"; 
                 } else 
-                category.share = "network.png";
+                    category.share = "network.png";
             } else {
-               category.share = "";
+                category.share = "";
             }    
         });
         let segment = this.view.segmExpenses;
@@ -149,19 +149,47 @@ define({
         navToForm("frmSettings");
     },
     showMenu: function(){
+        let flxDef = {
+            0:{'left': '-100%'},
+            100:{'left': '0%'}
+        };  
+        this.createSideMenuAnimation(flxDef, 'flxSideMenu');
+        this.createSideMenuAnimation(flxDef, 'flxHideMenu');
         this.view.flxSideMenuContainer.left = '0%';
     },
+
     hideMenu: function(){
-        this.view.flxSideMenuContainer.left = '-100%';
+        let flxDef = {
+            0:{'left': '0%'},
+            100:{'left': '-100%'}
+        };  
+        this.createSideMenuAnimation(flxDef, 'flxSideMenu');
+        this.createSideMenuAnimation(flxDef, 'flxHideMenu');
+        kony.timer.schedule(Date.now().toString(),() => {
+            this.view.flxSideMenuContainer.left = '-100%';
+        }, 0.5, false);
+
     },
+
+    createSideMenuAnimation: function(animationDef, flxId){
+        let config = {
+            "duration": 0.5,
+            "iterationCount": 1,
+            "delay": 0,
+            "fillMode": kony.anim.FILL_MODE_FORWARDS
+        };
+        let animDef = kony.ui.createAnimation(animationDef);
+        this.view[flxId].animate(animDef, config, null);        
+    },
+
     showUserInfo: function(){
-        let userInfo = userService.getById(CURRENT_USER.id);
-        this.view.txtUserEmail.text = userInfo.email;
+        this.view.txtUserEmail.text = userService.getById(CURRENT_USER.id).email;
     },
     logOut: function(){
         CURRENT_USER.id = undefined;
         navToForm("frmLogin");
     },
+
     calculateIncomeBalance: function(){
         let incomeLabel = this.view.lblIncomeCount;
         incomeLabel.text = `${serviceCategoryRefactored.getIncomeBalance()} ${this.getCarenncySymbolForCurrentUser()}`;
@@ -398,7 +426,6 @@ define({
                 categoryAnimProps.getAnimationStatus = true;
                 categoryAnimProps.timerIdMemory = '';
             }, 0.5, false);
-
         }
     }
 });

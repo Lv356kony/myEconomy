@@ -5,10 +5,6 @@
         "type": "string",
         "value": "0dp"
     },
-    "_height_": {
-        "type": "ref",
-        "value": "preferred"
-    },
     "_left_": {
         "type": "string",
         "value": "0dp"
@@ -37,11 +33,12 @@
         "value": "100%"
     },
     "allboxes": [],
-    "autogrowmode": 1,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
         "segDetails",
-        "flxDetailsTopGradient"
+        "flxDetailsTopGradient",
+        "flxEdit"
     ],
     "clipbounds": true,
     "containerweight": 100,

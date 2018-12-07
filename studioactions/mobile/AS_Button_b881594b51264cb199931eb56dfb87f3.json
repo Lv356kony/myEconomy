@@ -1,45 +1,36 @@
 {
-    "AS_Button_d1bd676d8b4e4543b61294e8268971ed": {
-        "id": "AS_Button_d1bd676d8b4e4543b61294e8268971ed",
+    "AS_Button_b881594b51264cb199931eb56dfb87f3": {
+        "id": "AS_Button_b881594b51264cb199931eb56dfb87f3",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
-        "contextObj": {
-            "KUID": "c9af47bd87034153a0897765ac19e939",
-            "name": "frmHistoryDetails",
-            "platform": "",
-            "type": "forms"
-        },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION___f2cf1e9cb8164ea1b12f270516fe93f2",
+            "id": "INVOKE_FUNCTION__ide_onClick_f0a92381decb4bb0af2c5a073d4d49b0",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "hideEditForm",
             "display": "hideEditForm",
             "inputparams": [],
-            "parentId": null,
             "callbackType": null,
             "disabled": null,
             "source": "controller"
         }, {
-            "id": "INVOKE_FUNCTION___e18e5d8e2bff4ec4bb4438239da7aad7",
+            "id": "INVOKE_FUNCTION__ide_onClick_iad568c641114ec0aa873cb47fd2403a",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "hideDeleteConfirmationWindow",
             "display": "hideDeleteConfirmationWindow",
             "inputparams": [],
-            "parentId": null,
             "callbackType": null,
             "disabled": null,
             "source": "controller"
         }, {
-            "id": "INVOKE_FUNCTION___afe8b047ce6e4d0586ec74c2a12853bd",
+            "id": "INVOKE_FUNCTION__ide_onClick_fc7fc1c6750747fb8cd305acc1cde03c",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "clearInputs",
             "display": "clearInputs",
             "inputparams": [],
-            "parentId": null,
             "callbackType": null,
             "disabled": true,
             "source": "controller"
