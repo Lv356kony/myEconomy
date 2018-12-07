@@ -32,9 +32,6 @@ define({
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
         } else if(currents.indexOf(this.categoryId) !== -1){
             expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);          
-            this.checkIfOwner();
-            this.view.fldHistorySearch.text = '';
-
         }else {
             expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);
         }
@@ -93,14 +90,17 @@ define({
                                     imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                         this.view.btnHistorySearch.text = 'Reset';
                     } else {
-                        alert('No matches. Try ro find something different.');
                         this.view.btnHistorySearch.text = 'Reset';
                     }
                 
                 } else {
                     dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                 }
+                
             }
+        }
+        if(dates.length === 0) {
+            alert('Nope. There is nothing here.');
         }
 
         let segHistoryExpense = this.view.segHistoryExpense;

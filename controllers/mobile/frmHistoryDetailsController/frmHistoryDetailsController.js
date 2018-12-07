@@ -73,7 +73,6 @@ define({
                         this.view.btnDetailsSearch.text = 'Reset';
                     
                     } else {
-                        alert('No matches. Try ro find something different.');
                         this.view.btnDetailsSearch.text = 'Reset';
                     }
                 } else {
@@ -81,8 +80,10 @@ define({
                 }
             }
         }
+        if(data.length === 0) {
+            alert('Nope. There is nothing here.');
+        }
         this.view.fldDetailsSearch.text = '';
-		
         return data;
     },
 
@@ -144,7 +145,7 @@ define({
         let categoriesFrom = this.view.lstBoxFrom.masterData;
         let categoriesTo = this.view.lstBoxTo.masterData; 
         let date = new Date(this.date);
-
+        
         this.view.lblTransactionId.text = selRowItems[0].id;
         this.view.lstBoxFrom.selectedKey = this.findCategoryKey(categoriesFrom, selRowItems[0].from);
         this.view.lstBoxTo.selectedKey = this.findCategoryKey(categoriesTo, selRowItems[0].to);
@@ -165,6 +166,10 @@ define({
         this.view.imgShowCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
         this.view.imgShowCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
         this.view.imgShowCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
+        
+        this.checkIfEqualCurrency(this.view.lblShowFromValue.text, this.view.lblShowCategory.text);
+        alert(this.view.lblShowFromValue.text);
+        alert(this.view.lblShowCategory.text);
     },
 
     changeIconOnSelect: function(){
@@ -279,5 +284,28 @@ define({
             case 'PLN':
                 return 'zloty_symbol.png';
         }
+    },
+    
+    checkIfEqualCurrency: function(categoryFrom, categoryTo) {
+        const currencyFrom = serviceCategoryRefactored.getCurrencyByCatName(categoryFrom);
+        const currencyTo = serviceCategoryRefactored.getCurrencyByCatName(categoryTo);
+//         this.view.flxShowExpenseTo.isVisible = currencyFrom === currencyTo ? false : true;
+//         this.view.flxExpenseTo.isVisible = currencyFrom === currencyTo ? false : true;
+        if(currencyFrom === currencyTo) {
+            this.view.flxShowExpenseTo.isVisible = false;
+            this.view.flxExpenseTo.isVisible = false;
+            this.view.flxCommentary.top = '150dp';
+            this.view.flxDate.top = '200dp';
+            this.view.flxShowCommentary.top = '150dp';
+            this.view.flxShowDate.top = '200dp';
+        } else {
+            this.view.flxShowExpenseTo.isVisible = true;
+            this.view.flxExpenseTo.isVisible = true;
+            this.view.flxCommentary.top = '200dp';
+            this.view.flxDate.top = '250dp';
+            this.view.flxShowCommentary.top = '200dp';
+            this.view.flxShowDate.top = '250dp';
+        }
+        alert(currencyFrom, currencyTo);
     }
 });
