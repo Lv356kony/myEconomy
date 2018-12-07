@@ -14,7 +14,7 @@ define({
     },
 
     onNavigate: function(category) {
-            this.categoryId = category.categoryId;
+        this.categoryId = category.categoryId;
     },
 
     showCategory: function(){
@@ -31,9 +31,9 @@ define({
         if(incomes.indexOf(this.categoryId) !== -1){
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
         } else if(currents.indexOf(this.categoryId) !== -1){
-            expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);          
+            expenseByCategory = serviceTransactionsRefactored.getByCategoryId(this.categoryId);
         }else {
-            expenseByCategory = serviceTransactions.getByCategoryId(this.categoryId);
+            expenseByCategory = serviceTransactionsRefactored.getByCategoryId(this.categoryId);
         }
         this.showHistory(expenseByCategory);
         this.view.fldHistorySearch.text = '';
@@ -64,21 +64,34 @@ define({
 
             if(index === -1){
                 let amounts = [0];
-                if(serviceCategory.getById(this.categoryId).type === 'Income'){
+                if(serviceCategory.getById(this.categoryId).type === CATEGORY_TYPES.INCOME){
                     for(let j = 0; j < getExpensesForSingleDay.length; j++){
                         amounts.push(getExpensesForSingleDay[j].fromAmount);
                         if(getExpensesForSingleDay[j].user_id !== CURRENT_USER.id){
                             isShared = 'share.png';
                         }
                     }
-                } else {
+                } else if(serviceCategory.getById(this.categoryId).type === CATEGORY_TYPES.CURRENT){
                     for(let j = 0; j < getExpensesForSingleDay.length; j++){
-                        amounts.push(getExpensesForSingleDay[j].toAmount);
+                        if(getExpensesForSingleDay[j].from === this.categoryId){
+                            amounts.push(-getExpensesForSingleDay[j].toAmount);
+                        } else if(getExpensesForSingleDay[j].to === this.categoryId){
+                            amounts.push(getExpensesForSingleDay[j].toAmount);
+                        }
+
+                        if(getExpensesForSingleDay[j].user_id !== CURRENT_USER.id){
+                            isShared = 'share.png';
+                        }
+                    }
+                } else if(serviceCategory.getById(this.categoryId).type === CATEGORY_TYPES.EXPENSE){
+                    for(let j = 0; j < getExpensesForSingleDay.length; j++){
+                        amounts.push(-getExpensesForSingleDay[j].toAmount);
                         if(getExpensesForSingleDay[j].user_id !== CURRENT_USER.id){
                             isShared = 'share.png';
                         }
                     }
                 }
+
                 let sum = amounts.reduce((prev,curr) => prev + curr); 
 
                 // filtering
@@ -92,11 +105,10 @@ define({
                     } else {
                         this.view.btnHistorySearch.text = 'Reset';
                     }
-                
+
                 } else {
                     dates.push({day: day, numDay: numDay.toString(), date: date, sum: sum.toString(), imgTotal: imgTotal, imgCurrency: imgCurrency, isShared: isShared});
                 }
-                
             }
         }
         if(dates.length === 0) {
@@ -187,15 +199,43 @@ define({
     },
 
     showDeleteOptions: function(){
+        let flxDef = {
+            0: {'centerX': '97%',
+                'centerY': '3%',
+                'width': '0dp',
+                'height': '0dp'},
+            100: {
+                'centerX': '50%',
+                'centerY': '50%',
+                'width': '300dp',
+                'height': '175dp'
+            }
+        };
+        this.createCategoryDeleteAnimation(flxDef, 'flxDeletionOptions');
         this.view.flxDeleteCategoryContainer.setVisibility(true);
         this.view.flxDeletionOptions.setVisibility(true);
         this.view.flxDeleteConfirmation.setVisibility(false);
     },
 
     hideDeleteOptions: function(){
-        this.view.flxDeleteCategoryContainer.setVisibility(false);
-        this.view.flxDeletionOptions.setVisibility(false);
-        this.view.flxDeleteConfirmation.setVisibility(false);
+        let flxDef = {
+            0: {
+                'centerX': '50%',
+                'centerY': '50%',
+                'width': '300dp',
+                'height': '175dp'
+            },
+            100: {'centerX': '97%',
+                  'centerY': '3%',
+                  'width': '0dp',
+                  'height': '0dp'}
+
+        };
+        this.createCategoryDeleteAnimation(flxDef, 'flxDeletionOptions');
+        kony.timer.schedule(Date.now().toString(),() => {
+            this.view.flxDeleteCategoryContainer.setVisibility(false);
+            this.view.flxDeletionOptions.setVisibility(false);
+        }, 0.5, false);
     },
 
     showDeleteBtnWith: function(){
@@ -213,7 +253,24 @@ define({
         this.view.flxDeletionOptions.setVisibility(false);
         this.view.flxDeleteConfirmation.setVisibility(true);
     },
-    
+
+    hideDeleteConfirmation: function(){
+        this.view.flxDeletionOptions.setVisibility(false);
+        this.view.flxDeleteCategoryContainer.setVisibility(false);
+        this.view.flxDeleteConfirmation.setVisibility(false);
+    },
+
+    createCategoryDeleteAnimation: function(animationDef, flxId){
+        let config = {
+            "duration": 0.5,
+            "iterationCount": 1,
+            "delay": 0,
+            "fillMode": kony.anim.FILL_MODE_FORWARDS
+        };
+        let animDef = kony.ui.createAnimation(animationDef);
+        this.view[flxId].animate(animDef, config, null);
+    },
+
     checkIfOwner: function() {
         let category = serviceCategoryRefactored.getById(this.categoryId);
         if(~category.sharedUsers_id.indexOf(CURRENT_USER.id)) {

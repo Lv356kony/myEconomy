@@ -5,7 +5,7 @@ define({
     /** onRowClick defined for segmExpenses **/
     AS_Segment_f353746986dd4760aa4632d92f13dc00: function AS_Segment_f353746986dd4760aa4632d92f13dc00(eventobject, sectionNumber, rowNumber) {
         var self = this;
-        return self.goToHistory.call(this, eventobject, sectionNumber, rowNumber);
+        return self.goToHistory.call(this, eventobject);
     },
     /** onClick defined for flxAddExpenses **/
     AS_FlexContainer_e1f8bac1ba84451a855e2ea89fec8761: function AS_FlexContainer_e1f8bac1ba84451a855e2ea89fec8761(eventobject) {

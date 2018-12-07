@@ -31,9 +31,6 @@
             "inputparams": [{
                 "name": "typeOfTransaction",
                 "value": "'Expenses'"
-            }, {
-                "name": "listBoxId",
-                "value": "'lstBoxTo'"
             }],
             "parentId": null,
             "callbackType": null,
@@ -47,9 +44,6 @@
             "inputparams": [{
                 "name": "typeOfTransaction",
                 "value": "'Current'"
-            }, {
-                "name": "listBoxId",
-                "value": "'lstBoxFrom'"
             }],
             "parentId": null,
             "callbackType": null,
@@ -58,8 +52,8 @@
         }, {
             "id": "INVOKE_FUNCTION___cfe895bca1b7495394da1ef3c1fb338b",
             "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "hideEditForm",
-            "display": "hideEditForm",
+            "sequenceKUID": "closeEditFormOnLoad",
+            "display": "closeEditFormOnLoad",
             "inputparams": [],
             "parentId": null,
             "callbackType": null,
