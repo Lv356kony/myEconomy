@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
+    "_height_": {
         "type": "string",
-        "value": "0dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "number",
@@ -30,7 +30,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "200dp"
+        "value": "65%"
     },
     "allboxes": [],
     "autogrowmode": 0,
@@ -57,5 +57,5 @@
     "snaptogrid": true,
     "wType": "FlexContainer",
     "widgetalignment": 1,
-    "zindex": 1
+    "zindex": 3
 }

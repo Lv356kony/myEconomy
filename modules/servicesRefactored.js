@@ -9,7 +9,7 @@ const serviceTransactionsRefactored = {
     getByCategoryId: function(categoryId){
         let transaction = [];
         for(let i = 0; i < DATA.transactions.length; i++){
-            if(categoryId === DATA.transactions[i].to){
+            if(categoryId === DATA.transactions[i].to || categoryId === DATA.transactions[i].from){
                 transaction.push(DATA.transactions[i]);
             }
         }
@@ -32,7 +32,7 @@ const serviceTransactionsRefactored = {
             }
         });
     },
-    
+
     getAllByType: function(categoryId, type, fromOrTo){
         let transactions = [];
         for(let i = 0; i < DATA.transactions.length; i++){
@@ -167,8 +167,8 @@ const serviceCategoryRefactored = {
             let externalTransactionsForm = serviceTransactionsRefactored.getAllExternalFromSharedCategories();
             externalTransactionsForm.forEach(i => {
                 if(this.getById(i.to).user_id !== CURRENT_USER.id && 
-                  	!(~this.getById(i.to).sharedUsers_id.indexOf(CURRENT_USER.id))){
-					current -= i.fromAmount;
+                   !(~this.getById(i.to).sharedUsers_id.indexOf(CURRENT_USER.id))){
+                    current -= i.fromAmount;
                 }
             });
         }
@@ -246,9 +246,9 @@ const serviceCategoryRefactored = {
         });
         return element;
     },
-    
+
     shareCategory: function (categotyId, userId) {
-       this.getById(categotyId).sharedUsers_id.push(userId);
+        this.getById(categotyId).sharedUsers_id.push(userId);
     },
 
     deleteByUserId: function(userId) {
@@ -280,7 +280,7 @@ const serviceCategoryRefactored = {
 };
 
 const userServiceRefactored = {
-    
+
     getById: function (userId) {
         let userMockArray = DATA.users.filter(function (user) {
             return user.id === userId;

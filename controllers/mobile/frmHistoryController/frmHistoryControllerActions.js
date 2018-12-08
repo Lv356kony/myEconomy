@@ -56,7 +56,7 @@ define({
     /** onClick defined for btnDeleteNo **/
     AS_Button_gbc64b124b5b4b458fec07940ad72fbd: function AS_Button_gbc64b124b5b4b458fec07940ad72fbd(eventobject) {
         var self = this;
-        return self.hideDeleteOptions.call(this);
+        return self.hideDeleteConfirmation.call(this);
     },
     /** onClick defined for btnWODeleteYes **/
     AS_Button_ca34fc56ea40449685b471f7afba7510: function AS_Button_ca34fc56ea40449685b471f7afba7510(eventobject) {
@@ -73,6 +73,6 @@ define({
         var self = this;
         self.onPreShow.call(this);
         self.showCategory.call(this);
-        self.hideDeleteOptions.call(this);
+        self.hideDeleteConfirmation.call(this);
     }
 });

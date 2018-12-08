@@ -2,8 +2,8 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_bottom_": {
-        "type": "number",
-        "value": "0"
+        "type": "string",
+        "value": "-400dp"
     },
     "_height_": {
         "type": "string",
@@ -50,7 +50,7 @@
     "kuid": "a85a9377c9fa46d0b0f52475aff439ce",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmHistoryDetails",
+    "parent": "flxDetails",
     "pf": "frmHistoryDetails",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

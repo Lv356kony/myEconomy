@@ -23,7 +23,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
+    "_skin_": "s1b150196ece4a9b89ecbe3aa2c34dfb",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -37,7 +37,8 @@
     "canUpdateUI": true,
     "children": [
         "flxSideMenu",
-        "flxHideMenu"
+        "flxHideMenu",
+        "flxTouchProtector"
     ],
     "clipbounds": true,
     "containerweight": 100,
