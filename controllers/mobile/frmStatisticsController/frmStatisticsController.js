@@ -5,7 +5,6 @@ define({
     },
         
     init: function() {
-        this.view.flxNextMonth.isVisible = false;
         this.view.lblCurrentBalanceValue.text = serviceCategoryRefactored.getCurrentBalance() + userServiceRefactored.getById(CURRENT_USER.id).currency;
       	this.outcomeClick(this.DATE.month, this.DATE.year);
         this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
@@ -20,13 +19,16 @@ define({
         this.setSegmentLabels(CATEGORY_TYPES.CURRENT, month, year);
     },
 
-    outcomeClick: function(month , year) {
+    outcomeClick: function(month = this.DATE.month, year = this.DATE.year) {
         let selectedItem = this.view.flxTabHeaderOutcome;
         this.view.flxChartContainer.removeAll();
         this.addChart(CATEGORY_TYPES.EXPENSE);
         this.changeTabHeaderColor(selectedItem);
         this.changeTabSumInfo(selectedItem);
        	this.setSegmentLabels(CATEGORY_TYPES.EXPENSE, month, year);
+        if(this.DATE.month === new Date().getMonth() && this.DATE.year === new Date().getFullYear()){
+        	this.view.flxNextMonth.isVisible = false;
+        }
     },
 
     backwardClick: function() {
@@ -52,7 +54,7 @@ define({
         }
         else{
             this.DATE.month = 11;
-            this.DATE.year = DATE.year - 1;
+            this.DATE.year = this.DATE.year - 1;
         }
         this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
         this.outcomeClick(this.DATE.month, this.DATE.year);
@@ -108,6 +110,9 @@ define({
        }
         return defaultTrans;  
     },
+    
+    
+    
     
     getTransactionsByType: function (type) {
         let categories = serviceCategoryRefactored.getCategories();
@@ -382,7 +387,7 @@ define({
                         "font": {
                             "family": ["HelveticaNeue"],
                             "style": ["Bold"],
-                            "size": [20],
+                            "size": [25],
                             "transparency": [0],
                             "color": ["0x000000ff"]
                         }

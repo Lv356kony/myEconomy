@@ -253,7 +253,7 @@ define({
                         "transparency": [0]
                     },
                     "position": "top",
-                    "alignment": "left",
+                    "alignment": "center",
                     "layout": "horizantal",
                     "containerWt": 8,
                     "margin": [10, 10, 10, 10],

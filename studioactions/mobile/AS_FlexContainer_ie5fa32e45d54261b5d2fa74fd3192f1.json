@@ -18,7 +18,13 @@
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "incomeClick",
             "display": "incomeClick",
-            "inputparams": [],
+            "inputparams": [{
+                "name": "month",
+                "value": "this.DATE.month"
+            }, {
+                "name": "year",
+                "value": "this.DATE.year"
+            }],
             "parentId": null,
             "callbackType": null,
             "disabled": null,
