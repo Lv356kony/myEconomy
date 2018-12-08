@@ -66,13 +66,15 @@ define({
                     from: this.getCategoryName(expenseByCategory[i].from),
                     commentary: expenseByCategory[i].commentary,
                     expense: (cetegory.type === CATEGORY_TYPES.INCOME ||
+                              (cetegory.type === CATEGORY_TYPES.CURRENT && cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].to).currency) ||
                               cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ?
-                    expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
+                    		  expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
                     to: this.getCategoryName(expenseByCategory[i].to),
                     date: expenseByCategory[i].date.toString(),
                     expenseTo: expenseTo.toString(),
-                    imgDol: this.setCurrencyIconInRow(this.categoryId)
+                    imgDol: this.setCurrencyIconInRow(this.categoryId),   
                 };
+                this.toId = expenseByCategory[i].to;
 
                 if(fldDetailsSearch) {
                     let searchString = `${rowData.commentary} ${rowData.expense} ${rowData.from}`.toLowerCase();
@@ -101,15 +103,17 @@ define({
         this.view.txtDetailsCategory.text = this.date;
         let data = this.__showDetails(this.categoryId, this.date);
         let segDetails = this.view.segDetails;
+        let category = serviceCategoryRefactored.getById(this.categoryId);
         segDetails.widgetDataMap = {
             txtFrom: 'from',
             txtCommentary: 'commentary',
-            txtExpense: serviceCategoryRefactored.getById(this.categoryId).type === CATEGORY_TYPES.INCOME ?  'expense' : 'expenseTo',
+            txtExpense: category.type === CATEGORY_TYPES.INCOME ||
+            			(category.type === CATEGORY_TYPES.CURRENT && category.currency !== serviceCategoryRefactored.getById(this.toId).currency) ?  
+            			'expense' : 'expenseTo',
             imgDollar: 'imgDol',
             txtMadeBy: 'spender'
         };
         segDetails.setData(data);
-
     },
 
     closeEditFormOnLoad: function(){
