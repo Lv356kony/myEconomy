@@ -9,7 +9,7 @@ define({
                 incomeCategories.push({
                     name: categories[i].name,
                     icon: categories[i].icon,
-                    balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
+                    balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id).toFixed(2)} ${symbol}`,
                     id:  categories[i].id
                 });
             }
@@ -42,7 +42,7 @@ define({
                 currentCategories.push({
                     name: categories[i].name,
                     icon: categories[i].icon,
-                    balance: `${income - expenses} ${symbol}`,
+                    balance: `${(income - expenses).toFixed(2)} ${symbol}`,
                     id:  categories[i].id,
                     sharedUsers_id: categories[i].sharedUsers_id,
                     share: ""
@@ -98,7 +98,7 @@ define({
                 expensesCategories.push({
                     name: categories[i].name,
                     icon: categories[i].icon,
-                    balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id)} ${symbol}`,
+                    balance: `${serviceCategoryRefactored.getBalanceByType(categories[i].id).toFixed(2)} ${symbol}`,
                     id:  categories[i].id,
                     sharedUsers_id: categories[i].sharedUsers_id,
                     share: ""
