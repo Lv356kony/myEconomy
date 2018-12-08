@@ -160,9 +160,11 @@ const serviceCategoryRefactored = {
 
     //If "allTransactions" = true then function will return balance with external transactions into shared categories
     getCurrentBalance: function(allTransactions){
-        let current = this.getIncomeBalance(allTransactions) - this.getExpenseBalance();
+        let current = this.getIncomeBalance() - this.getExpenseBalance();
         if(allTransactions){
-            let externalTransationsInto = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories();
+            current = this.getIncomeBalance(allTransactions);
+            let externalTransationsInto = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
+            .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
             let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
             externalTransationsInto.forEach(trans => {
                 if(this.getById(trans.from).type === CATEGORY_TYPES.CURRENT &&
@@ -171,11 +173,10 @@ const serviceCategoryRefactored = {
                     current += serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, CATEGORY_TYPES.CURRENT);
                 }
             });
-            let externalTransactionsForm = serviceTransactionsRefactored.getAllExternalFromSharedCategories();
-            externalTransactionsForm.forEach(trans => {
-                if(this.getById(trans.to).user_id !== CURRENT_USER.id && 
-                   !(~this.getById(trans.to).sharedUsers_id.indexOf(CURRENT_USER.id))){
-                    current -= serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, CATEGORY_TYPES.EXPENSE);
+            let transactionsForm = serviceTransactionsRefactored.getAll().concat(serviceTransactionsRefactored.getAllExternalFromSharedCategories());
+            transactionsForm.forEach(trans => {
+                if(this.getById(trans.from).type === CATEGORY_TYPES.CURRENT && this.getById(trans.to).type === CATEGORY_TYPES.EXPENSE) {
+                    current -= serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, CATEGORY_TYPES.CURRENT);
                 }
             });
         }
@@ -185,8 +186,13 @@ const serviceCategoryRefactored = {
     //If "allTransactions" = true then function will return balance with external transactions into shared categories
     getExpenseBalance: function(allTransactions){
         let expense = 0.00;
-        let transactionsWithoutShare = serviceTransactionsRefactored.getAll();
-        let transactionsWithshare = transactionsWithoutShare.concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories(), 
+        let transactionsWithoutShare = serviceTransactionsRefactored.getAll()
+        .filter(trans => {
+            if(this.getById(trans.from).user_id === CURRENT_USER.id){
+                return trans;
+            }
+        });
+        let transactionsWithshare = serviceTransactionsRefactored.getAll().concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories(), 
                                                                     serviceTransactionsRefactored.getAllExternalIntoMySharedCategories());
         let transactions = allTransactions ? transactionsWithshare : transactionsWithoutShare;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
