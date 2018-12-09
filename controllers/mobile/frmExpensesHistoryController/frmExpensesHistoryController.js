@@ -200,9 +200,9 @@ define({
                         "margin": [5, 5, 0, 0]
                     },
                     "textLabel": {
-                        "text": ["Expenses", "Incomes"],
+                        "text": ["Expense", "Income"],
                         "color": ["0x000000ff", "0x000000ff"],
-                        "margin": [3, 5, 1, 1]
+                        "margin": [3, 5, 3, 3]
                     },
                     "textValue": {
                         "text": ["$909", "$309"],
