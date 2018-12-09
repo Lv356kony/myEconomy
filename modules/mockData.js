@@ -499,6 +499,15 @@ Object.assign(DATA, {
             user_id: 1,
             date: new Date('December 03, 2018 23:15:30'),
             commentary: 'На Балі'
+        },    {
+            id: 38,
+            from: 10,
+            fromAmount: 5000,
+            to: 9,
+            toAmount: 5000,
+            user_id: 2,
+            date: new Date('August 11, 2018 23:15:30'),
+            commentary: 'На подорож'
         }
         
     ]
