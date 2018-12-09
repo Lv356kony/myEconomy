@@ -63,13 +63,15 @@ define({
                     from: serviceCategoryRefactored.getById(expenseByCategory[i].from).name,
                     commentary: expenseByCategory[i].commentary,
                     expense: (cetegory.type === CATEGORY_TYPES.INCOME ||
+                              (cetegory.type === CATEGORY_TYPES.CURRENT && cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].to).currency) ||
                               cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ?
-                    expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
+                    		  expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
                     to: serviceCategoryRefactored.getById(expenseByCategory[i].to).name,
                     date: expenseByCategory[i].date.toString(),
                     expenseTo: expenseTo.toString(),
                     imgDol: this.setCurrencyIconInRow(this.categoryId)
                 };
+                this.toId = expenseByCategory[i].to;
 
                 if(fldDetailsSearch) {
                     let searchString = `${rowData.commentary} ${rowData.expense} ${rowData.from}`.toLowerCase();
@@ -95,15 +97,17 @@ define({
         this.view.txtDetailsCategory.text = this.date;
         let data = this.__showDetails(this.categoryId, this.date);
         let segDetails = this.view.segDetails;
+        let category = serviceCategoryRefactored.getById(this.categoryId);
         segDetails.widgetDataMap = {
             txtFrom: 'from',
             txtCommentary: 'commentary',
-            txtExpense: serviceCategoryRefactored.getById(this.categoryId).type === CATEGORY_TYPES.INCOME ?  'expense' : 'expenseTo',
+            txtExpense: category.type === CATEGORY_TYPES.INCOME ||
+            			(category.type === CATEGORY_TYPES.CURRENT && category.currency !== serviceCategoryRefactored.getById(this.toId).currency) ?
+            			'expense' : 'expenseTo',
             imgDollar: 'imgDol',
             txtMadeBy: 'spender'
         };
         segDetails.setData(data);
-
     },
 
     closeEditFormOnLoad: function(){
@@ -213,13 +217,13 @@ define({
     },
 
     preventCategoryDuplicationOnSelect: function(mainCategory, lstBoxToCheck, lstBoxToUpdate){
-        let currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id); 
+        let currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id);
         if(currentIds.indexOf(this.categoryId) !== -1 && this.view.lstBoxFrom.selectedKeyValue[1] === this.view.lstBoxTo.selectedKeyValue[1]){
             let currentsExceptYourChoise = this.loadCategories(CATEGORY_TYPES.CURRENT).filter(element => {
                 if(element.indexOf(this.view[lstBoxToCheck].selectedKeyValue[1]) === -1){
                     return element;
                 }
-            });   
+            });
             this.view[lstBoxToUpdate].masterData = this.loadCategories(mainCategory).concat(currentsExceptYourChoise);
         }
     },
@@ -246,7 +250,7 @@ define({
         let fromId = serviceCategoryRefactored.getByName(categotyNameFrom).id;
 
         let categotyNameTo = this.view.lstBoxTo.selectedKeyValue[1];
-        let toId = serviceCategoryRefactored.getByName(categotyNameTo).id; 
+        let toId = serviceCategoryRefactored.getByName(categotyNameTo).id;
 
         let fromAmount = this.view.inpExpense.text;
         let toAmount = this.view.inpExpenseTo.text || selRowItems[0].expenseTo;
@@ -297,7 +301,7 @@ define({
         return transactionsForCurrentUser.filter(element => {
             if(categoryId === element.from){
                 return element;
-            }            
+            }
         });
     },
 

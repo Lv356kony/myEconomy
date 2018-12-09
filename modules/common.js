@@ -395,7 +395,7 @@ const serviceCurrencies = {
 };
 
 function initCurrencies(){
-    let currencySubsets = serviceCurrencies.generateCurrencySubsets(serviceCurrencies.findUserCurrencies());
+    let currencySubsets = serviceCurrencies.generateCurrencySubsets(CURRENCIES);
     serviceCurrencies.getCurrencies(currencySubsets);
 }
 
