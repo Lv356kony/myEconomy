@@ -40,6 +40,7 @@
     "focusskin": "se0d937cce43487299f54f6864210271",
     "groupcells": false,
     "id": "lstBoxFrom",
+    "ide_onSelection": "AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

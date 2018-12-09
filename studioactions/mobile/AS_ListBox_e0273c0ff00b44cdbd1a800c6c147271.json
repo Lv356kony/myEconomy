@@ -1,35 +1,32 @@
 {
-    "AS_ListBox_b942ddd2f6234218a1c6a9b57535cfbc": {
-        "id": "AS_ListBox_b942ddd2f6234218a1c6a9b57535cfbc",
+    "AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271": {
+        "id": "AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271",
         "type": "ACTION_SEQUENCE",
         "params": [{
             "datatype": "collection",
             "name": "eventobject"
         }],
+        "contextObj": {
+            "name": "frmHistoryDetails",
+            "type": "forms",
+            "platform": "",
+            "KUID": "c9af47bd87034153a0897765ac19e939"
+        },
         "language": "js",
         "actions": [{
-            "id": "INVOKE_FUNCTION__ide_onSelection_f6832efd84b44a409c74445bdb73f943",
-            "type": "INVOKE_FUNCTION",
-            "sequenceKUID": "changeIconOnSelect",
-            "display": "changeIconOnSelect",
-            "inputparams": [],
-            "callbackType": null,
-            "disabled": null,
-            "source": "controller"
-        }, {
-            "id": "INVOKE_FUNCTION___aa9d7bbe63674d19b46c69e7fb070c62",
+            "id": "INVOKE_FUNCTION___ad3c399f84014d5996f690855ca54797",
             "type": "INVOKE_FUNCTION",
             "sequenceKUID": "preventCategoryDuplicationOnSelect",
             "display": "preventCategoryDuplicationOnSelect",
             "inputparams": [{
                 "name": "mainCategory",
-                "value": "CATEGORY_TYPES.INCOME"
+                "value": "CATEGORY_TYPES.EXPENSE"
             }, {
                 "name": "lstBoxToCheck",
-                "value": "'lstBoxTo'"
+                "value": "'lstBoxFrom'"
             }, {
                 "name": "lstBoxToUpdate",
-                "value": "'lstBoxFrom'"
+                "value": "'lstBoxTo'"
             }],
             "parentId": null,
             "callbackType": null,

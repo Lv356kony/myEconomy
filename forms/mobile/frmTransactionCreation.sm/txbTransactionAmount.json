@@ -43,7 +43,9 @@
     "containerheightmode": 1,
     "containerweight": 100,
     "contentalignment": 4,
-    "focusskin": "sab74807df994273ab3b0a9dc946fbbc",
+    "disabledSkins": {
+        "focusSkin": "sab74807df994273ab3b0a9dc946fbbc"
+    },
     "id": "txbTransactionAmount",
     "ide_onTextChange": "AS_TextField_da66599987d84693a30f15a9d2344dc9",
     "info": null,
