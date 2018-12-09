@@ -14,6 +14,11 @@ define({
         self.changeIconOnSelect.call(this);
         self.preventCategoryDuplicationOnSelect.call(this, CATEGORY_TYPES.INCOME, 'lstBoxTo', 'lstBoxFrom');
     },
+    /** onSelection defined for lstBoxFrom **/
+    AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271: function AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271(eventobject) {
+        var self = this;
+        return self.preventCategoryDuplicationOnSelect.call(this, CATEGORY_TYPES.EXPENSE, 'lstBoxFrom', 'lstBoxTo');
+    },
     /** onClick defined for btnUpdate **/
     AS_Button_f5e19543b750464dafb06db05946f550: function AS_Button_f5e19543b750464dafb06db05946f550(eventobject) {
         var self = this;
@@ -75,10 +80,5 @@ define({
         self.showDetails.call(this);
         self.closeEditFormOnLoad.call(this);
         self.clearInputs.call(this);
-    },
-    /** onSelection defined for lstBoxFrom **/
-    AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271: function AS_ListBox_e0273c0ff00b44cdbd1a800c6c147271(eventobject) {
-        var self = this;
-        return self.preventCategoryDuplicationOnSelect.call(this, CATEGORY_TYPES.EXPENSE, 'lstBoxFrom', 'lstBoxTo');
     }
 });

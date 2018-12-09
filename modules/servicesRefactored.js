@@ -116,7 +116,7 @@ const serviceTransactionsRefactored = {
         transaction.to = to || transaction.to;
         transaction.date = new Date(date) || transaction.date;
         transaction.commentary = comment || transaction.commentary;
-
+		transaction.user_id = CURRENT_USER.id;
     },
 
     deleteById: function(transactionId){

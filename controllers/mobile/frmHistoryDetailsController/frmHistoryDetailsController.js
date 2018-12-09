@@ -65,7 +65,7 @@ define({
                     expense: (cetegory.type === CATEGORY_TYPES.INCOME ||
                               (cetegory.type === CATEGORY_TYPES.CURRENT && cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].to).currency) ||
                               cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ?
-                    		  expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
+                    expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
                     to: serviceCategoryRefactored.getById(expenseByCategory[i].to).name,
                     date: expenseByCategory[i].date.toString(),
                     expenseTo: expenseTo.toString(),
@@ -102,8 +102,8 @@ define({
             txtFrom: 'from',
             txtCommentary: 'commentary',
             txtExpense: category.type === CATEGORY_TYPES.INCOME ||
-            			(category.type === CATEGORY_TYPES.CURRENT && category.currency !== serviceCategoryRefactored.getById(this.toId).currency) ?
-            			'expense' : 'expenseTo',
+            (category.type === CATEGORY_TYPES.CURRENT && category.currency !== serviceCategoryRefactored.getById(this.toId).currency) ?
+            'expense' : 'expenseTo',
             imgDollar: 'imgDol',
             txtMadeBy: 'spender'
         };
@@ -218,7 +218,9 @@ define({
 
     preventCategoryDuplicationOnSelect: function(mainCategory, lstBoxToCheck, lstBoxToUpdate){
         let currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id);
-        if(currentIds.indexOf(this.categoryId) !== -1 && this.view.lstBoxFrom.selectedKeyValue[1] === this.view.lstBoxTo.selectedKeyValue[1]){
+        let lstFrom = this.view.lstBoxFrom.selectedKeyValue === null ? 'Default' : this.view.lstBoxFrom.selectedKeyValue[1];
+        let lstTo = this.view.lstBoxTo.selectedKeyValue === null ? "Another Default" : this.view.lstBoxTo.selectedKeyValue[1];
+        if(currentIds.indexOf(this.categoryId) !== -1 && lstFrom === lstTo){
             let currentsExceptYourChoise = this.loadCategories(CATEGORY_TYPES.CURRENT).filter(element => {
                 if(element.indexOf(this.view[lstBoxToCheck].selectedKeyValue[1]) === -1){
                     return element;
@@ -247,17 +249,28 @@ define({
         let id = this.view.lblTransactionId.text;
 
         let categotyNameFrom = this.view.lstBoxFrom.selectedKeyValue[1];
-        let fromId = serviceCategoryRefactored.getByName(categotyNameFrom).id;
+        let from = serviceCategoryRefactored.getByName(categotyNameFrom);
 
         let categotyNameTo = this.view.lstBoxTo.selectedKeyValue[1];
-        let toId = serviceCategoryRefactored.getByName(categotyNameTo).id;
+        let to = serviceCategoryRefactored.getByName(categotyNameTo);
 
-        let fromAmount = this.view.inpExpense.text;
-        let toAmount = this.view.inpExpenseTo.text || selRowItems[0].expenseTo;
         let comment = this.view.inpCommentary.text;
         let date = this.view.calEdit.month + ' ' + this.view.calEdit.day + ', ' + this.view.calEdit.year;
+		let fromAmount;
+        let toAmount;
+        
+        if(from.currency === to.currency){
+            fromAmount = this.view.inpExpense.text;
+            toAmount = fromAmount;
+        } else if(from.currency === userServiceRefactored.getById(CURRENT_USER.id).currency && from.currency !== to.currency){
+            fromAmount = this.view.inpExpense.text;
+            toAmount = calculate(from.currency, to.currency, fromAmount);
+        } else {
+            fromAmount = this.view.inpExpense.text;
+            toAmount = this.view.inpExpenseTo.text || selRowItems[0].expenseTo;              
+        }
 
-        serviceTransactionsRefactored.update(id, fromId, Number(fromAmount), toId, Number(toAmount), date, comment);
+        serviceTransactionsRefactored.update(id, from.id, Number(fromAmount), to.id, Number(toAmount), date, comment);
         this.onEmptyPageReturn();
     },
 

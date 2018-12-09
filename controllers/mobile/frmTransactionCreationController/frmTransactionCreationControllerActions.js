@@ -12,12 +12,14 @@ define({
         var self = this;
         self.selectionFromCategory.call(this);
         self.cleanFields.call(this);
+        self.preventCategoryDuplicationOnSelect.call(this, CATEGORY_TYPES.EXPENSE, 'lstTransactionFrom', 'lstTransactionTo');
     },
     /** onSelection defined for lstTransactionTo **/
     AS_ListBox_g83a1db0226946b4aedd58ad39558bff: function AS_ListBox_g83a1db0226946b4aedd58ad39558bff(eventobject) {
         var self = this;
         self.selectionToCategory.call(this);
         self.cleanFields.call(this);
+        self.preventCategoryDuplicationOnSelect.call(this, [], 'lstTransactionTo', 'lstTransactionFrom');
     },
     /** onTextChange defined for txbTransactionAmount **/
     AS_TextField_da66599987d84693a30f15a9d2344dc9: function AS_TextField_da66599987d84693a30f15a9d2344dc9(eventobject, changedtext) {

@@ -33,6 +33,25 @@
             "callbackType": null,
             "disabled": null,
             "source": "controller"
+        }, {
+            "id": "INVOKE_FUNCTION___g33efc13003c497f982efb612fe5324c",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "preventCategoryDuplicationOnSelect",
+            "display": "preventCategoryDuplicationOnSelect",
+            "inputparams": [{
+                "name": "mainCategory",
+                "value": "[]"
+            }, {
+                "name": "lstBoxToCheck",
+                "value": "'lstTransactionTo'"
+            }, {
+                "name": "lstBoxToUpdate",
+                "value": "'lstTransactionFrom'"
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
         }]
     }
 }

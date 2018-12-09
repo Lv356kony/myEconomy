@@ -78,7 +78,7 @@ define({
         if (this.category === CATEGORY_TYPES.EXPENSE) {
             dataFrom = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
             dataTo = this.getDataForListBox(CATEGORY_TYPES.EXPENSE)
-                			.concat(this.getDataForListBox(CATEGORY_TYPES.CURRENT));
+                .concat(this.getDataForListBox(CATEGORY_TYPES.CURRENT));
         } else {
             dataFrom = this.getDataForListBox(CATEGORY_TYPES.INCOME);
             dataTo = this.getDataForListBox(CATEGORY_TYPES.CURRENT);
@@ -89,6 +89,39 @@ define({
         listBoxTo.selectedKey = dataTo[0][0];
     },
 
+    preventCategoryDuplicationOnSelect: function(mainCategory, lstBoxToCheck, lstBoxToUpdate){
+        let lstFrom = this.view.lstTransactionFrom.selectedKeyValue === null ? 'Default' : this.view.lstTransactionFrom.selectedKeyValue[1];
+        let lstTo = this.view.lstTransactionTo.selectedKeyValue === null ? "Another Default" : this.view.lstTransactionTo.selectedKeyValue[1];
+        if(lstFrom === lstTo){
+            let currentsExceptYourChoise = this.loadCategories(CATEGORY_TYPES.CURRENT).filter(element => {
+                if(element.indexOf(this.view[lstBoxToCheck].selectedKeyValue[1]) === -1){
+                    return element;
+                }
+            });
+            this.view[lstBoxToUpdate].masterData = this.loadCategories(mainCategory).concat(currentsExceptYourChoise);
+        }
+    },
+
+    getCategoriesByType: function(typeOfTransaction){
+        let cetegoriesForCurrentUser = serviceCategoryRefactored.getCategories().concat(serviceCategoryRefactored.getSharedCategories());
+        return cetegoriesForCurrentUser.filter(element => {
+            if(typeOfTransaction === element.type){
+                return element;
+            }
+        });
+    },
+
+    loadCategories: function(typeOfTransaction){
+        let categories = this.getCategoriesByType(typeOfTransaction);
+        let prepForList = [];
+        for(var i = 0; i < categories.length; i++){
+            let lblId = typeOfTransaction + i;
+            prepForList.push([
+                lblId.toString(), categories[i].name
+            ]);
+        }
+        return prepForList;
+    },
 
     getSelectedCategory: function (type) {
         let selectedItem = [];
@@ -155,14 +188,14 @@ define({
             this.view.txtExchange.text = '';
         }
     } ,
-      cleanFields: function(){
-     this.view.txbTransactionAmount.text ="";
-     this.view.txtExchange.text = "";
-     this.view.flxExchange.isVisible = false;
-     this.view.lblCurrency.text = "";
-     this.view.lblAnotherCurrency.text = "";
+    cleanFields: function(){
+        this.view.txbTransactionAmount.text ="";
+        this.view.txtExchange.text = "";
+        this.view.flxExchange.isVisible = false;
+        this.view.lblCurrency.text = "";
+        this.view.lblAnotherCurrency.text = "";
 
-   }
+    }
 
 
 
