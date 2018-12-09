@@ -207,7 +207,11 @@ const serviceCategoryRefactored = {
     getById: categoryId => {
         return DATA.categories.find(category => category.id === categoryId);
     },
-
+    
+    getByName: categoryName => {
+        return DATA.categories.find(category => category.name === categoryName);
+    },
+    
     getCategories: function() {
         let categories = [];
         for(let i = 0; i < DATA.categories.length; i++) {
@@ -218,15 +222,15 @@ const serviceCategoryRefactored = {
         return categories;
     },
 
-    getWithSharedCategories: function() {
-        let categories = [];
-        for(let i = 0; i < DATA.categories.length; i++) {
-            if(DATA.categories[i].user_id === CURRENT_USER.id || DATA.categories[i].sharedUsers_id.indexOf(CURRENT_USER.id) !== -1) {
-                categories.push(DATA.categories[i]);
-            }
-        }
-        return categories;
-    },
+//     getWithSharedCategories: function() {
+//         let categories = [];
+//         for(let i = 0; i < DATA.categories.length; i++) {
+//             if(DATA.categories[i].user_id === CURRENT_USER.id || DATA.categories[i].sharedUsers_id.indexOf(CURRENT_USER.id) !== -1) {
+//                 categories.push(DATA.categories[i]);
+//             }
+//         }
+//         return categories;
+//     },
 
     getCurrencyById: function(categoryId) {
         return this.getById(categoryId).currency;

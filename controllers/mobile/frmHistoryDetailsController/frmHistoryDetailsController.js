@@ -26,7 +26,6 @@ define({
 
     __showDetails: function(categoryId, date){
         const incomeIds = this.getCategoriesByType(CATEGORY_TYPES.INCOME).map(element => element.id);
-        const currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id);
 
         let expenseByCategory = '';
         this.view.btnDetailsSearch.text = 'Search';
@@ -34,8 +33,6 @@ define({
 
         if(incomeIds.indexOf(this.categoryId) !== -1){
             expenseByCategory = this.getTransactionsByKeyFrom(this.categoryId);
-        } else if(currentIds.indexOf(this.categoryId) !== -1) {
-            expenseByCategory = serviceTransactionsRefactored.getByCategoryId(categoryId);
         } else {
             expenseByCategory = serviceTransactionsRefactored.getByCategoryId(categoryId);
         }
@@ -63,12 +60,12 @@ define({
                 let rowData = {
                     id: expenseByCategory[i].id,
                     spender: whoMadeTransaction,
-                    from: this.getCategoryName(expenseByCategory[i].from),
+                    from: serviceCategoryRefactored.getById(expenseByCategory[i].from).name,
                     commentary: expenseByCategory[i].commentary,
                     expense: (cetegory.type === CATEGORY_TYPES.INCOME ||
                               cetegory.currency !== serviceCategoryRefactored.getById(expenseByCategory[i].from).currency) ?
                     expenseByCategory[i].fromAmount.toString() :  expenseByCategory[i].toAmount.toString(),
-                    to: this.getCategoryName(expenseByCategory[i].to),
+                    to: serviceCategoryRefactored.getById(expenseByCategory[i].to).name,
                     date: expenseByCategory[i].date.toString(),
                     expenseTo: expenseTo.toString(),
                     imgDol: this.setCurrencyIconInRow(this.categoryId)
@@ -88,9 +85,6 @@ define({
                     data.push(rowData);  
                 }
             }
-        }
-        if(data.length === 0) {
-            alert('Nope. There is nothing here.');
         }
         this.view.fldDetailsSearch.text = '';
 
@@ -182,13 +176,8 @@ define({
             this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.INCOME);
             this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);
         } else if(currentIds.indexOf(this.categoryId) !== -1){
-            let currentExceptThis = this.loadCategories(CATEGORY_TYPES.CURRENT).filter(element => {
-                if(element.indexOf(serviceCategoryRefactored.getById(this.categoryId).name) === -1){
-                    return element;
-                }
-            });
-            this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);
-            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE).concat(currentExceptThis);
+            this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.INCOME).concat(this.loadCategories(CATEGORY_TYPES.CURRENT));
+            this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE).concat(this.loadCategories(CATEGORY_TYPES.CURRENT));
         } else{
             this.view.lstBoxFrom.masterData = this.loadCategories(CATEGORY_TYPES.CURRENT);
             this.view.lstBoxTo.masterData = this.loadCategories(CATEGORY_TYPES.EXPENSE);
@@ -206,7 +195,7 @@ define({
         this.view.inpExpenseTo.text = selRowItems[0].expenseTo >= 0 ? selRowItems[0].expenseTo : (selRowItems[0].expenseTo * -1).toString();
         this.view.inpCommentary.text = selRowItems[0].commentary;
         this.view.calEdit.dateComponents = [date.getDate(), date.getMonth()+1, date.getFullYear()];     
-        this.view.imgCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
+        this.view.imgCategory.src = serviceCategoryRefactored.getByName(selRowItems[0].to).icon;
         this.view.imgCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
         this.view.imgCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
 
@@ -216,17 +205,28 @@ define({
         this.view.lblShowExpenseTo.text = selRowItems[0].expenseTo >= 0 ? selRowItems[0].expenseTo : (selRowItems[0].expenseTo * -1).toString();
         this.view.lblShowCommValue.text = selRowItems[0].commentary;
         this.view.lblShowDateValue.text = this.date;
-        this.view.imgShowCategory.src = this.findByCategoryName(selRowItems[0].to).icon;
+        this.view.imgShowCategory.src = serviceCategoryRefactored.getByName(selRowItems[0].to).icon;
         this.view.imgShowCurrency.src = this.setCurrencyIconInDetails(selRowItems[0].from);
         this.view.imgShowCurrencyTo.src = this.setCurrencyIconInDetails(selRowItems[0].to);
 
         this.checkIfEqualCurrency(this.view.lblShowFromValue.text, this.view.lblShowCategory.text);
     },
 
+    preventCategoryDuplicationOnSelect: function(mainCategory, lstBoxToCheck, lstBoxToUpdate){
+        let currentIds = this.getCategoriesByType(CATEGORY_TYPES.CURRENT).map(element => element.id); 
+        if(currentIds.indexOf(this.categoryId) !== -1 && this.view.lstBoxFrom.selectedKeyValue[1] === this.view.lstBoxTo.selectedKeyValue[1]){
+            let currentsExceptYourChoise = this.loadCategories(CATEGORY_TYPES.CURRENT).filter(element => {
+                if(element.indexOf(this.view[lstBoxToCheck].selectedKeyValue[1]) === -1){
+                    return element;
+                }
+            });   
+            this.view[lstBoxToUpdate].masterData = this.loadCategories(mainCategory).concat(currentsExceptYourChoise);
+        }
+    },
+
     changeIconOnSelect: function(){
-        let categotyName = this.view.lstBoxTo.selectedKeyValue[1];
-        let cetgory = this.findByCategoryName(categotyName); 
-        this.view.imgCategory.src = cetgory.icon;
+        let categoryName = this.view.lstBoxTo.selectedKeyValue[1];
+        this.view.imgCategory.src = serviceCategoryRefactored.getByName(categoryName).icon;
     },
 
     findCategoryKey: function(data, categoryName){
@@ -243,23 +243,23 @@ define({
         let id = this.view.lblTransactionId.text;
 
         let categotyNameFrom = this.view.lstBoxFrom.selectedKeyValue[1];
-        let fromId = this.findByCategoryName(categotyNameFrom).id;
+        let fromId = serviceCategoryRefactored.getByName(categotyNameFrom).id;
 
         let categotyNameTo = this.view.lstBoxTo.selectedKeyValue[1];
-        let toId = this.findByCategoryName(categotyNameTo).id; 
+        let toId = serviceCategoryRefactored.getByName(categotyNameTo).id; 
 
         let fromAmount = this.view.inpExpense.text;
         let toAmount = this.view.inpExpenseTo.text || selRowItems[0].expenseTo;
         let comment = this.view.inpCommentary.text;
         let date = this.view.calEdit.month + ' ' + this.view.calEdit.day + ', ' + this.view.calEdit.year;
 
-        serviceTransactions.update(id, fromId, Number(fromAmount), toId, Number(toAmount), date, comment);
+        serviceTransactionsRefactored.update(id, fromId, Number(fromAmount), toId, Number(toAmount), date, comment);
         this.onEmptyPageReturn();
     },
 
     deleteTransaction: function(){
         let id = this.view.lblTransactionId.text;
-        serviceTransactions.deleteById(id);
+        serviceTransactionsRefactored.deleteById(id);
         this.onEmptyPageReturn();
     },
 
@@ -284,44 +284,30 @@ define({
     },
 
     getCategoriesByType: function(typeOfTransaction){
-        let cetegoriesForCurrentUser = serviceCategoryRefactored.getWithSharedCategories();
-        let categories = [];
-        for(let i = 0; i < cetegoriesForCurrentUser.length; i++){
-            if(typeOfTransaction === cetegoriesForCurrentUser[i].type){
-                categories.push(cetegoriesForCurrentUser[i]);
+        let cetegoriesForCurrentUser = serviceCategoryRefactored.getCategories().concat(serviceCategoryRefactored.getSharedCategories());
+        return cetegoriesForCurrentUser.filter(element => {
+            if(typeOfTransaction === element.type){
+                return element;
             }
-        }
-        return categories;
+        });
     },
 
     getTransactionsByKeyFrom: function(categoryId){
         let transactionsForCurrentUser = serviceTransactionsRefactored.getAll();
-        let transaction = [];
-        for(let i = 0; i < transactionsForCurrentUser.length; i++){
-            if(categoryId === transactionsForCurrentUser[i].from){
-                transaction.push(transactionsForCurrentUser[i]);
-            }
-        }
-        return transaction;
-    },
-
-    findByCategoryName: function(categoryName){
-        let category = DATA.categories.find(category => category.name === categoryName);
-        return category;
-    }, 
-
-    getCategoryName: function(id){
-        let category = DATA.categories.find(category => category.id === id);
-        return category.name;
+        return transactionsForCurrentUser.filter(element => {
+            if(categoryId === element.from){
+                return element;
+            }            
+        });
     },
 
     setCurrencyIconInRow: function(categoryId) {
-        let currency = serviceCategory.getCurrencyById(categoryId);
+        let currency = serviceCategoryRefactored.getCurrencyById(categoryId);
         return this.setCurrency(currency);
     },
 
     setCurrencyIconInDetails: function(categoryName) {
-        let currency = serviceCategory.getCurrencyByCatName(categoryName);
+        let currency = serviceCategoryRefactored.getCurrencyByCatName(categoryName);
         return this.setCurrency(currency);
     },
 
