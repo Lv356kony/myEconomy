@@ -5,7 +5,7 @@ define({
         let userEmail = this.view.txtEmail.text;
         let userPassword = this.view.txtPassword.text;  
 
-        let result = userService.login(userEmail, userPassword);
+        let result = userServiceRefactored.login(userEmail, userPassword);
 
         if ( result.error ) {
             let type = result.error.type;
@@ -33,11 +33,7 @@ define({
                 this.view.flxLoader.isVisible = false;
             };    
             kony.timer.schedule("mytimer", load, 3, false);
-
-
-
         }   
-
     },
 
     registration : function() {
@@ -47,7 +43,7 @@ define({
         let userConfPassword = this.view.txtConfirmation.text;
         
 
-        let result = userService.registration(userEmail, userPassword, userConfPassword);
+        let result = userServiceRefactored.registration(userEmail, userPassword, userConfPassword);
 
         if ( result.error ) {
             let type = result.error.type;

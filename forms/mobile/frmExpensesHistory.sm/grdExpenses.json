@@ -48,7 +48,7 @@
         {
             "columnContentAlignment": 5,
             "columnHeaderTemplate": null,
-            "columnHeaderText": "MIN EXPENSES",
+            "columnHeaderText": "MIN EXPENSE",
             "columnHeaderType": "text",
             "columnID": "col1",
             "columnOnClick": null,
@@ -62,7 +62,7 @@
         {
             "columnContentAlignment": 5,
             "columnHeaderTemplate": null,
-            "columnHeaderText": "AVG EXPENSES",
+            "columnHeaderText": "AVG EXPENSE",
             "columnHeaderType": "text",
             "columnID": "col2",
             "columnOnClick": null,
@@ -76,7 +76,7 @@
         {
             "columnContentAlignment": 5,
             "columnHeaderTemplate": null,
-            "columnHeaderText": "MAX EXPENSES",
+            "columnHeaderText": "MAX EXPENSE",
             "columnHeaderType": "text",
             "columnID": "col3",
             "columnOnClick": null,

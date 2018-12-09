@@ -157,10 +157,10 @@ define({
     exchange: function(){
 
         let from = this.view.lstTransactionFrom.selectedKeyValue[1];    
-        let currencyFrom= serviceCategory.getCurrencyByCatName(from); 
+        let currencyFrom= serviceCategoryRefactored.getCurrencyByCatName(from); 
 
         let to = this.view.lstTransactionTo.selectedKeyValue[1];  
-        let currencyTo = serviceCategory.getCurrencyByCatName(to); 
+        let currencyTo = serviceCategoryRefactored.getCurrencyByCatName(to); 
 
         let ammount = parseFloat(this.view.txbTransactionAmount.text);
         let exchange = this.view.txtExchange.text;

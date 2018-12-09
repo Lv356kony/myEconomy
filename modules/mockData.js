@@ -12,7 +12,7 @@ Object.assign(DATA, {
         },  {
             id: 2,
             email: 'taras.hlukhovetskyi@gmail.com',
-            password: 'intelwithradeon',
+            password: 'Td1@',
             firstName: "Taras",
             lastName: "",
             currency: "UAH",
@@ -20,7 +20,7 @@ Object.assign(DATA, {
         },  {
             id: 3,
             email: 'o.piaskovska@gmail.com',
-            password: 'somepassword',
+            password: 'Ok3@',
             firstName: "Oksana",
             lastName: "",
             currency: "UAH",
@@ -36,7 +36,7 @@ Object.assign(DATA, {
         },  {
             id: 5,
             email: 'olesiadovbush98@gmail.com',
-            password: 'onemoretime',
+            password: 'Ol5@',
             firstName: "",
             lastName: "",
             currency: "UAH",
