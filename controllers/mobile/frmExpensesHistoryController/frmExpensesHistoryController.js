@@ -1,46 +1,46 @@
 define({ 
-    
-	init: function (year) { 
+
+    init: function (year) { 
         this.addChart(year);
-       	this.view.grdIncome.data = [{col1: Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT)), 
-           col2: (Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT)) + Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT))) / 2, 
-           col3:  Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT))}];
-		this.view.grdExpenses.data = [{col1: Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE)), 
-           col2: (Math.min(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE)) + Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE))) / 2, 
-           col3:  Math.max(...this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE))}];   
+        this.view.grdIncome.data = [{col1: Math.min(...this.getValuesRange(CATEGORY_TYPES.CURRENT)), 
+                                     col2: (Math.min(...this.getValuesRange(CATEGORY_TYPES.CURRENT)) + Math.max(...this.getValuesRange(CATEGORY_TYPES.CURRENT))) / 2, 
+                                     col3:  Math.max(...this.getValuesRange(CATEGORY_TYPES.CURRENT))}];
+        this.view.grdExpenses.data = [{col1: Math.min(...this.getValuesRange(CATEGORY_TYPES.EXPENSE)), 
+                                       col2: (Math.min(...this.getValuesRange(CATEGORY_TYPES.EXPENSE)) + Math.max(...this.getValuesRange(CATEGORY_TYPES.EXPENSE))) / 2, 
+                                       col3:  Math.max(...this.getValuesRange(CATEGORY_TYPES.EXPENSE))}];   
     },
-    
+
     backwardClick: function() {
-		navToForm("frmCategoriesList");
+        navToForm("frmCategoriesList");
     },
-      
+
     getTransactionsInDefaultCurrency: function(){
         let currencyDefault = userServiceRefactored.getById(CURRENT_USER.id).currency;
         let trans = serviceTransactionsRefactored.getAll();
         let categories =  serviceCategoryRefactored.getCategories();
         let defaultTrans = [];
-		let data = {};
+        let data = {};
         let currencyTo, currencyFrom;
         for(let i = 0; i < trans.length; i++){
-			data = {id: trans[i].id,
+            data = {id: trans[i].id,
                     from: trans[i].from,
                     to: trans[i].to,
                     date: trans[i].date,
                     comment: trans[i].commentary};
-			currencyTo = serviceCategoryRefactored.getCurrencyById(trans[i].to);
-			currencyFrom = serviceCategoryRefactored.getCurrencyById(trans[i].from);
-			if(currencyTo === currencyFrom && currencyTo === currencyDefault){
-				data.amount = trans[i].fromAmount;
-			}else if(currencyFrom === currencyDefault){
-                    data.amount = calculate(currencyTo, currencyDefault, trans[i].toAmount);	
-			}else{
-			data.amount = calculate(currencyFrom, currencyDefault, trans[i].fromAmount);		
-		}
-			defaultTrans.push(data);
-       }
+            currencyTo = serviceCategoryRefactored.getCurrencyById(trans[i].to);
+            currencyFrom = serviceCategoryRefactored.getCurrencyById(trans[i].from);
+            if(currencyTo === currencyFrom && currencyTo === currencyDefault){
+                data.amount = trans[i].fromAmount;
+            }else if(currencyFrom === currencyDefault){
+                data.amount = calculate(currencyTo, currencyDefault, trans[i].toAmount);	
+            }else{
+                data.amount = calculate(currencyFrom, currencyDefault, trans[i].fromAmount);		
+            }
+            defaultTrans.push(data);
+        }
         return defaultTrans;  
     },
-        
+
     getTransactionsByType: function (type) {
         let categories = serviceCategoryRefactored.getCategories();
         let transactions = this.getTransactionsInDefaultCurrency();
@@ -60,8 +60,8 @@ define({
         }
         return transactionsByType;
     },
-    
-    getBalanceForEachMonthByType: function (type, year,start,end) {
+
+    getBalanceForEachMonthByType: function (type, year, month) {
         year = year || new Date().getFullYear();
         let transactions = this.getTransactionsByType(type);
         let transactionsForEachMonth = [];
@@ -75,97 +75,61 @@ define({
             transactionsForEachMonth.push(sum);
         } 
         return transactionsForEachMonth;
-        
     },
-  
-	formDate: function(startMonth = 0, endMonth = 11, year = new Date().getFullYear()){
-		let monthes = [];
-    	for(let i = startMonth; i <= endMonth; i++){
-        	monthes.push( i+1 + "/" + year);
-    	} 
-	return monthes;  
-	},
 
-//this function returns list of dataset for chart and name of rows if type = "date"
-    getBalanceForEachYearByType: function(type){
-        let trans = this.getTransactionsInDefaultCurrency();
-        let min = serviceTransactionsRefactored.getById(1).date.getFullYear();
-        let max = serviceTransactionsRefactored.getById(1).date.getFullYear();
-        trans.forEach(i => {
-            if(i.date.getFullYear() > max){
-                max = i.date.getFullYear();
-            }if(i.date.getFullYear() < min){
-                min = i.date.getFullYear();
-            }
+    getDateRange: function() {
+        let datesMock = [];
+        serviceTransactionsRefactored.getAll().forEach(i => {
+            datesMock.push(i.date);
         });
-        let allTrans = [];
-        let dateRows = [];
-        let startMonth = serviceTransactionsRefactored.getById(1).date.getMonth();
-        let endMonth = serviceTransactionsRefactored.getById(1).date.getMonth();
-        if(min === max){
-            trans.forEach(i=>{
-                if(i.date.getMonth() < startMonth){
-                        startMonth = i.date.getMonth();
-                }
-                if(i.date.getMonth() > endMonth){
-                        endMonth = i.date.getMonth();
-                }
-            });
-        if(arguments[0] === "date"){
-        return this.formDate(startMonth, endMonth, min);
-        }else{
-        return this.getBalanceForEachMonthByType(type, endYear, startMonth, endMonth);
-        }
-        }
+        let startDate = new Date(Math.min(...datesMock)).toISOString();
+        let endDate = new Date().toISOString();
+        let start      = startDate.split('-');
+        let end        = endDate.split('-');
+        let startYear  = parseInt(start[0]);
+        let endYear    = parseInt(end[0]);
+        let dates      = [];
 
-        for(let year = min; year <= max; year++){
-            if(min < year && year < max){
-                if(arguments[0] === "date"){
-                    dateRows.push(this.formDate(0, 11, year));
-                }else{
-                    allTrans.push(this.getBalanceForEachMonthByType(type, year, 0, 11));
-                }
+        for(let i = startYear; i <= endYear; i++) {
+            let endMonth = i != endYear ? 11 : parseInt(end[1]) - 1;
+            let startMon = i === startYear ? parseInt(start[1])-1 : 0;
+            for(let j = startMon; j <= endMonth; j = j > 12 ? j % 12 || 11 : j+1) {
+                dates.push([ getMonth[j], i].join('/'));
             }
-            if(year === min && year+1 <= max){
-                trans.forEach(i => {
-                    if(i.date.getMonth() < startMonth && i.date.getFullYear() === year){
-                        startMonth = i.date.getMonth();
-                    }
-                });
-                if(arguments[0] === "date"){
-                    dateRows.push(this.formDate(startMonth, 11, year));
-                }else{
-                    allTrans.push(this.getBalanceForEachMonthByType(type, year, startMonth, 11));
-                }
-            }
-            if(year === max && year-1 >= min){
-                trans.forEach(i => {
-                    if(i.date.getMonth() > endMonth && i.date.getFullYear() === year){
-                        endMonth = i.date.getMonth();
-                    }
-                });
-                if(arguments[0] === "date"){
-                    dateRows.push(this.formDate(0, endMonth, year));
-                }else{
-                    allTrans.push(this.getBalanceForEachMonthByType(type, year, 0, endMonth));
-                }
-            }
-       }
-        if(arguments[0] === "date"){
-            return [].concat.apply([], dateRows);
-        }else{
-            return [].concat.apply([], allTrans);
         }
+        return dates;
     },
     
+	//returns data by type of all period
+    getValuesRange: function(type) {
+        let datesMock = [];
+        serviceTransactionsRefactored.getAll().forEach(i => {
+            datesMock.push(i.date);
+        });
+        let startDate = new Date(Math.min(...datesMock)).toISOString();
+        let endDate = new Date().toISOString();
+        let start      = startDate.split('-');
+        let end        = endDate.split('-');
+        let startYear  = parseInt(start[0]);
+        let endYear    = parseInt(end[0]);
+        let values     = [];
+
+        for(let i = startYear; i <= endYear; i++) {
+            let endMonth = i != endYear ? 11 : parseInt(end[1]) - 1;
+            let startMon = i === startYear ? parseInt(start[1])-1 : 0;
+
+            values.push(this.getBalanceForEachMonthByType(type,i));
+        }
+        return [].concat.apply([], values);
+    },    
+
     addChart : function (year) {
         year = year || new Date().getFullYear();
         var chartWidjet = this.kdv_createChartWidget(year);
         this.view.flxChartContainer.removeAll();
         this.view.flxChartContainer.add(chartWidjet);
-
     },
-   
+
     //creating chart widget...
     kdv_createChartWidget: function (year) {
         var chartObj = this.kdv_createChartJSObject(year);
@@ -306,7 +270,7 @@ define({
                     "yAxis": {
                         "scale": {
                             "minValue": 0,
-                            "maxValue": parseInt(Math.max(...this.getBalanceForEachYearByType())+100),
+                            "maxValue": parseInt(Math.max(...this.getValuesRange())+100),
                             "majorInterval": 0,
                             "minorInterval": 0,
                             "offset": {
@@ -387,14 +351,14 @@ define({
             },
             "chartData": {
                 "rowNames": {
-                    "values": this.getBalanceForEachYearByType("date")
+                    "values": this.getDateRange()
                 },
                 "columnNames": {
                     "values": ["Expenses", "Current"]
                 },
                 "data": {
-                    "Expenses": this.getBalanceForEachYearByType(CATEGORY_TYPES.EXPENSE),
-                    "Current": this.getBalanceForEachYearByType(CATEGORY_TYPES.CURRENT)
+                    "Expenses": this.getValuesRange(CATEGORY_TYPES.EXPENSE),
+                    "Current": this.getValuesRange(CATEGORY_TYPES.CURRENT)
                 }
             },
             "chartEvents": {
@@ -444,4 +408,4 @@ define({
         return chartInfo;
     }
 
- });
+});

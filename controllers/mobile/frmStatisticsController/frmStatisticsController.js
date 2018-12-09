@@ -1,25 +1,39 @@
 define({ 
     DATE:{
         month: new Date().getMonth(),
-    	year: new Date().getFullYear()
+    	year: new Date().getFullYear(),
+        income: false
     },
         
     init: function() {
-        this.view.lblCurrentBalanceValue.text = serviceCategoryRefactored.getCurrentBalance() + userServiceRefactored.getById(CURRENT_USER.id).currency;
+        this.view.lblCurrentBalanceValue.text = serviceCategoryRefactored.getCurrentBalance() + this.getCarenncySymbolForCurrentUser();
       	this.outcomeClick(this.DATE.month, this.DATE.year);
         this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
     },
 
     incomeClick: function(month = this.DATE.month, year = this.DATE.year) {
+        this.DATE.income = true;
         let selectedItem = this.view.flxTabHeaderIncome;
         this.view.flxChartContainer.removeAll();
         this.addChart(CATEGORY_TYPES.CURRENT);
         this.changeTabHeaderColor(selectedItem);
         this.changeTabSumInfo(selectedItem);
         this.setSegmentLabels(CATEGORY_TYPES.CURRENT, month, year);
+        if(this.DATE.month === new Date().getMonth() && this.DATE.year === new Date().getFullYear()){
+        	this.view.flxNextMonth.isVisible = false;
+        }
+        let dates = [];
+		serviceTransactionsRefactored.getAll().forEach(i => {
+    	dates.push(i.date);
+		});
+		if(this.DATE.month === new Date(Math.min(...dates)).getMonth() && this.DATE.year === new Date(Math.min(...dates)).getFullYear()){
+            this.view.flxPreviousMonth.isVisible = false;
+        }
+        
     },
 
     outcomeClick: function(month = this.DATE.month, year = this.DATE.year) {
+     	this.DATE.income = false;
         let selectedItem = this.view.flxTabHeaderOutcome;
         this.view.flxChartContainer.removeAll();
         this.addChart(CATEGORY_TYPES.EXPENSE);
@@ -29,13 +43,25 @@ define({
         if(this.DATE.month === new Date().getMonth() && this.DATE.year === new Date().getFullYear()){
         	this.view.flxNextMonth.isVisible = false;
         }
+        
+		let dates = [];
+		serviceTransactionsRefactored.getAll().forEach(i => {
+    	dates.push(i.date);
+		});
+		if(this.DATE.month === new Date(Math.min(...dates)).getMonth() && this.DATE.year === new Date(Math.min(...dates)).getFullYear()){
+            this.view.flxPreviousMonth.isVisible = false;
+        }
     },
 
     backwardClick: function() {
+        this.DATE.income = false;
+        this.DATE.month = new Date().getMonth();
+        this.DATE.year = new Date().getFullYear();
 		navToForm("frmCategoriesList");
     },
     
     goToNextMonth: function(){
+        this.view.flxPreviousMonth.isVisible = true;
         if(this.DATE.month + 1 <= 11){
             this.DATE.month = this.DATE.month + 1;
         }
@@ -44,11 +70,15 @@ define({
             this.DATE.year = this.DATE.year + 1;
         }
         this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
-        this.outcomeClick(this.DATE.month, this.DATE.year);
-        
+        if(this.DATE.income === true){
+             this.incomeClick(this.DATE.month, this.DATE.year);
+        }else{
+            this.outcomeClick(this.DATE.month, this.DATE.year); 
+        }   
 	},
     
     goToPreviousMonth: function(){
+        this.view.flxNextMonth.isVisible = true;
         if(this.DATE.month - 1 >= 0){
             this.DATE.month = this.DATE.month - 1;
         }
@@ -57,31 +87,52 @@ define({
             this.DATE.year = this.DATE.year - 1;
         }
         this.view.lblDate.text = getMonth[this.DATE.month] + "/" + this.DATE.year;
-        this.outcomeClick(this.DATE.month, this.DATE.year);
-        this.view.flxNextMonth.isVisible = true;
+        if(this.DATE.income === true){
+             this.incomeClick(this.DATE.month, this.DATE.year);
+        }else{
+            this.outcomeClick(this.DATE.month, this.DATE.year); 
+        }   
 	},
 
     changeTabHeaderColor: function(selectedItem) {
         if (selectedItem === this.view.flxTabHeaderIncome){
             this.view.lblTabHeaderOutcome.skin = "sknTabHeaderInactive";
             this.view.lblTabHeaderIncome.skin = "sknTabHeaderActive";
-        }else {
+        }else{
             this.view.lblTabHeaderOutcome.skin = "sknTabHeaderActive";
             this.view.lblTabHeaderIncome.skin = "sknTabHeaderInactive";
         }
-
     },
 
     changeTabSumInfo: function(selectedItem) {
         if (selectedItem === this.view.flxTabHeaderIncome) {
-            this.view.lblTabSumInfo.text = "Income";
+            this.view.lblTabSumInfo.text = CATEGORY_TYPES.INCOME;
             this.view.lblTabSumInfoValue.text = 
-                this.getBalanceForEachMonthByType(CATEGORY_TYPES.CURRENT, new Date().getFullYear(), new Date().getMonth()) + userServiceRefactored.getById(CURRENT_USER.id).currency;
-        } else {
-            this.view.lblTabSumInfo.text = "Outcome";
+                this.getBalanceForEachMonthByType(CATEGORY_TYPES.CURRENT, this.DATE.year, this.DATE.month) + this.getCarenncySymbolForCurrentUser();
+        }else{
+            this.view.lblTabSumInfo.text = CATEGORY_TYPES.EXPENSE;
             this.view.lblTabSumInfoValue.text = 
-                this.getBalanceForEachMonthByType(CATEGORY_TYPES.EXPENSE, new Date().getFullYear(), new Date().getMonth()) + userServiceRefactored.getById(CURRENT_USER.id).currency;
+                this.getBalanceForEachMonthByType(CATEGORY_TYPES.EXPENSE, this.DATE.year, this.DATE.month) + this.getCarenncySymbolForCurrentUser();
         }
+    },
+    
+    getCarenncySymbolForCurrentUser: function (){
+        let currency = userServiceRefactored.getById(CURRENT_USER.id).currency;
+        let currencySymbol;
+        switch(currency) {
+            case "USD":
+                currencySymbol = "$";
+                break;
+            case "EUR":
+                currencySymbol = "€";
+                break;
+            case "PLN":
+                currencySymbol = "zł";
+                break;
+            default:
+                currencySymbol = "₴";
+        }
+        return currencySymbol;
     },
     
 	getTransactionsInDefaultCurrency: function(){
@@ -110,10 +161,7 @@ define({
        }
         return defaultTrans;  
     },
-    
-    
-    
-    
+        
     getTransactionsByType: function (type) {
         let categories = serviceCategoryRefactored.getCategories();
         let transactions = this.getTransactionsInDefaultCurrency();
@@ -134,7 +182,7 @@ define({
         return transactionsByType;
     },
     
-    getBalanceForEachMonthByType: function (type, year, month) {
+    getBalanceForEachMonthByType: function (type, year, month){
         year = year || new Date().getFullYear();
         let transactions = this.getTransactionsByType(type);
         let transactionsForEachMonth = [];
@@ -146,8 +194,7 @@ define({
         }
             transactionsForEachMonth.push(sum);
         
-        return transactionsForEachMonth;
-        
+        return transactionsForEachMonth;        
     },
 
     //this function returns ids of transactions where transactions were done this month
@@ -155,9 +202,12 @@ define({
     let transMonthIds = [];
     let transactions = this.getTransactionsInDefaultCurrency();
         for(let i = 0; i < transactions.length; i++){
-            if(transactions[i].date.getMonth() === month && transactions[i].date.getFullYear() === year){
-                transMonthIds.push(transactions[i].from);
-                transMonthIds.push(transactions[i].to);
+            if(transactions[i].date.getMonth() === month && 
+               transactions[i].date.getFullYear() === year && 
+               serviceCategoryRefactored.getById(transactions[i].from).user_id === CURRENT_USER.id &&
+               serviceCategoryRefactored.getById(transactions[i].to).user_id === CURRENT_USER.id){
+                	transMonthIds.push(transactions[i].from);
+                	transMonthIds.push(transactions[i].to);
             }
         }
     let unique = (value, index, self) => {
@@ -194,7 +244,7 @@ define({
             }
         }
         return categoryBalance;
-    },//correct
+    },
     
     getListNamesAndBalanceByCategory: function(categoryType, month, year) {
         let listNameAndBalanceByCategory = [];
@@ -215,20 +265,15 @@ define({
         let expenses = [];
         let income = [];
         for(let i = 0; i < categories.length; i++){
-            if(categories[i].type === "Expenses"){
+            if(categories[i].type === CATEGORY_TYPES.EXPENSE){
                 expenses.push(categories[i]);
-            } else if (categories[i].type === "Current") {
+            } else if (categories[i].type === CATEGORY_TYPES.CURRENT) {
                 income.push(categories[i]);
             }
         }
-        if (arguments[0] === "Expenses") {
+        if (arguments[0] === CATEGORY_TYPES.EXPENSE) {
             return expenses;
         } else return income;
-    },//correct
-
-    getBalanceByTypeOfCategories: function(categoryType, month, year) {
-        let listOfCategories = this.getListNamesAndBalanceByCategory(categoryType, month, year).map(i => i.balance);
-        return listOfCategories.reduce((accumulator, currentValue) => accumulator + currentValue); 
     },
 
     setSegmentLabels: function(categoryType, month, year) {
@@ -237,7 +282,7 @@ define({
         let segmentData = this.getListNamesAndBalanceByCategory(categoryType, month, year).map(i => {
             return {
                 name: i.name,
-                balance: i.balance + userServiceRefactored.getById(CURRENT_USER.id).currency
+                balance: i.balance + this.getCarenncySymbolForCurrentUser()
             };
         });
 
