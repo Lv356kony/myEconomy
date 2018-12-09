@@ -75,6 +75,24 @@ const serviceTransactionsRefactored = {
         });
     },
 
+    getRecalculatedByCarenncy: function (transaction, defaultCurrency, type) {
+        let categoryFrom = serviceCategoryRefactored.getCurrencyById(transaction.from);
+        let categoryTo = serviceCategoryRefactored.getCurrencyById(transaction.to);
+        let amount = transaction.fromAmount;
+        let category = categoryFrom;
+        if (type === CATEGORY_TYPES.EXPENSE) {
+            amount = transaction.toAmount;
+            category = categoryTo;
+        }
+        if(defaultCurrency === categoryTo){
+            return parseFloat(transaction.toAmount);
+        }else if(defaultCurrency === categoryFrom){
+            return parseFloat(transaction.fromAmount);
+        }else{
+            return calculate(category, defaultCurrency, amount);
+        }
+    },
+
     create: function(id, fromAmount, from, to, date, comment, toAmount){
         let transaction = {};
         transaction.id = id;
@@ -131,49 +149,34 @@ const serviceCategoryRefactored = {
         let transactionsWithshare = transactionsWithoutShare.concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
         let transactions = allTransactions ? transactionsWithshare : transactionsWithoutShare;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-        for(let i = 0; i < transactions.length; i++){
-            if(this.getById(transactions[i].from).type === CATEGORY_TYPES.INCOME){
-                let categoryFrom = this.getCurrencyById(transactions[i].from);
-                let categoryTo = this.getCurrencyById(transactions[i].to);
-                if(defaultCurrency === categoryFrom){
-                    incomes += parseFloat(transactions[i].fromAmount);
-                }else if(defaultCurrency === categoryTo){
-                    incomes += parseFloat(transactions[i].toAmount);
-                }else{
-                    incomes += calculate(categoryFrom, defaultCurrency, transactions[i].fromAmount);
-                }
+        transactions.forEach(trans => {
+            let type = this.getById(trans.from).type;
+            if(type === CATEGORY_TYPES.INCOME){
+                incomes += serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, type);
             }
-        }
+        });
         return parseFloat(incomes.toFixed(2));
     },
 
     //If "allTransactions" = true then function will return balance with external transactions into shared categories
     getCurrentBalance: function(allTransactions){
-        let current = this.getIncomeBalance(allTransactions) - this.getExpenseBalance();
+        let current = this.getIncomeBalance() - this.getExpenseBalance();
         if(allTransactions){
-            let externalTransations = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories();
+            current = this.getIncomeBalance(allTransactions);
+            let externalTransationsInto = serviceTransactionsRefactored.getAllExternalIntoMySharedCategories()
+            .concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories());
             let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-            for(let i = 0; i < externalTransations.length; i++){
-                if(this.getById(externalTransations[i].from).type === CATEGORY_TYPES.CURRENT &&
-                   this.getById(externalTransations[i].to).type === CATEGORY_TYPES.CURRENT &&
-                   this.getById(externalTransations[i].from).user_id !== CURRENT_USER.id)
-                {
-                    let categoryFrom = this.getCurrencyById(externalTransations[i].from);
-                    let categoryTo = this.getCurrencyById(externalTransations[i].to);
-                    if(defaultCurrency === categoryFrom){
-                        current += parseFloat(externalTransations[i].fromAmount);
-                    }else if(defaultCurrency === categoryTo){
-                        current += parseFloat(externalTransations[i].toAmount);
-                    }else{
-                        current += calculate(categoryFrom, defaultCurrency, externalTransations[i].fromAmount);
-                    }
+            externalTransationsInto.forEach(trans => {
+                if(this.getById(trans.from).type === CATEGORY_TYPES.CURRENT &&
+                   this.getById(trans.to).type === CATEGORY_TYPES.CURRENT &&
+                   this.getById(trans.from).user_id !== CURRENT_USER.id){
+                    current += serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, CATEGORY_TYPES.CURRENT);
                 }
-            }
-            let externalTransactionsForm = serviceTransactionsRefactored.getAllExternalFromSharedCategories();
-            externalTransactionsForm.forEach(i => {
-                if(this.getById(i.to).user_id !== CURRENT_USER.id && 
-                   !(~this.getById(i.to).sharedUsers_id.indexOf(CURRENT_USER.id))){
-                    current -= i.fromAmount;
+            });
+            let transactionsForm = serviceTransactionsRefactored.getAll().concat(serviceTransactionsRefactored.getAllExternalFromSharedCategories());
+            transactionsForm.forEach(trans => {
+                if(this.getById(trans.from).type === CATEGORY_TYPES.CURRENT && this.getById(trans.to).type === CATEGORY_TYPES.EXPENSE) {
+                    current -= serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, CATEGORY_TYPES.CURRENT);
                 }
             });
         }
@@ -183,24 +186,22 @@ const serviceCategoryRefactored = {
     //If "allTransactions" = true then function will return balance with external transactions into shared categories
     getExpenseBalance: function(allTransactions){
         let expense = 0.00;
-        let transactionsWithoutShare = serviceTransactionsRefactored.getAll();
-        let transactionsWithshare = transactionsWithoutShare.concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories(), 
+        let transactionsWithoutShare = serviceTransactionsRefactored.getAll()
+        .filter(trans => {
+            if(this.getById(trans.from).user_id === CURRENT_USER.id){
+                return trans;
+            }
+        });
+        let transactionsWithshare = serviceTransactionsRefactored.getAll().concat(serviceTransactionsRefactored.getAllExternalIntoSharedForMeCategories(), 
                                                                     serviceTransactionsRefactored.getAllExternalIntoMySharedCategories());
         let transactions = allTransactions ? transactionsWithshare : transactionsWithoutShare;
         let defaultCurrency = userServiceRefactored.getById(CURRENT_USER.id).currency;
-        for(let i = 0; i < transactions.length; i++){
-            if(this.getById(transactions[i].to).type === CATEGORY_TYPES.EXPENSE){
-                let categoryFrom = this.getCurrencyById(transactions[i].from);
-                let categoryTo = this.getCurrencyById(transactions[i].to);
-                if(defaultCurrency === categoryTo){
-                    expense += parseFloat(transactions[i].toAmount);
-                }else if(defaultCurrency === categoryFrom){
-                    expense += parseFloat(transactions[i].fromAmount);
-                }else{
-                    expense += calculate(categoryTo, defaultCurrency, transactions[i].fromAmount);
-                }
+        transactions.forEach(trans => {
+            let type = this.getById(trans.to).type;
+            if(type === CATEGORY_TYPES.EXPENSE){
+                expense += serviceTransactionsRefactored.getRecalculatedByCarenncy(trans, defaultCurrency, type);
             }
-        }
+        });
         return parseFloat(expense.toFixed(2));
     },
 
@@ -422,18 +423,6 @@ const userServiceRefactored = {
 };
 
 const serviceCurrenciesRefactored = {
-    findUserCurrencies: function (){
-        let categories = serviceCategory.getCategories();
-        let curr = [];
-        for(let i = 0; i < categories.length; i++){
-            const index = curr.findIndex(elem => elem === categories[i].currency);
-            if(index === -1) {
-                curr.push(categories[i].currency);
-            }
-        }
-        return curr;
-    },
-
     generateCurrencySubsets: function(currencies){
         let results = [];
         for(let i = 0; i < currencies.length; i++){
