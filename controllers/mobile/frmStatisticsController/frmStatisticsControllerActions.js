@@ -20,12 +20,12 @@ define({
     /** onClick defined for flxTabHeaderOutcome **/
     AS_FlexContainer_caf5253879de48d3afe79f8023334e32: function AS_FlexContainer_caf5253879de48d3afe79f8023334e32(eventobject) {
         var self = this;
-        return self.outcomeClick.call(this);
+        return self.outcomeClick.call(this, this.DATE.month, this.DATE.year);
     },
     /** onClick defined for flxTabHeaderIncome **/
     AS_FlexContainer_ie5fa32e45d54261b5d2fa74fd3192f1: function AS_FlexContainer_ie5fa32e45d54261b5d2fa74fd3192f1(eventobject) {
         var self = this;
-        return self.incomeClick.call(this);
+        return self.incomeClick.call(this, this.DATE.month, this.DATE.year);
     },
     /** postShow defined for frmStatistics **/
     AS_Form_c8d28d13b7c54a4ebf94279914d2f579: function AS_Form_c8d28d13b7c54a4ebf94279914d2f579(eventobject) {
