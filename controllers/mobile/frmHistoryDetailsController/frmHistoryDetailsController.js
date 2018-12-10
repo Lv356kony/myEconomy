@@ -262,7 +262,7 @@ define({
         if(from.currency === to.currency){
             fromAmount = this.view.inpExpense.text;
             toAmount = fromAmount;
-        } else if(from.currency === userServiceRefactored.getById(CURRENT_USER.id).currency && from.currency !== to.currency){
+        } else if(from.currency !== to.currency){
             fromAmount = this.view.inpExpense.text;
             toAmount = calculate(from.currency, to.currency, fromAmount);
         } else {

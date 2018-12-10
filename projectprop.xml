@@ -541,7 +541,7 @@
     <attributes name="ANDROIDWEAR_READ_HISTORY_BOOKMARKS" value="false"/>
     <attributes name="location" value="false"/>
     <attributes name="winphn10bgagentclassname" value=""/>
-    <attributes name="cloud_url" value="https://app-factory-dev.konycloud.com"/>
+    <attributes name="cloud_url" value="https://app-factory-dev.sync.konycloud.com"/>
     <attributes name="disablehttpskey" value="false"/>
     <attributes name="Music_Library" value="true"/>
     <attributes name="Location" value="true"/>

@@ -194,12 +194,5 @@ define({
         this.view.flxExchange.isVisible = false;
         this.view.lblCurrency.text = "";
         this.view.lblAnotherCurrency.text = "";
-
     }
-
-
-
-
-
-
 });     
