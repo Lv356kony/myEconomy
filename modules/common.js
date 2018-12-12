@@ -27,6 +27,30 @@ const DATA = {
     transactions:[]
 };
 
+const service = {
+ identity: undefined,
+ integration: undefined,
+ object: undefined,
+};
+
+function initServices () {
+    service.identity = kony.sdk.getCurrentInstance().getIdentityService("userstore");
+    service.integration = kony.sdk.getCurrentInstance().getIntegrationService("CurrenciesAPI");
+    service.object = kony.sdk.getCurrentInstance().getObjectService("myEconomyDB");
+}
+
+function getIdentityService() {
+    return service.identity;
+}
+
+function getIntegrationService() {
+    return service.integration;
+}
+
+function getObjectService() {
+    return service.object;
+}
+
 const serviceTransactions = {
 
     getBalanceByCategoryId: function(categoryId){
@@ -185,7 +209,7 @@ const serviceCategory = {
     },
 
     getCurrencyById: function(categoryId) {
-   		return this.getById(categoryId).currency;
+        return this.getById(categoryId).currency;
     },
 
     getCurrencyByCatName: function(categoryName) {
@@ -208,9 +232,9 @@ const serviceCategory = {
         return element;
     },
 
-//     shareCategory: function (categotyId, userId) {
-//         this.getById(categotyId).sharedUsers_id.push(userId);
-//     }
+    //     shareCategory: function (categotyId, userId) {
+    //         this.getById(categotyId).sharedUsers_id.push(userId);
+    //     }
 };
 
 const userService = {

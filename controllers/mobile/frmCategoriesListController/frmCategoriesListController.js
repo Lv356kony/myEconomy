@@ -22,6 +22,17 @@ define({
             imgShare: ""
         };
         segment.setData(incomeCategories);
+        const self = this;
+        let objectS = getObjectService();
+        alert(objectS);
+        let dataObj = new kony.sdk.dto.DataObject("categories");
+        let options = {"dataObject": dataObj};
+        objectS.fetch(options, function(response) {
+           let records = response.records; 
+           alert(records);
+        }, function(error){
+              alert("Fetch data error" + JSON.stringify(error));
+     });
     },
 
     initCurrentCategoriesList: function(){

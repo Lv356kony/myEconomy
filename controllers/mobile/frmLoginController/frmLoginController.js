@@ -1,7 +1,7 @@
 define({ 
 
     login: function(){
-
+		initServices();
         let userEmail = this.view.txtEmail.text;
         let userPassword = this.view.txtPassword.text;  
 

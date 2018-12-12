@@ -91,9 +91,11 @@ FOUNDATION_EXPORT NSString *const kAppNameKey;
 FOUNDATION_EXPORT NSString *const kAppIdKey;
 
 // request headers
-FOUNDATION_EXPORT NSString *const kHeaderRequestId;
+FOUNDATION_EXPORT NSString *const X_KONY_REQUEST_ID;
+FOUNDATION_EXPORT NSString *const CONTENT_TYPE_FORM_URL_ENCODED;
+FOUNDATION_EXPORT NSString *const CONTENT_TYPE_KEY;
 
-//cms database schema constants
+// cms database schema constants
 FOUNDATION_EXPORT NSString* const DATABASE_NAME;
 FOUNDATION_EXPORT NSString* const CMS_TABLE_NAME;
 FOUNDATION_EXPORT NSString* const EVENT_ID;
