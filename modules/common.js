@@ -36,7 +36,7 @@ const service = {
 function initServices () {
     service.identity = kony.sdk.getCurrentInstance().getIdentityService("userstore");
     service.integration = kony.sdk.getCurrentInstance().getIntegrationService("CurrenciesAPI");
-    service.object = kony.sdk.getCurrentInstance().getObjectService("myEconomyDB");
+    service.object = kony.sdk.getCurrentInstance().getObjectService("myEconomyDB", {"access": "online"});
 }
 
 function getIdentityService() {

@@ -23,10 +23,14 @@ define({
         };
         segment.setData(incomeCategories);
         const self = this;
+        
+        
         let objectS = getObjectService();
         alert(objectS);
         let dataObj = new kony.sdk.dto.DataObject("categories");
+        dataObj.odataUrl = "$select=<place-holder>,$filter=<place-holder>,$orderby=<place-holder>,$top=<place-holder>,$skip=<place-holder>,$expand=<place-holder>";
         let options = {"dataObject": dataObj};
+        
         objectS.fetch(options, function(response) {
            let records = response.records; 
            alert(records);
