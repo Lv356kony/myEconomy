@@ -1,0 +1,28 @@
+{
+    "AS_FlexContainer_d6d316e4694b46f69d60857f26e7e556": {
+        "id": "AS_FlexContainer_d6d316e4694b46f69d60857f26e7e556",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmLogin",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d42189327348471aa1ab445fc6ea76cd"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___j7560fc025e24d40877d44eeefc93b1e",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "loginViaGoogle",
+            "display": "loginViaGoogle",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

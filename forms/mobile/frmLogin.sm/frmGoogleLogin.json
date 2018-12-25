@@ -3,7 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "50%"
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -22,39 +26,30 @@
     "_skin_": "sf46a0056b534ebc8dc0c7106ca7c9e5",
     "_top_": {
         "type": "string",
-        "value": "200dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "80%"
+        "value": "25%"
     },
     "allboxes": [],
     "autogrowmode": 0,
     "canUpdateUI": true,
-    "centerx": {
-        "type": "string",
-        "value": "50.00%"
-    },
     "children": [
-        "flxEmail",
-        "flxEmailError",
-        "flxPassword",
-        "flxPasswordError",
-        "flxButtonLogin",
-        "frmSocialNetwork",
-        "flxCreateAccount"
+        "imgGoogleLogin"
     ],
     "clipbounds": true,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxLogin",
+    "id": "frmGoogleLogin",
+    "ide_onClick": "AS_FlexContainer_ed5c5e8587574fc49eb36eb08d5216b1",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "aaef07d562744049b6d7e73fd26ad261",
-    "layouttype": 4,
+    "kuid": "b42622d6cefa4adabe5d699274274ed7",
+    "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmLogin",
+    "parent": "frmSocialNetwork",
     "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

@@ -62,7 +62,7 @@
     <attributes name="apmgestureswipe" value=""/>
     <attributes name="andweartargetsdkkey" value="7.1 (25)"/>
     <attributes name="appnamekey" value="myEconomy"/>
-    <attributes name="currentgaversion" value="8.3.5.v201811011817"/>
+    <attributes name="currentgaversion" value="8.3.10.v201812031451"/>
     <attributes name="wp10sharedUserCertificates" value="false"/>
     <attributes name="enablelocalnotificationsandroidwear" value="false"/>
     <attributes name="ANDROIDWEAR_READ_SYNC_SETTINGS" value="false"/>
@@ -86,7 +86,7 @@
     <attributes name="bb10buildid" value=""/>
     <attributes name="apmerrorunhandledexception" value="true"/>
     <attributes name="READ_CONTACTS" value="false"/>
-    <attributes name="schemekey" value=""/>
+    <attributes name="schemekey" value="myeconomy"/>
     <attributes name="gradle_properties_attrs_andwear" value=""/>
     <attributes name="wintilebackcolornamekey" value="128,128,128"/>
     <attributes name="BROADCAST_SMS" value="false"/>
@@ -150,7 +150,7 @@
     <attributes name="wp10pfxkey" value=""/>
     <attributes name="ACCESS_CHECKIN_PROPERTIES" value="false"/>
     <attributes name="MOUNT_FORMAT_FILESYSTEMS" value="false"/>
-    <attributes name="lastmodifiedtime" value="1542099699833"/>
+    <attributes name="lastmodifiedtime" value="1545672685892"/>
     <attributes name="ipad_notificationicon_1x_20" value=""/>
     <attributes name="iphone_spotlighticon_2x_40" value=""/>
     <attributes name="wp10microphone" value="false"/>
@@ -340,7 +340,7 @@
     <attributes name="ANDROIDWEAR_SEND_SMS" value="false"/>
     <attributes name="ANDROIDWEAR_KILL_BACKGROUND_PROCESSES" value="false"/>
     <attributes name="apmserviceresponse" value="false"/>
-    <attributes name="urlschemanameorder" value=""/>
+    <attributes name="urlschemanameorder" value="Scheme,Host"/>
     <attributes name="ID_CAP_NETWORKING" value="true"/>
     <attributes name="UseSQLCipherFIPS" value="false"/>
     <attributes name="ANDROIDWEAR_USE_FINGERPRINT" value="false"/>
@@ -519,7 +519,7 @@
     <attributes name="thinwebcontextkey" value=""/>
     <attributes name="access_sms_mms" value="false"/>
     <attributes name="winmobiletileimagekey" value=""/>
-    <attributes name="hostkey" value=""/>
+    <attributes name="hostkey" value="com.orgname.myEconomy"/>
     <attributes name="AUTHENTICATE_ACCOUNTS" value="false"/>
     <attributes name="win8widelogokey" value=""/>
     <attributes name="privateNetworkClientServer" value="false"/>
@@ -527,7 +527,7 @@
     <attributes name="sharedUserCertificates" value="false"/>
     <attributes name="keyStorePasswordandwear" value=""/>
     <attributes name="win8pvkkey" value=""/>
-    <attributes name="UseOpenSSLLibrary" value="false"/>
+    <attributes name="UseOpenSSLLibrary" value="true"/>
     <attributes name="codeGeneration" value="false"/>
     <attributes name="WRITE_SMS" value="false"/>
     <attributes name="access_phone" value="false"/>
@@ -541,7 +541,7 @@
     <attributes name="ANDROIDWEAR_READ_HISTORY_BOOKMARKS" value="false"/>
     <attributes name="location" value="false"/>
     <attributes name="winphn10bgagentclassname" value=""/>
-    <attributes name="cloud_url" value="https://app-factory-dev.sync.konycloud.com"/>
+    <attributes name="cloud_url" value="https://app-factory-dev.konycloud.com"/>
     <attributes name="disablehttpskey" value="false"/>
     <attributes name="Music_Library" value="true"/>
     <attributes name="Location" value="true"/>
@@ -667,7 +667,7 @@
     <attributes name="spamanifestjson" value=""/>
     <attributes name="remoteSystem" value="false"/>
     <attributes name="win8toastcapablekey" value="Not set"/>
-    <attributes name="fabric_runtime_app_version" value="Linked"/>
+    <attributes name="fabric_runtime_app_version" value="1.0"/>
     <attributes name="UseSQLCipherFIPSandwear" value="false"/>
     <attributes name="SET_PROCESS_LIMIT" value="false"/>
     <attributes name="wp10contacts" value="false"/>
@@ -720,6 +720,5 @@
     <attributes name="certs_key_store_type" value="JKS"/>
     <attributes name="ANDROIDWEAR_WRITE_SYNC_SETTINGS" value="false"/>
     <attributes name="spaandroidtab800basefontsize" value="14"/>
-    <attributes name="isLibraryBuild" value="false"/>
     <attributes name="defaultlocalekey" value=""/>
 </properties>

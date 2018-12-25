@@ -35,10 +35,10 @@
     "defaulttheme": "defaultTheme",
     "cloud_account_guid": "990b7119-9591-4481-a42a-75650efa137e",
     "nativeContainerProperties": {
-        "isModified": true,
-        "isEnableJSContainer": true,
         "isEnableJSContainerAndroid": true,
-        "isEnableJSContaineriOS": true
+        "isModified": true,
+        "isEnableJSContaineriOS": true,
+        "isEnableJSContainer": true
     },
     "appmenu": {
         "tablet": {
@@ -238,5 +238,16 @@
     "watchos_watchMarketing1x": "",
     "enableactionbar": false,
     "enablexfsdw": false,
-    "enablexfsspa": false
+    "enablexfsspa": false,
+    "kfAppInfo": {
+        "990b7119-9591-4481-a42a-75650efa137e": {
+            "appName": "ITAmyEconomy",
+            "id": "c87c49db-ccad-4fd5-8750-b9379ca9ee9d",
+            "baseId": "c87c49db-ccad-4fd5-8750-b9379ca9ee9d",
+            "version": "1.0"
+        }
+    },
+    "ide_appEvents": {
+        "mobile": {}
+    }
 }

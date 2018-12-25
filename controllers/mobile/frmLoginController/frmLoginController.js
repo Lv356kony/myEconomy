@@ -1,5 +1,63 @@
 define({ 
 
+
+    loginSuccses : function (){
+        LoginService.getInstance().loginSuccessMod();
+    },
+
+    loginG: function (){
+        //         LoginService.getInstance().loginMod();
+
+        var self = this;
+        let ids = KNYMobileFabric.getIntegrationService("CurrenciesAPI").invokeOperation("convert", null, null, function(response) {
+         //   self.view.brwLogin.setVisibility(false);
+            alert('Success\n\n' + JSON.stringify(response));
+        }, function(error) {
+          //  self.view.brwLogin.setVisibility(false);
+            alert('Failure\n\n' + JSON.stringify(error));
+        }, null);
+        alert(ids);
+      //  this.view.brwLogin.setVisibility(true);
+//         let browser = this.view.brwLogin;
+//         ids.login({
+//             //browserWidget: browser,
+//             UseDeviceBrowser: true,
+//             success_url: 'myeconomy://com.orgname.myEconomy'
+//         }, function(response) {
+//          //   self.view.brwLogin.setVisibility(false);
+//             alert('Success\n\n' + JSON.stringify(response));
+//         }, function(error) {
+//           //  self.view.brwLogin.setVisibility(false);
+//             alert('Failure\n\n' + JSON.stringify(error));
+//         });
+       
+    },
+
+        loginViaGoogle : function (){
+     //       this.view.brwLogin.isVisible = true;
+            var authClient = null;
+            var providerName = "linckd";
+            var options = {
+                noPopup: false,
+                UseDeviceBrowser: true,
+                success_url: "myeconomy//com.orgname.myEconomy",
+               // browserWidget: this.view.brwLogin
+
+            };
+            try {
+                authClient = KNYMobileFabric.getIdentityService(providerName);
+            } catch (exception) {
+                alert("exception");
+            }
+            authClient.login(options,
+                             function(response) {
+                alert("Sucsses");
+            }, function(error) {
+                alert(JSON.stringify(error));
+            }
+                            );
+        },
+
     login: function(){
 
         let userEmail = this.view.txtEmail.text;
@@ -41,7 +99,7 @@ define({
         let userEmail = this.view.txtEmail.text;
         let userPassword = this.view.txtPassword.text;
         let userConfPassword = this.view.txtConfirmation.text;
-        
+
 
         let result = userServiceRefactored.registration(userEmail, userPassword, userConfPassword);
 
@@ -67,7 +125,7 @@ define({
             this.view.flxRegistration.isVisible=false; 
             this.view.flxButtonLogin.isVisible=true;
             this.view.flxCreateAccount.isVisible=true;
-            
+
 
             this.view.txtEmail.text = '';
             this.view.txtPassword.text = '';
@@ -90,19 +148,19 @@ define({
         this.view.txtEmail.text = '';
         this.view.txtPassword.text = '';
         this.view.txtConfirmation.text = '';
-       
-         this.view.flxEmailError.isVisible = false;
-         this.view.flxPasswordError.isVisible = false;
-         this.view.flxConfirmationError.isVisible = false;
-        
+
+        this.view.flxEmailError.isVisible = false;
+        this.view.flxPasswordError.isVisible = false;
+        this.view.flxConfirmationError.isVisible = false;
+
 
         this.view.flxButtonLogin.isVisible=false;
         this.view.flxCreateAccount.isVisible=false;
         this.view.flxRegistration.isVisible=true;
-        
+
         this.view.txtEmail.setFocus(true);
-        
-        
+
+
 
     },
 
@@ -119,28 +177,28 @@ define({
         this.view.txtEmail.text = '';
         this.view.txtPassword.text = '';
         this.view.txtConfirmation.text = '';
-        
+
         this.view.flxEmailError.isVisible = false;
         this.view.flxPasswordError.isVisible = false;
-         this.view.flxConfirmationError.isVisible = false;
-        
+        this.view.flxConfirmationError.isVisible = false;
+
 
     },
     cleanEmailError: function(){
         this.view.lblEmailError.text = '';
-         this.view.flxEmailError.isVisible = false;
+        this.view.flxEmailError.isVisible = false;
 
     },
     cleanPasswordError: function(){
         this.view.lblPasswordError.text = '';
-       this.view.flxPasswordError.isVisible = false;
+        this.view.flxPasswordError.isVisible = false;
     },
     cleanConfPasswordError(){
         this.view.lblConfirmationError.text ='';
-         this.view.flxConfirmationError.isVisible = false;
+        this.view.flxConfirmationError.isVisible = false;
     },
-    
-    
+
+
     createDefaultCategories: function (userId) {
         let namesAndIcons = [
             {

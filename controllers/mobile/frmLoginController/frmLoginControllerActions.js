@@ -36,5 +36,10 @@ define({
     AS_Button_caea3aed3cca4ee1baa4bdcb2bfb4412: function AS_Button_caea3aed3cca4ee1baa4bdcb2bfb4412(eventobject) {
         var self = this;
         return self.goToLogin.call(this);
+    },
+    /** onClick defined for frmGoogleLogin **/
+    AS_FlexContainer_ed5c5e8587574fc49eb36eb08d5216b1: function AS_FlexContainer_ed5c5e8587574fc49eb36eb08d5216b1(eventobject) {
+        var self = this;
+        return self.loginG.call(this);
     }
 });

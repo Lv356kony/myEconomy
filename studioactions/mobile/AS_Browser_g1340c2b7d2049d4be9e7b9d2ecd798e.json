@@ -1,0 +1,28 @@
+{
+    "AS_Browser_g1340c2b7d2049d4be9e7b9d2ecd798e": {
+        "id": "AS_Browser_g1340c2b7d2049d4be9e7b9d2ecd798e",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmLogin",
+            "type": "forms",
+            "platform": "",
+            "KUID": "d42189327348471aa1ab445fc6ea76cd"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION___c86263f76f9e431ba025b415cdba1ab5",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "loginViaGoogle",
+            "display": "loginViaGoogle",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}
